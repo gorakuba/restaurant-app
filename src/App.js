@@ -9,6 +9,7 @@ import Pizza from "./routes/Pizzas/Pizza";
 import Soup from "./routes/Soups/Soup";
 import Special from "./routes/SpecialsOfTheDay/Special";
 import VegDish from "./routes/VegDishes/VegDish";
+import Basket from "./routes/Basket/Basket";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='soups' element={<Soup />} />
         <Route path='specialsoftheday' element={<Special />} />
         <Route path='vegdishes' element={<VegDish />} />
+        <Route path='basket' element={<Basket />} />
       </Routes>
     </>
   );

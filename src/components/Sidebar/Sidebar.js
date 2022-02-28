@@ -10,16 +10,12 @@ function Sidebar() {
 
   return (
     <SidebarStyle>
-      {menuItems.map((item) => {
+      {menuItems.map((item, key) => {
         switch (item.name) {
           case "Dania dnia":
             return (
-              <Link to='/specialsoftheday' className='link'>
-                <ListItem
-                  key={item.id}
-                  onMouseOver={mouseHover}
-                  onMouseOut={mouseOutHover}
-                >
+              <Link to='/specialsoftheday' className='link' key={item.id}>
+                <ListItem onMouseOver={mouseHover} onMouseOut={mouseOutHover}>
                   {item.name}
                   <ArrowForwardIosIcon className='menuIcon' />
                 </ListItem>
@@ -27,12 +23,8 @@ function Sidebar() {
             );
           case "Dania mięsne":
             return (
-              <Link to='/meatdishes' className='link'>
-                <ListItem
-                  key={item.id}
-                  onMouseOver={mouseHover}
-                  onMouseOut={mouseOutHover}
-                >
+              <Link to='/meatdishes' className='link' key={item.id}>
+                <ListItem onMouseOver={mouseHover} onMouseOut={mouseOutHover}>
                   {item.name}
                   <ArrowForwardIosIcon className='menuIcon' />
                 </ListItem>
@@ -40,12 +32,8 @@ function Sidebar() {
             );
           case "Dania wege":
             return (
-              <Link to='/vegdishes' className='link'>
-                <ListItem
-                  key={item.id}
-                  onMouseOver={mouseHover}
-                  onMouseOut={mouseOutHover}
-                >
+              <Link to='/vegdishes' className='link' key={item.id}>
+                <ListItem onMouseOver={mouseHover} onMouseOut={mouseOutHover}>
                   {item.name}
                   <ArrowForwardIosIcon className='menuIcon' />
                 </ListItem>
@@ -53,12 +41,8 @@ function Sidebar() {
             );
           case "Zupy":
             return (
-              <Link to='/soups' className='link'>
-                <ListItem
-                  key={item.id}
-                  onMouseOver={mouseHover}
-                  onMouseOut={mouseOutHover}
-                >
+              <Link to='/soups' className='link' key={item.id}>
+                <ListItem onMouseOver={mouseHover} onMouseOut={mouseOutHover}>
                   {item.name}
                   <ArrowForwardIosIcon className='menuIcon' />
                 </ListItem>
@@ -66,12 +50,8 @@ function Sidebar() {
             );
           case "Fast food":
             return (
-              <Link to='/fastfoods' className='link'>
-                <ListItem
-                  key={item.id}
-                  onMouseOver={mouseHover}
-                  onMouseOut={mouseOutHover}
-                >
+              <Link to='/fastfoods' className='link' key={item.id}>
+                <ListItem onMouseOver={mouseHover} onMouseOut={mouseOutHover}>
                   {item.name}
                   <ArrowForwardIosIcon className='menuIcon' />
                 </ListItem>
@@ -79,12 +59,8 @@ function Sidebar() {
             );
           case "Pizza":
             return (
-              <Link to='/pizzas' className='link'>
-                <ListItem
-                  key={item.id}
-                  onMouseOver={mouseHover}
-                  onMouseOut={mouseOutHover}
-                >
+              <Link to='/pizzas' className='link' key={item.id}>
+                <ListItem onMouseOver={mouseHover} onMouseOut={mouseOutHover}>
                   {item.name}
                   <ArrowForwardIosIcon className='menuIcon' />
                 </ListItem>
@@ -92,12 +68,8 @@ function Sidebar() {
             );
           case "Napoje":
             return (
-              <Link to='/drinks' className='link'>
-                <ListItem
-                  key={item.id}
-                  onMouseOver={mouseHover}
-                  onMouseOut={mouseOutHover}
-                >
+              <Link to='/drinks' className='link' key={item.id}>
+                <ListItem onMouseOver={mouseHover} onMouseOut={mouseOutHover}>
                   {item.name}
                   <ArrowForwardIosIcon className='menuIcon' />
                 </ListItem>
@@ -105,12 +77,8 @@ function Sidebar() {
             );
           case "Dowóz i kontakt":
             return (
-              <Link to='/deliveryandcontact' className='link'>
-                <ListItem
-                  key={item.id}
-                  onMouseOver={mouseHover}
-                  onMouseOut={mouseOutHover}
-                >
+              <Link to='/deliveryandcontact' className='link' key={item.id}>
+                <ListItem onMouseOver={mouseHover} onMouseOut={mouseOutHover}>
                   {item.name}
                   <ArrowForwardIosIcon className='menuIcon' />
                 </ListItem>

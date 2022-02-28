@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const HeaderStyle = styled.header`
+  position: sticky;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   height: 70px;
@@ -51,7 +54,9 @@ const HeaderRight = styled.div`
   padding: 10px 20px;
 
   .headerRightIcon {
-    padding-left: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: rgb(0 0 0);
   }
 
   .headerRightIcon:hover {
@@ -63,7 +68,6 @@ const HeaderRight = styled.div`
 `;
 
 const BasketCounter = styled.div`
-  padding-left: 5px;
   font-weight: 900;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 `;
