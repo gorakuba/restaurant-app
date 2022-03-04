@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ProductStyle = styled.div`
   background-color: rgb(255, 255, 255);
   width: 95%;
-  height: 30vh;
+
   padding: 10px;
   margin: 30px 10px 10px 10px;
   border-radius: 10px;
@@ -39,19 +39,12 @@ const Description = styled.div`
 
 const AddSection = styled.div`
   display: flex;
-  justify-content: left;
-  margin: 25px 0 0 10px;
+  justify-content: right;
+  align-items: center;
+  margin: 0 0 0 10px;
 
   .clicked__plus {
-    margin-right: 8px;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  .clicked__minus {
-    margin-left: 8px;
+    margin-right: 20px;
 
     &:hover {
       cursor: pointer;
@@ -59,4 +52,17 @@ const AddSection = styled.div`
   }
 `;
 
-export { ProductStyle, HeaderLine, Price, Description, AddSection };
+const Counter = styled.div`
+  font-size: 20px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export { ProductStyle, HeaderLine, Price, Description, AddSection, Counter };

@@ -3,6 +3,7 @@ import styled from "styled-components";
 const BasketStyle = styled.div`
   display: flex;
   background-color: rgb(255 255 255);
+  margin: 20px;
 
   h1 {
     margin: 40px;
@@ -16,8 +17,8 @@ const LeftSide = styled.div`
 `;
 
 const RightSide = styled.div`
-  width: 28%;
-  height: 30vh;
+  width: 28.5%;
+  height: 23vh;
   background-color: rgb(255 255 255);
   padding: 10px;
   display: flex;

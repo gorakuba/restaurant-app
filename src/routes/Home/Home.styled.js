@@ -7,7 +7,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   background-color: rgb(255 255 255);
-  padding: 30px;
+  padding: 0 30px 30px 30px;
   width: 75%;
 `;
 
@@ -18,7 +18,7 @@ const Button = styled.button`
   height: 50px;
   border: none;
   border-radius: 10px;
-  color: rgb(0 0 255);
+  color: rgb(0 0 0);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-weight: 700;

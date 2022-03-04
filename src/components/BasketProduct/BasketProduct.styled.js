@@ -3,7 +3,6 @@ import styled from "styled-components";
 const ProductStyle = styled.div`
   background-color: rgb(255, 255, 255);
   width: 95%;
-  height: 30vh;
   padding: 10px;
   margin: 30px 10px 10px 10px;
   border-radius: 10px;
@@ -37,13 +36,14 @@ const Description = styled.div`
   padding: 10px;
 `;
 
-const AddSection = styled.div`
+const RemoveSection = styled.div`
   display: flex;
   justify-content: left;
-  margin: 25px 0 0 10px;
+  align-items: center;
+  margin: 0 0 0 10px;
 
   .clicked__minus {
-    margin-left: 8px;
+    margin-right: 20px;
 
     &:hover {
       cursor: pointer;
@@ -51,4 +51,4 @@ const AddSection = styled.div`
   }
 `;
 
-export { ProductStyle, HeaderLine, Price, Description, AddSection };
+export { ProductStyle, HeaderLine, Price, Description, RemoveSection };

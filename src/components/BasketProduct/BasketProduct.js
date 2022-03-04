@@ -5,9 +5,8 @@ import {
   HeaderLine,
   ProductStyle,
   Price,
-  AddSection,
+  RemoveSection,
 } from "./BasketProduct.styled";
-import RemoveIcon from "@mui/icons-material/Remove";
 
 function BasketProduct({ id, name, price, description }) {
   const [{ basket }, dispatch] = useStateValue();
@@ -28,12 +27,16 @@ function BasketProduct({ id, name, price, description }) {
     <ProductStyle>
       <HeaderLine>
         <h3>{name}</h3>
-        <Price>Price: {price} zł</Price>
+
+        <RemoveSection>
+          <div className='clicked__minus' onClick={basketRemove}>
+            Remove from basket
+          </div>
+
+          <Price>Price: {price} zł</Price>
+        </RemoveSection>
       </HeaderLine>
       <Description>{description}</Description>
-      <AddSection>
-        <RemoveIcon className='clicked__minus' onClick={basketRemove} />
-      </AddSection>
     </ProductStyle>
   );
 }

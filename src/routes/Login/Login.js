@@ -2,27 +2,48 @@ import React from "react";
 import {
   LoginButton,
   LoginHeader,
-  LoginLogic,
+  LoginLogicStyle,
   LoginStyle,
+  PrivacyPolicy,
+  RegisterButton,
 } from "./Login.styled";
+import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
+import LoginLogic from "./LoginLogic";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+  const { login, register } = LoginLogic();
+
   return (
-    <LoginLogic>
+    <LoginLogicStyle>
       <LoginStyle>
-        <LoginHeader> Reasurant App</LoginHeader>
+        <LoginHeader>
+          <Link to='/' className='link'>
+            Restaurant App
+            <RestaurantMenuIcon className='icon' />
+          </Link>
+        </LoginHeader>
 
-        <input type='text' className='login' placeholder='Enter your login' />
-
+        <input
+          type='text'
+          className='login'
+          placeholder='Enter your login'
+          onChange={(e) => e.target.value}
+        />
         <input
           type='password'
           className='pass'
           placeholder='Enter your password'
+          onChange={(e) => e.target.value}
         />
-
-        <LoginButton>Login</LoginButton>
+        <PrivacyPolicy>
+          <input type='checkbox' required />
+          <p>Accept privacy policy using in our online shop!</p>
+        </PrivacyPolicy>
+        <LoginButton onClick={login}>Login</LoginButton>
+        <RegisterButton onClick={register}>Register</RegisterButton>
       </LoginStyle>
-    </LoginLogic>
+    </LoginLogicStyle>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   HeaderStyle,
   HeaderLeft,
@@ -15,6 +15,8 @@ import { useStateValue } from "../../helper/StateProvider";
 
 function Header() {
   const [{ basket }, dispatch] = useStateValue();
+
+  // console.log(basket);
 
   return (
     <HeaderStyle>
