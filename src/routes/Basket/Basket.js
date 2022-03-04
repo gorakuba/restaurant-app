@@ -5,20 +5,22 @@ import { BasketStyle, LeftSide, RightSide } from "./Basket.styled";
 import BasketProduct from "../../components/BasketProduct/BasketProduct";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../../helper/reducer";
+import { Link } from "react-router-dom";
 
 function Basket() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
 
   return (
     <>
       <Header />
       <BasketStyle>
-        {basket?.length > 0 ? (
+        {basket.length > 0 ? (
           <>
             <LeftSide>
-              {basket?.map((product) => (
+              {basket.map((product) => (
                 <BasketProduct
-                  key={product.id}
+                  key={basket.indexOf(product)}
+                  id={product.id}
                   name={product.name}
                   description={product.description}
                   price={product.price}
@@ -29,8 +31,8 @@ function Basket() {
               <CurrencyFormat
                 renderText={(value) => (
                   <>
-                    <p>Items in basket: {basket.length}</p>
-                    <p>Total price: {value} zł</p>
+                    <p className='p1'>Items in basket: {basket.length}</p>
+                    <p className='p2'>Total price: {value} zł</p>
                   </>
                 )}
                 decimalScale={2}
@@ -38,6 +40,9 @@ function Basket() {
                 displayType={"text"}
                 thousandSeparator={true}
               />
+              <Link to='/specialsoftheday'>
+                <button>Add more items to basket</button>
+              </Link>
             </RightSide>
           </>
         ) : (

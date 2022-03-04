@@ -10,6 +10,7 @@ import Soup from "./routes/Soups/Soup";
 import Special from "./routes/SpecialsOfTheDay/Special";
 import VegDish from "./routes/VegDishes/VegDish";
 import Basket from "./routes/Basket/Basket";
+import Login from "./routes/Login/Login";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='specialsoftheday' element={<Special />} />
         <Route path='vegdishes' element={<VegDish />} />
         <Route path='basket' element={<Basket />} />
+        <Route path='login' element={<Login />} />
       </Routes>
     </>
   );

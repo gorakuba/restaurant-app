@@ -9,16 +9,14 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import { useStateValue } from "../../helper/StateProvider";
 
-function Product({ key, name, price, description }) {
+function Product({ id, name, price, description }) {
   const [{ basket }, dispatch] = useStateValue();
-  // key jest undefined, rozwiązać
-  console.log(key);
 
   const basketAdd = () => {
     dispatch({
       type: "ADD_TO_BASKET",
       product: {
-        id: key,
+        id: id,
         name: name,
         price: price,
         description: description,

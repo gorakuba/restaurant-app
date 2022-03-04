@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStateValue } from "../../helper/StateProvider";
 import {
   Description,
@@ -9,14 +9,14 @@ import {
 } from "./BasketProduct.styled";
 import RemoveIcon from "@mui/icons-material/Remove";
 
-function BasketProduct({ key, name, price, description }) {
+function BasketProduct({ id, name, price, description }) {
   const [{ basket }, dispatch] = useStateValue();
 
   const basketRemove = () => {
     dispatch({
       type: "REMOVE_FROM_BASKET",
       product: {
-        id: key,
+        id: id,
         name: name,
         price: price,
         description: description,

@@ -37,7 +37,9 @@ function Header() {
           <BasketCounter>{basket.length}</BasketCounter>
         ) : null}
 
-        <LoginIcon className='headerRightIcon' />
+        <Link to='/login'>
+          <LoginIcon className='headerRightIcon' />
+        </Link>
       </HeaderRight>
     </HeaderStyle>
   );

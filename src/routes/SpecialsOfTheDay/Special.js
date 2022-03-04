@@ -12,9 +12,10 @@ const Special = () => {
       <Container>
         <Sidebar />
         <Content>
-          {dishes?.map((dish) => (
+          {dishes.map((dish) => (
             <Product
-              key={dish.id}
+              key={dishes.indexOf(dish)}
+              id={dish.id}
               name={dish.name}
               price={dish.price}
               description={dish.description}
