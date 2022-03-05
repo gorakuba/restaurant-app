@@ -18,7 +18,8 @@ const LeftSide = styled.div`
 
 const RightSide = styled.div`
   width: 28.5%;
-  height: 23vh;
+  height: 30vh;
+  margin-left: 30px;
   background-color: rgb(255 255 255);
   padding: 10px;
   display: flex;
@@ -45,6 +46,11 @@ const RightSide = styled.div`
       transition: all ease-in-out;
       transition-duration: 400ms;
     }
+  }
+
+  @media (max-width: 1000px) {
+    width: auto;
+    margin-left: 30px;
   }
 `;
 

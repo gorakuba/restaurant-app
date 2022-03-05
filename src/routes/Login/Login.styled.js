@@ -11,11 +11,14 @@ const LoginStyle = styled.div`
   height: 85vh;
   background-color: rgb(255 255 255);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 30px;
+  padding: 20px;
+  padding-bottom: 30px;
   border-radius: 20px;
   border: none;
 
@@ -46,22 +49,29 @@ const LoginHeader = styled.h1`
   align-items: center;
   margin-bottom: 40px;
   word-wrap: break-word;
-  width: 50%;
-  height: 100px;
-  background-color: rgb(30 144 255);
-  border-radius: 20px;
+  text-decoration: underline;
 
   .link {
     text-decoration: none;
     color: black;
     display: flex;
     align-items: center;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
   }
 
   .icon {
     width: 40px;
     height: 40px;
     margin-left: 30px;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      margin-left: 0;
+      margin-top: 40px;
+    }
   }
 `;
 

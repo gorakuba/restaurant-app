@@ -31,6 +31,10 @@ const HeaderLeft = styled.div`
     display: flex;
     align-items: center;
     justify-content: left;
+
+    @media (max-width: 800px) {
+      text-align: center;
+    }
   }
 
   &:hover {
