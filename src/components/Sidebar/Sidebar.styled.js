@@ -1,12 +1,39 @@
 import styled from "styled-components";
 
+const OpenSidebar = styled.div`
+  margin: 30px 0 0 30px;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 const SidebarStyle = styled.div`
   width: 20%;
   background-color: rgb(255 255 255);
 
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
   .link {
     color: rgb(0 0 0);
     text-decoration: none;
+  }
+`;
+
+const Close = styled.div`
+  margin: 20px 0 0 30px;
+  display: flex;
+  align-items: center;
+
+  p {
+    margin-left: 20px;
+    font-weight: 500;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `;
 
@@ -25,6 +52,10 @@ const ListItem = styled.div`
   .menuIcon {
     font-size: 14px;
     font-weight: 300;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
   }
 
   &:hover {
@@ -39,4 +70,4 @@ const ListItem = styled.div`
   }
 `;
 
-export { SidebarStyle, ListItem };
+export { SidebarStyle, ListItem, OpenSidebar, Close };

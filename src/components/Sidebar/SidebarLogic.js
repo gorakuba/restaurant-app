@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function SidebarLogic() {
   const [showHover, setShowHover] = useState(false);
+  const [sidebar, setSidebar] = useState(true);
 
   const mouseHover = () => {
     setShowHover(true);
@@ -11,7 +12,15 @@ function SidebarLogic() {
     setShowHover(false);
   };
 
-  return { mouseHover, mouseOutHover };
+  const dotsClick = () => {
+    setSidebar((prev) => !prev);
+  };
+
+  const close = () => {
+    setSidebar((prev) => !prev);
+  };
+
+  return { mouseHover, mouseOutHover, sidebar, dotsClick, close };
 }
 
 export default SidebarLogic;

@@ -12,6 +12,10 @@ const HeaderStyle = styled.header`
   background-color: rgb(30 144 255);
   margin-bottom: 30px;
   justify-content: space-between;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 const HeaderLeft = styled.div`
@@ -23,6 +27,10 @@ const HeaderLeft = styled.div`
   h1 {
     margin-left: 15px;
     font-size: 18px;
+
+    @media (max-width: 730px) {
+      display: none;
+    }
   }
 
   .link {
@@ -31,10 +39,6 @@ const HeaderLeft = styled.div`
     display: flex;
     align-items: center;
     justify-content: left;
-
-    @media (max-width: 800px) {
-      text-align: center;
-    }
   }
 
   &:hover {
@@ -49,6 +53,10 @@ const HeaderMiddle = styled.div`
   font-weight: 500;
   font-size: 24px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+  @media (max-width: 730px) {
+    display: none;
+  }
 `;
 
 const HeaderRight = styled.div`
