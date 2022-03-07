@@ -3,12 +3,26 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   background-color: rgb(255 255 255);
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Content = styled.div`
   background-color: rgb(255 255 255);
   padding: 0 30px 30px 30px;
   width: 75%;
+
+  @media (max-width: 600px) {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 45px;
+  }
 `;
 
 const Button = styled.button`

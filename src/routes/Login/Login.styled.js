@@ -22,6 +22,10 @@ const LoginStyle = styled.div`
   border-radius: 20px;
   border: none;
 
+  @media (max-width: 600px) {
+    width: 70%;
+  }
+
   .login,
   .pass {
     border-radius: 10px;
@@ -35,6 +39,11 @@ const LoginStyle = styled.div`
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       transition: all ease-in-out;
       transition-duration: 400ms;
+    }
+
+    @media (max-width: 600px) {
+      width: 70%;
+      text-align: center;
     }
   }
 `;

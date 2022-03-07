@@ -1,10 +1,16 @@
 import styled from "styled-components";
 
 const OpenSidebar = styled.div`
-  margin: 30px 0 0 30px;
+  margin: 30px 0 30px 30px;
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -12,24 +18,37 @@ const SidebarStyle = styled.div`
   width: 20%;
   background-color: rgb(255 255 255);
 
-  @media (max-width: 600px) {
-    width: 100%;
-  }
-
   .link {
     color: rgb(0 0 0);
     text-decoration: none;
   }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Close = styled.div`
-  margin: 20px 0 0 30px;
+  margin: 20px 0 20px 30px;
   display: flex;
   align-items: center;
+
+  @media (max-width: 600px) {
+    margin-top: 30px;
+    margin-left: 0;
+  }
 
   p {
     margin-left: 20px;
     font-weight: 500;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
   }
 
   &:hover {

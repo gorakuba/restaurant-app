@@ -5,6 +5,10 @@ const BasketStyle = styled.div`
   background-color: rgb(255 255 255);
   margin: 20px;
 
+  @media (max-width: 600px) {
+    flex-direction: column-reverse;
+  }
+
   h1 {
     margin: 40px;
     font-weight: 700;
@@ -14,6 +18,11 @@ const BasketStyle = styled.div`
 
 const LeftSide = styled.div`
   width: 70%;
+
+  @media (max-width: 600px) {
+    margin: 20px;
+    width: 80%;
+  }
 `;
 
 const RightSide = styled.div`
@@ -30,6 +39,10 @@ const RightSide = styled.div`
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   font-style: italic;
   text-align: center;
+
+  @media (max-width: 600px) {
+    margin: 30px;
+  }
 
   .p2 {
     padding-bottom: 3vh;
