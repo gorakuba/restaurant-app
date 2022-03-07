@@ -16,12 +16,13 @@ const Content = styled.div`
   width: 75%;
 
   @media (max-width: 600px) {
+    text-align: center;
     width: 85%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 45px;
+    margin: 0 15px 0 15px;
   }
 `;
 

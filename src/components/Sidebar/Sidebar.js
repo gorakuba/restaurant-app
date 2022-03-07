@@ -1,7 +1,7 @@
 import React from "react";
 import { ListItem, OpenSidebar, SidebarStyle, Close } from "./Sidebar.styled";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { menuItems } from "./menu";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ function Sidebar() {
     <>
       {sidebar ? (
         <OpenSidebar>
-          <MoreHorizIcon onClick={dotsClick} />
+          <MenuIcon onClick={dotsClick} />
         </OpenSidebar>
       ) : (
         <SidebarStyle>

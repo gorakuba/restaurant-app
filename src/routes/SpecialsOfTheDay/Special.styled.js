@@ -19,7 +19,6 @@ const Content = styled.div`
     width: 85%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 `;
 

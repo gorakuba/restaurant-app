@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 const OpenSidebar = styled.div`
-  margin: 30px 0 30px 30px;
+  margin: 33px 0 20px 30px;
 
   &:hover {
     cursor: pointer;
+    transform: rotateY(180deg);
+    transition: all ease-in-out;
+    transition-duration: 0.6s;
   }
 
   @media (max-width: 600px) {
@@ -27,7 +30,6 @@ const SidebarStyle = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
 `;
@@ -38,8 +40,9 @@ const Close = styled.div`
   align-items: center;
 
   @media (max-width: 600px) {
-    margin-top: 30px;
-    margin-left: 0;
+    width: 100%;
+    justify-content: left;
+    margin: 30px 0 20px 65px;
   }
 
   p {
@@ -67,6 +70,12 @@ const ListItem = styled.div`
   font-size: 16px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    margin: 5px;
+    justify-content: center;
+  }
 
   .menuIcon {
     font-size: 14px;

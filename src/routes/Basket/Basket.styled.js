@@ -4,15 +4,21 @@ const BasketStyle = styled.div`
   display: flex;
   background-color: rgb(255 255 255);
   margin: 20px;
+  min-width: 350px;
 
   @media (max-width: 600px) {
     flex-direction: column-reverse;
+    width: 100%;
   }
 
   h1 {
     margin: 40px;
     font-weight: 700;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+    @media (max-width: 600px) {
+      text-align: center;
+    }
   }
 `;
 
@@ -21,7 +27,10 @@ const LeftSide = styled.div`
 
   @media (max-width: 600px) {
     margin: 20px;
-    width: 80%;
+    width: 87%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 
@@ -36,12 +45,14 @@ const RightSide = styled.div`
   font-weight: 700;
   font-size: 18px;
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   font-style: italic;
   text-align: center;
 
   @media (max-width: 600px) {
-    margin: 30px;
+    width: 85%;
+    align-items: center;
+    margin: 40px;
+    box-shadow: none;
   }
 
   .p2 {
