@@ -11,7 +11,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useStateValue } from "../../helper/StateProvider";
 
-function Product({ id, name, price, description }) {
+function Product({ id, name, description, price }) {
   const [{ basket }, dispatch] = useStateValue();
   const [clicked, setClicked] = useState(false);
   const [counter, setCounter] = useState(0);

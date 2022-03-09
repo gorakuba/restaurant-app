@@ -5,7 +5,6 @@ const Container = styled.div`
   background-color: rgb(255 255 255);
 
   @media (max-width: 600px) {
-    display: flex;
     flex-direction: column;
   }
 `;
@@ -16,10 +15,9 @@ const Content = styled.div`
   width: 75%;
 
   @media (max-width: 600px) {
-    width: 85%;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 `;
 

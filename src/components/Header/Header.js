@@ -16,8 +16,6 @@ import { useStateValue } from "../../helper/StateProvider";
 function Header() {
   const [{ basket }, dispatch] = useStateValue();
 
-  // console.log(basket);
-
   return (
     <HeaderStyle>
       <HeaderLeft>

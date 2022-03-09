@@ -30,6 +30,12 @@ const reducer = (state, action) => {
         basket: newBasket,
       };
 
+    case "REMOVE_ALL_FROM_BASKET":
+      return {
+        ...state,
+        basket: [],
+      };
+
     default:
       return state;
   }

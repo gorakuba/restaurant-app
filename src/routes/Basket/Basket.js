@@ -6,9 +6,10 @@ import BasketProduct from "../../components/BasketProduct/BasketProduct";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../../helper/reducer";
 import { Link } from "react-router-dom";
+import BasketLogic from "./BasketLogic";
 
 function Basket() {
-  const [{ basket }] = useStateValue();
+  const { basket, deleteItems } = BasketLogic();
 
   return (
     <>
@@ -43,6 +44,9 @@ function Basket() {
               <Link to='/specialsoftheday' className='link'>
                 <button className='add'>Add more items to basket</button>
               </Link>
+              <button className='delete' onClick={deleteItems}>
+                Delete items from basket
+              </button>
             </RightSide>
           </>
         ) : (

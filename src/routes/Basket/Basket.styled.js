@@ -4,19 +4,21 @@ const BasketStyle = styled.div`
   display: flex;
   background-color: rgb(255 255 255);
   margin: 20px;
-  min-width: 350px;
 
   @media (max-width: 600px) {
     flex-direction: column-reverse;
+    align-items: center;
+    margin: 35px;
     width: 100%;
   }
 
   h1 {
-    margin: 40px;
+    margin: 30px;
     font-weight: 700;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 
     @media (max-width: 600px) {
+      margin-left: -15px;
       text-align: center;
     }
   }
@@ -26,11 +28,11 @@ const LeftSide = styled.div`
   width: 70%;
 
   @media (max-width: 600px) {
-    margin: 20px;
-    width: 87%;
+    margin: 0 20px 20px -10px;
     display: flex;
+    align-items: center;
     flex-direction: column;
-    justify-content: center;
+    width: 100%;
   }
 `;
 
@@ -49,9 +51,8 @@ const RightSide = styled.div`
   text-align: center;
 
   @media (max-width: 600px) {
-    width: 85%;
-    align-items: center;
-    margin: 40px;
+    width: 100%;
+    margin: 20px 60px 60px 60px;
     box-shadow: none;
   }
 
@@ -67,13 +68,32 @@ const RightSide = styled.div`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
+    padding: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-weight: 700;
 
     &:hover {
       cursor: pointer;
       background-color: rgb(255 215 0);
+      transition: all ease-in-out;
+      transition-duration: 400ms;
+    }
+  }
+
+  .delete {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 17px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(165 42 42);
       transition: all ease-in-out;
       transition-duration: 400ms;
     }
