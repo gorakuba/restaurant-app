@@ -59,7 +59,14 @@ const RightSide = styled.div`
     padding-bottom: 3vh;
   }
 
-  button {
+  .link {
+    text-decoration: none;
+  }
+
+  .add {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px;
     border: none;
     border-radius: 5px;

@@ -40,8 +40,8 @@ function Basket() {
                 displayType={"text"}
                 thousandSeparator={true}
               />
-              <Link to='/specialsoftheday'>
-                <button>Add more items to basket</button>
+              <Link to='/specialsoftheday' className='link'>
+                <button className='add'>Add more items to basket</button>
               </Link>
             </RightSide>
           </>
