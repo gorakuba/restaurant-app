@@ -5,13 +5,12 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
   position: fixed;
-  left: 0.5vh;
+  left: -0.5vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
   @media (max-width: 600px) {
-    margin: 5vh;
     height: auto;
   }
 `;
