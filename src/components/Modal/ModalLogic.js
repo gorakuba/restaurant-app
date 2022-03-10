@@ -1,14 +1,40 @@
-import React, { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const ModalLogic = () => {
   const [showModal, setShowModal] = useState(false);
   const modalRef = useRef();
 
-  const modalOpen = () => {
-    setShowModal((prevModal) => !prevModal);
+  const openModal = () => {
+    setShowModal((prev) => !prev);
   };
 
-  return { modalOpen, modalRef, showModal };
+  const closeModal = (e) => {
+    if (modalRef.current === e.target) {
+      setShowModal(false);
+    }
+  };
+
+  const keyPress = useCallback(
+    (e) => {
+      if (e.key === "Escape" && showModal) {
+        setShowModal(false);
+      }
+    },
+    [setShowModal, showModal]
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", keyPress);
+    return () => document.removeEventListener("keydown", keyPress);
+  }, [keyPress]);
+
+  return {
+    closeModal,
+    modalRef,
+    showModal,
+    setShowModal,
+    openModal,
+  };
 };
 
 export default ModalLogic;
