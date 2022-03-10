@@ -24,6 +24,8 @@ const LoginStyle = styled.div`
 
   @media (max-width: 600px) {
     width: 70%;
+    height: 100vh;
+    margin-bottom: 30px;
   }
 
   .login,
@@ -80,6 +82,7 @@ const LoginHeader = styled.h1`
       flex-direction: column;
       margin-left: 0;
       margin-top: 40px;
+      /* margin-bottom: -40px; */
     }
   }
 `;

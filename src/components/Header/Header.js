@@ -12,9 +12,11 @@ import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import LoginIcon from "@mui/icons-material/Login";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../../helper/StateProvider";
+import ModalLogic from "../Modal/ModalLogic";
 
 function Header() {
   const [{ basket }, dispatch] = useStateValue();
+  const { modalOpen } = ModalLogic();
 
   return (
     <HeaderStyle>
@@ -28,7 +30,7 @@ function Header() {
       <HeaderMiddle>Enjoy your meal!</HeaderMiddle>
 
       <HeaderRight>
-        <PersonIcon className='headerRightIcon' />
+        <PersonIcon className='headerRightIcon' onClick={modalOpen} />
         <Link to='/basket'>
           <ShoppingBasketIcon className='headerRightIcon' />
         </Link>
