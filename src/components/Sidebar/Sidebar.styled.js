@@ -5,9 +5,6 @@ const OpenSidebar = styled.div`
 
   &:hover {
     cursor: pointer;
-    transform: rotateY(180deg);
-    transition: all ease-in-out;
-    transition-duration: 0.9s;
   }
 
   @media (max-width: 600px) {

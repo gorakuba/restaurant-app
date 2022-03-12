@@ -2,21 +2,22 @@ import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 
 const Background = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  left: 0.25vh;
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     height: auto;
   }
 `;
 
 const ModalWraper = styled.div`
   width: 700px;
-  height: 300px;
+  max-height: 700px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
@@ -24,6 +25,7 @@ const ModalWraper = styled.div`
   top: 40vh;
   z-index: 100;
   border-radius: 10px;
+  overflow-y: auto;
 
   @media (max-width: 600px) {
     margin: 5vh;

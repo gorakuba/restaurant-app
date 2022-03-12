@@ -18,8 +18,7 @@ const Login = () => {
     <LoginLogicStyle>
       <LoginStyle>
         <LoginHeader>
-          <Link to='/' className='link'>
-            Restaurant App
+          <Link to='/' className='linkT'>
             <RestaurantMenuIcon className='icon' />
           </Link>
         </LoginHeader>

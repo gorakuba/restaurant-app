@@ -18,14 +18,14 @@ const LoginStyle = styled.div`
   align-items: center;
   margin-top: 30px;
   padding: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   border-radius: 20px;
   border: none;
+  margin-bottom: 40px;
 
   @media (max-width: 600px) {
     width: 70%;
     height: 100vh;
-    margin-bottom: 30px;
   }
 
   .login,
@@ -36,6 +36,7 @@ const LoginStyle = styled.div`
     width: 40%;
     height: 30px;
     padding: 10px;
+    text-align: center;
 
     &:hover {
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -43,9 +44,8 @@ const LoginStyle = styled.div`
       transition-duration: 400ms;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 1000px) {
       width: 70%;
-      text-align: center;
     }
   }
 `;
@@ -62,15 +62,11 @@ const LoginHeader = styled.h1`
   word-wrap: break-word;
   text-decoration: underline;
 
-  .link {
+  .linkT {
     text-decoration: none;
     color: black;
     display: flex;
     align-items: center;
-
-    @media (max-width: 600px) {
-      flex-direction: column;
-    }
   }
 
   .icon {
