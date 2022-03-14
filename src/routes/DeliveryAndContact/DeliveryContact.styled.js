@@ -22,6 +22,11 @@ const Content = styled.div`
     width: 90%;
     display: flex;
     flex-direction: column;
+
+    h1 {
+      margin-left: 10px;
+      text-align: center;
+    }
   }
 `;
 
@@ -58,9 +63,17 @@ const ContactForms = styled.div`
           cursor: pointer;
           border: none;
           font-weight: 600;
-          letter-spacing: 3px;
+          letter-spacing: 1px;
           transition: all ease-in-out;
           transition-duration: 600ms;
+          word-break: break-all;
+        }
+
+        @media (max-width: 730px) {
+          line-height: 3;
+
+          &:hover {
+          }
         }
       }
     }

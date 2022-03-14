@@ -63,10 +63,15 @@ const HeaderMiddle = styled.div`
 `;
 
 const HeaderRight = styled.div`
+  border-left: 2px solid black;
   display: flex;
   align-items: center;
   justify-content: right;
   padding: 10px 20px;
+
+  @media (max-width: 730px) {
+    border-left: none;
+  }
 
   .headerRightIcon {
     padding-left: 15px;
