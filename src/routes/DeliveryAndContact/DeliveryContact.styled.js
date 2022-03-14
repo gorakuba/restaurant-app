@@ -25,6 +25,7 @@ const Content = styled.div`
 
     h1 {
       margin-left: 10px;
+      text-align: center;
     }
   }
 `;

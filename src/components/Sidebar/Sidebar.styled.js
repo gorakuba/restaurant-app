@@ -92,6 +92,12 @@ const ListItem = styled.div`
     width: 80%;
     transition: all ease-in-out;
     transition-duration: 400ms;
+
+    @media (max-width: 600px) {
+      &:hover {
+        width: 100%;
+      }
+    }
   }
 `;
 
