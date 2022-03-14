@@ -17,6 +17,7 @@ const OpenSidebar = styled.div`
 const SidebarStyle = styled.div`
   width: 20%;
   background-color: rgb(255 255 255);
+  margin-bottom: 20px;
 
   .link {
     color: rgb(0 0 0);

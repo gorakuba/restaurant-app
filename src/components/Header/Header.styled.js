@@ -54,8 +54,6 @@ const HeaderMiddle = styled.div`
   font-style: italic;
   font-size: 24px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
 
   @media (max-width: 730px) {
     display: none;
