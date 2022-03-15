@@ -1,17 +1,9 @@
-import { useState } from "react";
-
 const DeliveryContactLogic = () => {
-  const [hover, setHover] = useState(false);
+  const position = [49.854851, 19.33852];
+  const markerPosition = [49.85485, 19.33852];
+  const zoom = 12;
 
-  const mouseOut = () => {
-    setHover(false);
-  };
-
-  const mouseOn = () => {
-    setHover(true);
-  };
-
-  return { hover, mouseOut, mouseOn };
+  return { position, markerPosition, zoom };
 };
 
 export default DeliveryContactLogic;
