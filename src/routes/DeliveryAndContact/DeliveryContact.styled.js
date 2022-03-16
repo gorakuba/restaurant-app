@@ -86,18 +86,52 @@ const Map = styled.div`
   background-color: rgb(255 255 255);
   padding: 1rem;
   border-radius: 20px;
-  margin: 30px 50px 50px 0;
+  margin: 30px 100px 50px 0;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 1000px) {
     width: 95%;
-    margin: 15px;
+    margin: 13px;
   }
 
   .leaflet-container {
     width: 100%;
     height: 100%;
+    z-index: 0;
   }
 `;
 
-export { Container, Content, ContactForms, Map };
+const Footer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 100px 50px 100px;
+  padding: 50px 50px 20px 50px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  border: none;
+
+  @media (max-width: 800px) {
+    width: 78%;
+    margin: 13px;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  button {
+    width: 150px;
+    padding: 10px;
+    margin: 50px 10px 50px 10px;
+    border-radius: 10px;
+    border: none;
+
+    &:hover {
+      background-color: lightblue;
+      cursor: pointer;
+    }
+  }
+`;
+
+export { Container, Content, ContactForms, Map, Footer };

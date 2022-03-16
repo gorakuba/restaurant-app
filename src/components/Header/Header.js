@@ -9,7 +9,8 @@ import {
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-import LoginIcon from "@mui/icons-material/Login";
+import InputIcon from "@mui/icons-material/Input";
+import QueuePlayNextIcon from "@mui/icons-material/QueuePlayNext";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../../helper/StateProvider";
 import ModalLogic from "../Modal/ModalLogic";
@@ -49,8 +50,12 @@ function Header() {
           <BasketCounter>{basket.length}</BasketCounter>
         ) : null}
 
+        <Link to='/reservation'>
+          <QueuePlayNextIcon className='headerRightIcon' />
+        </Link>
+
         <Link to='/login'>
-          <LoginIcon className='headerRightIcon' />
+          <InputIcon className='headerRightIcon' />
         </Link>
       </HeaderRight>
     </HeaderStyle>

@@ -11,6 +11,7 @@ import Special from "./routes/SpecialsOfTheDay/Special";
 import VegDish from "./routes/VegDishes/VegDish";
 import Basket from "./routes/Basket/Basket";
 import Login from "./routes/Login/Login";
+import Reservation from "./routes/Reservation/Reservation";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path='vegdishes' element={<VegDish />} />
         <Route path='basket' element={<Basket />} />
         <Route path='login' element={<Login />} />
+        <Route path='/reservation' element={<Reservation />} />
       </Routes>
     </>
   );

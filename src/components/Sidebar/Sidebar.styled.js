@@ -86,11 +86,11 @@ const ListItem = styled.div`
 
   &:hover {
     background-color: rgb(245 245 245);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     cursor: pointer;
     font-weight: 700;
     width: 80%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: all ease-in-out;
     transition-duration: 400ms;
 

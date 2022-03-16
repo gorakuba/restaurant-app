@@ -72,7 +72,6 @@ const LoginHeader = styled.h1`
   .icon {
     width: 40px;
     height: 40px;
-    margin-left: 30px;
 
     @media (max-width: 600px) {
       flex-direction: column;

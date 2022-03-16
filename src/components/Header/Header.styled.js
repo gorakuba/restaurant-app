@@ -12,6 +12,7 @@ const HeaderStyle = styled.header`
   background-color: rgb(30 144 255);
   margin-bottom: 30px;
   justify-content: space-between;
+  z-index: 10;
 
   @media (max-width: 500px) {
     width: 100%;

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function SidebarLogic() {
   const [showHover, setShowHover] = useState(false);
-  const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
 
   const mouseHover = () => {
     setShowHover(true);

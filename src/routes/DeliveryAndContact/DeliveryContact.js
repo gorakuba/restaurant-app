@@ -4,6 +4,7 @@ import {
   Container,
   Content,
   Map,
+  Footer,
 } from "./DeliveryContact.styled";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
@@ -18,7 +19,7 @@ import "leaflet/dist/leaflet.css";
 import DeliveryContactLogic from "./DeliveryContactLogic";
 
 function DeliveryContact() {
-  const { position, markerPosition, zoom } = DeliveryContactLogic();
+  const { position, markerPosition, zoom, send } = DeliveryContactLogic();
 
   return (
     <>
@@ -84,6 +85,18 @@ function DeliveryContact() {
           </MapContainer>
         </Map>
       </Container>
+
+      <Footer>
+        <h3>
+          Może chcesz zostać z nami na dłużej? Złóż swoje CV, a my rozpatrzymy
+          twoją propozycję i postaramy się odpowiedzieć tak szybko, jak to tylko
+          możliwe 😉
+        </h3>
+
+        <button type='submit' onClick={send}>
+          Send e-mail to us
+        </button>
+      </Footer>
     </>
   );
 }

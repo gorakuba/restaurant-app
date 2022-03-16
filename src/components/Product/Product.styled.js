@@ -3,7 +3,6 @@ import styled from "styled-components";
 const ProductStyle = styled.div`
   background-color: rgb(255, 255, 255);
   width: 95%;
-
   padding: 10px;
   margin: 30px 10px 10px 10px;
   border-radius: 10px;
