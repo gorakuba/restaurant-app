@@ -2,8 +2,6 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { Container, Content, TableSection } from "./Resevation.styled";
-import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
-import EventSeatIcon from "@mui/icons-material/EventSeat";
 import Table from "../../components/Table/Table";
 import { tables } from "./tables";
 
