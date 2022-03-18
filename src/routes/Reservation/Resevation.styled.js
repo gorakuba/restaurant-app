@@ -16,10 +16,14 @@ const Content = styled.div`
 
   h1 {
     margin-left: 10px;
+
+    @media (max-width: 800px) {
+      text-align: center;
+    }
   }
 
-  @media (max-width: 600px) {
-    width: 90%;
+  @media (max-width: 800px) {
+    width: 95%;
     display: flex;
     flex-direction: column;
   }
@@ -29,6 +33,10 @@ const TableSection = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
 `;
 
 export { Container, Content, TableSection };

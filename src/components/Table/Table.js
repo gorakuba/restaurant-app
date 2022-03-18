@@ -7,6 +7,7 @@ import {
   Buttons,
   CancelSection,
   Header,
+  ChairHeader,
 } from "./Table.styled";
 import TableLogic from "./TableLogic";
 import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
@@ -25,6 +26,10 @@ const Table = ({ name }) => {
     renderTables,
     removeChair,
     noCancel,
+    load,
+    yesCancel,
+    cancelButton,
+    removeReservation,
   } = TableLogic();
 
   return (
@@ -35,22 +40,22 @@ const Table = ({ name }) => {
         </h4>
 
         {!renderTables ? <button onClick={reserve}>{title}</button> : null}
+
+        {cancelButton ? (
+          <button className='removeReservation' onClick={removeReservation}>
+            Cancel reservation
+          </button>
+        ) : null}
       </TableHeader>
 
       <TableBody>
-        {!table ? (
+        {!load ? (
           <Header>
-            <img
-              src='https://restauracjapapu.pl/upload/images/25220826e9086e.jpg'
-              alt='restaurant_photo'
-            />
-
-            <img
-              src='https://restauracjapapu.pl/upload/images/551a4661be0047.jpg'
-              alt='restaurant_photo'
-            />
+            <h1>UNRESERVED</h1>
           </Header>
-        ) : (
+        ) : null}
+
+        {table ? (
           <>
             <div className='head'>
               <p>Ile miejsc potrzebujesz:</p>
@@ -76,7 +81,7 @@ const Table = ({ name }) => {
               </p>
             ) : null}
           </>
-        )}
+        ) : null}
 
         {renderTables ? (
           <>
@@ -88,17 +93,14 @@ const Table = ({ name }) => {
             </h5>
 
             <ChairSection>
-              {Array(parseInt(place))
-                .fill()
-                .map((_, id) => (
-                  <>
-                    <EventSeatIcon
-                      key={id}
-                      className='chairIcon'
-                      onClick={removeChair}
-                    />
-                  </>
-                ))}
+              {place !== 0 ? (
+                <ChairHeader>
+                  {place} <EventSeatIcon className='chairIcon' />
+                  <button className='deletePersonButton' onClick={removeChair}>
+                    Delete person
+                  </button>
+                </ChairHeader>
+              ) : null}
 
               {place === 0 ? (
                 <>
@@ -106,7 +108,7 @@ const Table = ({ name }) => {
                     <p>Czy na pewno chesz anulować rezerwację?</p>
 
                     <Buttons>
-                      <button className='controlsCancel' onClick={yesClick}>
+                      <button className='controlsCancel' onClick={yesCancel}>
                         Tak
                       </button>
                       <button className='controlsCancel' onClick={noCancel}>

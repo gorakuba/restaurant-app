@@ -2,12 +2,21 @@ import styled from "styled-components";
 
 const TableStyle = styled.div`
   background-color: rgb(255, 255, 255);
-  width: 47%;
+  width: 100%;
   height: 20vh;
   padding: 10px;
-  margin: 30px 10px 10px 10px;
+  margin: 50px 10px 10px 10px;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+  @media (min-width: 1500px) {
+    width: 47%;
+  }
+
+  @media (max-width: 1499px) {
+    height: auto;
+    padding-bottom: 3vh;
+  }
 
   h4 {
     margin: 5px;
@@ -53,6 +62,11 @@ const TableHeader = styled.div`
       margin-right: 10px;
     }
   }
+
+  .removeReservation {
+    height: 40px;
+    width: 100px;
+  }
 `;
 
 const TableBody = styled.div`
@@ -71,6 +85,10 @@ const TableBody = styled.div`
     font-style: italic;
     display: flex;
     align-items: center;
+
+    @media (max-width: 800px) {
+      margin-top: 50px;
+    }
 
     .dotsIcon {
       margin-right: 10px;
@@ -92,33 +110,13 @@ const TableBody = styled.div`
 
 const Header = styled.div`
   display: flex;
-
-  img {
-    width: 40%;
-    height: 130px;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  justify-content: center;
 `;
 
 const ChairSection = styled.div`
   display: flex;
-  justify-content: space-around;
-
-  .chairIcon {
-    height: 30px;
-    width: 30px;
-    padding: 5px 5px 5px 0;
-    margin: 15px 5px 5px 0;
-
-    &:hover {
-      color: rgb(255, 0, 0);
-      cursor: pointer;
-      transition: all ease-in-out;
-      transition-duration: 400ms;
-    }
-  }
+  justify-content: start;
+  margin: 10px;
 
   p {
     font-style: italic;
@@ -126,15 +124,45 @@ const ChairSection = styled.div`
   }
 `;
 
+const ChairHeader = styled.div`
+  display: flex;
+  align-items: center;
+
+  .chairIcon {
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    margin: 5px 10px 5px 10px;
+  }
+
+  .deletePersonButton {
+    &:hover {
+      background-color: rgb(255, 0, 0);
+      cursor: pointer;
+      transition: all ease-in-out;
+      transition-duration: 400ms;
+    }
+  }
+`;
+
 const CancelSection = styled.div`
   display: flex;
   align-items: center;
   margin-top: -10px;
+
+  @media (max-width: 800px) {
+    margin-top: 10px;
+  }
 `;
 
 const Buttons = styled.div`
   display: flex;
   margin-left: 80px;
+
+  @media (max-width: 800px) {
+    margin-left: 40px;
+    flex-direction: column;
+  }
 
   .controlsCancel {
     width: 100px;
@@ -153,4 +181,5 @@ export {
   Buttons,
   CancelSection,
   Header,
+  ChairHeader,
 };

@@ -93,7 +93,7 @@ const RightSide = styled.div`
 
     &:hover {
       cursor: pointer;
-      background-color: rgb(165 42 42);
+      background-color: rgb(255 0 0);
       transition: all ease-in-out;
       transition-duration: 400ms;
     }

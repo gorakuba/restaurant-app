@@ -7,7 +7,6 @@ import {
   Footer,
 } from "./DeliveryContact.styled";
 import Header from "../../components/Header/Header";
-import Sidebar from "../../components/Sidebar/Sidebar";
 import {
   WebAssetOutlined,
   Mail,
@@ -25,7 +24,6 @@ function DeliveryContact() {
     <>
       <Header />
       <Container>
-        <Sidebar />
         <Content>
           <h1>Zapraszamy do kontaktu z naszą resturacją :</h1>
           <ContactForms>

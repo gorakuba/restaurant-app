@@ -10,7 +10,7 @@ import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import InputIcon from "@mui/icons-material/Input";
-import QueuePlayNextIcon from "@mui/icons-material/QueuePlayNext";
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../../helper/StateProvider";
 import ModalLogic from "../Modal/ModalLogic";
@@ -51,7 +51,7 @@ function Header() {
         ) : null}
 
         <Link to='/reservation'>
-          <QueuePlayNextIcon className='headerRightIcon' />
+          <BookmarkAddIcon className='headerRightIcon' />
         </Link>
 
         <Link to='/login'>

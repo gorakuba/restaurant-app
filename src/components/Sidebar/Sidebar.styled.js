@@ -24,7 +24,7 @@ const SidebarStyle = styled.div`
     text-decoration: none;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -69,7 +69,7 @@ const ListItem = styled.div`
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 100%;
     margin: 5px;
     justify-content: center;
@@ -79,7 +79,7 @@ const ListItem = styled.div`
     font-size: 14px;
     font-weight: 300;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 800px) {
       display: none;
     }
   }
@@ -94,7 +94,7 @@ const ListItem = styled.div`
     transition: all ease-in-out;
     transition-duration: 400ms;
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
       &:hover {
         width: 100%;
       }

@@ -16,7 +16,7 @@ const Content = styled.div`
   width: 75%;
 
   h1 {
-    margin-left: 10px;
+    margin-left: 60px;
   }
 
   @media (max-width: 600px) {
@@ -32,7 +32,7 @@ const Content = styled.div`
 
 const ContactForms = styled.div`
   ul {
-    margin: 50px 50px 50px 0px;
+    margin: 50px 50px 50px 40px;
     list-style-type: circle;
 
     a {
@@ -63,7 +63,7 @@ const ContactForms = styled.div`
           cursor: pointer;
           border: none;
           font-weight: 600;
-          letter-spacing: 1px;
+          text-decoration: underline;
           transition: all ease-in-out;
           transition-duration: 600ms;
           word-break: break-all;

@@ -14,7 +14,7 @@ const HeaderStyle = styled.header`
   justify-content: space-between;
   z-index: 10;
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     width: 100%;
   }
 `;
@@ -52,7 +52,6 @@ const HeaderMiddle = styled.div`
   width: 40%;
   text-align: center;
   font-weight: 500;
-  font-style: italic;
   font-size: 24px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 

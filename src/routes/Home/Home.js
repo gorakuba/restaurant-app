@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../../components/Header/Header";
-import Sidebar from "../../components/Sidebar/Sidebar";
 import { Container, Content, Button } from "./Home.styled";
 import { Link } from "react-router-dom";
 
@@ -9,7 +8,6 @@ function Home() {
     <>
       <Header />
       <Container>
-        <Sidebar />
         <Content>
           <h1>Welcome to our restaurant page!</h1>
           <p>

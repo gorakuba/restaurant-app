@@ -13,7 +13,6 @@ const Container = styled.div`
 const Content = styled.div`
   background-color: rgb(255 255 255);
   padding: 0 30px 30px 30px;
-  width: 75%;
 
   @media (max-width: 600px) {
     text-align: center;
