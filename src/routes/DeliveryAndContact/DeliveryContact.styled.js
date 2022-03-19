@@ -11,22 +11,22 @@ const Container = styled.div`
 
 const Content = styled.div`
   background-color: rgb(255 255 255);
-  margin-left: 20px;
   padding: 0 30px 30px 30px;
   width: 75%;
 
   h1 {
     margin-left: 60px;
+
+    @media (max-width: 730px) {
+      margin-left: 20px;
+      text-align: center;
+    }
   }
 
   @media (max-width: 600px) {
     width: 90%;
     display: flex;
     flex-direction: column;
-
-    h1 {
-      text-align: center;
-    }
   }
 `;
 
@@ -34,6 +34,10 @@ const ContactForms = styled.div`
   ul {
     margin: 50px 50px 50px 40px;
     list-style-type: circle;
+
+    @media (max-width: 730px) {
+      margin-left: 20px;
+    }
 
     a {
       text-decoration: none;
@@ -70,10 +74,7 @@ const ContactForms = styled.div`
         }
 
         @media (max-width: 730px) {
-          line-height: 3;
-
-          &:hover {
-          }
+          line-height: 1;
         }
       }
     }
@@ -105,7 +106,7 @@ const Footer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 100px 50px 100px;
+  margin: 20px 100px 80px 100px;
   padding: 50px 50px 20px 50px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-radius: 20px;

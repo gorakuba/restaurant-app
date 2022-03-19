@@ -25,7 +25,6 @@ function Header() {
       <HeaderLeft>
         <Link to='/' className='link'>
           <RestaurantMenuIcon />
-          <h1>Restaurant App</h1>
         </Link>
       </HeaderLeft>
 

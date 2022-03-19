@@ -22,17 +22,8 @@ const HeaderStyle = styled.header`
 const HeaderLeft = styled.div`
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   margin-left: 10px;
-
-  h1 {
-    margin-left: 15px;
-    font-size: 18px;
-
-    @media (max-width: 730px) {
-      display: none;
-    }
-  }
 
   .link {
     text-decoration: none;
@@ -61,15 +52,10 @@ const HeaderMiddle = styled.div`
 `;
 
 const HeaderRight = styled.div`
-  border-left: 2px solid black;
   display: flex;
   align-items: center;
   justify-content: right;
   padding: 10px 20px;
-
-  @media (max-width: 730px) {
-    border-left: none;
-  }
 
   .headerRightIcon {
     padding-left: 15px;
