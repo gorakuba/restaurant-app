@@ -52,6 +52,17 @@ function Product({ id, name, description, price }) {
 
   const basketAdd = () => {
     setClicked((prev) => !prev);
+    setCounter(counter + 1);
+
+    dispatch({
+      type: "ADD_TO_BASKET",
+      product: {
+        id: id,
+        name: name,
+        price: price,
+        description: description,
+      },
+    });
   };
 
   return (
@@ -60,7 +71,7 @@ function Product({ id, name, description, price }) {
         <h3>{name}</h3>
 
         <AddSection>
-          {clicked ? (
+          {clicked && counter > 0 ? (
             <Counter>
               <AddIcon onClick={counterPlus} />
               {counter}

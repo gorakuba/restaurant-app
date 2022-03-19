@@ -37,7 +37,7 @@ const TableStyle = styled.div`
   }
 
   .number {
-    padding: 5px 5px 5px 18px;
+    padding: 5px;
     margin-left: 10px;
     text-align: center;
     width: 50px;

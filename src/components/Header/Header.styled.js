@@ -13,24 +13,21 @@ const HeaderStyle = styled.header`
   margin-bottom: 30px;
   justify-content: space-between;
   z-index: 10;
-
-  @media (max-width: 600px) {
-    width: 100%;
-  }
+  width: 100%;
 `;
 
 const HeaderLeft = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
+  margin-left: 30px;
 
   .link {
     text-decoration: none;
     color: rgb(0 0 0);
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
   }
 
   &:hover {
@@ -40,7 +37,6 @@ const HeaderLeft = styled.div`
 
 const HeaderMiddle = styled.div`
   padding: 10px;
-  width: 40%;
   text-align: center;
   font-weight: 500;
   font-size: 24px;

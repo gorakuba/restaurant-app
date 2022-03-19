@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../../components/Header/Header";
-import { useStateValue } from "../../helper/StateProvider";
 import { BasketStyle, LeftSide, RightSide } from "./Basket.styled";
 import BasketProduct from "../../components/BasketProduct/BasketProduct";
 import CurrencyFormat from "react-currency-format";
