@@ -4,12 +4,13 @@ const ProductStyle = styled.div`
   background-color: rgb(255, 255, 255);
   width: auto;
   padding: 10px;
-  margin: 30px 24px 10px 10px;
+  margin: 30px 10px 10px 10px;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 600px) {
     width: 95%;
+    margin-left: 12.5px;
   }
 
   &:first-child {

@@ -8,12 +8,15 @@ const HeaderStyle = styled.header`
   align-items: center;
   height: 70px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  padding: 10px 20px;
+  padding: 10px 25px;
   background-color: rgb(30 144 255);
   margin-bottom: 30px;
   justify-content: space-between;
   z-index: 10;
-  width: 100%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const HeaderLeft = styled.div`
