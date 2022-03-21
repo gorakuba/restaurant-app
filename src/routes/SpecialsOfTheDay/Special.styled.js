@@ -12,6 +12,7 @@ const Container = styled.div`
 const Content = styled.div`
   background-color: rgb(255 255 255);
   padding: 30px;
+  width: 75%;
 
   @media (max-width: 600px) {
     width: 90%;

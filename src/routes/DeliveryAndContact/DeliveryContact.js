@@ -51,8 +51,15 @@ function DeliveryContact() {
                 target='blank'
                 href='https://www.whatsapp.com/'
               >
-                <li>poprzez kontakt telefoniczny, SMS lub WhatApp'a</li>
-                <WhatsApp className='icon' />
+                <div className='contact'>
+                  <li>poprzez kontakt telefoniczny, SMS lub WhatApp'a</li>
+                  <p>
+                    (nasz numer telefonu: 123-456-789 oraz nasz adres:
+                    Andrychów, ul. Piękna 88)
+                  </p>
+                </div>
+
+                <WhatsApp className='iconWup' />
               </a>
 
               <a

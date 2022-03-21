@@ -68,16 +68,22 @@ const Table = ({ name }) => {
             </div>
             {place.length >= 1 ? (
               <p>
-                {parseInt(place) === 1
-                  ? `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osoby?`
-                  : `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osób?`}
-                <br />
-                <button className='controls' onClick={yesClick}>
-                  Tak
-                </button>
-                <button className='controls' onClick={noClick}>
-                  Nie
-                </button>
+                {parseInt(place) < 0 || parseInt(place) === 0 ? (
+                  "Ilość miejsc nie może być mniejsza ani równa 0!"
+                ) : (
+                  <>
+                    {parseInt(place) === 1
+                      ? `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osoby?`
+                      : `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osób?`}
+                    <br />
+                    <button className='controls' onClick={yesClick}>
+                      Tak
+                    </button>
+                    <button className='controls' onClick={noClick}>
+                      Nie
+                    </button>
+                  </>
+                )}
               </p>
             ) : null}
           </>

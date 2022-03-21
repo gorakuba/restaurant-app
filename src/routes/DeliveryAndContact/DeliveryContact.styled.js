@@ -56,6 +56,27 @@ const ContactForms = styled.div`
         height: 40px;
       }
 
+      .iconWup {
+        margin-left: 20px;
+        margin-top: 25px;
+        width: 40px;
+        height: 40px;
+
+        @media (max-width: 800px) {
+          margin-top: 0;
+        }
+      }
+
+      .contact {
+        p {
+          margin-top: -30px;
+
+          @media (max-width: 800px) {
+            margin-top: 0;
+          }
+        }
+      }
+
       li {
         line-height: 5;
         font-size: 20px;
