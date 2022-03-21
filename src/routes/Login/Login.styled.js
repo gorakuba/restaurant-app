@@ -77,7 +77,6 @@ const LoginHeader = styled.h1`
       flex-direction: column;
       margin-left: 0;
       margin-top: 40px;
-      /* margin-bottom: -40px; */
     }
   }
 `;
