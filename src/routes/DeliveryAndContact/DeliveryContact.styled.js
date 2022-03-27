@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   background-color: rgb(255 255 255);
-  margin-left: 20px;
+  /* margin-left: 20px; */
   padding: 0 30px 30px 30px;
   width: 75%;
 
