@@ -152,6 +152,20 @@ const CancelSection = styled.div`
 
   @media (max-width: 800px) {
     margin-top: 10px;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
+const CancelReservation = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
   }
 `;
 
@@ -182,4 +196,5 @@ export {
   CancelSection,
   Header,
   ChairHeader,
+  CancelReservation,
 };

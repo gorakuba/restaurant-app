@@ -7,6 +7,7 @@ const TableLogic = () => {
   const [place, setPlace] = useState("");
   const [renderTables, setRenderTables] = useState(false);
   const [cancelButton, setCancelButton] = useState(false);
+  const [reservationDelete, setReservationDelete] = useState(false);
 
   const reserve = () => {
     setTable((prev) => !prev);
@@ -55,6 +56,11 @@ const TableLogic = () => {
     setTable(true);
     setTitle("Cancel");
     setRenderTables(false);
+    setCancelButton(false);
+  };
+
+  const removeReservationQuestion = () => {
+    setReservationDelete(true);
   };
 
   const removeReservation = (e) => {
@@ -64,6 +70,11 @@ const TableLogic = () => {
     setRenderTables(false);
     setLoad(false);
     setCancelButton(false);
+    setReservationDelete(false);
+  };
+
+  const leaveReservation = () => {
+    setReservationDelete(false);
   };
 
   return {
@@ -82,6 +93,9 @@ const TableLogic = () => {
     yesCancel,
     cancelButton,
     removeReservation,
+    removeReservationQuestion,
+    reservationDelete,
+    leaveReservation,
   };
 };
 
