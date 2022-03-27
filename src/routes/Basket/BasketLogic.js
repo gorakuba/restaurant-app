@@ -1,4 +1,3 @@
-import React from "react";
 import { useStateValue } from "../../helper/StateProvider";
 
 const BasketLogic = () => {

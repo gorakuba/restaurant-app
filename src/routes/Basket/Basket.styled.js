@@ -18,7 +18,7 @@ const BasketStyle = styled.div`
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 
     @media (max-width: 600px) {
-      margin-left: -15px;
+      margin-left: 0;
       text-align: center;
     }
   }

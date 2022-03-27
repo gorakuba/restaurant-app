@@ -11,22 +11,26 @@ const Container = styled.div`
 
 const Content = styled.div`
   background-color: rgb(255 255 255);
+<<<<<<< HEAD
   /* margin-left: 20px; */
+=======
+>>>>>>> 6e418137e0d325693f1b5125b2c42694b3b1ceb0
   padding: 0 30px 30px 30px;
   width: 75%;
 
   h1 {
     margin-left: 60px;
+
+    @media (max-width: 730px) {
+      margin-left: 20px;
+      text-align: center;
+    }
   }
 
   @media (max-width: 600px) {
     width: 90%;
     display: flex;
     flex-direction: column;
-
-    h1 {
-      text-align: center;
-    }
   }
 `;
 
@@ -34,6 +38,10 @@ const ContactForms = styled.div`
   ul {
     margin: 50px 50px 50px 40px;
     list-style-type: circle;
+
+    @media (max-width: 730px) {
+      margin-left: 20px;
+    }
 
     a {
       text-decoration: none;
@@ -50,6 +58,27 @@ const ContactForms = styled.div`
         margin-left: 20px;
         width: 40px;
         height: 40px;
+      }
+
+      .iconWup {
+        margin-left: 20px;
+        margin-top: 25px;
+        width: 40px;
+        height: 40px;
+
+        @media (max-width: 800px) {
+          margin-top: 0;
+        }
+      }
+
+      .contact {
+        p {
+          margin-top: -30px;
+
+          @media (max-width: 800px) {
+            margin-top: 0;
+          }
+        }
       }
 
       li {
@@ -70,10 +99,7 @@ const ContactForms = styled.div`
         }
 
         @media (max-width: 730px) {
-          line-height: 3;
-
-          &:hover {
-          }
+          line-height: 1;
         }
       }
     }
@@ -105,7 +131,7 @@ const Footer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 100px 50px 100px;
+  margin: 20px 100px 80px 100px;
   padding: 50px 50px 20px 50px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-radius: 20px;

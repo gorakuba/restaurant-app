@@ -8,7 +8,7 @@ const HeaderStyle = styled.header`
   align-items: center;
   height: 70px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  padding: 10px 20px;
+  padding: 10px 25px;
   background-color: rgb(30 144 255);
   margin-bottom: 30px;
   justify-content: space-between;
@@ -22,24 +22,15 @@ const HeaderStyle = styled.header`
 const HeaderLeft = styled.div`
   display: flex;
   align-items: center;
-  justify-content: left;
-  margin-left: 10px;
-
-  h1 {
-    margin-left: 15px;
-    font-size: 18px;
-
-    @media (max-width: 730px) {
-      display: none;
-    }
-  }
+  justify-content: center;
+  margin-left: 30px;
 
   .link {
     text-decoration: none;
     color: rgb(0 0 0);
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
   }
 
   &:hover {
@@ -49,7 +40,6 @@ const HeaderLeft = styled.div`
 
 const HeaderMiddle = styled.div`
   padding: 10px;
-  width: 40%;
   text-align: center;
   font-weight: 500;
   font-size: 24px;
@@ -61,15 +51,10 @@ const HeaderMiddle = styled.div`
 `;
 
 const HeaderRight = styled.div`
-  /* border-left: 2px solid black; */
   display: flex;
   align-items: center;
   justify-content: right;
   padding: 10px 20px;
-
-  /* @media (max-width: 730px) {
-    border-left: none;
-  } */
 
   .headerRightIcon {
     padding-left: 15px;

@@ -25,11 +25,9 @@ function Header() {
       <HeaderLeft>
         <Link to='/' className='link'>
           <RestaurantMenuIcon />
-          {/* <h1>Restaurant App</h1> */}
+          <HeaderMiddle>Enjoy your meal!</HeaderMiddle>
         </Link>
       </HeaderLeft>
-
-      <HeaderMiddle>Enjoy your meal!</HeaderMiddle>
 
       <HeaderRight>
         <PersonIcon className='headerRightIcon' onClick={openModal} />

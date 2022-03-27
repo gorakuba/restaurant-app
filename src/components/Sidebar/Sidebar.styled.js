@@ -1,31 +1,31 @@
 import styled from "styled-components";
 
 const OpenSidebar = styled.div`
-  margin: 33px 0 20px 30px;
+  margin: 33px 0 20px 50px;
 
   &:hover {
     cursor: pointer;
   }
 
   @media (max-width: 600px) {
-    margin-left: 40px;
     display: flex;
     flex-direction: column;
+    margin-left: 55px;
   }
 `;
 
 const SidebarStyle = styled.div`
   width: 20%;
   background-color: rgb(255 255 255);
-  margin-bottom: 20px;
+  margin: 0 20px 20px 20px;
 
   .link {
     color: rgb(0 0 0);
     text-decoration: none;
   }
 
-  @media (max-width: 800px) {
-    width: 100%;
+  @media (max-width: 600px) {
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,7 +40,7 @@ const Close = styled.div`
   @media (max-width: 600px) {
     width: 100%;
     justify-content: left;
-    margin: 30px 0 20px 65px;
+    margin: 30px 0 20px 70px;
   }
 
   p {
@@ -71,7 +71,7 @@ const ListItem = styled.div`
 
   @media (max-width: 800px) {
     width: 100%;
-    margin: 5px;
+    margin: 10px;
     justify-content: center;
   }
 
