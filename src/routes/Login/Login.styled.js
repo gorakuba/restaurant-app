@@ -24,7 +24,7 @@ const LoginStyle = styled.div`
 
   @media (max-width: 600px) {
     width: 70%;
-    height: 100vh;
+    margin-bottom: 5vh;
   }
 
   .loginInfo,
@@ -75,6 +75,7 @@ const LoginHeader = styled.div`
   word-wrap: break-word;
   text-decoration: underline;
   background-color: rgb(30 144 255);
+  border-radius: 15px;
 
   .linkT {
     text-decoration: none;
@@ -90,7 +91,6 @@ const LoginHeader = styled.div`
     @media (max-width: 600px) {
       flex-direction: column;
       margin-left: 0;
-      margin-top: 40px;
     }
   }
 `;

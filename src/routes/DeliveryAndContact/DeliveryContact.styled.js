@@ -28,7 +28,7 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 40px;
+    padding-left: 35px;
   }
 `;
 
