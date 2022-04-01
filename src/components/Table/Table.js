@@ -89,24 +89,30 @@ const Table = ({ name }) => {
                   />
                 </div>
                 {place.length >= 1 ? (
-                  <p>
-                    {parseInt(place) < 0 || parseInt(place) === 0 ? (
-                      "Ilość miejsc nie może być mniejsza ani równa 0!"
+                  <>
+                    {parseInt(place) > 10 ? (
+                      <p>Stolik można zarezerwować dla maksymalnie 10 osób!</p>
                     ) : (
-                      <>
-                        {parseInt(place) === 1
-                          ? `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osoby?`
-                          : `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osób?`}
-                        <br />
-                        <button className='controls' onClick={yesClick}>
-                          Tak
-                        </button>
-                        <button className='controls' onClick={noClick}>
-                          Nie
-                        </button>
-                      </>
+                      <p>
+                        {parseInt(place) < 0 || parseInt(place) === 0 ? (
+                          "Ilość miejsc nie może być mniejsza ani równa 0!"
+                        ) : (
+                          <>
+                            {parseInt(place) === 1
+                              ? `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osoby?`
+                              : `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osób?`}
+                            <br />
+                            <button className='controls' onClick={yesClick}>
+                              Tak
+                            </button>
+                            <button className='controls' onClick={noClick}>
+                              Nie
+                            </button>
+                          </>
+                        )}
+                      </p>
                     )}
-                  </p>
+                  </>
                 ) : null}
               </>
             ) : null}

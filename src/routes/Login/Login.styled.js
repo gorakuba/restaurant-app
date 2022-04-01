@@ -16,8 +16,8 @@ const LoginStyle = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
-  padding: 20px;
+  margin-top: 40px;
+  padding: 8vh;
   padding-bottom: 50px;
   border-radius: 20px;
   border: none;
@@ -26,6 +26,18 @@ const LoginStyle = styled.div`
   @media (max-width: 600px) {
     width: 70%;
     height: 100vh;
+  }
+
+  .loginInfo,
+  .passInfo {
+    margin: 0;
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  .none {
+    display: none;
   }
 
   .login,
@@ -86,7 +98,7 @@ const LoginButton = styled.button`
   margin-bottom: 10px;
   padding: 10px;
   height: 40px;
-  width: 40%;
+  width: 20vw;
   border-radius: 5px;
   border: none;
 
@@ -102,7 +114,7 @@ const RegisterButton = styled.button`
   margin: 20px;
   padding: 10px;
   height: 40px;
-  width: 40%;
+  width: 20vw;
   border-radius: 5px;
   border: none;
 
@@ -120,6 +132,7 @@ const PrivacyPolicy = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 
   input {
     margin-right: 20px;

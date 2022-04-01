@@ -72,6 +72,10 @@ const TableHeader = styled.div`
 const TableBody = styled.div`
   margin: 10px 5px 0 5px;
 
+  h1 {
+    margin-top: -10px;
+  }
+
   .controls {
     width: 100px;
     height: 30px;
