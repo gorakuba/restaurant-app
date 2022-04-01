@@ -7,8 +7,8 @@ const LoginLogicStyle = styled.div`
 `;
 
 const LoginStyle = styled.div`
-  width: 50%;
-  height: 85vh;
+  width: 40vw;
+  height: 80vh;
   background-color: rgb(255 255 255);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -16,12 +16,11 @@ const LoginStyle = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
-  padding: 8vh;
+  margin-top: 5vh;
+  padding: 5vh;
   padding-bottom: 50px;
   border-radius: 20px;
   border: none;
-  margin-bottom: 40px;
 
   @media (max-width: 600px) {
     width: 70%;
@@ -62,10 +61,12 @@ const LoginStyle = styled.div`
   }
 `;
 
-const LoginHeader = styled.h1`
+const LoginHeader = styled.div`
   font-style: italic;
   font-family: Georgia, "Times New Roman", Times, serif;
   margin: 10px;
+  width: 43vw;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -73,6 +74,7 @@ const LoginHeader = styled.h1`
   margin-bottom: 40px;
   word-wrap: break-word;
   text-decoration: underline;
+  background-color: rgb(30 144 255);
 
   .linkT {
     text-decoration: none;
@@ -126,7 +128,7 @@ const RegisterButton = styled.button`
   }
 `;
 
-const PrivacyPolicy = styled.div`
+const LoginRemember = styled.div`
   width: 40%;
   word-wrap: break-word;
   display: flex;
@@ -149,5 +151,5 @@ export {
   LoginLogicStyle,
   LoginHeader,
   RegisterButton,
-  PrivacyPolicy,
+  LoginRemember,
 };

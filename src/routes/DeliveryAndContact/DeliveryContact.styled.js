@@ -11,15 +11,11 @@ const Container = styled.div`
 
 const Content = styled.div`
   background-color: rgb(255 255 255);
-<<<<<<< HEAD
-  /* margin-left: 20px; */
-=======
->>>>>>> 6e418137e0d325693f1b5125b2c42694b3b1ceb0
-  padding: 0 30px 30px 30px;
+  padding: 0 30px 30px 10px;
   width: 75%;
 
   h1 {
-    margin-left: 60px;
+    margin-left: 50px;
 
     @media (max-width: 730px) {
       margin-left: 20px;
@@ -31,6 +27,8 @@ const Content = styled.div`
     width: 90%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
   }
 `;
 
@@ -112,11 +110,11 @@ const Map = styled.div`
   background-color: rgb(255 255 255);
   padding: 1rem;
   border-radius: 20px;
-  margin: 30px 100px 50px 0;
+  margin: 30px 60px 50px 0;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 1000px) {
-    width: 95%;
+    width: 97%;
     margin: 13px;
   }
 
@@ -131,14 +129,14 @@ const Footer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 100px 80px 100px;
+  margin: 20px 60px 80px 60px;
   padding: 50px 50px 20px 50px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   border: none;
 
   @media (max-width: 800px) {
-    width: 78%;
+    width: 80%;
     margin: 13px;
   }
 

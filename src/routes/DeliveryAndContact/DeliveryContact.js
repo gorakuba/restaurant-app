@@ -42,7 +42,7 @@ function DeliveryContact() {
                 target='blank'
                 href='https://mail.google.com/'
               >
-                <li>poprzez naszą pocztę elktroniczną</li>
+                <li>poprzez naszą pocztę elektroniczną</li>
                 <Mail className='icon' />
               </a>
 

@@ -4,7 +4,7 @@ import {
   LoginHeader,
   LoginLogicStyle,
   LoginStyle,
-  PrivacyPolicy,
+  LoginRemember,
   RegisterButton,
 } from "./Login.styled";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
@@ -47,10 +47,10 @@ const Login = () => {
         />
         {!loginForm ? <p className='passInfo'>{passInfo}</p> : null}
 
-        <PrivacyPolicy>
-          <input type='checkbox' required />
-          <p>Accept privacy policy using in our online shop!</p>
-        </PrivacyPolicy>
+        <LoginRemember>
+          <input type='checkbox' />
+          <p>Zapamiętaj dane logowania</p>
+        </LoginRemember>
 
         {loginForm ? (
           <Link to='/'>
