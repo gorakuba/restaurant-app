@@ -115,6 +115,7 @@ const TableBody = styled.div`
 const Header = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 `;
 
 const ChairSection = styled.div`
