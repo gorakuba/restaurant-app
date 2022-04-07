@@ -14,8 +14,8 @@ const Modal = ({ setCloseModal }) => {
   return (
     <>
       <Background ref={modalRef} onClick={closeModal}>
-        <ModalWraper showModal={showModal}>
-          <ModalContent>
+        <ModalWraper showModal={showModal} color>
+          <ModalContent color>
             <div className='modal'>
               <div className='modal__logo'>
                 <RestaurantIcon />

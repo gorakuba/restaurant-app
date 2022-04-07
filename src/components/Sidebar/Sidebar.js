@@ -18,7 +18,7 @@ function Sidebar() {
           <MenuIcon onClick={dotsClick} />
         </OpenSidebar>
       ) : (
-        <SidebarStyle>
+        <SidebarStyle color>
           <Close>
             <CloseIcon className='closeIcon' onClick={close} />
             <p>Close menu</p>
@@ -29,6 +29,8 @@ function Sidebar() {
                 return (
                   <Link to='/specialsoftheday' className='link' key={item.id}>
                     <ListItem
+                      color
+                      font
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -41,6 +43,8 @@ function Sidebar() {
                 return (
                   <Link to='/meatdishes' className='link' key={item.id}>
                     <ListItem
+                      color
+                      font
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -53,6 +57,8 @@ function Sidebar() {
                 return (
                   <Link to='/vegdishes' className='link' key={item.id}>
                     <ListItem
+                      color
+                      font
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -65,6 +71,8 @@ function Sidebar() {
                 return (
                   <Link to='/soups' className='link' key={item.id}>
                     <ListItem
+                      color
+                      font
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -77,6 +85,8 @@ function Sidebar() {
                 return (
                   <Link to='/fastfoods' className='link' key={item.id}>
                     <ListItem
+                      color
+                      font
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -89,6 +99,8 @@ function Sidebar() {
                 return (
                   <Link to='/pizzas' className='link' key={item.id}>
                     <ListItem
+                      color
+                      font
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -101,6 +113,8 @@ function Sidebar() {
                 return (
                   <Link to='/drinks' className='link' key={item.id}>
                     <ListItem
+                      color
+                      font
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -113,6 +127,8 @@ function Sidebar() {
                 return (
                   <Link to='/deliveryandcontact' className='link' key={item.id}>
                     <ListItem
+                      color
+                      font
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >

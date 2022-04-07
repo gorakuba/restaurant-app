@@ -24,7 +24,7 @@ function BasketProduct({ id, name, price, description }) {
   };
 
   return (
-    <ProductStyle>
+    <ProductStyle color>
       <HeaderLine>
         <h3>{name}</h3>
 

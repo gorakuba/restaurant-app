@@ -66,7 +66,7 @@ function Product({ id, name, description, price }) {
   };
 
   return (
-    <ProductStyle>
+    <ProductStyle color>
       <HeaderLine>
         <h3>{name}</h3>
 
@@ -86,7 +86,7 @@ function Product({ id, name, description, price }) {
         </AddSection>
       </HeaderLine>
 
-      <Description>{description}</Description>
+      <Description color>{description}</Description>
     </ProductStyle>
   );
 }

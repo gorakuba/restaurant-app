@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import { colors } from "../../utilities/colors";
+import { fonts } from "../../utilities/fonts";
 
-const OpenSidebar = styled.div`
+export const OpenSidebar = styled.div`
   margin: 33px 0 20px 50px;
 
   &:hover {
@@ -14,13 +16,13 @@ const OpenSidebar = styled.div`
   }
 `;
 
-const SidebarStyle = styled.div`
+export const SidebarStyle = styled.div`
   width: 20%;
-  background-color: rgb(255 255 255);
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
   margin: 0 20px 20px 20px;
 
   .link {
-    color: rgb(0 0 0);
+    color: ${(props) => (props.color ? colors.secondColorType : null)};
     text-decoration: none;
   }
 
@@ -32,7 +34,7 @@ const SidebarStyle = styled.div`
   }
 `;
 
-const Close = styled.div`
+export const Close = styled.div`
   margin: 20px 0 20px 30px;
   display: flex;
   align-items: center;
@@ -57,7 +59,7 @@ const Close = styled.div`
   }
 `;
 
-const ListItem = styled.div`
+export const ListItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,8 +68,7 @@ const ListItem = styled.div`
   width: 70%;
   height: 30px;
   font-size: 16px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: ${(props) => (props.color ? fonts.thirdFontColor : null)};
 
   @media (max-width: 800px) {
     width: 100%;
@@ -85,12 +86,14 @@ const ListItem = styled.div`
   }
 
   &:hover {
-    background-color: rgb(245 245 245);
+    background-color: ${(props) =>
+      props.color ? colors.sixthColorType : null};
     border-radius: 10px;
     cursor: pointer;
     font-weight: 700;
     width: 80%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px
+      ${(props) => (props.color ? colors.fourthColorType : null)};
     transition: all ease-in-out;
     transition-duration: 400ms;
 
@@ -101,5 +104,3 @@ const ListItem = styled.div`
     }
   }
 `;
-
-export { SidebarStyle, ListItem, OpenSidebar, Close };

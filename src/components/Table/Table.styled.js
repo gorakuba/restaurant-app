@@ -1,13 +1,15 @@
 import styled from "styled-components";
+import { colors } from "../../utilities/colors";
 
-const TableStyle = styled.div`
-  background-color: rgb(255, 255, 255);
+export const TableStyle = styled.div`
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
   width: 100%;
   height: 20vh;
   padding: 10px;
   margin: 50px 10px 10px 10px;
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px
+    ${(props) => (props.color ? colors.fourthColorType : null)};
 
   @media (min-width: 1500px) {
     width: 47%;
@@ -29,7 +31,8 @@ const TableStyle = styled.div`
     border-radius: 10px;
 
     &:hover {
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 20px
+        ${(props) => (props.color ? colors.fourthColorType : null)};
       transition: all ease-in-out;
       transition-duration: 400ms;
       cursor: pointer;
@@ -44,11 +47,12 @@ const TableStyle = styled.div`
     height: 20px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(245 245 245);
+    background-color: ${(props) =>
+      props.color ? colors.sixthColorType : null};
   }
 `;
 
-const TableHeader = styled.div`
+export const TableHeader = styled.div`
   display: flex;
   justify-content: space-between;
   font-style: italic;
@@ -69,7 +73,7 @@ const TableHeader = styled.div`
   }
 `;
 
-const TableBody = styled.div`
+export const TableBody = styled.div`
   margin: 10px 5px 0 5px;
 
   h1 {
@@ -112,13 +116,13 @@ const TableBody = styled.div`
   }
 `;
 
-const Header = styled.div`
+export const Header = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
 `;
 
-const ChairSection = styled.div`
+export const ChairSection = styled.div`
   display: flex;
   justify-content: start;
   margin: 10px;
@@ -129,7 +133,7 @@ const ChairSection = styled.div`
   }
 `;
 
-const ChairHeader = styled.div`
+export const ChairHeader = styled.div`
   display: flex;
   align-items: center;
 
@@ -142,7 +146,8 @@ const ChairHeader = styled.div`
 
   .deletePersonButton {
     &:hover {
-      background-color: rgb(255, 0, 0);
+      background-color: ${(props) =>
+        props.color ? colors.seventhColorType : null};
       cursor: pointer;
       transition: all ease-in-out;
       transition-duration: 400ms;
@@ -150,7 +155,7 @@ const ChairHeader = styled.div`
   }
 `;
 
-const CancelSection = styled.div`
+export const CancelSection = styled.div`
   display: flex;
   align-items: center;
   margin-top: -10px;
@@ -163,7 +168,7 @@ const CancelSection = styled.div`
   }
 `;
 
-const CancelReservation = styled.div`
+export const CancelReservation = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,7 +179,7 @@ const CancelReservation = styled.div`
   }
 `;
 
-const Buttons = styled.div`
+export const Buttons = styled.div`
   display: flex;
   margin-left: 80px;
 
@@ -191,15 +196,3 @@ const Buttons = styled.div`
     margin: 30px 20px 20px 0;
   }
 `;
-
-export {
-  TableStyle,
-  TableHeader,
-  TableBody,
-  ChairSection,
-  Buttons,
-  CancelSection,
-  Header,
-  ChairHeader,
-  CancelReservation,
-};

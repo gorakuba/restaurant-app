@@ -37,7 +37,7 @@ const Table = ({ name }) => {
   } = TableLogic();
 
   return (
-    <TableStyle>
+    <TableStyle color>
       <TableHeader>
         <h4>
           <TableRestaurantIcon className='tableIcon' /> {name}
@@ -128,7 +128,7 @@ const Table = ({ name }) => {
 
                 <ChairSection>
                   {place !== 0 ? (
-                    <ChairHeader>
+                    <ChairHeader color>
                       {place} <EventSeatIcon className='chairIcon' />
                       <button
                         className='deletePersonButton'

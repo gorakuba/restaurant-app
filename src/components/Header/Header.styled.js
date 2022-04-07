@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import { colors } from "../../utilities/colors";
+import { fonts } from "../../utilities/fonts";
 
-const HeaderStyle = styled.header`
+export const HeaderStyle = styled.header`
   position: sticky;
   top: 0;
   left: 0;
@@ -9,7 +11,7 @@ const HeaderStyle = styled.header`
   height: 70px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   padding: 10px 25px;
-  background-color: rgb(30 144 255);
+  background-color: ${(props) => (props.color ? colors.firstColorType : null)};
   margin-bottom: 30px;
   justify-content: space-between;
   z-index: 10;
@@ -19,7 +21,7 @@ const HeaderStyle = styled.header`
   }
 `;
 
-const HeaderLeft = styled.div`
+export const HeaderLeft = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +29,7 @@ const HeaderLeft = styled.div`
 
   .link {
     text-decoration: none;
-    color: rgb(0 0 0);
+    color: ${(props) => (props.color ? colors.secondColorType : null)};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,19 +40,19 @@ const HeaderLeft = styled.div`
   }
 `;
 
-const HeaderMiddle = styled.div`
+export const HeaderMiddle = styled.div`
   padding: 10px;
   text-align: center;
   font-weight: 500;
   font-size: 24px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: ${(props) => (props.font ? fonts.firstFontType : null)};
 
   @media (max-width: 730px) {
     display: none;
   }
 `;
 
-const HeaderRight = styled.div`
+export const HeaderRight = styled.div`
   display: flex;
   align-items: center;
   justify-content: right;
@@ -59,7 +61,7 @@ const HeaderRight = styled.div`
   .headerRightIcon {
     padding-left: 15px;
     padding-right: 15px;
-    color: rgb(0 0 0);
+    color: ${(props) => (props.color ? colors.secondColorType : null)};
   }
 
   .headerRightIcon:hover {
@@ -70,9 +72,8 @@ const HeaderRight = styled.div`
   }
 `;
 
-const BasketCounter = styled.div`
+export const BasketCounter = styled.div`
   font-weight: 900;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: ${(props) => (props.font ? fonts.secondFontType : null)},
+    sans-serif;
 `;
-
-export { HeaderStyle, HeaderLeft, HeaderMiddle, HeaderRight, BasketCounter };

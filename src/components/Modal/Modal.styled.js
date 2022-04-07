@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
+import { colors } from "../../utilities/colors";
 
-const Background = styled.div`
+export const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,12 +16,13 @@ const Background = styled.div`
   }
 `;
 
-const ModalWraper = styled.div`
+export const ModalWraper = styled.div`
   width: 700px;
   max-height: 700px;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 16px
+    ${(props) => (props.color ? colors.fourthColorType : null)};
   background: #fff;
-  color: #000;
+  color: ${(props) => (props.color ? colors.secondColorType : null)};
   position: relative;
   top: 40vh;
   z-index: 100;
@@ -37,14 +39,14 @@ const ModalWraper = styled.div`
   }
 `;
 
-const ModalContent = styled.div`
+export const ModalContent = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   line-height: 1.8;
   padding: 20px;
-  color: #141414;
+  color: ${(props) => (props.color ? colors.fifthColorType : null)};
 
   .modal__logo {
     display: flex;
@@ -57,7 +59,7 @@ const ModalContent = styled.div`
   }
 `;
 
-const CloseModalButton = styled(CloseIcon)`
+export const CloseModalButton = styled(CloseIcon)`
   cursor: pointer;
   position: absolute;
   top: 20px;
@@ -66,5 +68,3 @@ const CloseModalButton = styled(CloseIcon)`
   height: 32px;
   padding: 0;
 `;
-
-export { Background, ModalWraper, ModalContent, CloseModalButton };

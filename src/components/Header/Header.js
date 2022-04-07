@@ -21,15 +21,15 @@ function Header() {
   const { openModal, showModal, setShowModal } = ModalLogic();
 
   return (
-    <HeaderStyle>
-      <HeaderLeft>
+    <HeaderStyle color>
+      <HeaderLeft color>
         <Link to='/' className='link'>
           <RestaurantMenuIcon />
-          <HeaderMiddle>Enjoy your meal!</HeaderMiddle>
+          <HeaderMiddle font>Enjoy your meal!</HeaderMiddle>
         </Link>
       </HeaderLeft>
 
-      <HeaderRight>
+      <HeaderRight color>
         <PersonIcon className='headerRightIcon' onClick={openModal} />
 
         {showModal ? (
@@ -45,7 +45,7 @@ function Header() {
         </Link>
 
         {basket.length >= 1 ? (
-          <BasketCounter>{basket.length}</BasketCounter>
+          <BasketCounter font>{basket.length}</BasketCounter>
         ) : null}
 
         <Link to='/reservation'>

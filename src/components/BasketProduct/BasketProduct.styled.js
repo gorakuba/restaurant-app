@@ -1,13 +1,14 @@
 import styled from "styled-components";
+import { colors } from "../../utilities/colors";
 
-const ProductStyle = styled.div`
-  background-color: rgb(255, 255, 255);
-  background-color: rgb(255, 255, 255);
+export const ProductStyle = styled.div`
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
   width: auto;
   padding: 10px;
   margin: 30px 10px 10px 30px;
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px
+    ${(props) => (props.color ? colors.fourthColorType : null)};
 
   @media (max-width: 600px) {
     margin-left: 10px;
@@ -23,26 +24,26 @@ const ProductStyle = styled.div`
   }
 `;
 
-const HeaderLine = styled.div`
+export const HeaderLine = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-const Price = styled.div`
+export const Price = styled.div`
   display: flex;
   margin: 0 10px 0 0;
   font-weight: 500;
 `;
 
-const Description = styled.div`
+export const Description = styled.div`
   font-size: 12px;
   font-weight: 700;
   color: black;
   padding: 10px;
 `;
 
-const RemoveSection = styled.div`
+export const RemoveSection = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
@@ -56,5 +57,3 @@ const RemoveSection = styled.div`
     }
   }
 `;
-
-export { ProductStyle, HeaderLine, Price, Description, RemoveSection };
