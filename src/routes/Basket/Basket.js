@@ -1,19 +1,20 @@
 import React from "react";
 import Header from "../../components/Header/Header";
-import { BasketStyle, LeftSide, RightSide } from "./Basket.styled";
+import { BasketStyle, LeftSide, RightSide, Checkout } from "./Basket.styled";
 import BasketProduct from "../../components/BasketProduct/BasketProduct";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../../helper/reducer";
 import { Link } from "react-router-dom";
 import BasketLogic from "./BasketLogic";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 function Basket() {
-  const { basket, deleteItems } = BasketLogic();
+  const { basket, deleteItems, checkout } = BasketLogic();
 
   return (
     <>
       <Header />
-      <BasketStyle>
+      <BasketStyle color font>
         {basket.length > 0 ? (
           <>
             <LeftSide>
@@ -27,7 +28,7 @@ function Basket() {
                 />
               ))}
             </LeftSide>
-            <RightSide>
+            <RightSide color>
               <CurrencyFormat
                 renderText={(value) => (
                   <>
@@ -46,6 +47,12 @@ function Basket() {
               <button className='delete' onClick={deleteItems}>
                 Delete items from basket
               </button>
+              <Link to='/checkout' className='link'>
+                <Checkout color onClick={checkout}>
+                  Go to checkout page
+                  <ShoppingCartIcon className='checkoutIcon' />
+                </Checkout>
+              </Link>
             </RightSide>
           </>
         ) : (

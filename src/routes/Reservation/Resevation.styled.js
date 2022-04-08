@@ -1,16 +1,17 @@
 import styled from "styled-components";
+import { colors } from "../../utilities/colors";
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
-  background-color: rgb(255 255 255);
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
 
   @media (max-width: 600px) {
     flex-direction: column;
   }
 `;
 
-const Content = styled.div`
-  background-color: rgb(255 255 255);
+export const Content = styled.div`
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
   padding: 0 30px 30px 30px;
   width: 75%;
   margin-left: auto;
@@ -28,7 +29,7 @@ const Content = styled.div`
   }
 `;
 
-const TableSection = styled.div`
+export const TableSection = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -37,5 +38,3 @@ const TableSection = styled.div`
     justify-content: center;
   }
 `;
-
-export { Container, Content, TableSection };

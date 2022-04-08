@@ -9,9 +9,10 @@ function VegDish() {
   return (
     <>
       <Header />
-      <Container>
+      <Container color>
         <Sidebar />
-        <Content>
+        <Content color font>
+          <h1>Dania wege:</h1>
           {dishes.map((dish) => (
             <Product
               key={dish.id}

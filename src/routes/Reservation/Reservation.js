@@ -9,9 +9,9 @@ const Reservation = () => {
   return (
     <>
       <Header />
-      <Container>
+      <Container color>
         <Sidebar />
-        <Content>
+        <Content color>
           <h1>Zarezerwuj stolik online już teraz: </h1>
           <TableSection>
             {tables.map((table) => (

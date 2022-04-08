@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import SidebarLogic from "./SidebarLogic";
 
 function Sidebar() {
-  const { mouseHover, mouseOutHover, dotsClick, sidebar, close } =
+  const { mouseHover, mouseOutHover, dotsClick, sidebar, close, clickFunc } =
     SidebarLogic();
 
   return (

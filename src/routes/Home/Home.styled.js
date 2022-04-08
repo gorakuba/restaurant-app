@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { colors } from "../../utilities/colors";
+import { fonts } from "../../utilities/fonts";
 
 const Container = styled.div`
   display: flex;
-  background-color: rgb(255 255 255);
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
   margin-left: 20px;
 
   @media (max-width: 600px) {
@@ -13,7 +15,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  background-color: rgb(255 255 255);
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
   padding: 0 30px 30px 30px;
 
   @media (max-width: 600px) {
@@ -34,13 +36,13 @@ const Button = styled.button`
   height: 50px;
   border: none;
   border-radius: 10px;
-  color: rgb(0 0 0);
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  color: ${(props) => (props.color ? colors.secondColorType : null)};
+  font-family: ${(props) => (props.font ? fonts.thirdFontType : null)};
   font-weight: 700;
 
   &:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px
+      ${(props) => (props.color ? colors.fourthColorType : null)};
     cursor: pointer;
     width: 220px;
     transition: all ease-in-out;

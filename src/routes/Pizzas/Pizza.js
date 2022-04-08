@@ -9,9 +9,10 @@ function Pizza() {
   return (
     <>
       <Header />
-      <Container>
+      <Container color>
         <Sidebar />
-        <Content>
+        <Content color font>
+          <h1>Pizza:</h1>
           {dishes.map((dish) => (
             <Product
               key={dish.id}

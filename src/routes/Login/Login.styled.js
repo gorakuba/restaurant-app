@@ -1,16 +1,19 @@
 import styled from "styled-components";
+import { colors } from "../../utilities/colors";
+import { fonts } from "../../utilities/fonts";
 
-const LoginLogicStyle = styled.div`
+export const LoginLogicStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const LoginStyle = styled.div`
+export const LoginStyle = styled.div`
   width: 40vw;
   height: 80vh;
-  background-color: rgb(255 255 255);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  box-shadow: 0 10px 20px
+    ${(props) => (props.color ? colors.fourthColorType : null)};
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -30,7 +33,7 @@ const LoginStyle = styled.div`
   .loginInfo,
   .passInfo {
     margin: 0;
-    color: red;
+    color: ${(props) => (props.color ? colors.seventhColorType : null)};
     font-size: 12px;
     font-style: italic;
   }
@@ -50,7 +53,8 @@ const LoginStyle = styled.div`
     text-align: center;
 
     &:hover {
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 20px
+        ${(props) => (props.color ? colors.fourthColorType : null)};
       transition: all ease-in-out;
       transition-duration: 400ms;
     }
@@ -61,12 +65,13 @@ const LoginStyle = styled.div`
   }
 `;
 
-const LoginHeader = styled.div`
+export const LoginHeader = styled.div`
   font-style: italic;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: ${(props) => (props.font ? fonts.fifthColorType : null)};
   margin: 10px;
   width: 43vw;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px
+    ${(props) => (props.color ? colors.fourthColorType : null)};
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -74,12 +79,12 @@ const LoginHeader = styled.div`
   margin-bottom: 40px;
   word-wrap: break-word;
   text-decoration: underline;
-  background-color: rgb(30 144 255);
+  background-color: ${(props) => (props.color ? colors.ninethColorType : null)};
   border-radius: 15px;
 
   .linkT {
     text-decoration: none;
-    color: black;
+    color: ${(props) => (props.color ? colors.secondColorType : null)};
     display: flex;
     align-items: center;
   }
@@ -95,7 +100,7 @@ const LoginHeader = styled.div`
   }
 `;
 
-const LoginButton = styled.button`
+export const LoginButton = styled.button`
   margin: 40px;
   margin-bottom: 10px;
   padding: 10px;
@@ -106,13 +111,14 @@ const LoginButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: rgb(255 215 0);
+    background-color: ${(props) =>
+      props.color ? colors.eighthColorType : null};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
 `;
 
-const RegisterButton = styled.button`
+export const RegisterButton = styled.button`
   margin: 20px;
   padding: 10px;
   height: 40px;
@@ -122,13 +128,14 @@ const RegisterButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: rgb(218, 165, 32);
+    background-color: ${(props) =>
+      props.color ? colors.tenthColorType : null};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
 `;
 
-const LoginRemember = styled.div`
+export const LoginRemember = styled.div`
   width: 40%;
   word-wrap: break-word;
   display: flex;
@@ -144,12 +151,3 @@ const LoginRemember = styled.div`
     font-weight: 500;
   }
 `;
-
-export {
-  LoginStyle,
-  LoginButton,
-  LoginLogicStyle,
-  LoginHeader,
-  RegisterButton,
-  LoginRemember,
-};

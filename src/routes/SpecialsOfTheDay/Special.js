@@ -9,9 +9,10 @@ const Special = () => {
   return (
     <>
       <Header />
-      <Container>
+      <Container color>
         <Sidebar />
-        <Content>
+        <Content color font>
+          <h1>Dania dnia:</h1>
           {dishes.map((dish) => (
             <Product
               key={dishes.indexOf(dish)}

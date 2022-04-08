@@ -1,16 +1,17 @@
 import styled from "styled-components";
+import { colors } from "../../utilities/colors";
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
-  background-color: rgb(255 255 255);
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
 
   @media (max-width: 1000px) {
     flex-direction: column;
   }
 `;
 
-const Content = styled.div`
-  background-color: rgb(255 255 255);
+export const Content = styled.div`
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
   padding: 0 30px 30px 10px;
   width: 75%;
 
@@ -32,7 +33,7 @@ const Content = styled.div`
   }
 `;
 
-const ContactForms = styled.div`
+export const ContactForms = styled.div`
   ul {
     margin: 50px 50px 50px 40px;
     list-style-type: circle;
@@ -104,14 +105,15 @@ const ContactForms = styled.div`
   }
 `;
 
-const Map = styled.div`
+export const Map = styled.div`
   height: 500px;
   width: 150vh;
-  background-color: rgb(255 255 255);
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
   padding: 1rem;
   border-radius: 20px;
   margin: 30px 60px 50px 0;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px
+    ${(props) => (props.color ? colors.fourthColorType : null)};
 
   @media (max-width: 1000px) {
     width: 97%;
@@ -125,13 +127,14 @@ const Map = styled.div`
   }
 `;
 
-const Footer = styled.div`
+export const Footer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px 60px 80px 60px;
   padding: 50px 50px 20px 50px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px
+    ${(props) => (props.color ? colors.fourthColorType : null)};
   border-radius: 20px;
   border: none;
 
@@ -157,5 +160,3 @@ const Footer = styled.div`
     }
   }
 `;
-
-export { Container, Content, ContactForms, Map, Footer };

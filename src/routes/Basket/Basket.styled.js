@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { colors } from "../../utilities/colors";
+import { fonts } from "../../utilities/fonts";
 
-const BasketStyle = styled.div`
+export const BasketStyle = styled.div`
   display: flex;
-  background-color: rgb(255 255 255);
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
   margin: 20px;
 
   @media (max-width: 600px) {
@@ -15,7 +17,7 @@ const BasketStyle = styled.div`
   h1 {
     margin: 30px;
     font-weight: 700;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-family: ${(props) => (props.font ? fonts.fourthFontType : null)};
 
     @media (max-width: 600px) {
       margin-left: 0;
@@ -24,7 +26,7 @@ const BasketStyle = styled.div`
   }
 `;
 
-const LeftSide = styled.div`
+export const LeftSide = styled.div`
   width: 70%;
 
   @media (max-width: 600px) {
@@ -36,11 +38,11 @@ const LeftSide = styled.div`
   }
 `;
 
-const RightSide = styled.div`
+export const RightSide = styled.div`
   width: 28.5%;
   height: 30vh;
   margin-left: 30px;
-  background-color: rgb(255 255 255);
+  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -75,7 +77,8 @@ const RightSide = styled.div`
 
     &:hover {
       cursor: pointer;
-      background-color: rgb(255 215 0);
+      background-color: ${(props) =>
+        props.color ? colors.eighthColorType : null};
       transition: all ease-in-out;
       transition-duration: 400ms;
     }
@@ -93,7 +96,8 @@ const RightSide = styled.div`
 
     &:hover {
       cursor: pointer;
-      background-color: rgb(255 0 0);
+      background-color: ${(props) =>
+        props.color ? colors.seventhColorType : null};
       transition: all ease-in-out;
       transition-duration: 400ms;
     }
@@ -105,4 +109,26 @@ const RightSide = styled.div`
   }
 `;
 
-export { BasketStyle, LeftSide, RightSide };
+export const Checkout = styled.button`
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+
+  .checkoutIcon {
+    margin-left: 10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${(props) =>
+      props.color ? colors.eleventhColorType : null};
+    transition: all ease-in-out;
+    transition-duration: 400ms;
+  }
+`;

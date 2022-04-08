@@ -23,10 +23,10 @@ function DeliveryContact() {
   return (
     <>
       <Header />
-      <Container>
-        <Content>
+      <Container color>
+        <Content color>
           <h1>Zapraszamy do kontaktu z naszą resturacją :</h1>
-          <ContactForms>
+          <ContactForms color>
             <ul>
               <a
                 className='link'
@@ -74,7 +74,7 @@ function DeliveryContact() {
           </ContactForms>
         </Content>
 
-        <Map>
+        <Map color>
           <MapContainer center={position} zoom={zoom}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -91,7 +91,7 @@ function DeliveryContact() {
         </Map>
       </Container>
 
-      <Footer>
+      <Footer color>
         <h3>
           Może chcesz zostać z nami na dłużej? Złóż swoje CV, a my rozpatrzymy
           twoją propozycję i postaramy się odpowiedzieć tak szybko, jak to tylko

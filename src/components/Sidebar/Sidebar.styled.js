@@ -68,7 +68,7 @@ export const ListItem = styled.div`
   width: 70%;
   height: 30px;
   font-size: 16px;
-  font-family: ${(props) => (props.color ? fonts.thirdFontColor : null)};
+  font-family: ${(props) => (props.color ? fonts.thirdFontType : null)};
 
   @media (max-width: 800px) {
     width: 100%;

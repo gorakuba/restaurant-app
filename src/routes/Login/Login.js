@@ -24,8 +24,8 @@ const Login = () => {
 
   return (
     <LoginLogicStyle>
-      <LoginStyle>
-        <LoginHeader>
+      <LoginStyle color>
+        <LoginHeader color font>
           <Link to='/' className='linkT'>
             <RestaurantMenuIcon className='icon' />
           </Link>
@@ -54,14 +54,18 @@ const Login = () => {
 
         {loginForm ? (
           <Link to='/'>
-            <LoginButton onClick={loginFunc}>Login</LoginButton>
+            <LoginButton color onClick={loginFunc}>
+              Login
+            </LoginButton>
           </Link>
         ) : (
-          <LoginButton onClick={validFunc}>Sprawdź</LoginButton>
+          <LoginButton color onClick={validFunc}>
+            Sprawdź
+          </LoginButton>
         )}
 
         <Link to='/register'>
-          <RegisterButton>Register</RegisterButton>
+          <RegisterButton color>Register</RegisterButton>
         </Link>
       </LoginStyle>
     </LoginLogicStyle>

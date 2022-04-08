@@ -9,7 +9,9 @@ const BasketLogic = () => {
     });
   };
 
-  return { basket, deleteItems };
+  const checkout = () => {};
+
+  return { basket, deleteItems, checkout };
 };
 
 export default BasketLogic;

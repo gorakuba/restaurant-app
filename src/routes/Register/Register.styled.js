@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
+import { colors } from "../../utilities/colors";
 
-const Error = styled.div`
+export const Error = styled.div`
   margin: 20px;
 
   .link {
@@ -8,10 +9,10 @@ const Error = styled.div`
   }
 `;
 
-const Back = styled.div`
+export const Back = styled.div`
   display: flex;
   align-items: center;
-  color: rgb(0 0 0);
+  color: ${(props) => (props.color ? colors.secondColorType : null)};
   font-size: 18px;
   font-weight: 700;
 
@@ -19,5 +20,3 @@ const Back = styled.div`
     margin-right: 10px;
   }
 `;
-
-export { Error, Back };

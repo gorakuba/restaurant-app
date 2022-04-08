@@ -9,9 +9,10 @@ function Soup() {
   return (
     <>
       <Header />
-      <Container>
+      <Container color>
         <Sidebar />
-        <Content>
+        <Content color font>
+          <h1>Zupy:</h1>
           {dishes.map((dish) => (
             <Product
               key={dish.id}

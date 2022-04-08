@@ -20,7 +20,13 @@ function SidebarLogic() {
     setSidebar((prev) => !prev);
   };
 
-  return { mouseHover, mouseOutHover, sidebar, dotsClick, close };
+  return {
+    mouseHover,
+    mouseOutHover,
+    sidebar,
+    dotsClick,
+    close,
+  };
 }
 
 export default SidebarLogic;

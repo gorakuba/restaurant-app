@@ -9,9 +9,10 @@ function FastFood() {
   return (
     <>
       <Header />
-      <Container>
+      <Container color>
         <Sidebar />
-        <Content>
+        <Content color font>
+          <h1>Fast food:</h1>
           {dishes.map((dish) => (
             <Product
               key={dish.id}

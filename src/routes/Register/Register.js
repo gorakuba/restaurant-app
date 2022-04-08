@@ -11,7 +11,7 @@ const Register = () => {
       <p>Resource not found on server!</p>
 
       <Link to='/login' className='link'>
-        <Back>
+        <Back color>
           <ArrowBackIcon className='icon' />
           <p>Back to login page</p>
         </Back>
