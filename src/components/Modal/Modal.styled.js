@@ -20,9 +20,13 @@ export const ModalWraper = styled.div`
   width: 700px;
   max-height: 700px;
   box-shadow: 0 5px 16px
-    ${(props) => (props.color ? colors.fourthColorType : null)};
+    ${(props) =>
+      props.color === "color"
+        ? colors.fourthColorType
+        : colors.defaultColorType};
   background: #fff;
-  color: ${(props) => (props.color ? colors.secondColorType : null)};
+  color: ${(props) =>
+    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
   position: relative;
   top: 40vh;
   z-index: 100;
@@ -46,7 +50,8 @@ export const ModalContent = styled.div`
   align-items: center;
   line-height: 1.8;
   padding: 20px;
-  color: ${(props) => (props.color ? colors.fifthColorType : null)};
+  color: ${(props) =>
+    props.color === "color" ? colors.fifthColorType : colors.defaultColorType};
 
   .modal__logo {
     display: flex;

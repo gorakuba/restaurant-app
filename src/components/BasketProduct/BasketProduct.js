@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStateValue } from "../../helper/StateProvider";
 import {
   Description,
@@ -7,6 +7,7 @@ import {
   Price,
   RemoveSection,
 } from "./BasketProduct.styled";
+import { color } from "../../utilities/colors";
 
 function BasketProduct({ id, name, price, description }) {
   const [{ basket }, dispatch] = useStateValue();
@@ -24,7 +25,7 @@ function BasketProduct({ id, name, price, description }) {
   };
 
   return (
-    <ProductStyle color>
+    <ProductStyle color={color}>
       <HeaderLine>
         <h3>{name}</h3>
 

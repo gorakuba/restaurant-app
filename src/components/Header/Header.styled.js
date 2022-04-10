@@ -11,7 +11,8 @@ export const HeaderStyle = styled.header`
   height: 70px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   padding: 10px 25px;
-  background-color: ${(props) => (props.color ? colors.firstColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.firstColorType : colors.defaultColorType};
   margin-bottom: 30px;
   justify-content: space-between;
   z-index: 10;
@@ -29,7 +30,10 @@ export const HeaderLeft = styled.div`
 
   .link {
     text-decoration: none;
-    color: ${(props) => (props.color ? colors.secondColorType : null)};
+    color: ${(props) =>
+      props.color === "color"
+        ? colors.secondColorType
+        : colors.defaultColorType};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +49,8 @@ export const HeaderMiddle = styled.div`
   text-align: center;
   font-weight: 500;
   font-size: 24px;
-  font-family: ${(props) => (props.font ? fonts.firstFontType : null)};
+  font-family: ${(props) =>
+    props.font === "font" ? fonts.firstFontType : fonts.defaultFontType};
 
   @media (max-width: 730px) {
     display: none;
@@ -61,7 +66,10 @@ export const HeaderRight = styled.div`
   .headerRightIcon {
     padding-left: 15px;
     padding-right: 15px;
-    color: ${(props) => (props.color ? colors.secondColorType : null)};
+    color: ${(props) =>
+      props.color === "color"
+        ? colors.secondColorType
+        : colors.defaultColorType};
   }
 
   .headerRightIcon:hover {
@@ -74,6 +82,7 @@ export const HeaderRight = styled.div`
 
 export const BasketCounter = styled.div`
   font-weight: 900;
-  font-family: ${(props) => (props.font ? fonts.secondFontType : null)},
+  font-family: ${(props) =>
+      props.font === "font" ? fonts.secondFontType : fonts.defaultFontType},
     sans-serif;
 `;

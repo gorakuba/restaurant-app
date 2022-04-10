@@ -18,11 +18,15 @@ export const OpenSidebar = styled.div`
 
 export const SidebarStyle = styled.div`
   width: 20%;
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   margin: 0 20px 20px 20px;
 
   .link {
-    color: ${(props) => (props.color ? colors.secondColorType : null)};
+    color: ${(props) =>
+      props.color === "color"
+        ? colors.secondColorType
+        : colors.defaultColorType};
     text-decoration: none;
   }
 
@@ -68,7 +72,8 @@ export const ListItem = styled.div`
   width: 70%;
   height: 30px;
   font-size: 16px;
-  font-family: ${(props) => (props.color ? fonts.thirdFontType : null)};
+  font-family: ${(props) =>
+    props.font === "font" ? fonts.thirdFontType : fonts.defaultFontType};
 
   @media (max-width: 800px) {
     width: 100%;
@@ -87,13 +92,18 @@ export const ListItem = styled.div`
 
   &:hover {
     background-color: ${(props) =>
-      props.color ? colors.sixthColorType : null};
+      props.color === "color"
+        ? colors.sixthColorType
+        : colors.defaultColorType};
     border-radius: 10px;
     cursor: pointer;
     font-weight: 700;
     width: 80%;
     box-shadow: 0 10px 20px
-      ${(props) => (props.color ? colors.fourthColorType : null)};
+      ${(props) =>
+        props.color === "color"
+          ? colors.fourthColorType
+          : colors.defaultColorType};
     transition: all ease-in-out;
     transition-duration: 400ms;
 

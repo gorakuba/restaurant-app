@@ -10,6 +10,7 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useStateValue } from "../../helper/StateProvider";
+import { color } from "../../utilities/colors";
 
 function Product({ id, name, description, price }) {
   const [{ basket }, dispatch] = useStateValue();
@@ -66,7 +67,7 @@ function Product({ id, name, description, price }) {
   };
 
   return (
-    <ProductStyle color>
+    <ProductStyle color={color}>
       <HeaderLine>
         <h3>{name}</h3>
 
@@ -86,7 +87,7 @@ function Product({ id, name, description, price }) {
         </AddSection>
       </HeaderLine>
 
-      <Description color>{description}</Description>
+      <Description color={color}>{description}</Description>
     </ProductStyle>
   );
 }

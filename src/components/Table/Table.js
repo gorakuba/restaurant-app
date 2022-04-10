@@ -14,6 +14,7 @@ import TableLogic from "./TableLogic";
 import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import { color } from "../../utilities/colors";
 
 const Table = ({ name }) => {
   const {
@@ -37,7 +38,7 @@ const Table = ({ name }) => {
   } = TableLogic();
 
   return (
-    <TableStyle color>
+    <TableStyle color={color}>
       <TableHeader>
         <h4>
           <TableRestaurantIcon className='tableIcon' /> {name}
@@ -128,7 +129,7 @@ const Table = ({ name }) => {
 
                 <ChairSection>
                   {place !== 0 ? (
-                    <ChairHeader color>
+                    <ChairHeader color={color}>
                       {place} <EventSeatIcon className='chairIcon' />
                       <button
                         className='deletePersonButton'

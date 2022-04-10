@@ -1,4 +1,6 @@
+export const color = "color";
 export const colors = {
+  defaultColorType: "rgb(128, 128, 128)",
   firstColorType: "rgb(30 144 255)",
   secondColorType: "rgb(0 0 0)",
   thirdColorType: "rgb(255, 255, 255)",

@@ -2,13 +2,17 @@ import styled from "styled-components";
 import { colors } from "../../utilities/colors";
 
 export const ProductStyle = styled.div`
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   width: auto;
   padding: 10px;
   margin: 30px 10px 10px 10px;
   border-radius: 10px;
   box-shadow: 0 10px 20px
-    ${(props) => (props.color ? colors.fourthColorType : null)};
+    ${(props) =>
+      props.color === "color"
+        ? colors.fourthColorType
+        : colors.defaultColorType};
 
   @media (max-width: 600px) {
     width: 95%;
@@ -39,7 +43,8 @@ export const Price = styled.div`
 export const Description = styled.div`
   font-size: 12px;
   font-weight: 700;
-  color: ${(props) => (props.color ? colors.secondColorType : null)};
+  color: ${(props) =>
+    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
   padding: 10px;
 `;
 

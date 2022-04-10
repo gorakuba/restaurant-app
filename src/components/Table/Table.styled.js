@@ -2,14 +2,18 @@ import styled from "styled-components";
 import { colors } from "../../utilities/colors";
 
 export const TableStyle = styled.div`
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   width: 100%;
   height: 20vh;
   padding: 10px;
   margin: 50px 10px 10px 10px;
   border-radius: 10px;
   box-shadow: 0 10px 20px
-    ${(props) => (props.color ? colors.fourthColorType : null)};
+    ${(props) =>
+      props.color === "color"
+        ? colors.fourthColorType
+        : colors.defaultColorType};
 
   @media (min-width: 1500px) {
     width: 47%;
@@ -32,7 +36,10 @@ export const TableStyle = styled.div`
 
     &:hover {
       box-shadow: 0 10px 20px
-        ${(props) => (props.color ? colors.fourthColorType : null)};
+        ${(props) =>
+          props.color === "color"
+            ? colors.fourthColorType
+            : colors.defaultColorType};
       transition: all ease-in-out;
       transition-duration: 400ms;
       cursor: pointer;
@@ -48,7 +55,9 @@ export const TableStyle = styled.div`
     border-radius: 10px;
     border: none;
     background-color: ${(props) =>
-      props.color ? colors.sixthColorType : null};
+      props.color === "color"
+        ? colors.sixthColorType
+        : colors.defaultColorType};
   }
 `;
 
@@ -147,7 +156,9 @@ export const ChairHeader = styled.div`
   .deletePersonButton {
     &:hover {
       background-color: ${(props) =>
-        props.color ? colors.seventhColorType : null};
+        props.color === "color"
+          ? colors.seventhColorType
+          : colors.defaultColorType};
       cursor: pointer;
       transition: all ease-in-out;
       transition-duration: 400ms;

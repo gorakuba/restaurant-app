@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-const menuItems = [
+export const menuItems = [
   { id: uuidv4(), name: "Dania dnia" },
   { id: uuidv4(), name: "Dania mięsne" },
   { id: uuidv4(), name: "Dania wege" },
@@ -10,5 +10,3 @@ const menuItems = [
   { id: uuidv4(), name: "Napoje" },
   { id: uuidv4(), name: "Dowóz i kontakt" },
 ];
-
-export { menuItems };

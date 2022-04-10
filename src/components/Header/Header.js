@@ -15,21 +15,23 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "../../helper/StateProvider";
 import ModalLogic from "../Modal/ModalLogic";
 import Modal from "../Modal/Modal";
+import { color } from "../../utilities/colors";
+import { font } from "../../utilities/fonts";
 
 function Header() {
   const [{ basket }] = useStateValue();
   const { openModal, showModal, setShowModal } = ModalLogic();
 
   return (
-    <HeaderStyle color>
-      <HeaderLeft color>
+    <HeaderStyle color={color}>
+      <HeaderLeft color={color}>
         <Link to='/' className='link'>
           <RestaurantMenuIcon />
-          <HeaderMiddle font>Enjoy your meal!</HeaderMiddle>
+          <HeaderMiddle font={font}>Enjoy your meal!</HeaderMiddle>
         </Link>
       </HeaderLeft>
 
-      <HeaderRight color>
+      <HeaderRight color={color}>
         <PersonIcon className='headerRightIcon' onClick={openModal} />
 
         {showModal ? (

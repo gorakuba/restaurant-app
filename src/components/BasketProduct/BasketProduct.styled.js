@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { colors } from "../../utilities/colors";
 
 export const ProductStyle = styled.div`
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color ? colors.thirdColorType : colors.defaultColorType};
   width: auto;
   padding: 10px;
   margin: 30px 10px 10px 30px;
   border-radius: 10px;
   box-shadow: 0 10px 20px
-    ${(props) => (props.color ? colors.fourthColorType : null)};
+    ${(props) =>
+      props.color ? colors.fourthColorType : colors.defaultColorType};
 
   @media (max-width: 600px) {
     margin-left: 10px;

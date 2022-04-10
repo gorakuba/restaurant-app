@@ -6,9 +6,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import { menuItems } from "./menu";
 import { Link } from "react-router-dom";
 import SidebarLogic from "./SidebarLogic";
+import { color } from "../../utilities/colors";
+import { font } from "../../utilities/fonts";
 
 function Sidebar() {
-  const { mouseHover, mouseOutHover, dotsClick, sidebar, close, clickFunc } =
+  const { mouseHover, mouseOutHover, dotsClick, sidebar, close } =
     SidebarLogic();
 
   return (
@@ -18,7 +20,7 @@ function Sidebar() {
           <MenuIcon onClick={dotsClick} />
         </OpenSidebar>
       ) : (
-        <SidebarStyle color>
+        <SidebarStyle color={color}>
           <Close>
             <CloseIcon className='closeIcon' onClick={close} />
             <p>Close menu</p>
@@ -29,8 +31,8 @@ function Sidebar() {
                 return (
                   <Link to='/specialsoftheday' className='link' key={item.id}>
                     <ListItem
-                      color
-                      font
+                      color={color}
+                      font={font}
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -43,8 +45,8 @@ function Sidebar() {
                 return (
                   <Link to='/meatdishes' className='link' key={item.id}>
                     <ListItem
-                      color
-                      font
+                      color={color}
+                      font={font}
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -57,8 +59,8 @@ function Sidebar() {
                 return (
                   <Link to='/vegdishes' className='link' key={item.id}>
                     <ListItem
-                      color
-                      font
+                      color={color}
+                      font={font}
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -71,8 +73,8 @@ function Sidebar() {
                 return (
                   <Link to='/soups' className='link' key={item.id}>
                     <ListItem
-                      color
-                      font
+                      color={color}
+                      font={font}
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -85,8 +87,8 @@ function Sidebar() {
                 return (
                   <Link to='/fastfoods' className='link' key={item.id}>
                     <ListItem
-                      color
-                      font
+                      color={color}
+                      font={font}
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -99,8 +101,8 @@ function Sidebar() {
                 return (
                   <Link to='/pizzas' className='link' key={item.id}>
                     <ListItem
-                      color
-                      font
+                      color={color}
+                      font={font}
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -113,8 +115,8 @@ function Sidebar() {
                 return (
                   <Link to='/drinks' className='link' key={item.id}>
                     <ListItem
-                      color
-                      font
+                      color={color}
+                      font={font}
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >
@@ -127,8 +129,8 @@ function Sidebar() {
                 return (
                   <Link to='/deliveryandcontact' className='link' key={item.id}>
                     <ListItem
-                      color
-                      font
+                      color={color}
+                      font={font}
                       onMouseOver={mouseHover}
                       onMouseOut={mouseOutHover}
                     >

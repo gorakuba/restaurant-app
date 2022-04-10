@@ -1,4 +1,6 @@
+export const font = "font";
 export const fonts = {
+  defaultFontType: "Times New Roman",
   firstFontType: "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
   secondFontType: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS'",
   thirdFontType:

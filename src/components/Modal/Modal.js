@@ -7,6 +7,7 @@ import {
 } from "./Modal.styled";
 import ModalLogic from "./ModalLogic";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
+import { color } from "../../utilities/colors";
 
 const Modal = ({ setCloseModal }) => {
   const { closeModal, modalRef, showModal } = ModalLogic();
@@ -14,8 +15,8 @@ const Modal = ({ setCloseModal }) => {
   return (
     <>
       <Background ref={modalRef} onClick={closeModal}>
-        <ModalWraper showModal={showModal} color>
-          <ModalContent color>
+        <ModalWraper showModal={showModal} color={color}>
+          <ModalContent color={color}>
             <div className='modal'>
               <div className='modal__logo'>
                 <RestaurantIcon />
