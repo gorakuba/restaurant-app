@@ -11,9 +11,13 @@ export const LoginLogicStyle = styled.div`
 export const LoginStyle = styled.div`
   width: 40vw;
   height: 80vh;
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   box-shadow: 0 10px 20px
-    ${(props) => (props.color ? colors.fourthColorType : null)};
+    ${(props) =>
+      props.color === "color"
+        ? colors.fourthColorType
+        : colors.defaultColorType};
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -33,7 +37,10 @@ export const LoginStyle = styled.div`
   .loginInfo,
   .passInfo {
     margin: 0;
-    color: ${(props) => (props.color ? colors.seventhColorType : null)};
+    color: ${(props) =>
+      props.color === "color"
+        ? colors.seventhColorType
+        : colors.defaultColorType};
     font-size: 12px;
     font-style: italic;
   }
@@ -54,7 +61,10 @@ export const LoginStyle = styled.div`
 
     &:hover {
       box-shadow: 0 10px 20px
-        ${(props) => (props.color ? colors.fourthColorType : null)};
+        ${(props) =>
+          props.color === "color"
+            ? colors.fourthColorType
+            : colors.defaultColorType};
       transition: all ease-in-out;
       transition-duration: 400ms;
     }
@@ -67,11 +77,15 @@ export const LoginStyle = styled.div`
 
 export const LoginHeader = styled.div`
   font-style: italic;
-  font-family: ${(props) => (props.font ? fonts.fifthColorType : null)};
+  font-family: ${(props) =>
+    props.font === "font" ? fonts.fifthColorType : fonts.defaultFontType};
   margin: 10px;
   width: 43vw;
   box-shadow: 0 10px 20px
-    ${(props) => (props.color ? colors.fourthColorType : null)};
+    ${(props) =>
+      props.color === "color"
+        ? colors.fourthColorType
+        : colors.defaultColorType};
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -79,12 +93,16 @@ export const LoginHeader = styled.div`
   margin-bottom: 40px;
   word-wrap: break-word;
   text-decoration: underline;
-  background-color: ${(props) => (props.color ? colors.ninethColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.ninethColorType : colors.defaultColorType};
   border-radius: 15px;
 
   .linkT {
     text-decoration: none;
-    color: ${(props) => (props.color ? colors.secondColorType : null)};
+    color: ${(props) =>
+      props.color === "color"
+        ? colors.secondColorType
+        : colors.defaultColorType};
     display: flex;
     align-items: center;
   }
@@ -112,7 +130,9 @@ export const LoginButton = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
-      props.color ? colors.eighthColorType : null};
+      props.color === "color"
+        ? colors.eighthColorType
+        : colors.defaultColorType};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
@@ -129,7 +149,9 @@ export const RegisterButton = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
-      props.color ? colors.tenthColorType : null};
+      props.color === "color"
+        ? colors.tenthColorType
+        : colors.defaultColorType};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }

@@ -3,7 +3,8 @@ import { colors } from "../../utilities/colors";
 
 export const Container = styled.div`
   display: flex;
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -11,7 +12,8 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 0 30px 30px 10px;
   width: 75%;
 
@@ -44,7 +46,10 @@ export const ContactForms = styled.div`
 
     a {
       text-decoration: none;
-      color: rgb(0 0 0);
+      color: ${(props) =>
+        props.color === "color"
+          ? colors.secondColorType
+          : colors.defaultColorType};
       display: flex;
       align-items: center;
 
@@ -108,12 +113,16 @@ export const ContactForms = styled.div`
 export const Map = styled.div`
   height: 500px;
   width: 150vh;
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 1rem;
   border-radius: 20px;
   margin: 30px 60px 50px 0;
   box-shadow: 0 10px 20px
-    ${(props) => (props.color ? colors.fourthColorType : null)};
+    ${(props) =>
+      props.color === "color"
+        ? colors.fourthColorType
+        : colors.defaultColorType};
 
   @media (max-width: 1000px) {
     width: 97%;
@@ -134,7 +143,10 @@ export const Footer = styled.div`
   margin: 20px 60px 80px 60px;
   padding: 50px 50px 20px 50px;
   box-shadow: 0 10px 20px
-    ${(props) => (props.color ? colors.fourthColorType : null)};
+    ${(props) =>
+      props.color === "color"
+        ? colors.fourthColorType
+        : colors.defaultColorType};
   border-radius: 20px;
   border: none;
 
@@ -155,7 +167,10 @@ export const Footer = styled.div`
     border: none;
 
     &:hover {
-      background-color: lightblue;
+      background-color: ${(props) =>
+        props.color === "color"
+          ? colors.thirteenthColorType
+          : colors.defaultColorType};
       cursor: pointer;
     }
   }

@@ -10,6 +10,8 @@ import {
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import { Link } from "react-router-dom";
 import LoginLogic from "./LoginLogic";
+import { color } from "../../utilities/colors";
+import { font } from "../../utilities/fonts";
 
 const Login = () => {
   const {
@@ -24,8 +26,8 @@ const Login = () => {
 
   return (
     <LoginLogicStyle>
-      <LoginStyle color>
-        <LoginHeader color font>
+      <LoginStyle color={color}>
+        <LoginHeader color={color} font={font}>
           <Link to='/' className='linkT'>
             <RestaurantMenuIcon className='icon' />
           </Link>
@@ -54,18 +56,18 @@ const Login = () => {
 
         {loginForm ? (
           <Link to='/'>
-            <LoginButton color onClick={loginFunc}>
+            <LoginButton color={color} onClick={loginFunc}>
               Login
             </LoginButton>
           </Link>
         ) : (
-          <LoginButton color onClick={validFunc}>
+          <LoginButton color={color} onClick={validFunc}>
             Sprawdź
           </LoginButton>
         )}
 
         <Link to='/register'>
-          <RegisterButton color>Register</RegisterButton>
+          <RegisterButton color={color}>Register</RegisterButton>
         </Link>
       </LoginStyle>
     </LoginLogicStyle>

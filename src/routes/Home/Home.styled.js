@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { colors } from "../../utilities/colors";
 import { fonts } from "../../utilities/fonts";
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   margin-left: 20px;
 
   @media (max-width: 600px) {
@@ -14,8 +15,9 @@ const Container = styled.div`
   }
 `;
 
-const Content = styled.div`
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+export const Content = styled.div`
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 0 30px 30px 30px;
 
   @media (max-width: 600px) {
@@ -29,25 +31,28 @@ const Content = styled.div`
   }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   margin-top: 50px;
   padding: 5px;
   width: 200px;
   height: 50px;
   border: none;
   border-radius: 10px;
-  color: ${(props) => (props.color ? colors.secondColorType : null)};
-  font-family: ${(props) => (props.font ? fonts.thirdFontType : null)};
+  color: ${(props) =>
+    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
+  font-family: ${(props) =>
+    props.font === "font" ? fonts.thirdFontType : fonts.defaultFontType};
   font-weight: 700;
 
   &:hover {
     box-shadow: 0 10px 20px
-      ${(props) => (props.color ? colors.fourthColorType : null)};
+      ${(props) =>
+        props.color === "color"
+          ? colors.fourthColorType
+          : colors.defaultColorType};
     cursor: pointer;
     width: 220px;
     transition: all ease-in-out;
     transition-duration: 300ms;
   }
 `;
-
-export { Container, Content, Button };

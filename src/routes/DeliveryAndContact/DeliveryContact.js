@@ -16,6 +16,8 @@ import {
 import { TileLayer, MapContainer, Popup, Circle } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import DeliveryContactLogic from "./DeliveryContactLogic";
+import { color } from "../../utilities/colors";
+import { colors } from "../../utilities/colors";
 
 function DeliveryContact() {
   const { position, markerPosition, zoom, send } = DeliveryContactLogic();
@@ -23,10 +25,10 @@ function DeliveryContact() {
   return (
     <>
       <Header />
-      <Container color>
-        <Content color>
+      <Container color={color}>
+        <Content color={color}>
           <h1>Zapraszamy do kontaktu z naszą resturacją :</h1>
-          <ContactForms color>
+          <ContactForms color={color}>
             <ul>
               <a
                 className='link'
@@ -74,14 +76,18 @@ function DeliveryContact() {
           </ContactForms>
         </Content>
 
-        <Map color>
+        <Map color={color}>
           <MapContainer center={position} zoom={zoom}>
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
             />
 
-            <Circle center={markerPosition} color='rgb(65	105	225)' radius={700}>
+            <Circle
+              center={markerPosition}
+              color={colors.twelfthColorType}
+              radius={700}
+            >
               <Popup>
                 <h3>Enjoy your meal!</h3>
                 <p>Location: Andrychów</p>
@@ -91,7 +97,7 @@ function DeliveryContact() {
         </Map>
       </Container>
 
-      <Footer color>
+      <Footer color={color}>
         <h3>
           Może chcesz zostać z nami na dłużej? Złóż swoje CV, a my rozpatrzymy
           twoją propozycję i postaramy się odpowiedzieć tak szybko, jak to tylko

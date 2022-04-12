@@ -7,6 +7,8 @@ import { getBasketTotal } from "../../helper/reducer";
 import { Link } from "react-router-dom";
 import BasketLogic from "./BasketLogic";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { color } from "../../utilities/colors";
+import { font } from "../../utilities/fonts";
 
 function Basket() {
   const { basket, deleteItems, checkout } = BasketLogic();
@@ -14,7 +16,7 @@ function Basket() {
   return (
     <>
       <Header />
-      <BasketStyle color font>
+      <BasketStyle color={color} font={font}>
         {basket.length > 0 ? (
           <>
             <LeftSide>
@@ -28,7 +30,7 @@ function Basket() {
                 />
               ))}
             </LeftSide>
-            <RightSide color>
+            <RightSide color={color}>
               <CurrencyFormat
                 renderText={(value) => (
                   <>

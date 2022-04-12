@@ -2,13 +2,15 @@ import React from "react";
 import Header from "../../components/Header/Header";
 import { Container, Content, Button } from "./Home.styled";
 import { Link } from "react-router-dom";
+import { color } from "../../utilities/colors";
+import { font } from "../../utilities/fonts";
 
 function Home() {
   return (
     <>
       <Header />
-      <Container color>
-        <Content color>
+      <Container color={color}>
+        <Content color={color}>
           <h1>Welcome to our restaurant page!</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae
@@ -49,7 +51,7 @@ function Home() {
             posuere justo sem, ut ultricies enim pulvinar vel.
           </p>
           <Link to='/specialsoftheday'>
-            <Button color font>
+            <Button color={color} font={font}>
               Start make your order
             </Button>
           </Link>

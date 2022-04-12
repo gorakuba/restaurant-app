@@ -4,7 +4,8 @@ import { fonts } from "../../utilities/fonts";
 
 export const BasketStyle = styled.div`
   display: flex;
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   margin: 20px;
 
   @media (max-width: 600px) {
@@ -17,7 +18,8 @@ export const BasketStyle = styled.div`
   h1 {
     margin: 30px;
     font-weight: 700;
-    font-family: ${(props) => (props.font ? fonts.fourthFontType : null)};
+    font-family: ${(props) =>
+      props.font === "font" ? fonts.fourthFontType : colors.defaultColorType};
 
     @media (max-width: 600px) {
       margin-left: 0;
@@ -42,7 +44,8 @@ export const RightSide = styled.div`
   width: 28.5%;
   height: 30vh;
   margin-left: 30px;
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -78,7 +81,9 @@ export const RightSide = styled.div`
     &:hover {
       cursor: pointer;
       background-color: ${(props) =>
-        props.color ? colors.eighthColorType : null};
+        props.color === "color"
+          ? colors.eighthColorType
+          : colors.defaultColorType};
       transition: all ease-in-out;
       transition-duration: 400ms;
     }
@@ -97,7 +102,9 @@ export const RightSide = styled.div`
     &:hover {
       cursor: pointer;
       background-color: ${(props) =>
-        props.color ? colors.seventhColorType : null};
+        props.color === "color"
+          ? colors.seventhColorType
+          : colors.defaultColorType};
       transition: all ease-in-out;
       transition-duration: 400ms;
     }
@@ -127,7 +134,9 @@ export const Checkout = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
-      props.color ? colors.eleventhColorType : null};
+      props.color === "color"
+        ? colors.eleventhColorType
+        : colors.defaultColorType};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
