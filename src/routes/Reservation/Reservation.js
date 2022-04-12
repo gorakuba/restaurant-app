@@ -4,14 +4,15 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import { Container, Content, TableSection } from "./Resevation.styled";
 import Table from "../../components/Table/Table";
 import { tables } from "./tables";
+import { color } from "../../utilities/colors";
 
 const Reservation = () => {
   return (
     <>
       <Header />
-      <Container color>
+      <Container color={color}>
         <Sidebar />
-        <Content color>
+        <Content color={color}>
           <h1>Zarezerwuj stolik online już teraz: </h1>
           <TableSection>
             {tables.map((table) => (

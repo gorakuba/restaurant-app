@@ -4,14 +4,16 @@ import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Product from "../../components/Product/Product";
 import { dishes } from "../../routes/VegDishes/dishes";
+import { color } from "../../utilities/colors";
+import { font } from "../../utilities/fonts";
 
 function VegDish() {
   return (
     <>
       <Header />
-      <Container color>
+      <Container color={color}>
         <Sidebar />
-        <Content color font>
+        <Content color={color} font={font}>
           <h1>Dania wege:</h1>
           {dishes.map((dish) => (
             <Product

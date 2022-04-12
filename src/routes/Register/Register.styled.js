@@ -12,7 +12,8 @@ export const Error = styled.div`
 export const Back = styled.div`
   display: flex;
   align-items: center;
-  color: ${(props) => (props.color ? colors.secondColorType : null)};
+  color: ${(props) =>
+    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
   font-size: 18px;
   font-weight: 700;
 

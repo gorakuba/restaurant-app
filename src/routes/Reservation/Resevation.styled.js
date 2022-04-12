@@ -3,7 +3,8 @@ import { colors } from "../../utilities/colors";
 
 export const Container = styled.div`
   display: flex;
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
 
   @media (max-width: 600px) {
     flex-direction: column;
@@ -11,7 +12,8 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  background-color: ${(props) => (props.color ? colors.thirdColorType : null)};
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 0 30px 30px 30px;
   width: 75%;
   margin-left: auto;
