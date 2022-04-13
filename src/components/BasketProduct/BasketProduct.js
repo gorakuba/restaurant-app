@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStateValue } from "../../helper/StateProvider";
 import {
   Description,
@@ -30,7 +30,7 @@ function BasketProduct({ id, name, price, description }) {
         <h3>{name}</h3>
 
         <RemoveSection>
-          <div className='clicked__minus' onClick={basketRemove}>
+          <div className='basketProduct__clickedMinus' onClick={basketRemove}>
             Remove from basket
           </div>
 

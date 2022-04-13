@@ -25,6 +25,22 @@ const tables = [
     id: uuidv4(),
     name: "Sixth table:",
   },
+  {
+    id: uuidv4(),
+    name: "Seventh table:",
+  },
+  {
+    id: uuidv4(),
+    name: "Eighth table:",
+  },
+  {
+    id: uuidv4(),
+    name: "Ninth table:",
+  },
+  {
+    id: uuidv4(),
+    name: "Tenth table:",
+  },
 ];
 
 export { tables };

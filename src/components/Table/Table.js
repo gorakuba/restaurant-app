@@ -41,14 +41,14 @@ const Table = ({ name }) => {
     <TableStyle color={color}>
       <TableHeader>
         <h4>
-          <TableRestaurantIcon className='tableIcon' /> {name}
+          <TableRestaurantIcon className='table__tableIcon' /> {name}
         </h4>
 
         {!renderTables ? <button onClick={reserve}>{title}</button> : null}
 
         {cancelButton ? (
           <button
-            className='removeReservation'
+            className='table__removeReservation'
             onClick={removeReservationQuestion}
           >
             Cancel reservation
@@ -68,10 +68,16 @@ const Table = ({ name }) => {
             <p>Czy na pewno chesz anulować rezerwację?</p>
 
             <Buttons>
-              <button className='controlsCancel' onClick={removeReservation}>
+              <button
+                className='table__controlsCancel'
+                onClick={removeReservation}
+              >
                 Tak
               </button>
-              <button className='controlsCancel' onClick={leaveReservation}>
+              <button
+                className='table__controlsCancel'
+                onClick={leaveReservation}
+              >
                 Nie
               </button>
             </Buttons>
@@ -80,11 +86,11 @@ const Table = ({ name }) => {
           <>
             {table ? (
               <>
-                <div className='head'>
+                <div className='table__head'>
                   <p>Ile miejsc potrzebujesz:</p>
                   <input
                     type='number'
-                    className='number'
+                    className='table__number'
                     required
                     onChange={setPlaces}
                   />
@@ -103,10 +109,16 @@ const Table = ({ name }) => {
                               ? `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osoby?`
                               : `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osób?`}
                             <br />
-                            <button className='controls' onClick={yesClick}>
+                            <button
+                              className='table__controls'
+                              onClick={yesClick}
+                            >
                               Tak
                             </button>
-                            <button className='controls' onClick={noClick}>
+                            <button
+                              className='table__controls'
+                              onClick={noClick}
+                            >
                               Nie
                             </button>
                           </>
@@ -121,7 +133,7 @@ const Table = ({ name }) => {
             {renderTables ? (
               <>
                 <h5>
-                  <ArrowRightAltIcon className='dotsIcon' />
+                  <ArrowRightAltIcon className='table__dotsIcon' />
                   {parseInt(place) === 1
                     ? `Stolik zarezerwowany dla ${place} osoby 🤭`
                     : `Stolik zarezerwowany dla ${place} osób 🤭`}
@@ -130,9 +142,9 @@ const Table = ({ name }) => {
                 <ChairSection>
                   {place !== 0 ? (
                     <ChairHeader color={color}>
-                      {place} <EventSeatIcon className='chairIcon' />
+                      {place} <EventSeatIcon className='table__chairIcon' />
                       <button
-                        className='deletePersonButton'
+                        className='table__deletePersonButton'
                         onClick={removeChair}
                       >
                         Delete person
@@ -147,12 +159,15 @@ const Table = ({ name }) => {
 
                         <Buttons>
                           <button
-                            className='controlsCancel'
+                            className='table__controlsCancel'
                             onClick={yesCancel}
                           >
                             Tak
                           </button>
-                          <button className='controlsCancel' onClick={noCancel}>
+                          <button
+                            className='table__controlsCancel'
+                            onClick={noCancel}
+                          >
                             Nie, dodaj osoby
                           </button>
                         </Buttons>

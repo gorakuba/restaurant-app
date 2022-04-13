@@ -54,7 +54,7 @@ export const AddSection = styled.div`
   align-items: center;
   margin: 0 0 0 10px;
 
-  .clicked__plus {
+  .product__clickedPlus {
     margin-right: 20px;
 
     &:hover {

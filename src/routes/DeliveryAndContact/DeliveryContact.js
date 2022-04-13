@@ -31,29 +31,29 @@ function DeliveryContact() {
           <ContactForms color={color}>
             <ul>
               <a
-                className='link'
+                className='contact__link'
                 target='blank'
                 href='https://restaurant-app-demo.netlify.app'
               >
                 <li>poprzez naszą stronę internetową</li>
-                <WebAssetOutlined className='icon' />
+                <WebAssetOutlined className='contact__icon' />
               </a>
 
               <a
-                className='link'
+                className='contact__link'
                 target='blank'
                 href='https://mail.google.com/'
               >
                 <li>poprzez naszą pocztę elektroniczną</li>
-                <Mail className='icon' />
+                <Mail className='contact__icon' />
               </a>
 
               <a
-                className='link'
+                className='contact__link'
                 target='blank'
                 href='https://www.whatsapp.com/'
               >
-                <div className='contact'>
+                <div className='contact__contact'>
                   <li>poprzez kontakt telefoniczny, SMS lub WhatApp'a</li>
                   <p>
                     (nasz numer telefonu: 123-456-789 oraz nasz adres:
@@ -61,16 +61,16 @@ function DeliveryContact() {
                   </p>
                 </div>
 
-                <WhatsApp className='iconWup' />
+                <WhatsApp className='contact__iconWup' />
               </a>
 
               <a
-                className='link'
+                className='contact__link'
                 target='blank'
                 href='https://www.facebook.com'
               >
                 <li>poprzez naszą stronę na FaceBook'u</li>
-                <Facebook className='icon' />
+                <Facebook className='contact__icon' />
               </a>
             </ul>
           </ContactForms>

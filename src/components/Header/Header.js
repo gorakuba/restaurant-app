@@ -25,14 +25,14 @@ function Header() {
   return (
     <HeaderStyle color={color}>
       <HeaderLeft color={color}>
-        <Link to='/' className='link'>
+        <Link to='/' className='header__link'>
           <RestaurantMenuIcon />
           <HeaderMiddle font={font}>Enjoy your meal!</HeaderMiddle>
         </Link>
       </HeaderLeft>
 
       <HeaderRight color={color}>
-        <PersonIcon className='headerRightIcon' onClick={openModal} />
+        <PersonIcon className='header__headerRightIcon' onClick={openModal} />
 
         {showModal ? (
           <Modal
@@ -43,7 +43,7 @@ function Header() {
         ) : null}
 
         <Link to='/basket'>
-          <ShoppingBasketIcon className='headerRightIcon' />
+          <ShoppingBasketIcon className='header__headerRightIcon' />
         </Link>
 
         {basket.length >= 1 ? (
@@ -51,11 +51,11 @@ function Header() {
         ) : null}
 
         <Link to='/reservation'>
-          <BookmarkAddIcon className='headerRightIcon' />
+          <BookmarkAddIcon className='header__headerRightIcon' />
         </Link>
 
         <Link to='/login'>
-          <InputIcon className='headerRightIcon' />
+          <InputIcon className='header__headerRightIcon' />
         </Link>
       </HeaderRight>
     </HeaderStyle>

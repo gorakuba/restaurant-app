@@ -16,20 +16,25 @@ function Sidebar() {
   return (
     <>
       {sidebar ? (
-        <OpenSidebar>
+        <OpenSidebar color={color}>
           <MenuIcon onClick={dotsClick} />
+          <p>Open menu</p>
         </OpenSidebar>
       ) : (
         <SidebarStyle color={color}>
           <Close>
-            <CloseIcon className='closeIcon' onClick={close} />
+            <CloseIcon className='sidebar__closeIcon' onClick={close} />
             <p>Close menu</p>
           </Close>
           {menuItems.map((item) => {
             switch (item.name) {
               case "Dania dnia":
                 return (
-                  <Link to='/specialsoftheday' className='link' key={item.id}>
+                  <Link
+                    to='/specialsoftheday'
+                    className='sidebar__link'
+                    key={item.id}
+                  >
                     <ListItem
                       color={color}
                       font={font}
@@ -37,13 +42,17 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='menuIcon' />
+                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
                     </ListItem>
                   </Link>
                 );
               case "Dania mięsne":
                 return (
-                  <Link to='/meatdishes' className='link' key={item.id}>
+                  <Link
+                    to='/meatdishes'
+                    className='sidebar__link'
+                    key={item.id}
+                  >
                     <ListItem
                       color={color}
                       font={font}
@@ -51,13 +60,13 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='menuIcon' />
+                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
                     </ListItem>
                   </Link>
                 );
               case "Dania wege":
                 return (
-                  <Link to='/vegdishes' className='link' key={item.id}>
+                  <Link to='/vegdishes' className='sidebar__link' key={item.id}>
                     <ListItem
                       color={color}
                       font={font}
@@ -65,13 +74,13 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='menuIcon' />
+                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
                     </ListItem>
                   </Link>
                 );
               case "Zupy":
                 return (
-                  <Link to='/soups' className='link' key={item.id}>
+                  <Link to='/soups' className='sidebar__link' key={item.id}>
                     <ListItem
                       color={color}
                       font={font}
@@ -79,13 +88,13 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='menuIcon' />
+                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
                     </ListItem>
                   </Link>
                 );
               case "Fast food":
                 return (
-                  <Link to='/fastfoods' className='link' key={item.id}>
+                  <Link to='/fastfoods' className='sidebar__link' key={item.id}>
                     <ListItem
                       color={color}
                       font={font}
@@ -93,13 +102,13 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='menuIcon' />
+                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
                     </ListItem>
                   </Link>
                 );
               case "Pizza":
                 return (
-                  <Link to='/pizzas' className='link' key={item.id}>
+                  <Link to='/pizzas' className='sidebar__link' key={item.id}>
                     <ListItem
                       color={color}
                       font={font}
@@ -107,13 +116,13 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='menuIcon' />
+                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
                     </ListItem>
                   </Link>
                 );
               case "Napoje":
                 return (
-                  <Link to='/drinks' className='link' key={item.id}>
+                  <Link to='/drinks' className='sidebar__link' key={item.id}>
                     <ListItem
                       color={color}
                       font={font}
@@ -121,13 +130,17 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='menuIcon' />
+                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
                     </ListItem>
                   </Link>
                 );
               case "Dowóz i kontakt":
                 return (
-                  <Link to='/deliveryandcontact' className='link' key={item.id}>
+                  <Link
+                    to='/deliveryandcontact'
+                    className='sidebar__link'
+                    key={item.id}
+                  >
                     <ListItem
                       color={color}
                       font={font}
@@ -135,7 +148,7 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='menuIcon' />
+                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
                     </ListItem>
                   </Link>
                 );

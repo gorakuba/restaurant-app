@@ -34,8 +34,8 @@ export const LoginStyle = styled.div`
     margin-bottom: 5vh;
   }
 
-  .loginInfo,
-  .passInfo {
+  .login__loginInfo,
+  .login__passInfo {
     margin: 0;
     color: ${(props) =>
       props.color === "color"
@@ -45,12 +45,8 @@ export const LoginStyle = styled.div`
     font-style: italic;
   }
 
-  .none {
-    display: none;
-  }
-
-  .login,
-  .pass {
+  .login__login,
+  .login__pass {
     border-radius: 10px;
     margin: 20px;
     border: none;
@@ -97,7 +93,7 @@ export const LoginHeader = styled.div`
     props.color === "color" ? colors.ninethColorType : colors.defaultColorType};
   border-radius: 15px;
 
-  .linkT {
+  .login__linkT {
     text-decoration: none;
     color: ${(props) =>
       props.color === "color"
@@ -107,7 +103,7 @@ export const LoginHeader = styled.div`
     align-items: center;
   }
 
-  .icon {
+  .login__icon {
     width: 40px;
     height: 40px;
 

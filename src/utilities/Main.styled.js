@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { colors } from "../../utilities/colors";
-import { fonts } from "../../utilities/fonts";
+import { colors } from "./colors";
+import { fonts } from "./fonts";
 
 export const Container = styled.div`
   display: flex;
@@ -17,8 +17,8 @@ export const Content = styled.div`
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 30px;
   width: 75%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 21vw;
+  z-index: 1;
 
   h1 {
     font-family: ${(props) =>
@@ -26,9 +26,10 @@ export const Content = styled.div`
     margin: 0 20px 20px 20px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 90%;
     display: flex;
     flex-direction: column;
+    margin-left: 2vw;
   }
 `;

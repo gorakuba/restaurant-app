@@ -28,7 +28,7 @@ export const HeaderLeft = styled.div`
   justify-content: center;
   margin-left: 30px;
 
-  .link {
+  .header__link {
     text-decoration: none;
     color: ${(props) =>
       props.color === "color"
@@ -63,7 +63,7 @@ export const HeaderRight = styled.div`
   justify-content: right;
   padding: 10px 20px;
 
-  .headerRightIcon {
+  .header__headerRightIcon {
     padding-left: 15px;
     padding-right: 15px;
     color: ${(props) =>
@@ -72,7 +72,7 @@ export const HeaderRight = styled.div`
         : colors.defaultColorType};
   }
 
-  .headerRightIcon:hover {
+  .header__headerRightIcon:hover {
     cursor: pointer;
     transform: scale(1.15);
     transition: all ease-in-out;

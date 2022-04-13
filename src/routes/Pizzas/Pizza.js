@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Content } from "./Pizza.styled";
+import { Container, Content } from "../../utilities/Main.styled";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Product from "../../components/Product/Product";

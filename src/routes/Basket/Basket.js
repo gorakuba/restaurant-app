@@ -34,8 +34,10 @@ function Basket() {
               <CurrencyFormat
                 renderText={(value) => (
                   <>
-                    <p className='p1'>Items in basket: {basket.length}</p>
-                    <p className='p2'>Total price: {value} zł</p>
+                    <p className='basket__p1'>
+                      Items in basket: {basket.length}
+                    </p>
+                    <p className='basket__p2'>Total price: {value} zł</p>
                   </>
                 )}
                 decimalScale={2}
@@ -43,16 +45,18 @@ function Basket() {
                 displayType={"text"}
                 thousandSeparator={true}
               />
-              <Link to='/specialsoftheday' className='link'>
-                <button className='add'>Add more items to basket</button>
+              <Link to='/specialsoftheday' className='basket__link'>
+                <button className='basket__add'>
+                  Add more items to basket
+                </button>
               </Link>
-              <button className='delete' onClick={deleteItems}>
+              <button className='basket__delete' onClick={deleteItems}>
                 Delete items from basket
               </button>
-              <Link to='/checkout' className='link'>
-                <Checkout color onClick={checkout}>
+              <Link to='/checkout' className='basket__link'>
+                <Checkout color={color} onClick={checkout}>
                   Go to checkout page
-                  <ShoppingCartIcon className='checkoutIcon' />
+                  <ShoppingCartIcon className='basket__checkoutIcon' />
                 </Checkout>
               </Link>
             </RightSide>

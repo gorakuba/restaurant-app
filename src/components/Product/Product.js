@@ -79,7 +79,7 @@ function Product({ id, name, description, price }) {
               <RemoveIcon onClick={counterMinus} />
             </Counter>
           ) : (
-            <div className='clicked__plus' onClick={basketAdd}>
+            <div className='product__clickedPlus' onClick={basketAdd}>
               Add to basket
             </div>
           )}

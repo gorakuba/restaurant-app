@@ -16,8 +16,8 @@ export const Content = styled.div`
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 0 30px 30px 30px;
   width: 75%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 21vw;
+  z-index: 1;
 
   h1 {
     margin-left: 10px;
@@ -28,6 +28,7 @@ export const Content = styled.div`
     width: 97%;
     display: flex;
     flex-direction: column;
+    margin-left: 0.5vw;
   }
 `;
 

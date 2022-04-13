@@ -4,7 +4,7 @@ import { colors } from "../../utilities/colors";
 export const Error = styled.div`
   margin: 20px;
 
-  .link {
+  .register__link {
     text-decoration: none;
   }
 `;
@@ -17,7 +17,7 @@ export const Back = styled.div`
   font-size: 18px;
   font-weight: 700;
 
-  .icon {
+  .register__icon {
     margin-right: 10px;
   }
 `;

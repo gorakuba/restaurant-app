@@ -46,7 +46,7 @@ export const TableStyle = styled.div`
     }
   }
 
-  .number {
+  .table__number {
     padding: 5px;
     margin-left: 10px;
     text-align: center;
@@ -71,12 +71,12 @@ export const TableHeader = styled.div`
     display: flex;
     align-items: center;
 
-    .tableIcon {
+    .table__tableIcon {
       margin-right: 10px;
     }
   }
 
-  .removeReservation {
+  .table__removeReservation {
     height: 40px;
     width: 100px;
   }
@@ -89,7 +89,7 @@ export const TableBody = styled.div`
     margin-top: -10px;
   }
 
-  .controls {
+  .table__controls {
     width: 100px;
     height: 30px;
     border: none;
@@ -107,7 +107,7 @@ export const TableBody = styled.div`
       margin-top: 50px;
     }
 
-    .dotsIcon {
+    .table__dotsIcon {
       margin-right: 10px;
       margin-left: 4px;
       font-size: 18px;
@@ -119,7 +119,7 @@ export const TableBody = styled.div`
     font-weight: 100;
   }
 
-  .head {
+  .table__head {
     display: flex;
     align-items: center;
   }
@@ -128,7 +128,7 @@ export const TableBody = styled.div`
 export const Header = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 40px;
 `;
 
 export const ChairSection = styled.div`
@@ -146,14 +146,14 @@ export const ChairHeader = styled.div`
   display: flex;
   align-items: center;
 
-  .chairIcon {
+  .table__chairIcon {
     height: 30px;
     width: 30px;
     padding: 5px;
     margin: 5px 10px 5px 10px;
   }
 
-  .deletePersonButton {
+  .table__deletePersonButton {
     &:hover {
       background-color: ${(props) =>
         props.color === "color"
@@ -199,7 +199,7 @@ export const Buttons = styled.div`
     flex-direction: column;
   }
 
-  .controlsCancel {
+  .table__controlsCancel {
     width: 100px;
     height: 40px;
     border: none;

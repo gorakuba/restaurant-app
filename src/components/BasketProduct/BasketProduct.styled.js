@@ -51,7 +51,7 @@ export const RemoveSection = styled.div`
   align-items: center;
   margin: 0 0 0 10px;
 
-  .clicked__minus {
+  .basketProduct__clickedMinus {
     margin-right: 20px;
 
     &:hover {

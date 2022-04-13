@@ -53,18 +53,18 @@ export const ContactForms = styled.div`
       display: flex;
       align-items: center;
 
-      .link {
+      .contact__link {
         display: flex;
         align-items: center;
       }
 
-      .icon {
+      .contact__icon {
         margin-left: 20px;
         width: 40px;
         height: 40px;
       }
 
-      .iconWup {
+      .contact__iconWup {
         margin-left: 20px;
         margin-top: 25px;
         width: 40px;
@@ -75,7 +75,7 @@ export const ContactForms = styled.div`
         }
       }
 
-      .contact {
+      .contact__contact {
         p {
           margin-top: -30px;
 

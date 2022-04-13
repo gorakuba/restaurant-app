@@ -11,9 +11,9 @@ const Register = () => {
       <hr />
       <p>Resource not found on server!</p>
 
-      <Link to='/login' className='link'>
+      <Link to='/login' className='register__link'>
         <Back color={color}>
-          <ArrowBackIcon className='icon' />
+          <ArrowBackIcon className='register__icon' />
           <p>Back to login page</p>
         </Back>
       </Link>

@@ -61,15 +61,15 @@ export const RightSide = styled.div`
     box-shadow: none;
   }
 
-  .p2 {
+  .basket__p2 {
     padding-bottom: 3vh;
   }
 
-  .link {
+  .basket__link {
     text-decoration: none;
   }
 
-  .add {
+  .basket__add {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -89,7 +89,7 @@ export const RightSide = styled.div`
     }
   }
 
-  .delete {
+  .basket__delete {
     display: block;
     margin-top: 20px;
     margin-left: auto;
@@ -127,7 +127,7 @@ export const Checkout = styled.button`
   align-items: center;
   padding: 14px;
 
-  .checkoutIcon {
+  .basket__checkoutIcon {
     margin-left: 10px;
   }
 

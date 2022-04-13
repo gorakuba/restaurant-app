@@ -17,12 +17,12 @@ const Modal = ({ setCloseModal }) => {
       <Background ref={modalRef} onClick={closeModal}>
         <ModalWraper showModal={showModal} color={color}>
           <ModalContent color={color}>
-            <div className='modal'>
+            <div>
               <div className='modal__logo'>
                 <RestaurantIcon />
-                <p className='modal__p'>Our Restaurant</p>
+                <p>Our Restaurant</p>
               </div>
-              <div className='modal__description'>
+              <div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                 finibus tincidunt ipsum ac commodo. Sed pulvinar posuere dolor,
                 in pretium orci. In nec ex eu arcu maximus ultrices. Fusce sem

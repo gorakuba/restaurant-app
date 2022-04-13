@@ -3,13 +3,31 @@ import { colors } from "../../utilities/colors";
 import { fonts } from "../../utilities/fonts";
 
 export const OpenSidebar = styled.div`
-  margin: 33px 0 20px 50px;
+  position: fixed;
+  left: 0;
+  top: auto;
+  margin: 20px 0 20px 50px;
+  display: flex;
+  align-items: center;
+  color: ${(props) =>
+    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
+
+  p {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: 500;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
 
   &:hover {
     cursor: pointer;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
+    position: static;
     display: flex;
     flex-direction: column;
     margin-left: 55px;
@@ -17,12 +35,15 @@ export const OpenSidebar = styled.div`
 `;
 
 export const SidebarStyle = styled.div`
+  position: fixed;
+  left: 0;
+  top: auto;
   width: 20%;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   margin: 0 20px 20px 20px;
 
-  .link {
+  .sidebar__link {
     color: ${(props) =>
       props.color === "color"
         ? colors.secondColorType
@@ -30,7 +51,9 @@ export const SidebarStyle = styled.div`
     text-decoration: none;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
+    position: static;
+    left: auto;
     width: auto;
     display: flex;
     flex-direction: column;
@@ -51,6 +74,7 @@ export const Close = styled.div`
 
   p {
     margin-left: 20px;
+    margin-right: 20px;
     font-weight: 500;
 
     @media (max-width: 600px) {
@@ -81,7 +105,7 @@ export const ListItem = styled.div`
     justify-content: center;
   }
 
-  .menuIcon {
+  .sidebar__menuIcon {
     font-size: 14px;
     font-weight: 300;
 

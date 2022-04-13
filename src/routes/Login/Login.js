@@ -28,26 +28,26 @@ const Login = () => {
     <LoginLogicStyle>
       <LoginStyle color={color}>
         <LoginHeader color={color} font={font}>
-          <Link to='/' className='linkT'>
-            <RestaurantMenuIcon className='icon' />
+          <Link to='/' className='login__linkT'>
+            <RestaurantMenuIcon className='login__icon' />
           </Link>
         </LoginHeader>
 
         <input
           type='text'
-          className='login'
+          className='login__login'
           placeholder='Enter your login'
           onChange={loginValid}
         />
-        {!loginForm ? <p className='loginInfo'>{loginInfo}</p> : null}
+        {!loginForm ? <p className='login__loginInfo'>{loginInfo}</p> : null}
 
         <input
           type='password'
-          className='pass'
+          className='login__pass'
           placeholder='Enter your password'
           onChange={passValid}
         />
-        {!loginForm ? <p className='passInfo'>{passInfo}</p> : null}
+        {!loginForm ? <p className='login__passInfo'>{passInfo}</p> : null}
 
         <LoginRemember>
           <input type='checkbox' />
