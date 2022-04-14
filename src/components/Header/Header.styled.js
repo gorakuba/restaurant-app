@@ -28,23 +28,24 @@ export const HeaderLeft = styled.div`
   justify-content: center;
   margin-left: 30px;
 
-  .header__link {
-    text-decoration: none;
-    color: ${(props) =>
-      props.color === "color"
-        ? colors.secondColorType
-        : colors.defaultColorType};
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &:hover {
+    cursor: pointer;
   }
+`;
+
+export const HomeLink = styled.div`
+  color: ${(props) =>
+    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     cursor: pointer;
   }
 `;
 
-export const HeaderMiddle = styled.div`
+export const HeaderLeftTitle = styled.div`
   padding: 10px;
   text-align: center;
   font-weight: 500;
@@ -62,17 +63,15 @@ export const HeaderRight = styled.div`
   align-items: center;
   justify-content: right;
   padding: 10px 20px;
+`;
 
-  .header__headerRightIcon {
-    padding-left: 15px;
-    padding-right: 15px;
-    color: ${(props) =>
-      props.color === "color"
-        ? colors.secondColorType
-        : colors.defaultColorType};
-  }
+export const HeaderRightIcon = styled.div`
+  padding-left: 15px;
+  padding-right: 15px;
+  color: ${(props) =>
+    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
 
-  .header__headerRightIcon:hover {
+  &:hover {
     cursor: pointer;
     transform: scale(1.15);
     transition: all ease-in-out;

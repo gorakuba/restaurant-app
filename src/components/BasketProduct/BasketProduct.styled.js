@@ -12,17 +12,13 @@ export const ProductStyle = styled.div`
     ${(props) =>
       props.color ? colors.fourthColorType : colors.defaultColorType};
 
-  @media (max-width: 600px) {
-    margin-left: 10px;
-    width: 95%;
-  }
-
   &:first-child {
     margin-top: 0px;
   }
 
-  h3 {
+  @media (max-width: 600px) {
     margin-left: 10px;
+    width: 95%;
   }
 `;
 
@@ -30,6 +26,25 @@ export const HeaderLine = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const Name = styled.h3`
+  margin-left: 10px;
+`;
+
+export const RemoveSection = styled.div`
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 0 0 0 10px;
+`;
+
+export const Minus = styled.div`
+  margin-right: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Price = styled.div`
@@ -43,19 +58,4 @@ export const Description = styled.div`
   font-weight: 700;
   color: black;
   padding: 10px;
-`;
-
-export const RemoveSection = styled.div`
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  margin: 0 0 0 10px;
-
-  .basketProduct__clickedMinus {
-    margin-right: 20px;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
 `;

@@ -24,7 +24,8 @@ export const ModalWraper = styled.div`
       props.color === "color"
         ? colors.fourthColorType
         : colors.defaultColorType};
-  background: #fff;
+  background-color: ${(props) =>
+    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   color: ${(props) =>
     props.color === "color" ? colors.secondColorType : colors.defaultColorType};
   position: relative;
@@ -32,6 +33,7 @@ export const ModalWraper = styled.div`
   z-index: 100;
   border-radius: 10px;
   overflow-y: auto;
+  padding: 20px;
 
   @media (max-width: 600px) {
     margin: 5vh;
@@ -45,31 +47,33 @@ export const ModalWraper = styled.div`
 
 export const ModalContent = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   line-height: 1.8;
-  padding: 20px;
   color: ${(props) =>
     props.color === "color" ? colors.fifthColorType : colors.defaultColorType};
+`;
 
-  .modal__logo {
-    display: flex;
-    align-items: center;
-  }
+export const ModalLogo = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-  p {
-    margin-left: 15px;
-    font-weight: 500;
-  }
+export const ModalLogoTitle = styled.p`
+  margin-left: 15px;
+  font-weight: 500;
+`;
+
+export const ModalContentText = styled.div`
+  text-align: center;
 `;
 
 export const CloseModalButton = styled(CloseIcon)`
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 32px;
-  height: 32px;
-  padding: 0;
+  top: 35px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
 `;

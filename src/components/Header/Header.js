@@ -2,9 +2,11 @@ import React from "react";
 import {
   HeaderStyle,
   HeaderLeft,
-  HeaderMiddle,
+  HeaderLeftTitle,
   HeaderRight,
   BasketCounter,
+  HomeLink,
+  HeaderRightIcon,
 } from "./Header.styled";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import PersonIcon from "@mui/icons-material/Person";
@@ -25,14 +27,18 @@ function Header() {
   return (
     <HeaderStyle color={color}>
       <HeaderLeft color={color}>
-        <Link to='/' className='header__link'>
-          <RestaurantMenuIcon />
-          <HeaderMiddle font={font}>Enjoy your meal!</HeaderMiddle>
+        <Link to='/' style={{ textDecoration: "none" }}>
+          <HomeLink color={color}>
+            <RestaurantMenuIcon />
+            <HeaderLeftTitle font={font}>Enjoy your meal!</HeaderLeftTitle>
+          </HomeLink>
         </Link>
       </HeaderLeft>
 
       <HeaderRight color={color}>
-        <PersonIcon className='header__headerRightIcon' onClick={openModal} />
+        <HeaderRightIcon color={color}>
+          <PersonIcon onClick={openModal} />
+        </HeaderRightIcon>
 
         {showModal ? (
           <Modal
@@ -43,7 +49,9 @@ function Header() {
         ) : null}
 
         <Link to='/basket'>
-          <ShoppingBasketIcon className='header__headerRightIcon' />
+          <HeaderRightIcon color={color}>
+            <ShoppingBasketIcon />
+          </HeaderRightIcon>
         </Link>
 
         {basket.length >= 1 ? (
@@ -51,11 +59,15 @@ function Header() {
         ) : null}
 
         <Link to='/reservation'>
-          <BookmarkAddIcon className='header__headerRightIcon' />
+          <HeaderRightIcon color={color}>
+            <BookmarkAddIcon />
+          </HeaderRightIcon>
         </Link>
 
         <Link to='/login'>
-          <InputIcon className='header__headerRightIcon' />
+          <HeaderRightIcon color={color}>
+            <InputIcon />
+          </HeaderRightIcon>
         </Link>
       </HeaderRight>
     </HeaderStyle>

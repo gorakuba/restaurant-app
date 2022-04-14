@@ -6,6 +6,8 @@ import {
   ProductStyle,
   Price,
   RemoveSection,
+  Minus,
+  Name,
 } from "./BasketProduct.styled";
 import { color } from "../../utilities/colors";
 
@@ -27,12 +29,10 @@ function BasketProduct({ id, name, price, description }) {
   return (
     <ProductStyle color={color}>
       <HeaderLine>
-        <h3>{name}</h3>
+        <Name>{name}</Name>
 
         <RemoveSection>
-          <div className='basketProduct__clickedMinus' onClick={basketRemove}>
-            Remove from basket
-          </div>
+          <Minus onClick={basketRemove}>Remove from basket</Minus>
 
           <Price>Price: {price} zł</Price>
         </RemoveSection>
