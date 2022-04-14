@@ -39,7 +39,7 @@ function Sidebar() {
                 return (
                   <Link
                     to='/specialsoftheday'
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
                     key={item.id}
                   >
                     <ListItem
@@ -49,7 +49,7 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
+                      <ArrowForwardIosIcon />
                     </ListItem>
                   </Link>
                 );
@@ -57,7 +57,7 @@ function Sidebar() {
                 return (
                   <Link
                     to='/meatdishes'
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
                     key={item.id}
                   >
                     <ListItem
@@ -67,7 +67,7 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
+                      <ArrowForwardIosIcon />
                     </ListItem>
                   </Link>
                 );
@@ -75,7 +75,7 @@ function Sidebar() {
                 return (
                   <Link
                     to='/vegdishes'
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
                     key={item.id}
                   >
                     <ListItem
@@ -85,7 +85,7 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
+                      <ArrowForwardIosIcon />
                     </ListItem>
                   </Link>
                 );
@@ -93,7 +93,7 @@ function Sidebar() {
                 return (
                   <Link
                     to='/soups'
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
                     key={item.id}
                   >
                     <ListItem
@@ -103,7 +103,7 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
+                      <ArrowForwardIosIcon />
                     </ListItem>
                   </Link>
                 );
@@ -111,7 +111,7 @@ function Sidebar() {
                 return (
                   <Link
                     to='/fastfoods'
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
                     key={item.id}
                   >
                     <ListItem
@@ -121,7 +121,7 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
+                      <ArrowForwardIosIcon />
                     </ListItem>
                   </Link>
                 );
@@ -129,7 +129,7 @@ function Sidebar() {
                 return (
                   <Link
                     to='/pizzas'
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
                     key={item.id}
                   >
                     <ListItem
@@ -139,7 +139,7 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
+                      <ArrowForwardIosIcon />
                     </ListItem>
                   </Link>
                 );
@@ -147,7 +147,7 @@ function Sidebar() {
                 return (
                   <Link
                     to='/drinks'
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
                     key={item.id}
                   >
                     <ListItem
@@ -157,7 +157,7 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
+                      <ArrowForwardIosIcon />
                     </ListItem>
                   </Link>
                 );
@@ -165,7 +165,7 @@ function Sidebar() {
                 return (
                   <Link
                     to='/deliveryandcontact'
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
                     key={item.id}
                   >
                     <ListItem
@@ -175,7 +175,7 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon className='sidebar__menuIcon' />
+                      <ArrowForwardIosIcon />
                     </ListItem>
                   </Link>
                 );

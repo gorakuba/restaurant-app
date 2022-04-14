@@ -87,12 +87,6 @@ export const CloseSidebarTitle = styled.p`
   }
 `;
 
-// export const SidebarLink = styled.div`
-//   color: ${(props) =>
-//     props.color === "color" ? colors.secondColorType : colors.defaultColorType};
-//   text-decoration: none;
-// `;
-
 export const ListItem = styled.div`
   display: flex;
   align-items: center;

@@ -16,6 +16,15 @@ import {
   CancelQuestion,
   RemoveReservationButton,
   LeaveReservationButton,
+  TableHead,
+  TableHeadInput,
+  ReservationButtonAgree,
+  ReservationButtonDisagree,
+  DotsIcon,
+  RenderTableHeader,
+  TableChairIcon,
+  DeletePerson,
+  CancelSectionQuestion,
 } from "./Table.styled";
 import TableLogic from "./TableLogic";
 import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
@@ -49,12 +58,15 @@ const Table = ({ name }) => {
       <TableHeader>
         <TableHeaderTitle>
           <TableIcon>
-            <TableRestaurantIcon /> {name}
+            <TableRestaurantIcon />
           </TableIcon>
+          {name}
         </TableHeaderTitle>
 
         {!renderTables ? (
-          <ReservationButton onClick={reserve}>{title}</ReservationButton>
+          <ReservationButton onClick={reserve} color={color}>
+            {title}
+          </ReservationButton>
         ) : null}
 
         {cancelButton ? (
@@ -86,16 +98,16 @@ const Table = ({ name }) => {
           <>
             {table ? (
               <>
-                <div className='table__head'>
+                <TableHead>
                   <p>Ile miejsc potrzebujesz:</p>
-                  <input
+                  <TableHeadInput
                     type='number'
-                    className='table__number'
-                    required
                     onChange={setPlaces}
+                    color={color}
                   />
-                </div>
-                {place.length >= 1 ? (
+                </TableHead>
+
+                {parseInt(place) >= 1 ? (
                   <>
                     {parseInt(place) > 10 ? (
                       <p>Stolik można zarezerwować dla maksymalnie 10 osób!</p>
@@ -109,18 +121,12 @@ const Table = ({ name }) => {
                               ? `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osoby?`
                               : `Czy jesteś pewien, że chcesz zarezerwowć stolik dla ${place} osób?`}
                             <br />
-                            <button
-                              className='table__controls'
-                              onClick={yesClick}
-                            >
+                            <ReservationButtonAgree onClick={yesClick}>
                               Tak
-                            </button>
-                            <button
-                              className='table__controls'
-                              onClick={noClick}
-                            >
+                            </ReservationButtonAgree>
+                            <ReservationButtonDisagree onClick={noClick}>
                               Nie
-                            </button>
+                            </ReservationButtonDisagree>
                           </>
                         )}
                       </p>
@@ -132,44 +138,43 @@ const Table = ({ name }) => {
 
             {renderTables ? (
               <>
-                <h5>
-                  <ArrowRightAltIcon className='table__dotsIcon' />
+                <RenderTableHeader>
+                  <DotsIcon>
+                    <ArrowRightAltIcon />
+                  </DotsIcon>
+
                   {parseInt(place) === 1
                     ? `Stolik zarezerwowany dla ${place} osoby 🤭`
                     : `Stolik zarezerwowany dla ${place} osób 🤭`}
-                </h5>
+                </RenderTableHeader>
 
                 <ChairSection>
                   {place !== 0 ? (
                     <ChairHeader color={color}>
-                      {place} <EventSeatIcon className='table__chairIcon' />
-                      <button
-                        className='table__deletePersonButton'
-                        onClick={removeChair}
-                      >
+                      {place}
+                      <TableChairIcon>
+                        <EventSeatIcon />
+                      </TableChairIcon>
+                      <DeletePerson color={color} onClick={removeChair}>
                         Delete person
-                      </button>
+                      </DeletePerson>
                     </ChairHeader>
                   ) : null}
 
                   {place === 0 ? (
                     <>
                       <CancelSection>
-                        <p>Czy na pewno chesz anulować rezerwację?</p>
+                        <CancelSectionQuestion>
+                          Czy na pewno chesz anulować rezerwację?
+                        </CancelSectionQuestion>
 
                         <Buttons>
-                          <button
-                            className='table__controlsCancel'
-                            onClick={yesCancel}
-                          >
+                          <RemoveReservationButton onClick={yesCancel}>
                             Tak
-                          </button>
-                          <button
-                            className='table__controlsCancel'
-                            onClick={noCancel}
-                          >
+                          </RemoveReservationButton>
+                          <LeaveReservationButton onClick={noCancel}>
                             Nie, dodaj osoby
-                          </button>
+                          </LeaveReservationButton>
                         </Buttons>
                       </CancelSection>
                     </>

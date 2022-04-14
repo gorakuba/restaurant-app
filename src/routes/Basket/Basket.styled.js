@@ -30,6 +30,7 @@ export const BasketStyle = styled.div`
 
 export const LeftSide = styled.div`
   width: 70%;
+  margin-top: 30px;
 
   @media (max-width: 600px) {
     margin: 0 20px 20px -10px;
