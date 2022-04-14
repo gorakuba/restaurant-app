@@ -64,6 +64,12 @@ export const ReservationButton = styled.button`
 export const CancelReservationButton = styled.button`
   height: 40px;
   width: 100px;
+  border: none;
+  border-radius: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const TableBody = styled.div`
@@ -108,9 +114,13 @@ export const RemoveReservationButton = styled.button`
   border: none;
   border-radius: 10px;
   margin: 30px 20px 20px 0;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
-export const LeaveReservationButton = styled(RemoveReservationButton);
+export const LeaveReservationButton = styled(RemoveReservationButton)``;
 
 export const TableHead = styled.div`
   display: flex;
@@ -135,9 +145,13 @@ export const ReservationButtonAgree = styled.button`
   border: none;
   border-radius: 10px;
   margin: 15px 10px 20px 0;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
-export const ReservationButtonDisagree = styled(ReservationButtonAgree);
+export const ReservationButtonDisagree = styled(ReservationButtonAgree)``;
 
 export const RenderTableHeader = styled.h5`
   font-weight: 100;
