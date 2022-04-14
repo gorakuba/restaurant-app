@@ -24,28 +24,6 @@ export const TableStyle = styled.div`
     padding-bottom: 3vh;
   }
 
-  h4 {
-    margin: 5px;
-  }
-
-  button {
-    width: 100px;
-    height: 30px;
-    border: none;
-    border-radius: 10px;
-
-    &:hover {
-      box-shadow: 0 10px 20px
-        ${(props) =>
-          props.color === "color"
-            ? colors.fourthColorType
-            : colors.defaultColorType};
-      transition: all ease-in-out;
-      transition-duration: 400ms;
-      cursor: pointer;
-    }
-  }
-
   .table__number {
     padding: 5px;
     margin-left: 10px;
@@ -66,20 +44,39 @@ export const TableHeader = styled.div`
   justify-content: space-between;
   font-style: italic;
   font-size: 20px;
+`;
 
-  h4 {
-    display: flex;
-    align-items: center;
+export const TableHeaderTitle = styled.h4`
+  margin: 5px;
+  display: flex;
+  align-items: center;
+`;
 
-    .table__tableIcon {
-      margin-right: 10px;
-    }
+export const TableIcon = styled.div`
+  margin-right: 10px;
+`;
+
+export const ReservationButton = styled.button`
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+
+  &:hover {
+    box-shadow: 0 10px 20px
+      ${(props) =>
+        props.color === "color"
+          ? colors.fourthColorType
+          : colors.defaultColorType};
+    transition: all ease-in-out;
+    transition-duration: 400ms;
+    cursor: pointer;
   }
+`;
 
-  .table__removeReservation {
-    height: 40px;
-    width: 100px;
-  }
+export const CancelReservationButton = styled.button`
+  height: 40px;
+  width: 100px;
 `;
 
 export const TableBody = styled.div`
@@ -114,18 +111,51 @@ export const TableBody = styled.div`
     }
   }
 
-  p {
-    font-style: italic;
-    font-weight: 100;
-  }
-
   .table__head {
     display: flex;
     align-items: center;
   }
 `;
 
-export const Header = styled.div`
+export const CancelSection = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: -10px;
+
+  @media (max-width: 800px) {
+    margin-top: 10px;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  margin-left: 80px;
+
+  @media (max-width: 800px) {
+    margin-left: 40px;
+    flex-direction: column;
+  }
+`;
+
+export const RemoveReservationButton = styled.button`
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  margin: 30px 20px 20px 0;
+`;
+
+export const LeaveReservationButton = styled(RemoveReservationButton);
+
+export const CancelQuestion = styled.p`
+  font-style: italic;
+  font-weight: 100;
+`;
+
+export const Header = styled.h1`
   display: flex;
   justify-content: center;
   margin-top: 40px;
@@ -166,19 +196,6 @@ export const ChairHeader = styled.div`
   }
 `;
 
-export const CancelSection = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: -10px;
-
-  @media (max-width: 800px) {
-    margin-top: 10px;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-  }
-`;
-
 export const CancelReservation = styled.div`
   display: flex;
   justify-content: center;
@@ -187,23 +204,5 @@ export const CancelReservation = styled.div`
 
   @media (max-width: 800px) {
     flex-direction: column;
-  }
-`;
-
-export const Buttons = styled.div`
-  display: flex;
-  margin-left: 80px;
-
-  @media (max-width: 800px) {
-    margin-left: 40px;
-    flex-direction: column;
-  }
-
-  .table__controlsCancel {
-    width: 100px;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-    margin: 30px 20px 20px 0;
   }
 `;

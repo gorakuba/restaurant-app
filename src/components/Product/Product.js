@@ -6,6 +6,8 @@ import {
   Price,
   AddSection,
   Counter,
+  Plus,
+  Name,
 } from "./Product.styled";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -69,7 +71,7 @@ function Product({ id, name, description, price }) {
   return (
     <ProductStyle color={color}>
       <HeaderLine>
-        <h3>{name}</h3>
+        <Name>{name}</Name>
 
         <AddSection>
           {clicked && counter > 0 ? (
@@ -79,9 +81,7 @@ function Product({ id, name, description, price }) {
               <RemoveIcon onClick={counterMinus} />
             </Counter>
           ) : (
-            <div className='product__clickedPlus' onClick={basketAdd}>
-              Add to basket
-            </div>
+            <Plus onClick={basketAdd}>Add to basket</Plus>
           )}
           <Price>Price: {price} zł</Price>
         </AddSection>

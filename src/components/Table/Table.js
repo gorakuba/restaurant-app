@@ -9,6 +9,13 @@ import {
   Header,
   ChairHeader,
   CancelReservation,
+  TableHeaderTitle,
+  TableIcon,
+  ReservationButton,
+  CancelReservationButton,
+  CancelQuestion,
+  RemoveReservationButton,
+  LeaveReservationButton,
 } from "./Table.styled";
 import TableLogic from "./TableLogic";
 import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
@@ -40,46 +47,39 @@ const Table = ({ name }) => {
   return (
     <TableStyle color={color}>
       <TableHeader>
-        <h4>
-          <TableRestaurantIcon className='table__tableIcon' /> {name}
-        </h4>
+        <TableHeaderTitle>
+          <TableIcon>
+            <TableRestaurantIcon /> {name}
+          </TableIcon>
+        </TableHeaderTitle>
 
-        {!renderTables ? <button onClick={reserve}>{title}</button> : null}
+        {!renderTables ? (
+          <ReservationButton onClick={reserve}>{title}</ReservationButton>
+        ) : null}
 
         {cancelButton ? (
-          <button
-            className='table__removeReservation'
-            onClick={removeReservationQuestion}
-          >
+          <CancelReservationButton onClick={removeReservationQuestion}>
             Cancel reservation
-          </button>
+          </CancelReservationButton>
         ) : null}
       </TableHeader>
 
       <TableBody>
-        {!load ? (
-          <Header>
-            <h1>UNRESERVED</h1>
-          </Header>
-        ) : null}
+        {!load ? <Header>UNRESERVED</Header> : null}
 
         {reservationDelete ? (
           <CancelReservation>
-            <p>Czy na pewno chesz anulować rezerwację?</p>
+            <CancelQuestion>
+              Czy na pewno chesz anulować rezerwację?
+            </CancelQuestion>
 
             <Buttons>
-              <button
-                className='table__controlsCancel'
-                onClick={removeReservation}
-              >
+              <RemoveReservationButton onClick={removeReservation}>
                 Tak
-              </button>
-              <button
-                className='table__controlsCancel'
-                onClick={leaveReservation}
-              >
+              </RemoveReservationButton>
+              <LeaveReservationButton onClick={leaveReservation}>
                 Nie
-              </button>
+              </LeaveReservationButton>
             </Buttons>
           </CancelReservation>
         ) : (

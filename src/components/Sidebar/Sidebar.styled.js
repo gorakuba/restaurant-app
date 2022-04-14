@@ -12,16 +12,6 @@ export const OpenSidebar = styled.div`
   color: ${(props) =>
     props.color === "color" ? colors.secondColorType : colors.defaultColorType};
 
-  p {
-    margin-left: 20px;
-    margin-right: 20px;
-    font-weight: 500;
-
-    @media (max-width: 600px) {
-      display: none;
-    }
-  }
-
   &:hover {
     cursor: pointer;
   }
@@ -34,6 +24,20 @@ export const OpenSidebar = styled.div`
   }
 `;
 
+export const OpenSidebarTitle = styled.p`
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: 500;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
 export const SidebarStyle = styled.div`
   position: fixed;
   left: 0;
@@ -42,14 +46,6 @@ export const SidebarStyle = styled.div`
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   margin: 0 20px 20px 20px;
-
-  .sidebar__link {
-    color: ${(props) =>
-      props.color === "color"
-        ? colors.secondColorType
-        : colors.defaultColorType};
-    text-decoration: none;
-  }
 
   @media (max-width: 800px) {
     position: static;
@@ -66,26 +62,36 @@ export const Close = styled.div`
   display: flex;
   align-items: center;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media (max-width: 600px) {
     width: 100%;
     justify-content: left;
     margin: 30px 0 20px 70px;
   }
+`;
 
-  p {
-    margin-left: 20px;
-    margin-right: 20px;
-    font-weight: 500;
-
-    @media (max-width: 600px) {
-      display: none;
-    }
-  }
+export const CloseSidebarTitle = styled.p`
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: 500;
 
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
+
+// export const SidebarLink = styled.div`
+//   color: ${(props) =>
+//     props.color === "color" ? colors.secondColorType : colors.defaultColorType};
+//   text-decoration: none;
+// `;
 
 export const ListItem = styled.div`
   display: flex;
@@ -98,21 +104,6 @@ export const ListItem = styled.div`
   font-size: 16px;
   font-family: ${(props) =>
     props.font === "font" ? fonts.thirdFontType : fonts.defaultFontType};
-
-  @media (max-width: 800px) {
-    width: 100%;
-    margin: 10px;
-    justify-content: center;
-  }
-
-  .sidebar__menuIcon {
-    font-size: 14px;
-    font-weight: 300;
-
-    @media (max-width: 800px) {
-      display: none;
-    }
-  }
 
   &:hover {
     background-color: ${(props) =>
@@ -136,5 +127,20 @@ export const ListItem = styled.div`
         width: 100%;
       }
     }
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    margin: 10px;
+    justify-content: center;
+  }
+`;
+
+export const MenuIcon = styled.div`
+  font-size: 14px;
+  font-weight: 300;
+
+  @media (max-width: 800px) {
+    display: none;
   }
 `;

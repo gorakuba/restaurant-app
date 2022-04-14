@@ -14,17 +14,13 @@ export const ProductStyle = styled.div`
         ? colors.fourthColorType
         : colors.defaultColorType};
 
-  @media (max-width: 600px) {
-    width: 95%;
-    margin-left: 12.5px;
-  }
-
   &:first-child {
     margin-top: 0px;
   }
 
-  h3 {
-    margin-left: 10px;
+  @media (max-width: 600px) {
+    width: 95%;
+    margin-left: 12.5px;
   }
 `;
 
@@ -32,6 +28,38 @@ export const HeaderLine = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const Name = styled.h3`
+  margin-left: 10px;
+`;
+
+export const AddSection = styled.div`
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin: 0 0 0 10px;
+`;
+
+export const Counter = styled.div`
+  font-size: 20px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const Plus = styled.div`
+  margin-right: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Price = styled.div`
@@ -46,32 +74,4 @@ export const Description = styled.div`
   color: ${(props) =>
     props.color === "color" ? colors.secondColorType : colors.defaultColorType};
   padding: 10px;
-`;
-
-export const AddSection = styled.div`
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  margin: 0 0 0 10px;
-
-  .product__clickedPlus {
-    margin-right: 20px;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-`;
-
-export const Counter = styled.div`
-  font-size: 20px;
-  width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 20px;
-
-  &:hover {
-    cursor: pointer;
-  }
 `;

@@ -1,5 +1,12 @@
 import React from "react";
-import { ListItem, OpenSidebar, SidebarStyle, Close } from "./Sidebar.styled";
+import {
+  ListItem,
+  OpenSidebar,
+  SidebarStyle,
+  Close,
+  OpenSidebarTitle,
+  CloseSidebarTitle,
+} from "./Sidebar.styled";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -18,13 +25,13 @@ function Sidebar() {
       {sidebar ? (
         <OpenSidebar color={color}>
           <MenuIcon onClick={dotsClick} />
-          <p>Open menu</p>
+          <OpenSidebarTitle>Open menu</OpenSidebarTitle>
         </OpenSidebar>
       ) : (
         <SidebarStyle color={color}>
           <Close>
             <CloseIcon className='sidebar__closeIcon' onClick={close} />
-            <p>Close menu</p>
+            <CloseSidebarTitle>Close menu</CloseSidebarTitle>
           </Close>
           {menuItems.map((item) => {
             switch (item.name) {
@@ -32,7 +39,7 @@ function Sidebar() {
                 return (
                   <Link
                     to='/specialsoftheday'
-                    className='sidebar__link'
+                    style={{ textDecoration: "none" }}
                     key={item.id}
                   >
                     <ListItem
@@ -50,7 +57,7 @@ function Sidebar() {
                 return (
                   <Link
                     to='/meatdishes'
-                    className='sidebar__link'
+                    style={{ textDecoration: "none" }}
                     key={item.id}
                   >
                     <ListItem
@@ -66,7 +73,11 @@ function Sidebar() {
                 );
               case "Dania wege":
                 return (
-                  <Link to='/vegdishes' className='sidebar__link' key={item.id}>
+                  <Link
+                    to='/vegdishes'
+                    style={{ textDecoration: "none" }}
+                    key={item.id}
+                  >
                     <ListItem
                       color={color}
                       font={font}
@@ -80,7 +91,11 @@ function Sidebar() {
                 );
               case "Zupy":
                 return (
-                  <Link to='/soups' className='sidebar__link' key={item.id}>
+                  <Link
+                    to='/soups'
+                    style={{ textDecoration: "none" }}
+                    key={item.id}
+                  >
                     <ListItem
                       color={color}
                       font={font}
@@ -94,7 +109,11 @@ function Sidebar() {
                 );
               case "Fast food":
                 return (
-                  <Link to='/fastfoods' className='sidebar__link' key={item.id}>
+                  <Link
+                    to='/fastfoods'
+                    style={{ textDecoration: "none" }}
+                    key={item.id}
+                  >
                     <ListItem
                       color={color}
                       font={font}
@@ -108,7 +127,11 @@ function Sidebar() {
                 );
               case "Pizza":
                 return (
-                  <Link to='/pizzas' className='sidebar__link' key={item.id}>
+                  <Link
+                    to='/pizzas'
+                    style={{ textDecoration: "none" }}
+                    key={item.id}
+                  >
                     <ListItem
                       color={color}
                       font={font}
@@ -122,7 +145,11 @@ function Sidebar() {
                 );
               case "Napoje":
                 return (
-                  <Link to='/drinks' className='sidebar__link' key={item.id}>
+                  <Link
+                    to='/drinks'
+                    style={{ textDecoration: "none" }}
+                    key={item.id}
+                  >
                     <ListItem
                       color={color}
                       font={font}
@@ -138,7 +165,7 @@ function Sidebar() {
                 return (
                   <Link
                     to='/deliveryandcontact'
-                    className='sidebar__link'
+                    style={{ textDecoration: "none" }}
                     key={item.id}
                   >
                     <ListItem
