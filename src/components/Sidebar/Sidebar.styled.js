@@ -9,6 +9,7 @@ export const OpenSidebar = styled.div`
   margin: 20px 0 20px 60px;
   display: flex;
   align-items: center;
+  overflow: auto;
   color: ${(props) =>
     props.color === "color" ? colors.secondColorType : colors.defaultColorType};
 
