@@ -22,7 +22,7 @@ export const BasketStyle = styled.div`
       props.font === "font" ? fonts.fourthFontType : colors.defaultColorType};
 
     @media (max-width: 600px) {
-      margin-left: 0;
+      margin: 30px 0 30px -20px;
       text-align: center;
     }
   }

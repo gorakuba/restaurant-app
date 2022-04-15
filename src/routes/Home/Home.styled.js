@@ -4,14 +4,17 @@ import { fonts } from "../../utilities/fonts";
 
 export const Container = styled.div`
   display: flex;
+  justify-content: center;
+  margin: 20px;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
-  margin-left: 20px;
 
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
-    margin-left: 5px;
+    width: auto;
+    text-align: justify;
+    margin-left: 35px;
   }
 `;
 

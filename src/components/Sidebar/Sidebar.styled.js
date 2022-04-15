@@ -6,7 +6,7 @@ export const OpenSidebar = styled.div`
   position: fixed;
   left: 0;
   top: auto;
-  margin: 20px 0 20px 50px;
+  margin: 20px 0 20px 55px;
   display: flex;
   align-items: center;
   color: ${(props) =>
@@ -18,9 +18,6 @@ export const OpenSidebar = styled.div`
 
   @media (max-width: 800px) {
     position: static;
-    display: flex;
-    flex-direction: column;
-    margin-left: 55px;
   }
 `;
 
@@ -45,7 +42,7 @@ export const SidebarStyle = styled.div`
   width: 20%;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
-  margin: 0 20px 20px 20px;
+  margin: 0 20px 20px 30px;
 
   @media (max-width: 800px) {
     position: static;
@@ -127,6 +124,12 @@ export const ListItem = styled.div`
     width: 100%;
     margin: 10px;
     justify-content: center;
+  }
+`;
+
+export const ArrowIcon = styled.div`
+  @media (max-width: 800px) {
+    display: none;
   }
 `;
 

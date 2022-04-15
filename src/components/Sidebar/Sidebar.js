@@ -6,6 +6,7 @@ import {
   Close,
   OpenSidebarTitle,
   CloseSidebarTitle,
+  ArrowIcon,
 } from "./Sidebar.styled";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -30,7 +31,7 @@ function Sidebar() {
       ) : (
         <SidebarStyle color={color}>
           <Close>
-            <CloseIcon className='sidebar__closeIcon' onClick={close} />
+            <CloseIcon onClick={close} />
             <CloseSidebarTitle>Close menu</CloseSidebarTitle>
           </Close>
           {menuItems.map((item) => {
@@ -49,7 +50,9 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon />
+                      <ArrowIcon>
+                        <ArrowForwardIosIcon />
+                      </ArrowIcon>
                     </ListItem>
                   </Link>
                 );
@@ -67,7 +70,9 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon />
+                      <ArrowIcon>
+                        <ArrowForwardIosIcon />
+                      </ArrowIcon>
                     </ListItem>
                   </Link>
                 );
@@ -85,7 +90,9 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon />
+                      <ArrowIcon>
+                        <ArrowForwardIosIcon />
+                      </ArrowIcon>
                     </ListItem>
                   </Link>
                 );
@@ -103,7 +110,9 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon />
+                      <ArrowIcon>
+                        <ArrowForwardIosIcon />
+                      </ArrowIcon>
                     </ListItem>
                   </Link>
                 );
@@ -121,7 +130,9 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon />
+                      <ArrowIcon>
+                        <ArrowForwardIosIcon />
+                      </ArrowIcon>
                     </ListItem>
                   </Link>
                 );
@@ -139,7 +150,9 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon />
+                      <ArrowIcon>
+                        <ArrowForwardIosIcon />
+                      </ArrowIcon>
                     </ListItem>
                   </Link>
                 );
@@ -157,7 +170,9 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon />
+                      <ArrowIcon>
+                        <ArrowForwardIosIcon />
+                      </ArrowIcon>
                     </ListItem>
                   </Link>
                 );
@@ -175,7 +190,9 @@ function Sidebar() {
                       onMouseOut={mouseOutHover}
                     >
                       {item.name}
-                      <ArrowForwardIosIcon />
+                      <ArrowIcon>
+                        <ArrowForwardIosIcon />
+                      </ArrowIcon>
                     </ListItem>
                   </Link>
                 );

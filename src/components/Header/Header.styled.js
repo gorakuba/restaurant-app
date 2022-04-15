@@ -17,7 +17,7 @@ export const HeaderStyle = styled.header`
   justify-content: space-between;
   z-index: 10;
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 100%;
   }
 `;
