@@ -6,7 +6,7 @@ export const OpenSidebar = styled.div`
   position: fixed;
   left: 0;
   top: auto;
-  margin: 20px 0 20px 55px;
+  margin: 20px 0 20px 60px;
   display: flex;
   align-items: center;
   color: ${(props) =>
@@ -29,10 +29,6 @@ export const OpenSidebarTitle = styled.p`
   &:hover {
     cursor: pointer;
   }
-
-  @media (max-width: 600px) {
-    display: none;
-  }
 `;
 
 export const SidebarStyle = styled.div`
@@ -51,6 +47,7 @@ export const SidebarStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 30px;
   }
 `;
 
@@ -128,7 +125,7 @@ export const ListItem = styled.div`
 `;
 
 export const ArrowIcon = styled.div`
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     display: none;
   }
 `;

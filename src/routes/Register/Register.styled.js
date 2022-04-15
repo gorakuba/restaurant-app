@@ -3,10 +3,6 @@ import { colors } from "../../utilities/colors";
 
 export const Error = styled.div`
   margin: 20px;
-
-  .register__link {
-    text-decoration: none;
-  }
 `;
 
 export const Back = styled.div`
@@ -16,8 +12,8 @@ export const Back = styled.div`
     props.color === "color" ? colors.secondColorType : colors.defaultColorType};
   font-size: 18px;
   font-weight: 700;
+`;
 
-  .register__icon {
-    margin-right: 10px;
-  }
+export const RegisterIcon = styled.div`
+  margin-right: 10px;
 `;

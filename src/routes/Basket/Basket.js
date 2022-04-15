@@ -1,6 +1,17 @@
 import React from "react";
 import Header from "../../components/Header/Header";
-import { BasketStyle, LeftSide, RightSide, Checkout } from "./Basket.styled";
+import {
+  ItemsPrice,
+  BasketStyle,
+  LeftSide,
+  RightSide,
+  Checkout,
+  ItemsCount,
+  BasketAddButton,
+  BasketDeleteButton,
+  CheckoutIcon,
+  EmptyBasket,
+} from "./Basket.styled";
 import BasketProduct from "../../components/BasketProduct/BasketProduct";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../../helper/reducer";
@@ -34,10 +45,8 @@ function Basket() {
               <CurrencyFormat
                 renderText={(value) => (
                   <>
-                    <p className='basket__p1'>
-                      Items in basket: {basket.length}
-                    </p>
-                    <p className='basket__p2'>Total price: {value} zł</p>
+                    <ItemsCount>Items in basket: {basket.length}</ItemsCount>
+                    <ItemsPrice>Total price: {value} zł</ItemsPrice>
                   </>
                 )}
                 decimalScale={2}
@@ -45,24 +54,24 @@ function Basket() {
                 displayType={"text"}
                 thousandSeparator={true}
               />
-              <Link to='/specialsoftheday' className='basket__link'>
-                <button className='basket__add'>
-                  Add more items to basket
-                </button>
+              <Link to='/specialsoftheday' style={{ textDecoration: "none" }}>
+                <BasketAddButton>Add more items to basket</BasketAddButton>
               </Link>
-              <button className='basket__delete' onClick={deleteItems}>
+              <BasketDeleteButton onClick={deleteItems}>
                 Delete items from basket
-              </button>
-              <Link to='/checkout' className='basket__link'>
+              </BasketDeleteButton>
+              <Link to='/checkout' style={{ textDecoration: "none" }}>
                 <Checkout color={color} onClick={checkout}>
                   Go to checkout page
-                  <ShoppingCartIcon className='basket__checkoutIcon' />
+                  <CheckoutIcon>
+                    <ShoppingCartIcon />
+                  </CheckoutIcon>
                 </Checkout>
               </Link>
             </RightSide>
           </>
         ) : (
-          <h1>Your shopping basket is empty!</h1>
+          <EmptyBasket>Your shopping basket is empty!</EmptyBasket>
         )}
       </BasketStyle>
     </>

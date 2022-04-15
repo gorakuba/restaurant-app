@@ -14,18 +14,6 @@ export const BasketStyle = styled.div`
     margin: 35px;
     width: 100%;
   }
-
-  h1 {
-    margin: 30px;
-    font-weight: 700;
-    font-family: ${(props) =>
-      props.font === "font" ? fonts.fourthFontType : colors.defaultColorType};
-
-    @media (max-width: 600px) {
-      margin: 30px 0 30px -20px;
-      text-align: center;
-    }
-  }
 `;
 
 export const LeftSide = styled.div`
@@ -58,62 +46,55 @@ export const RightSide = styled.div`
 
   @media (max-width: 600px) {
     width: 100%;
+    height: auto;
     margin: 20px 60px 60px 60px;
     box-shadow: none;
   }
 
-  .basket__p2 {
-    padding-bottom: 3vh;
-  }
-
-  .basket__link {
-    text-decoration: none;
-  }
-
-  .basket__add {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    font-weight: 700;
-
-    &:hover {
-      cursor: pointer;
-      background-color: ${(props) =>
-        props.color === "color"
-          ? colors.eighthColorType
-          : colors.defaultColorType};
-      transition: all ease-in-out;
-      transition-duration: 400ms;
-    }
-  }
-
-  .basket__delete {
-    display: block;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 17px;
-    border: none;
-    border-radius: 10px;
-    font-weight: 700;
-
-    &:hover {
-      cursor: pointer;
-      background-color: ${(props) =>
-        props.color === "color"
-          ? colors.seventhColorType
-          : colors.defaultColorType};
-      transition: all ease-in-out;
-      transition-duration: 400ms;
-    }
-  }
-
   @media (max-width: 1000px) {
     width: auto;
+    height: auto;
     margin-left: 30px;
+  }
+`;
+
+export const ItemsCount = styled.p`
+  padding-bottom: 1vh;
+`;
+
+export const ItemsPrice = styled.p`
+  padding-bottom: 4vh;
+`;
+
+export const BasketAddButton = styled.button`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${(props) =>
+      props.color === "color"
+        ? colors.eighthColorType
+        : colors.defaultColorType};
+    transition: all ease-in-out;
+    transition-duration: 400ms;
+  }
+`;
+
+export const BasketDeleteButton = styled(BasketAddButton)`
+  margin-top: 20px;
+  padding: 17px;
+
+  &:hover {
+    background-color: ${(props) =>
+      props.color === "color"
+        ? colors.seventhColorType
+        : colors.defaultColorType};
   }
 `;
 
@@ -128,10 +109,6 @@ export const Checkout = styled.button`
   align-items: center;
   padding: 14px;
 
-  .basket__checkoutIcon {
-    margin-left: 10px;
-  }
-
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
@@ -140,5 +117,21 @@ export const Checkout = styled.button`
         : colors.defaultColorType};
     transition: all ease-in-out;
     transition-duration: 400ms;
+  }
+`;
+
+export const CheckoutIcon = styled.div`
+  margin-left: 10px;
+`;
+
+export const EmptyBasket = styled.h1`
+  margin: 30px;
+  font-weight: 700;
+  font-family: ${(props) =>
+    props.font === "font" ? fonts.fourthFontType : colors.defaultColorType};
+
+  @media (max-width: 600px) {
+    margin: 30px 0 30px -20px;
+    text-align: center;
   }
 `;

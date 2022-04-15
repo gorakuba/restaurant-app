@@ -6,7 +6,7 @@ export const Container = styled.div`
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     flex-direction: column;
   }
 `;
@@ -16,13 +16,8 @@ export const Content = styled.div`
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 0 30px 30px 30px;
   width: 75%;
-  margin-left: 21vw;
+  margin-left: 25vw;
   z-index: 1;
-
-  h1 {
-    margin-left: 10px;
-    text-align: center;
-  }
 
   @media (max-width: 800px) {
     width: 97%;
@@ -30,6 +25,11 @@ export const Content = styled.div`
     flex-direction: column;
     margin-left: 0.5vw;
   }
+`;
+
+export const ResHeader = styled.h1`
+  margin-left: 10px;
+  text-align: center;
 `;
 
 export const TableSection = styled.div`
