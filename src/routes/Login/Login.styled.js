@@ -33,42 +33,6 @@ export const LoginStyle = styled.div`
     width: 70%;
     margin-bottom: 5vh;
   }
-
-  .login__loginInfo,
-  .login__passInfo {
-    margin: 0;
-    color: ${(props) =>
-      props.color === "color"
-        ? colors.seventhColorType
-        : colors.defaultColorType};
-    font-size: 12px;
-    font-style: italic;
-  }
-
-  .login__login,
-  .login__pass {
-    border-radius: 10px;
-    margin: 20px;
-    border: none;
-    width: 40%;
-    height: 30px;
-    padding: 10px;
-    text-align: center;
-
-    &:hover {
-      box-shadow: 0 10px 20px
-        ${(props) =>
-          props.color === "color"
-            ? colors.fourthColorType
-            : colors.defaultColorType};
-      transition: all ease-in-out;
-      transition-duration: 400ms;
-    }
-
-    @media (max-width: 1000px) {
-      width: 70%;
-    }
-  }
 `;
 
 export const LoginHeader = styled.div`
@@ -82,7 +46,6 @@ export const LoginHeader = styled.div`
       props.color === "color"
         ? colors.fourthColorType
         : colors.defaultColorType};
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,26 +55,67 @@ export const LoginHeader = styled.div`
   background-color: ${(props) =>
     props.color === "color" ? colors.ninethColorType : colors.defaultColorType};
   border-radius: 15px;
+`;
 
-  .login__linkT {
-    text-decoration: none;
-    color: ${(props) =>
-      props.color === "color"
-        ? colors.secondColorType
-        : colors.defaultColorType};
-    display: flex;
-    align-items: center;
+export const LoginIcon = styled.div`
+  width: 40px;
+  height: 40px;
+  padding: 25px 10px 10px 10px;
+`;
+
+export const LoginInput = styled.input`
+  border-radius: 10px;
+  margin: 20px;
+  border: none;
+  width: 40%;
+  height: 30px;
+  padding: 10px;
+  text-align: center;
+
+  &:hover {
+    box-shadow: 0 10px 20px
+      ${(props) =>
+        props.color === "color"
+          ? colors.fourthColorType
+          : colors.defaultColorType};
+    transition: all ease-in-out;
+    transition-duration: 400ms;
   }
 
-  .login__icon {
-    width: 40px;
-    height: 40px;
-
-    @media (max-width: 600px) {
-      flex-direction: column;
-      margin-left: 0;
-    }
+  @media (max-width: 1000px) {
+    width: 70%;
   }
+`;
+
+export const PassInput = styled(LoginInput)``;
+
+export const LoginInfo = styled.p`
+  margin: 0;
+  color: ${(props) =>
+    props.color === "color"
+      ? colors.seventhColorType
+      : colors.defaultColorType};
+  font-size: 12px;
+  font-style: italic;
+`;
+
+export const PassInfo = styled(LoginInfo)``;
+
+export const LoginRemember = styled.div`
+  width: 40%;
+  word-wrap: break-word;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+`;
+
+export const RememberInput = styled.input`
+  margin-right: 20px;
+`;
+
+export const RememberText = styled.p`
+  font-weight: 500;
 `;
 
 export const LoginButton = styled.button`
@@ -150,22 +154,5 @@ export const RegisterButton = styled.button`
         : colors.defaultColorType};
     transition: all ease-in-out;
     transition-duration: 400ms;
-  }
-`;
-
-export const LoginRemember = styled.div`
-  width: 40%;
-  word-wrap: break-word;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-
-  input {
-    margin-right: 20px;
-  }
-
-  p {
-    font-weight: 500;
   }
 `;

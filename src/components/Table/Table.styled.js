@@ -5,7 +5,7 @@ export const TableStyle = styled.div`
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   width: 100%;
-  height: 20vh;
+  height: auto;
   padding: 10px;
   margin: 50px 10px 10px 10px;
   border-radius: 10px;
@@ -79,7 +79,8 @@ export const TableBody = styled.div`
 export const Header = styled.h1`
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
 `;
 
 export const CancelReservation = styled.div`

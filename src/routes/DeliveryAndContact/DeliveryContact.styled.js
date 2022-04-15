@@ -17,15 +17,6 @@ export const Content = styled.div`
   padding: 0 30px 30px 10px;
   width: 75%;
 
-  h1 {
-    margin-left: 50px;
-
-    @media (max-width: 730px) {
-      margin-left: 20px;
-      text-align: center;
-    }
-  }
-
   @media (max-width: 600px) {
     width: 90%;
     display: flex;
@@ -35,78 +26,77 @@ export const Content = styled.div`
   }
 `;
 
-export const ContactForms = styled.div`
-  ul {
-    margin: 50px 50px 50px 40px;
-    list-style-type: circle;
+export const ContactHeader = styled.h1`
+  margin-left: 50px;
 
-    @media (max-width: 730px) {
-      margin-left: 20px;
-    }
+  @media (max-width: 730px) {
+    margin-left: 20px;
+    text-align: center;
+  }
+`;
 
-    a {
-      text-decoration: none;
-      color: ${(props) =>
-        props.color === "color"
-          ? colors.secondColorType
-          : colors.defaultColorType};
-      display: flex;
-      align-items: center;
+export const ContactList = styled.ul`
+  margin: 50px 50px 50px 40px;
+  list-style-type: circle;
 
-      .contact__link {
-        display: flex;
-        align-items: center;
-      }
+  @media (max-width: 730px) {
+    margin-left: 20px;
+  }
+`;
 
-      .contact__icon {
-        margin-left: 20px;
-        width: 40px;
-        height: 40px;
-      }
+export const ContactLink = styled.div`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: ${(props) =>
+    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
+`;
 
-      .contact__iconWup {
-        margin-left: 20px;
-        margin-top: 25px;
-        width: 40px;
-        height: 40px;
+export const ContactIcon = styled.div`
+  margin-left: 20px;
+  width: 25px;
+  height: 25px;
+`;
 
-        @media (max-width: 800px) {
-          margin-top: 0;
-        }
-      }
+export const ContactIconWup = styled(ContactIcon)`
+  margin-left: 20px;
+  margin-top: 40px;
+  width: 40px;
+  height: 40px;
 
-      .contact__contact {
-        p {
-          margin-top: -30px;
+  @media (max-width: 800px) {
+    margin-top: 0;
+  }
+`;
 
-          @media (max-width: 800px) {
-            margin-top: 0;
-          }
-        }
-      }
+export const ContactItems = styled.li`
+  line-height: 5;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 5px;
+  font-weight: 500;
 
-      li {
-        line-height: 5;
-        font-size: 20px;
-        font-weight: 400;
-        padding: 5px;
-        font-weight: 500;
+  &:hover {
+    cursor: pointer;
+    border: none;
+    color: ${(props) =>
+      props.color === "color"
+        ? colors.fourteenthColorType
+        : colors.defaultColorType};
+    transition: all ease-in-out;
+    transition-duration: 200ms;
+  }
 
-        &:hover {
-          cursor: pointer;
-          border: none;
-          font-weight: 600;
-          text-decoration: underline;
-          transition: all ease-in-out;
-          transition-duration: 600ms;
-          word-break: break-all;
-        }
+  @media (max-width: 730px) {
+    line-height: 1;
+  }
+`;
 
-        @media (max-width: 730px) {
-          line-height: 1;
-        }
-      }
-    }
+export const ContactInfoText = styled.p`
+  margin-top: -30px;
+
+  @media (max-width: 800px) {
+    margin-top: 0;
   }
 `;
 
@@ -154,24 +144,24 @@ export const Footer = styled.div`
     width: 80%;
     margin: 13px;
   }
+`;
 
-  h3 {
-    text-align: center;
-  }
+export const FooterHeader = styled.h3`
+  text-align: center;
+`;
 
-  button {
-    width: 150px;
-    padding: 10px;
-    margin: 50px 10px 50px 10px;
-    border-radius: 10px;
-    border: none;
+export const FooterButton = styled.button`
+  width: 150px;
+  padding: 10px;
+  margin: 50px 10px 50px 10px;
+  border-radius: 10px;
+  border: none;
 
-    &:hover {
-      background-color: ${(props) =>
-        props.color === "color"
-          ? colors.thirteenthColorType
-          : colors.defaultColorType};
-      cursor: pointer;
-    }
+  &:hover {
+    background-color: ${(props) =>
+      props.color === "color"
+        ? colors.thirteenthColorType
+        : colors.defaultColorType};
+    cursor: pointer;
   }
 `;

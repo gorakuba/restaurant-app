@@ -14,4 +14,5 @@ export const colors = {
   eleventhColorType: "rgb(93, 173, 226)",
   twelfthColorType: "rgb(65 105 225)",
   thirteenthColorType: "rgb(173 216 230)",
+  fourteenthColorType: "rgb(70 130 180)",
 };

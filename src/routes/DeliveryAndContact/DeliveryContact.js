@@ -1,10 +1,18 @@
 import React from "react";
 import {
-  ContactForms,
   Container,
   Content,
   Map,
   Footer,
+  ContactHeader,
+  ContactList,
+  ContactLink,
+  ContactItems,
+  ContactIcon,
+  ContactInfoText,
+  ContactIconWup,
+  FooterHeader,
+  FooterButton,
 } from "./DeliveryContact.styled";
 import Header from "../../components/Header/Header";
 import {
@@ -27,53 +35,73 @@ function DeliveryContact() {
       <Header />
       <Container color={color}>
         <Content color={color}>
-          <h1>Zapraszamy do kontaktu z naszą resturacją :</h1>
-          <ContactForms color={color}>
-            <ul>
-              <a
-                className='contact__link'
+          <ContactHeader>
+            Zapraszamy do kontaktu z naszą resturacją :
+          </ContactHeader>
+          <>
+            <ContactList>
+              <ContactLink
+                color={color}
                 target='blank'
                 href='https://restaurant-app-demo.netlify.app'
               >
-                <li>poprzez naszą stronę internetową</li>
-                <WebAssetOutlined className='contact__icon' />
-              </a>
+                <ContactItems color={color}>
+                  poprzez naszą stronę internetową
+                </ContactItems>
+                <ContactIcon>
+                  <WebAssetOutlined />
+                </ContactIcon>
+              </ContactLink>
 
-              <a
-                className='contact__link'
+              <ContactLink
+                color={color}
                 target='blank'
                 href='https://mail.google.com/'
               >
-                <li>poprzez naszą pocztę elektroniczną</li>
-                <Mail className='contact__icon' />
-              </a>
+                <ContactItems color={color}>
+                  poprzez naszą pocztę elektroniczną
+                </ContactItems>
 
-              <a
-                className='contact__link'
+                <ContactIcon>
+                  <Mail />
+                </ContactIcon>
+              </ContactLink>
+
+              <ContactLink
+                color={color}
                 target='blank'
                 href='https://www.whatsapp.com/'
               >
-                <div className='contact__contact'>
-                  <li>poprzez kontakt telefoniczny, SMS lub WhatApp'a</li>
-                  <p>
+                <div>
+                  <ContactItems color={color}>
+                    poprzez kontakt telefoniczny, SMS lub WhatApp'a
+                  </ContactItems>
+                  <ContactInfoText>
                     (nasz numer telefonu: 123-456-789 oraz nasz adres:
                     Andrychów, ul. Piękna 88)
-                  </p>
+                  </ContactInfoText>
                 </div>
 
-                <WhatsApp className='contact__iconWup' />
-              </a>
+                <ContactIconWup>
+                  <WhatsApp />
+                </ContactIconWup>
+              </ContactLink>
 
-              <a
-                className='contact__link'
+              <ContactLink
+                color={color}
                 target='blank'
                 href='https://www.facebook.com'
               >
-                <li>poprzez naszą stronę na FaceBook'u</li>
-                <Facebook className='contact__icon' />
-              </a>
-            </ul>
-          </ContactForms>
+                <ContactItems color={color}>
+                  poprzez naszą stronę na FaceBook'u
+                </ContactItems>
+
+                <ContactIcon>
+                  <Facebook />
+                </ContactIcon>
+              </ContactLink>
+            </ContactList>
+          </>
         </Content>
 
         <Map color={color}>
@@ -98,15 +126,15 @@ function DeliveryContact() {
       </Container>
 
       <Footer color={color}>
-        <h3>
+        <FooterHeader>
           Może chcesz zostać z nami na dłużej? Złóż swoje CV, a my rozpatrzymy
           twoją propozycję i postaramy się odpowiedzieć tak szybko, jak to tylko
           możliwe 😉
-        </h3>
+        </FooterHeader>
 
-        <button type='submit' onClick={send}>
+        <FooterButton color={color} type='submit' onClick={send}>
           Send e-mail to us
-        </button>
+        </FooterButton>
       </Footer>
     </>
   );

@@ -6,6 +6,13 @@ import {
   LoginStyle,
   LoginRemember,
   RegisterButton,
+  LoginIcon,
+  LoginInput,
+  LoginInfo,
+  PassInput,
+  PassInfo,
+  RememberInput,
+  RememberText,
 } from "./Login.styled";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import { Link } from "react-router-dom";
@@ -28,30 +35,38 @@ const Login = () => {
     <LoginLogicStyle>
       <LoginStyle color={color}>
         <LoginHeader color={color} font={font}>
-          <Link to='/' className='login__linkT'>
-            <RestaurantMenuIcon className='login__icon' />
+          <Link
+            to='/'
+            style={{
+              textDecoration: "none",
+              color: "rgb(0 0 0)",
+            }}
+          >
+            <LoginIcon>
+              <RestaurantMenuIcon />
+            </LoginIcon>
           </Link>
         </LoginHeader>
 
-        <input
+        <LoginInput
+          color={color}
           type='text'
-          className='login__login'
           placeholder='Enter your login'
           onChange={loginValid}
         />
-        {!loginForm ? <p className='login__loginInfo'>{loginInfo}</p> : null}
+        {!loginForm ? <LoginInfo color={color}>{loginInfo}</LoginInfo> : null}
 
-        <input
+        <PassInput
+          color={color}
           type='password'
-          className='login__pass'
           placeholder='Enter your password'
           onChange={passValid}
         />
-        {!loginForm ? <p className='login__passInfo'>{passInfo}</p> : null}
+        {!loginForm ? <PassInfo color={color}>{passInfo}</PassInfo> : null}
 
         <LoginRemember>
-          <input type='checkbox' />
-          <p>Zapamiętaj dane logowania</p>
+          <RememberInput type='checkbox' />
+          <RememberText>Zapamiętaj dane logowania</RememberText>
         </LoginRemember>
 
         {loginForm ? (
