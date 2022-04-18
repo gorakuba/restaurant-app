@@ -6,6 +6,7 @@ import Product from "../../components/Product/Product";
 import { dishes } from "../../routes/Soups/dishes";
 import { color } from "../../utilities/colors";
 import { font } from "../../utilities/fonts";
+import { motion } from "framer-motion";
 
 function Soup() {
   return (
@@ -13,15 +14,29 @@ function Soup() {
       <Header />
       <Container color={color}>
         <Sidebar />
+
         <Content color={color} font={font}>
-          <h1>Zupy:</h1>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.4 }}
+          >
+            <h1>Zupy:</h1>
+          </motion.div>
+
           {dishes.map((dish) => (
-            <Product
-              key={dish.id}
-              name={dish.name}
-              price={dish.price}
-              description={dish.description}
-            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, marginTop: 40 }}
+              transition={{ delay: 1.6, duration: 0.8 }}
+            >
+              <Product
+                key={dish.id}
+                name={dish.name}
+                price={dish.price}
+                description={dish.description}
+              />
+            </motion.div>
           ))}
         </Content>
       </Container>

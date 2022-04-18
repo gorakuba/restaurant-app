@@ -4,8 +4,9 @@ import { fonts } from "../../utilities/fonts";
 
 export const OpenSidebar = styled.div`
   position: fixed;
-  left: 0;
+  left: 14vw;
   top: auto;
+  width: 20%;
   margin: 20px 0 20px 60px;
   display: flex;
   align-items: center;
@@ -33,7 +34,7 @@ export const OpenSidebarTitle = styled.p`
 
 export const SidebarStyle = styled.div`
   position: fixed;
-  left: 0;
+  left: 14vw;
   top: auto;
   width: 20%;
   background-color: ${(props) =>

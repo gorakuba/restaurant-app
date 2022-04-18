@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 import LoginLogic from "./LoginLogic";
 import { color } from "../../utilities/colors";
 import { font } from "../../utilities/fonts";
+import { motion } from "framer-motion";
 
 const Login = () => {
   const {
@@ -32,60 +33,64 @@ const Login = () => {
   } = LoginLogic();
 
   return (
-    <LoginLogicStyle>
-      <LoginStyle color={color}>
-        <LoginHeader color={color} font={font}>
-          <Link
-            to='/'
-            style={{
-              textDecoration: "none",
-              color: "rgb(0 0 0)",
-            }}
-          >
-            <LoginIcon>
-              <RestaurantMenuIcon />
-            </LoginIcon>
-          </Link>
-        </LoginHeader>
+    <motion.div>
+      <LoginLogicStyle>
+        <LoginStyle color={color}>
+          <motion.div>
+            <LoginHeader color={color} font={font}>
+              <Link
+                to='/'
+                style={{
+                  textDecoration: "none",
+                  color: "rgb(0 0 0)",
+                }}
+              >
+                <LoginIcon>
+                  <RestaurantMenuIcon />
+                </LoginIcon>
+              </Link>
+            </LoginHeader>
+          </motion.div>
 
-        <LoginInput
-          color={color}
-          type='text'
-          placeholder='Enter your login'
-          onChange={loginValid}
-        />
-        {!loginForm ? <LoginInfo color={color}>{loginInfo}</LoginInfo> : null}
+          <LoginInput
+            color={color}
+            type='text'
+            placeholder='Enter your login'
+            onChange={loginValid}
+          />
+          {!loginForm ? <LoginInfo color={color}>{loginInfo}</LoginInfo> : null}
 
-        <PassInput
-          color={color}
-          type='password'
-          placeholder='Enter your password'
-          onChange={passValid}
-        />
-        {!loginForm ? <PassInfo color={color}>{passInfo}</PassInfo> : null}
+          <PassInput
+            color={color}
+            type='password'
+            placeholder='Enter your password'
+            onChange={passValid}
+          />
+          {!loginForm ? <PassInfo color={color}>{passInfo}</PassInfo> : null}
 
-        <LoginRemember>
-          <RememberInput type='checkbox' />
-          <RememberText>Zapamiętaj dane logowania</RememberText>
-        </LoginRemember>
+          <LoginRemember>
+            <RememberInput type='checkbox' />
+            <RememberText>Zapamiętaj dane logowania</RememberText>
+          </LoginRemember>
 
-        {loginForm ? (
-          <Link to='/'>
-            <LoginButton color={color} onClick={loginFunc}>
-              Login
+          {loginForm ? (
+            <Link to='/'>
+              <LoginButton color={color} onClick={loginFunc}>
+                Login
+              </LoginButton>
+            </Link>
+          ) : (
+            <LoginButton color={color} onClick={validFunc}>
+              Sprawdź
             </LoginButton>
-          </Link>
-        ) : (
-          <LoginButton color={color} onClick={validFunc}>
-            Sprawdź
-          </LoginButton>
-        )}
+          )}
 
-        <Link to='/register'>
-          <RegisterButton color={color}>Register</RegisterButton>
-        </Link>
-      </LoginStyle>
-    </LoginLogicStyle>
+          <Link to='/register'>
+            <RegisterButton color={color}>Register</RegisterButton>
+          </Link>
+        </LoginStyle>
+      </LoginLogicStyle>
+    </motion.div>
   );
 };
 

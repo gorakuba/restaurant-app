@@ -3,6 +3,7 @@ import { colors } from "../../utilities/colors";
 import { fonts } from "../../utilities/fonts";
 
 export const Container = styled.div`
+  width: 50vw;
   margin: 0 auto;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
@@ -11,10 +12,15 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
   }
+
+  @media (min-width: 1500px) {
+    width: 70vw;
+  }
 `;
 
 export const Content = styled.div`
   margin: 20px;
+  text-align: justify;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 0 30px 30px 30px;

@@ -31,7 +31,7 @@ export const HeaderLine = styled.div`
 `;
 
 export const Name = styled.h3`
-  margin-left: 40px;
+  margin-left: 10px;
 `;
 
 export const AddSection = styled.div`

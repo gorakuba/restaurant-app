@@ -6,6 +6,7 @@ import Product from "../../components/Product/Product";
 import { dishes } from "../../routes/SpecialsOfTheDay/dishes";
 import { color } from "../../utilities/colors";
 import { font } from "../../utilities/fonts";
+import { motion } from "framer-motion";
 
 const Special = () => {
   return (
@@ -13,16 +14,30 @@ const Special = () => {
       <Header />
       <Container color={color}>
         <Sidebar />
+
         <Content color={color} font={font}>
-          <h1>Dania dnia:</h1>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.4 }}
+          >
+            <h1>Dania dnia:</h1>
+          </motion.div>
+
           {dishes.map((dish) => (
-            <Product
-              key={dishes.indexOf(dish)}
-              id={dish.id}
-              name={dish.name}
-              price={dish.price}
-              description={dish.description}
-            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, marginTop: 40 }}
+              transition={{ delay: 1.6, duration: 0.8 }}
+            >
+              <Product
+                key={dishes.indexOf(dish)}
+                id={dish.id}
+                name={dish.name}
+                price={dish.price}
+                description={dish.description}
+              />
+            </motion.div>
           ))}
         </Content>
       </Container>

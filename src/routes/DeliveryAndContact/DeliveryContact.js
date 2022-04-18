@@ -26,6 +26,7 @@ import "leaflet/dist/leaflet.css";
 import DeliveryContactLogic from "./DeliveryContactLogic";
 import { color } from "../../utilities/colors";
 import { colors } from "../../utilities/colors";
+import { motion } from "framer-motion";
 
 function DeliveryContact() {
   const { position, markerPosition, zoom, send } = DeliveryContactLogic();
@@ -34,108 +35,114 @@ function DeliveryContact() {
     <>
       <Header />
       <Container color={color}>
-        <Content color={color}>
-          <ContactHeader>
-            Zapraszamy do kontaktu z naszą resturacją :
-          </ContactHeader>
-          <>
-            <ContactList>
-              <ContactLink
-                color={color}
-                target='blank'
-                href='https://restaurant-app-demo.netlify.app'
-              >
-                <ContactItems color={color}>
-                  poprzez naszą stronę internetową
-                </ContactItems>
-                <ContactIcon>
-                  <WebAssetOutlined />
-                </ContactIcon>
-              </ContactLink>
-
-              <ContactLink
-                color={color}
-                target='blank'
-                href='https://mail.google.com/'
-              >
-                <ContactItems color={color}>
-                  poprzez naszą pocztę elektroniczną
-                </ContactItems>
-
-                <ContactIcon>
-                  <Mail />
-                </ContactIcon>
-              </ContactLink>
-
-              <ContactLink
-                color={color}
-                target='blank'
-                href='https://www.whatsapp.com/'
-              >
-                <div>
+        <motion.div>
+          <Content color={color}>
+            <ContactHeader>
+              Zapraszamy do kontaktu z naszą resturacją :
+            </ContactHeader>
+            <>
+              <ContactList>
+                <ContactLink
+                  color={color}
+                  target='blank'
+                  href='https://restaurant-app-demo.netlify.app'
+                >
                   <ContactItems color={color}>
-                    poprzez kontakt telefoniczny, SMS lub WhatApp'a
+                    poprzez naszą stronę internetową
                   </ContactItems>
-                  <ContactInfoText>
-                    (nasz numer telefonu: 123-456-789 oraz nasz adres:
-                    Andrychów, ul. Piękna 88)
-                  </ContactInfoText>
-                </div>
+                  <ContactIcon>
+                    <WebAssetOutlined />
+                  </ContactIcon>
+                </ContactLink>
 
-                <ContactIconWup>
-                  <WhatsApp />
-                </ContactIconWup>
-              </ContactLink>
+                <ContactLink
+                  color={color}
+                  target='blank'
+                  href='https://mail.google.com/'
+                >
+                  <ContactItems color={color}>
+                    poprzez naszą pocztę elektroniczną
+                  </ContactItems>
 
-              <ContactLink
-                color={color}
-                target='blank'
-                href='https://www.facebook.com'
+                  <ContactIcon>
+                    <Mail />
+                  </ContactIcon>
+                </ContactLink>
+
+                <ContactLink
+                  color={color}
+                  target='blank'
+                  href='https://www.whatsapp.com/'
+                >
+                  <div>
+                    <ContactItems color={color}>
+                      poprzez kontakt telefoniczny, SMS lub WhatApp'a
+                    </ContactItems>
+                    <ContactInfoText>
+                      (nasz numer telefonu: 123-456-789 oraz nasz adres:
+                      Andrychów, ul. Piękna 88)
+                    </ContactInfoText>
+                  </div>
+
+                  <ContactIconWup>
+                    <WhatsApp />
+                  </ContactIconWup>
+                </ContactLink>
+
+                <ContactLink
+                  color={color}
+                  target='blank'
+                  href='https://www.facebook.com'
+                >
+                  <ContactItems color={color}>
+                    poprzez naszą stronę na FaceBook'u
+                  </ContactItems>
+
+                  <ContactIcon>
+                    <Facebook />
+                  </ContactIcon>
+                </ContactLink>
+              </ContactList>
+            </>
+          </Content>
+        </motion.div>
+
+        <motion.div>
+          <Map color={color}>
+            <MapContainer center={position} zoom={zoom}>
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+              />
+
+              <Circle
+                center={markerPosition}
+                color={colors.twelfthColorType}
+                radius={700}
               >
-                <ContactItems color={color}>
-                  poprzez naszą stronę na FaceBook'u
-                </ContactItems>
-
-                <ContactIcon>
-                  <Facebook />
-                </ContactIcon>
-              </ContactLink>
-            </ContactList>
-          </>
-        </Content>
-
-        <Map color={color}>
-          <MapContainer center={position} zoom={zoom}>
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-            />
-
-            <Circle
-              center={markerPosition}
-              color={colors.twelfthColorType}
-              radius={700}
-            >
-              <Popup>
-                <h3>Enjoy your meal!</h3>
-                <p>Location: Andrychów</p>
-              </Popup>
-            </Circle>
-          </MapContainer>
-        </Map>
+                <Popup>
+                  <h3>Enjoy your meal!</h3>
+                  <p>Location: Andrychów</p>
+                </Popup>
+              </Circle>
+            </MapContainer>
+          </Map>
+        </motion.div>
       </Container>
 
-      <Footer color={color}>
-        <FooterHeader>
-          Może chcesz zostać z nami na dłużej? Złóż swoje CV, a my rozpatrzymy
-          twoją propozycję i postaramy się odpowiedzieć tak szybko, jak to tylko
-          możliwe 😉
-        </FooterHeader>
+      <motion.div>
+        <Footer color={color}>
+          <FooterHeader>
+            Może chcesz zostać z nami na dłużej? Złóż swoje CV, a my rozpatrzymy
+            twoją propozycję i postaramy się odpowiedzieć tak szybko, jak to
+            tylko możliwe 😉
+          </FooterHeader>
 
-        <FooterButton color={color} type='submit' onClick={send}>
-          Send e-mail to us
-        </FooterButton>
-      </Footer>
+          <FooterButton color={color} type='submit' onClick={send}>
+            Send e-mail to us
+          </FooterButton>
+        </Footer>
+      </motion.div>
     </>
   );
 }

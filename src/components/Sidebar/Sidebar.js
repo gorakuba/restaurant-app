@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ListItem,
   OpenSidebar,
@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import SidebarLogic from "./SidebarLogic";
 import { color } from "../../utilities/colors";
 import { font } from "../../utilities/fonts";
+import { motion } from "framer-motion";
 
 function Sidebar() {
   const { mouseHover, mouseOutHover, dotsClick, sidebar, close } =
@@ -24,177 +25,238 @@ function Sidebar() {
   return (
     <>
       {sidebar ? (
-        <OpenSidebar color={color}>
-          <MenuIcon onClick={dotsClick} />
-          <OpenSidebarTitle>Open menu</OpenSidebarTitle>
-        </OpenSidebar>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1 }}
+        >
+          <OpenSidebar color={color} onClick={dotsClick}>
+            <MenuIcon />
+            <OpenSidebarTitle>Open menu</OpenSidebarTitle>
+          </OpenSidebar>
+        </motion.div>
       ) : (
         <SidebarStyle color={color}>
-          <Close>
-            <CloseIcon onClick={close} />
-            <CloseSidebarTitle>Close menu</CloseSidebarTitle>
-          </Close>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1 }}
+          >
+            <Close onClick={close}>
+              <CloseIcon />
+              <CloseSidebarTitle>Close menu</CloseSidebarTitle>
+            </Close>
+          </motion.div>
+
           {menuItems.map((item) => {
             switch (item.name) {
               case "Dania dnia":
                 return (
-                  <Link
-                    to='/specialsoftheday'
-                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
-                    key={item.id}
+                  <motion.div
+                    initial={{ opacity: 0, marginLeft: -200 }}
+                    animate={{ opacity: 1, marginLeft: 0 }}
+                    transition={{ type: "spring", stiffness: 50, delay: 0.1 }}
                   >
-                    <ListItem
-                      color={color}
-                      font={font}
-                      onMouseOver={mouseHover}
-                      onMouseOut={mouseOutHover}
+                    <Link
+                      to='/specialsoftheday'
+                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      key={item.id}
                     >
-                      {item.name}
-                      <ArrowIcon>
-                        <ArrowForwardIosIcon />
-                      </ArrowIcon>
-                    </ListItem>
-                  </Link>
+                      <ListItem
+                        color={color}
+                        font={font}
+                        onMouseOver={mouseHover}
+                        onMouseOut={mouseOutHover}
+                      >
+                        {item.name}
+                        <ArrowIcon>
+                          <ArrowForwardIosIcon />
+                        </ArrowIcon>
+                      </ListItem>
+                    </Link>
+                  </motion.div>
                 );
               case "Dania mięsne":
                 return (
-                  <Link
-                    to='/meatdishes'
-                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
-                    key={item.id}
+                  <motion.div
+                    initial={{ opacity: 0, marginLeft: -200 }}
+                    animate={{ opacity: 1, marginLeft: 0 }}
+                    transition={{ type: "spring", stiffness: 50, delay: 0.2 }}
                   >
-                    <ListItem
-                      color={color}
-                      font={font}
-                      onMouseOver={mouseHover}
-                      onMouseOut={mouseOutHover}
+                    <Link
+                      to='/meatdishes'
+                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      key={item.id}
                     >
-                      {item.name}
-                      <ArrowIcon>
-                        <ArrowForwardIosIcon />
-                      </ArrowIcon>
-                    </ListItem>
-                  </Link>
+                      <ListItem
+                        color={color}
+                        font={font}
+                        onMouseOver={mouseHover}
+                        onMouseOut={mouseOutHover}
+                      >
+                        {item.name}
+                        <ArrowIcon>
+                          <ArrowForwardIosIcon />
+                        </ArrowIcon>
+                      </ListItem>
+                    </Link>
+                  </motion.div>
                 );
               case "Dania wege":
                 return (
-                  <Link
-                    to='/vegdishes'
-                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
-                    key={item.id}
+                  <motion.div
+                    initial={{ opacity: 0, marginLeft: -200 }}
+                    animate={{ opacity: 1, marginLeft: 0 }}
+                    transition={{ type: "spring", stiffness: 50, delay: 0.3 }}
                   >
-                    <ListItem
-                      color={color}
-                      font={font}
-                      onMouseOver={mouseHover}
-                      onMouseOut={mouseOutHover}
+                    <Link
+                      to='/vegdishes'
+                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      key={item.id}
                     >
-                      {item.name}
-                      <ArrowIcon>
-                        <ArrowForwardIosIcon />
-                      </ArrowIcon>
-                    </ListItem>
-                  </Link>
+                      <ListItem
+                        color={color}
+                        font={font}
+                        onMouseOver={mouseHover}
+                        onMouseOut={mouseOutHover}
+                      >
+                        {item.name}
+                        <ArrowIcon>
+                          <ArrowForwardIosIcon />
+                        </ArrowIcon>
+                      </ListItem>
+                    </Link>
+                  </motion.div>
                 );
               case "Zupy":
                 return (
-                  <Link
-                    to='/soups'
-                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
-                    key={item.id}
+                  <motion.div
+                    initial={{ opacity: 0, marginLeft: -200 }}
+                    animate={{ opacity: 1, marginLeft: 0 }}
+                    transition={{ type: "spring", stiffness: 50, delay: 0.4 }}
                   >
-                    <ListItem
-                      color={color}
-                      font={font}
-                      onMouseOver={mouseHover}
-                      onMouseOut={mouseOutHover}
+                    <Link
+                      to='/soups'
+                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      key={item.id}
                     >
-                      {item.name}
-                      <ArrowIcon>
-                        <ArrowForwardIosIcon />
-                      </ArrowIcon>
-                    </ListItem>
-                  </Link>
+                      <ListItem
+                        color={color}
+                        font={font}
+                        onMouseOver={mouseHover}
+                        onMouseOut={mouseOutHover}
+                      >
+                        {item.name}
+                        <ArrowIcon>
+                          <ArrowForwardIosIcon />
+                        </ArrowIcon>
+                      </ListItem>
+                    </Link>
+                  </motion.div>
                 );
               case "Fast food":
                 return (
-                  <Link
-                    to='/fastfoods'
-                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
-                    key={item.id}
+                  <motion.div
+                    initial={{ opacity: 0, marginLeft: -200 }}
+                    animate={{ opacity: 1, marginLeft: 0 }}
+                    transition={{ type: "spring", stiffness: 50, delay: 0.5 }}
                   >
-                    <ListItem
-                      color={color}
-                      font={font}
-                      onMouseOver={mouseHover}
-                      onMouseOut={mouseOutHover}
+                    <Link
+                      to='/fastfoods'
+                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      key={item.id}
                     >
-                      {item.name}
-                      <ArrowIcon>
-                        <ArrowForwardIosIcon />
-                      </ArrowIcon>
-                    </ListItem>
-                  </Link>
+                      <ListItem
+                        color={color}
+                        font={font}
+                        onMouseOver={mouseHover}
+                        onMouseOut={mouseOutHover}
+                      >
+                        {item.name}
+                        <ArrowIcon>
+                          <ArrowForwardIosIcon />
+                        </ArrowIcon>
+                      </ListItem>
+                    </Link>
+                  </motion.div>
                 );
               case "Pizza":
                 return (
-                  <Link
-                    to='/pizzas'
-                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
-                    key={item.id}
+                  <motion.div
+                    initial={{ opacity: 0, marginLeft: -200 }}
+                    animate={{ opacity: 1, marginLeft: 0 }}
+                    transition={{ type: "spring", stiffness: 50, delay: 0.6 }}
                   >
-                    <ListItem
-                      color={color}
-                      font={font}
-                      onMouseOver={mouseHover}
-                      onMouseOut={mouseOutHover}
+                    <Link
+                      to='/pizzas'
+                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      key={item.id}
                     >
-                      {item.name}
-                      <ArrowIcon>
-                        <ArrowForwardIosIcon />
-                      </ArrowIcon>
-                    </ListItem>
-                  </Link>
+                      <ListItem
+                        color={color}
+                        font={font}
+                        onMouseOver={mouseHover}
+                        onMouseOut={mouseOutHover}
+                      >
+                        {item.name}
+                        <ArrowIcon>
+                          <ArrowForwardIosIcon />
+                        </ArrowIcon>
+                      </ListItem>
+                    </Link>
+                  </motion.div>
                 );
               case "Napoje":
                 return (
-                  <Link
-                    to='/drinks'
-                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
-                    key={item.id}
+                  <motion.div
+                    initial={{ opacity: 0, marginLeft: -200 }}
+                    animate={{ opacity: 1, marginLeft: 0 }}
+                    transition={{ type: "spring", stiffness: 50, delay: 0.7 }}
                   >
-                    <ListItem
-                      color={color}
-                      font={font}
-                      onMouseOver={mouseHover}
-                      onMouseOut={mouseOutHover}
+                    <Link
+                      to='/drinks'
+                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      key={item.id}
                     >
-                      {item.name}
-                      <ArrowIcon>
-                        <ArrowForwardIosIcon />
-                      </ArrowIcon>
-                    </ListItem>
-                  </Link>
+                      <ListItem
+                        color={color}
+                        font={font}
+                        onMouseOver={mouseHover}
+                        onMouseOut={mouseOutHover}
+                      >
+                        {item.name}
+                        <ArrowIcon>
+                          <ArrowForwardIosIcon />
+                        </ArrowIcon>
+                      </ListItem>
+                    </Link>
+                  </motion.div>
                 );
               case "Dowóz i kontakt":
                 return (
-                  <Link
-                    to='/deliveryandcontact'
-                    style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
-                    key={item.id}
+                  <motion.div
+                    initial={{ opacity: 0, marginLeft: -200 }}
+                    animate={{ opacity: 1, marginLeft: 0 }}
+                    transition={{ type: "spring", stiffness: 50, delay: 0.8 }}
                   >
-                    <ListItem
-                      color={color}
-                      font={font}
-                      onMouseOver={mouseHover}
-                      onMouseOut={mouseOutHover}
+                    <Link
+                      to='/deliveryandcontact'
+                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      key={item.id}
                     >
-                      {item.name}
-                      <ArrowIcon>
-                        <ArrowForwardIosIcon />
-                      </ArrowIcon>
-                    </ListItem>
-                  </Link>
+                      <ListItem
+                        color={color}
+                        font={font}
+                        onMouseOver={mouseHover}
+                        onMouseOut={mouseOutHover}
+                      >
+                        {item.name}
+                        <ArrowIcon>
+                          <ArrowForwardIosIcon />
+                        </ArrowIcon>
+                      </ListItem>
+                    </Link>
+                  </motion.div>
                 );
               default:
                 return null;

@@ -17,7 +17,6 @@ export const BasketStyle = styled.div`
 `;
 
 export const LeftSide = styled.div`
-  width: 70%;
   margin-top: 30px;
 
   @media (max-width: 600px) {
@@ -30,9 +29,9 @@ export const LeftSide = styled.div`
 `;
 
 export const RightSide = styled.div`
-  width: 28.5%;
   height: 30vh;
-  margin-left: 30px;
+  width: 25vw;
+  margin-left: 10px;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 10px;

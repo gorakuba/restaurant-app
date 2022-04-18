@@ -20,6 +20,7 @@ import BasketLogic from "./BasketLogic";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { color } from "../../utilities/colors";
 import { font } from "../../utilities/fonts";
+import { motion } from "framer-motion";
 
 function Basket() {
   const { basket, deleteItems, checkout } = BasketLogic();
@@ -30,48 +31,55 @@ function Basket() {
       <BasketStyle color={color} font={font}>
         {basket.length > 0 ? (
           <>
-            <LeftSide>
-              {basket.map((product) => (
-                <BasketProduct
-                  key={basket.indexOf(product)}
-                  id={product.id}
-                  name={product.name}
-                  description={product.description}
-                  price={product.price}
+            <motion.div>
+              <LeftSide>
+                {basket.map((product) => (
+                  <BasketProduct
+                    key={basket.indexOf(product)}
+                    id={product.id}
+                    name={product.name}
+                    description={product.description}
+                    price={product.price}
+                  />
+                ))}
+              </LeftSide>
+            </motion.div>
+
+            <motion.div>
+              <RightSide color={color}>
+                <CurrencyFormat
+                  renderText={(value) => (
+                    <>
+                      <ItemsCount>Items in basket: {basket.length}</ItemsCount>
+                      <ItemsPrice>Total price: {value} zł</ItemsPrice>
+                    </>
+                  )}
+                  decimalScale={2}
+                  value={getBasketTotal(basket)}
+                  displayType={"text"}
+                  thousandSeparator={true}
                 />
-              ))}
-            </LeftSide>
-            <RightSide color={color}>
-              <CurrencyFormat
-                renderText={(value) => (
-                  <>
-                    <ItemsCount>Items in basket: {basket.length}</ItemsCount>
-                    <ItemsPrice>Total price: {value} zł</ItemsPrice>
-                  </>
-                )}
-                decimalScale={2}
-                value={getBasketTotal(basket)}
-                displayType={"text"}
-                thousandSeparator={true}
-              />
-              <Link to='/specialsoftheday' style={{ textDecoration: "none" }}>
-                <BasketAddButton>Add more items to basket</BasketAddButton>
-              </Link>
-              <BasketDeleteButton onClick={deleteItems}>
-                Delete items from basket
-              </BasketDeleteButton>
-              <Link to='/checkout' style={{ textDecoration: "none" }}>
-                <Checkout color={color} onClick={checkout}>
-                  Go to checkout page
-                  <CheckoutIcon>
-                    <ShoppingCartIcon />
-                  </CheckoutIcon>
-                </Checkout>
-              </Link>
-            </RightSide>
+                <Link to='/specialsoftheday' style={{ textDecoration: "none" }}>
+                  <BasketAddButton>Add more items to basket</BasketAddButton>
+                </Link>
+                <BasketDeleteButton onClick={deleteItems}>
+                  Delete items from basket
+                </BasketDeleteButton>
+                <Link to='/checkout' style={{ textDecoration: "none" }}>
+                  <Checkout color={color} onClick={checkout}>
+                    Go to checkout page
+                    <CheckoutIcon>
+                      <ShoppingCartIcon />
+                    </CheckoutIcon>
+                  </Checkout>
+                </Link>
+              </RightSide>
+            </motion.div>
           </>
         ) : (
-          <EmptyBasket>Your shopping basket is empty!</EmptyBasket>
+          <motion.div>
+            <EmptyBasket>Your shopping basket is empty!</EmptyBasket>
+          </motion.div>
         )}
       </BasketStyle>
     </>

@@ -3,6 +3,7 @@ import { colors } from "../../utilities/colors";
 
 export const Container = styled.div`
   display: flex;
+  align-items: center;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
 
@@ -14,7 +15,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
-  padding: 0 30px 30px 10px;
+  padding: 0 30px 0px 10px;
   width: 75%;
 
   @media (max-width: 600px) {
@@ -70,7 +71,7 @@ export const ContactIconWup = styled(ContactIcon)`
 `;
 
 export const ContactItems = styled.li`
-  line-height: 5;
+  line-height: 4;
   font-size: 20px;
   font-weight: 400;
   padding: 5px;
@@ -101,13 +102,13 @@ export const ContactInfoText = styled.p`
 `;
 
 export const Map = styled.div`
-  height: 500px;
-  width: 150vh;
+  height: 550px;
+  width: 120vh;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 1rem;
   border-radius: 20px;
-  margin: 30px 60px 50px 0;
+  margin: 30px 60px 80px 0;
   box-shadow: 0 10px 20px
     ${(props) =>
       props.color === "color"

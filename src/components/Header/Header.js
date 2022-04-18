@@ -29,6 +29,7 @@ function Header() {
     <motion.div
       initial={{ opacity: 0, marginTop: -200 }}
       animate={{ opacity: 1, marginTop: 0 }}
+      transition={{ delay: 0.2 }}
     >
       <HeaderStyle color={color}>
         <HeaderLeft color={color}>
