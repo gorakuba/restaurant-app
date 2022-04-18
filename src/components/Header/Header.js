@@ -19,58 +19,64 @@ import ModalLogic from "../Modal/ModalLogic";
 import Modal from "../Modal/Modal";
 import { color } from "../../utilities/colors";
 import { font } from "../../utilities/fonts";
+import { motion } from "framer-motion";
 
 function Header() {
   const [{ basket }] = useStateValue();
   const { openModal, showModal, setShowModal } = ModalLogic();
 
   return (
-    <HeaderStyle color={color}>
-      <HeaderLeft color={color}>
-        <Link to='/' style={{ textDecoration: "none" }}>
-          <HomeLink color={color}>
-            <RestaurantMenuIcon />
-            <HeaderLeftTitle font={font}>Enjoy your meal!</HeaderLeftTitle>
-          </HomeLink>
-        </Link>
-      </HeaderLeft>
+    <motion.div
+      initial={{ opacity: 0, marginTop: -200 }}
+      animate={{ opacity: 1, marginTop: 0 }}
+    >
+      <HeaderStyle color={color}>
+        <HeaderLeft color={color}>
+          <Link to='/' style={{ textDecoration: "none" }}>
+            <HomeLink color={color}>
+              <RestaurantMenuIcon />
+              <HeaderLeftTitle font={font}>Enjoy your meal!</HeaderLeftTitle>
+            </HomeLink>
+          </Link>
+        </HeaderLeft>
 
-      <HeaderRight color={color}>
-        <HeaderRightIcon color={color}>
-          <PersonIcon onClick={openModal} />
-        </HeaderRightIcon>
-
-        {showModal ? (
-          <Modal
-            showModal={showModal}
-            setShowModal={setShowModal}
-            setCloseModal={() => setShowModal(false)}
-          />
-        ) : null}
-
-        <Link to='/basket'>
+        <HeaderRight color={color}>
           <HeaderRightIcon color={color}>
-            <ShoppingBasketIcon />
+            <PersonIcon onClick={openModal} />
           </HeaderRightIcon>
-        </Link>
 
-        {basket.length >= 1 ? (
-          <BasketCounter font>{basket.length}</BasketCounter>
-        ) : null}
+          {showModal ? (
+            <Modal
+              showModal={showModal}
+              setShowModal={setShowModal}
+              setCloseModal={() => setShowModal(false)}
+            />
+          ) : null}
 
-        <Link to='/reservation'>
-          <HeaderRightIcon color={color}>
-            <BookmarkAddIcon />
-          </HeaderRightIcon>
-        </Link>
+          <Link to='/basket'>
+            <HeaderRightIcon color={color}>
+              <ShoppingBasketIcon />
+            </HeaderRightIcon>
+          </Link>
 
-        <Link to='/login'>
-          <HeaderRightIcon color={color}>
-            <InputIcon />
-          </HeaderRightIcon>
-        </Link>
-      </HeaderRight>
-    </HeaderStyle>
+          {basket.length >= 1 ? (
+            <BasketCounter font>{basket.length}</BasketCounter>
+          ) : null}
+
+          <Link to='/reservation'>
+            <HeaderRightIcon color={color}>
+              <BookmarkAddIcon />
+            </HeaderRightIcon>
+          </Link>
+
+          <Link to='/login'>
+            <HeaderRightIcon color={color}>
+              <InputIcon />
+            </HeaderRightIcon>
+          </Link>
+        </HeaderRight>
+      </HeaderStyle>
+    </motion.div>
   );
 }
 

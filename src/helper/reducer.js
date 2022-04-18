@@ -22,7 +22,7 @@ const reducer = (state, action) => {
       if (index >= 0) {
         newBasket.splice(index, 1);
       } else {
-        console.warn(`Can not remove it! Item is not in a basket!`);
+        console.warn("Can not remove it! Item is not in a basket!");
       }
 
       return {

@@ -14,6 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  margin: 20px;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 0 30px 30px 30px;
