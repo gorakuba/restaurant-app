@@ -9,7 +9,6 @@ export const OpenSidebar = styled.div`
   margin: 20px 0 20px 60px;
   display: flex;
   align-items: center;
-  overflow: auto;
   color: ${(props) =>
     props.color === "color" ? colors.secondColorType : colors.defaultColorType};
 
@@ -49,6 +48,11 @@ export const SidebarStyle = styled.div`
     flex-direction: column;
     align-items: center;
     margin-right: 30px;
+  }
+
+  @media (min-width: 801px) and (max-width: 1499px) {
+    height: 80vh;
+    overflow: auto;
   }
 `;
 

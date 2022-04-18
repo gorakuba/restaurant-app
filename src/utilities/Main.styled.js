@@ -17,7 +17,7 @@ export const Content = styled.div`
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 30px;
   width: 75%;
-  margin-left: 21vw;
+  margin-left: 25vw;
   z-index: 1;
 
   h1 {
