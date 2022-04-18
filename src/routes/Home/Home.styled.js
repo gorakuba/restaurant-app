@@ -3,16 +3,13 @@ import { colors } from "../../utilities/colors";
 import { fonts } from "../../utilities/fonts";
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 20px;
+  margin: 0 auto;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
-    margin-left: 35px;
   }
 `;
 

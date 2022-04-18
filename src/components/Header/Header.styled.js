@@ -10,14 +10,15 @@ export const HeaderStyle = styled.header`
   align-items: center;
   height: 70px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  padding: 10px 25px;
+  padding: 10px 20px;
   background-color: ${(props) =>
     props.color === "color" ? colors.firstColorType : colors.defaultColorType};
   margin-bottom: 30px;
   justify-content: space-between;
   z-index: 10;
+  width: auto;
 
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     width: 100%;
   }
 `;
