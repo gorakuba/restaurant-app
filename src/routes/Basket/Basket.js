@@ -31,7 +31,11 @@ function Basket() {
       <BasketStyle color={color} font={font}>
         {basket.length > 0 ? (
           <>
-            <motion.div>
+            <motion.div
+              initial={{ opacity: 0, marginTop: -200 }}
+              animate={{ opacity: 1, marginTop: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
               <LeftSide>
                 {basket.map((product) => (
                   <BasketProduct
@@ -45,7 +49,11 @@ function Basket() {
               </LeftSide>
             </motion.div>
 
-            <motion.div>
+            <motion.div
+              initial={{ opacity: 0, marginTop: -200 }}
+              animate={{ opacity: 1, marginTop: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+            >
               <RightSide color={color}>
                 <CurrencyFormat
                   renderText={(value) => (
@@ -77,7 +85,11 @@ function Basket() {
             </motion.div>
           </>
         ) : (
-          <motion.div>
+          <motion.div
+            initial={{ opacity: 0, marginTop: -200 }}
+            animate={{ opacity: 1, marginTop: 0 }}
+            transition={{ type: "spring", stiffness: 50, delay: 0.4 }}
+          >
             <EmptyBasket>Your shopping basket is empty!</EmptyBasket>
           </motion.div>
         )}

@@ -3,9 +3,6 @@ import { colors } from "../../utilities/colors";
 import { fonts } from "../../utilities/fonts";
 
 export const HeaderStyle = styled.header`
-  position: sticky;
-  top: 0;
-  left: 0;
   display: flex;
   align-items: center;
   height: 70px;
@@ -15,7 +12,6 @@ export const HeaderStyle = styled.header`
     props.color === "color" ? colors.firstColorType : colors.defaultColorType};
   margin-bottom: 30px;
   justify-content: space-between;
-  z-index: 10;
   width: auto;
 
   @media (max-width: 600px) {

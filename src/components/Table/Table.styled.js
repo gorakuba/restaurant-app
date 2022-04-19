@@ -15,10 +15,6 @@ export const TableStyle = styled.div`
         ? colors.fourthColorType
         : colors.defaultColorType};
 
-  @media (min-width: 1500px) {
-    width: 47%;
-  }
-
   @media (max-width: 1499px) {
     height: auto;
     padding-bottom: 3vh;

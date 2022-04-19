@@ -4,7 +4,7 @@ import { colors } from "../../utilities/colors";
 export const ProductStyle = styled.div`
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
-  width: auto;
+  width: 100%;
   padding: 10px;
   margin: 30px 10px 10px 10px;
   border-radius: 10px;

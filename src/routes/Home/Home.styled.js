@@ -11,6 +11,7 @@ export const Container = styled.div`
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   @media (min-width: 1500px) {
@@ -19,20 +20,22 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
   text-align: justify;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
   padding: 0 30px 30px 30px;
 
-  @media (max-width: 600px) {
+  h1 {
     text-align: center;
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 15px 0 15px;
+  }
+
+  @media (max-width: 800px) {
+    margin: 0 auto 0 auto;
   }
 `;
 

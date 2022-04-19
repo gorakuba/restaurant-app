@@ -20,7 +20,7 @@ const Modal = ({ setCloseModal }) => {
     <>
       <motion.div
         initial={{ opacity: 0, marginTop: -1200 }}
-        animate={{ opacity: 1, marginTop: -900 }}
+        animate={{ opacity: 1, marginTop: -600 }}
         transition={{ delay: 0.1, duration: 0.4 }}
       >
         <Background ref={modalRef} onClick={closeModal}>

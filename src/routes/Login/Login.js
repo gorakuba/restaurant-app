@@ -33,10 +33,18 @@ const Login = () => {
   } = LoginLogic();
 
   return (
-    <motion.div>
+    <motion.div
+      initial={{ opacity: 0, marginTop: -200 }}
+      animate={{ opacity: 1, marginTop: 0 }}
+      transition={{ delay: 0.2 }}
+    >
       <LoginLogicStyle>
         <LoginStyle color={color}>
-          <motion.div>
+          <motion.div
+            initial={{ opacity: 0, marginTop: -200 }}
+            animate={{ opacity: 1, marginTop: 0 }}
+            transition={{ type: "spring", stiffness: 50, delay: 0.4 }}
+          >
             <LoginHeader color={color} font={font}>
               <Link
                 to='/'

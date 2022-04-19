@@ -5,7 +5,7 @@ import { fonts } from "../../utilities/fonts";
 export const OpenSidebar = styled.div`
   position: fixed;
   left: 14vw;
-  top: auto;
+  top: 17vh;
   width: 20%;
   margin: 20px 0 20px 60px;
   display: flex;
@@ -19,6 +19,7 @@ export const OpenSidebar = styled.div`
 
   @media (max-width: 800px) {
     position: static;
+    top: auto;
   }
 `;
 
@@ -35,7 +36,7 @@ export const OpenSidebarTitle = styled.p`
 export const SidebarStyle = styled.div`
   position: fixed;
   left: 14vw;
-  top: auto;
+  top: 17vh;
   width: 20%;
   background-color: ${(props) =>
     props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
@@ -43,7 +44,7 @@ export const SidebarStyle = styled.div`
 
   @media (max-width: 800px) {
     position: static;
-    left: auto;
+    top: auto;
     width: auto;
     display: flex;
     flex-direction: column;
@@ -66,10 +67,10 @@ export const Close = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: 100%;
     justify-content: left;
-    margin: 30px 0 20px 70px;
+    margin: 30px 0 20px 40px;
   }
 `;
 
@@ -82,7 +83,7 @@ export const CloseSidebarTitle = styled.p`
     cursor: pointer;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     display: none;
   }
 `;
