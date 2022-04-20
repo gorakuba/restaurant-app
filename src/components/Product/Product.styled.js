@@ -1,24 +1,19 @@
 import styled from "styled-components";
-import { colors } from "../../utilities/colors";
 
 export const ProductStyle = styled.div`
   background-color: ${(props) =>
-    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
+    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   margin: 30px 10px 10px 10px;
   border-radius: 10px;
-  box-shadow: 0 10px 20px
-    ${(props) =>
-      props.color === "color"
-        ? colors.fourthColorType
-        : colors.defaultColorType};
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
   &:first-child {
     margin-top: 0px;
   }
 
-  @media (max-width: 600px) {
+  @media ${(props) => props.theme.breakpoints.sm} {
     width: 95%;
     margin-left: 12.5px;
   }
@@ -28,6 +23,7 @@ export const HeaderLine = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 15px 15px 0;
 `;
 
 export const Name = styled.h3`
@@ -47,7 +43,7 @@ export const Counter = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 20px;
+  margin-right: 20px;
 
   &:hover {
     cursor: pointer;
@@ -72,6 +68,6 @@ export const Description = styled.div`
   font-size: 12px;
   font-weight: 700;
   color: ${(props) =>
-    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
+    props.color ? props.theme.colors.color_2 : props.theme.defaultColor};
   padding: 10px;
 `;

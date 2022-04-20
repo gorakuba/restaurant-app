@@ -1,21 +1,16 @@
 import styled from "styled-components";
-import { colors } from "../../utilities/colors";
 
 export const TableStyle = styled.div`
   background-color: ${(props) =>
-    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
+    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
   width: 100%;
   height: auto;
   padding: 10px;
   margin: 50px 10px 10px 10px;
   border-radius: 10px;
-  box-shadow: 0 10px 20px
-    ${(props) =>
-      props.color === "color"
-        ? colors.fourthColorType
-        : colors.defaultColorType};
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
-  @media (max-width: 1499px) {
+  @media ${(props) => props.theme.breakpoints.xl} {
     height: auto;
     padding-bottom: 3vh;
   }
@@ -46,11 +41,7 @@ export const ReservationButton = styled.button`
   border-radius: 10px;
 
   &:hover {
-    box-shadow: 0 10px 20px
-      ${(props) =>
-        props.color === "color"
-          ? colors.fourthColorType
-          : colors.defaultColorType};
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: all ease-in-out;
     transition-duration: 400ms;
     cursor: pointer;
@@ -85,7 +76,7 @@ export const CancelReservation = styled.div`
   align-items: center;
   margin-top: 20px;
 
-  @media (max-width: 800px) {
+  @media ${(props) => props.theme.breakpoints.md} {
     flex-direction: column;
   }
 `;
@@ -99,7 +90,7 @@ export const Buttons = styled.div`
   display: flex;
   margin-left: 80px;
 
-  @media (max-width: 800px) {
+  @media ${(props) => props.theme.breakpoints.md} {
     margin-left: 40px;
     flex-direction: column;
   }
@@ -133,7 +124,7 @@ export const TableHeadInput = styled.input`
   border-radius: 10px;
   border: none;
   background-color: ${(props) =>
-    props.color === "color" ? colors.sixthColorType : colors.defaultColorType};
+    props.color ? props.theme.colors.color_4 : props.theme.defaultColor};
 `;
 
 export const ReservationButtonAgree = styled.button`
@@ -156,7 +147,7 @@ export const RenderTableHeader = styled.h5`
   display: flex;
   align-items: center;
 
-  @media (max-width: 800px) {
+  @media ${(props) => props.theme.breakpoints.md} {
     margin-top: 50px;
   }
 `;
@@ -188,9 +179,7 @@ export const TableChairIcon = styled.div`
 export const DeletePerson = styled(RemoveReservationButton)`
   &:hover {
     background-color: ${(props) =>
-      props.color === "color"
-        ? colors.seventhColorType
-        : colors.defaultColorType};
+      props.color ? props.theme.colors.color_5 : props.theme.defaultColor};
     cursor: pointer;
     transition: all ease-in-out;
     transition-duration: 400ms;
@@ -202,7 +191,7 @@ export const CancelSection = styled.div`
   align-items: center;
   margin-top: -10px;
 
-  @media (max-width: 800px) {
+  @media ${(props) => props.theme.breakpoints.md} {
     margin-top: 10px;
     flex-direction: column;
     margin-left: auto;

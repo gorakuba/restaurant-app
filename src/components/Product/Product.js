@@ -12,7 +12,6 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useStateValue } from "../../helper/StateProvider";
-import { color } from "../../utilities/colors";
 
 function Product({ id, name, description, price }) {
   const [{ basket }, dispatch] = useStateValue();
@@ -20,9 +19,7 @@ function Product({ id, name, description, price }) {
   const [counter, setCounter] = useState(0);
 
   const counterPlus = () => {
-    setCounter(counter + 1);
-
-    if (counter >= 0) {
+    if (counter === 0) {
       dispatch({
         type: "ADD_TO_BASKET",
         product: {
@@ -33,11 +30,11 @@ function Product({ id, name, description, price }) {
         },
       });
     }
+
+    setCounter(counter + 1);
   };
 
   const counterMinus = () => {
-    setCounter(counter - 1);
-
     if (counter > 0) {
       dispatch({
         type: "REMOVE_FROM_BASKET",
@@ -48,15 +45,14 @@ function Product({ id, name, description, price }) {
           description: description,
         },
       });
-    } else if (counter === 0) {
+
+      setCounter(counter - 1);
+    } else {
       setCounter(0);
     }
   };
 
   const basketAdd = () => {
-    setClicked((prev) => !prev);
-    setCounter(counter + 1);
-
     dispatch({
       type: "ADD_TO_BASKET",
       product: {
@@ -66,10 +62,13 @@ function Product({ id, name, description, price }) {
         description: description,
       },
     });
+
+    setClicked((prev) => !prev);
+    setCounter(counter + 1);
   };
 
   return (
-    <ProductStyle color={color}>
+    <ProductStyle color>
       <HeaderLine>
         <Name>{name}</Name>
 
@@ -83,11 +82,12 @@ function Product({ id, name, description, price }) {
           ) : (
             <Plus onClick={basketAdd}>Add to basket</Plus>
           )}
+
           <Price>Price: {price} zł</Price>
         </AddSection>
       </HeaderLine>
 
-      <Description color={color}>{description}</Description>
+      <Description color>{description}</Description>
     </ProductStyle>
   );
 }

@@ -30,7 +30,6 @@ import TableLogic from "./TableLogic";
 import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-import { color } from "../../utilities/colors";
 
 const Table = ({ name }) => {
   const {
@@ -54,7 +53,7 @@ const Table = ({ name }) => {
   } = TableLogic();
 
   return (
-    <TableStyle color={color}>
+    <TableStyle color>
       <TableHeader>
         <TableHeaderTitle>
           <TableIcon>
@@ -64,7 +63,7 @@ const Table = ({ name }) => {
         </TableHeaderTitle>
 
         {!renderTables ? (
-          <ReservationButton onClick={reserve} color={color}>
+          <ReservationButton onClick={reserve} color>
             {title}
           </ReservationButton>
         ) : null}
@@ -101,11 +100,7 @@ const Table = ({ name }) => {
                 <TableHead>
                   <p>Ile miejsc potrzebujesz:</p>
 
-                  <TableHeadInput
-                    type='number'
-                    color={color}
-                    onChange={setPlaces}
-                  />
+                  <TableHeadInput type='number' color onChange={setPlaces} />
                 </TableHead>
 
                 {place.length >= 1 ? (
@@ -159,12 +154,12 @@ const Table = ({ name }) => {
 
                 <ChairSection>
                   {place !== 0 ? (
-                    <ChairHeader color={color}>
+                    <ChairHeader color>
                       {place}
                       <TableChairIcon>
                         <EventSeatIcon />
                       </TableChairIcon>
-                      <DeletePerson color={color} onClick={removeChair}>
+                      <DeletePerson color onClick={removeChair}>
                         Delete person
                       </DeletePerson>
                     </ChairHeader>

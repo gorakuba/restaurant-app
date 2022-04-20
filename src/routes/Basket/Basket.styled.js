@@ -1,25 +1,23 @@
 import styled from "styled-components";
-import { colors } from "../../utilities/colors";
-import { fonts } from "../../utilities/fonts";
 
 export const BasketStyle = styled.div`
   display: flex;
   background-color: ${(props) =>
-    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
+    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
   margin: 20px;
 
-  @media (max-width: 600px) {
+  @media ${(props) => props.theme.breakpoints.sm} {
     flex-direction: column-reverse;
     align-items: center;
     margin: 35px;
-    width: 100%;
+    width: 97.5%;
   }
 `;
 
 export const LeftSide = styled.div`
   margin-top: 30px;
 
-  @media (max-width: 600px) {
+  @media ${(props) => props.theme.breakpoints.sm} {
     margin: 0 20px 20px -10px;
     display: flex;
     align-items: center;
@@ -32,8 +30,9 @@ export const RightSide = styled.div`
   height: 30vh;
   width: 25vw;
   margin-left: 10px;
+  margin-top: 5vh;
   background-color: ${(props) =>
-    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
+    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -43,14 +42,14 @@ export const RightSide = styled.div`
   font-style: italic;
   text-align: center;
 
-  @media (max-width: 600px) {
+  @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
     height: auto;
     margin: 20px 60px 60px 60px;
     box-shadow: none;
   }
 
-  @media (max-width: 1000px) {
+  @media ${(props) => props.theme.breakpoints.lg} {
     width: auto;
     height: auto;
     margin-left: 30px;
@@ -77,9 +76,7 @@ export const BasketAddButton = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
-      props.color === "color"
-        ? colors.eighthColorType
-        : colors.defaultColorType};
+      props.color ? props.theme.colors.color_7 : props.theme.defaultColor};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
@@ -91,9 +88,7 @@ export const BasketDeleteButton = styled(BasketAddButton)`
 
   &:hover {
     background-color: ${(props) =>
-      props.color === "color"
-        ? colors.seventhColorType
-        : colors.defaultColorType};
+      props.color ? props.theme.colors.color_6 : props.theme.defaultColor};
   }
 `;
 
@@ -111,9 +106,7 @@ export const Checkout = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
-      props.color === "color"
-        ? colors.eleventhColorType
-        : colors.defaultColorType};
+      props.color ? props.theme.colors.color_10 : props.theme.defaultColor};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
@@ -127,10 +120,10 @@ export const EmptyBasket = styled.h1`
   margin: 30px;
   font-weight: 700;
   font-family: ${(props) =>
-    props.font === "font" ? fonts.fourthFontType : colors.defaultColorType};
+    props.font ? props.theme.fonts.font_4 : props.theme.defaultFont};
 
-  @media (max-width: 600px) {
-    margin: 30px 0 30px -20px;
+  @media ${(props) => props.theme.breakpoints.sm} {
+    margin: 30px 0 30px -30px;
     text-align: center;
   }
 `;

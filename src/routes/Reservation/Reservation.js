@@ -3,18 +3,17 @@ import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { Container, Content, ResHeader } from "./Resevation.styled";
 import Table from "../../components/Table/Table";
-import { tables } from "./tables";
-import { color } from "../../utilities/colors";
+import { tables } from "../../utilities/tables";
 import { motion } from "framer-motion";
 
 const Reservation = () => {
   return (
     <>
       <Header />
-      <Container color={color}>
+      <Container color>
         <Sidebar />
 
-        <Content color={color}>
+        <Content color>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

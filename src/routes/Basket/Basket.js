@@ -18,8 +18,6 @@ import { getBasketTotal } from "../../helper/reducer";
 import { Link } from "react-router-dom";
 import BasketLogic from "./BasketLogic";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { color } from "../../utilities/colors";
-import { font } from "../../utilities/fonts";
 import { motion } from "framer-motion";
 
 function Basket() {
@@ -28,13 +26,13 @@ function Basket() {
   return (
     <>
       <Header />
-      <BasketStyle color={color} font={font}>
+      <BasketStyle color font>
         {basket.length > 0 ? (
           <>
             <motion.div
               initial={{ opacity: 0, marginTop: -200 }}
               animate={{ opacity: 1, marginTop: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
+              transition={{ type: "spring", stiffness: 50, delay: 0.4 }}
             >
               <LeftSide>
                 {basket.map((product) => (
@@ -52,9 +50,9 @@ function Basket() {
             <motion.div
               initial={{ opacity: 0, marginTop: -200 }}
               animate={{ opacity: 1, marginTop: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
+              transition={{ type: "spring", stiffness: 50, delay: 0.8 }}
             >
-              <RightSide color={color}>
+              <RightSide color>
                 <CurrencyFormat
                   renderText={(value) => (
                     <>
@@ -68,13 +66,15 @@ function Basket() {
                   thousandSeparator={true}
                 />
                 <Link to='/specialsoftheday' style={{ textDecoration: "none" }}>
-                  <BasketAddButton>Add more items to basket</BasketAddButton>
+                  <BasketAddButton color>
+                    Add more items to basket
+                  </BasketAddButton>
                 </Link>
-                <BasketDeleteButton onClick={deleteItems}>
+                <BasketDeleteButton color onClick={deleteItems}>
                   Delete items from basket
                 </BasketDeleteButton>
                 <Link to='/checkout' style={{ textDecoration: "none" }}>
-                  <Checkout color={color} onClick={checkout}>
+                  <Checkout color onClick={checkout}>
                     Go to checkout page
                     <CheckoutIcon>
                       <ShoppingCartIcon />

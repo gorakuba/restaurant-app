@@ -17,8 +17,6 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "../../helper/StateProvider";
 import ModalLogic from "../Modal/ModalLogic";
 import Modal from "../Modal/Modal";
-import { color } from "../../utilities/colors";
-import { font } from "../../utilities/fonts";
 import { motion } from "framer-motion";
 
 function Header() {
@@ -32,18 +30,18 @@ function Header() {
       animate={{ opacity: 1, marginTop: 0 }}
       transition={{ delay: 0.2 }}
     >
-      <HeaderStyle color={color}>
-        <HeaderLeft color={color}>
+      <HeaderStyle color>
+        <HeaderLeft color>
           <Link to='/' style={{ textDecoration: "none" }}>
-            <HomeLink color={color}>
+            <HomeLink color>
               <RestaurantMenuIcon />
-              <HeaderLeftTitle font={font}>Enjoy your meal!</HeaderLeftTitle>
+              <HeaderLeftTitle font>Enjoy your meal!</HeaderLeftTitle>
             </HomeLink>
           </Link>
         </HeaderLeft>
 
-        <HeaderRight color={color}>
-          <HeaderRightIcon color={color}>
+        <HeaderRight color>
+          <HeaderRightIcon color>
             <PersonIcon onClick={openModal} />
           </HeaderRightIcon>
 
@@ -56,7 +54,7 @@ function Header() {
           ) : null}
 
           <Link to='/basket'>
-            <HeaderRightIcon color={color}>
+            <HeaderRightIcon color>
               <ShoppingBasketIcon />
             </HeaderRightIcon>
           </Link>
@@ -66,13 +64,13 @@ function Header() {
           ) : null}
 
           <Link to='/reservation'>
-            <HeaderRightIcon color={color}>
+            <HeaderRightIcon color>
               <BookmarkAddIcon />
             </HeaderRightIcon>
           </Link>
 
           <Link to='/login'>
-            <HeaderRightIcon color={color}>
+            <HeaderRightIcon color>
               <InputIcon />
             </HeaderRightIcon>
           </Link>

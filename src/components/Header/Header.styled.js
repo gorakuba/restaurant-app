@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { colors } from "../../utilities/colors";
-import { fonts } from "../../utilities/fonts";
 
 export const HeaderStyle = styled.header`
   display: flex;
@@ -9,14 +7,9 @@ export const HeaderStyle = styled.header`
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   padding: 10px 20px;
   background-color: ${(props) =>
-    props.color === "color" ? colors.firstColorType : colors.defaultColorType};
+    props.color ? props.theme.colors.color_1 : props.theme.defaultColor};
   margin-bottom: 30px;
   justify-content: space-between;
-  width: auto;
-
-  @media (max-width: 600px) {
-    width: 100%;
-  }
 `;
 
 export const HeaderLeft = styled.div`
@@ -32,7 +25,7 @@ export const HeaderLeft = styled.div`
 
 export const HomeLink = styled.div`
   color: ${(props) =>
-    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
+    props.color ? props.theme.colors.color_2 : props.theme.defaultColor};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,9 +41,9 @@ export const HeaderLeftTitle = styled.div`
   font-weight: 500;
   font-size: 24px;
   font-family: ${(props) =>
-    props.font === "font" ? fonts.firstFontType : fonts.defaultFontType};
+    props.font ? props.theme.fonts.font_1 : props.theme.defaultFont};
 
-  @media (max-width: 730px) {
+  @media ${(props) => props.theme.breakpoints.md} {
     display: none;
   }
 `;
@@ -66,7 +59,7 @@ export const HeaderRightIcon = styled.div`
   padding-left: 15px;
   padding-right: 15px;
   color: ${(props) =>
-    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
+    props.color ? props.theme.colors.color_2 : props.theme.defaultColor};
 
   &:hover {
     cursor: pointer;
@@ -79,6 +72,6 @@ export const HeaderRightIcon = styled.div`
 export const BasketCounter = styled.div`
   font-weight: 900;
   font-family: ${(props) =>
-      props.font === "font" ? fonts.secondFontType : fonts.defaultFontType},
+      props.font ? props.theme.fonts.font_2 : props.theme.defaultFont},
     sans-serif;
 `;

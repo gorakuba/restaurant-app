@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Error, Back, RegisterIcon } from "./Register.styled";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { color } from "../../utilities/colors";
 
 const Register = () => {
   return (
@@ -12,7 +11,7 @@ const Register = () => {
       <p>Resource not found on server!</p>
 
       <Link to='/login' style={{ textDecoration: "none" }}>
-        <Back color={color}>
+        <Back color>
           <RegisterIcon>
             <ArrowBackIcon />
           </RegisterIcon>

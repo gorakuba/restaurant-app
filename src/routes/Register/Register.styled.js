@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { colors } from "../../utilities/colors";
 
 export const Error = styled.div`
   margin: 20px;
@@ -9,7 +8,7 @@ export const Back = styled.div`
   display: flex;
   align-items: center;
   color: ${(props) =>
-    props.color === "color" ? colors.secondColorType : colors.defaultColorType};
+    props.color ? props.theme.colors.color_2 : props.theme.defaultColor};
   font-size: 18px;
   font-weight: 700;
 `;

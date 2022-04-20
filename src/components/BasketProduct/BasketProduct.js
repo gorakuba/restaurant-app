@@ -9,7 +9,6 @@ import {
   Minus,
   Name,
 } from "./BasketProduct.styled";
-import { color } from "../../utilities/colors";
 
 function BasketProduct({ id, name, price, description }) {
   const [{ basket }, dispatch] = useStateValue();
@@ -27,7 +26,7 @@ function BasketProduct({ id, name, price, description }) {
   };
 
   return (
-    <ProductStyle color={color}>
+    <ProductStyle color>
       <HeaderLine>
         <Name>{name}</Name>
 

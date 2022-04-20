@@ -1,21 +1,19 @@
 import React from "react";
-import { Container, Content } from "../../utilities/Main.styled";
+import { Container, Content } from "../../styles/main.styled";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Product from "../../components/Product/Product";
-import { dishes } from "../../routes/Soups/dishes";
-import { color } from "../../utilities/colors";
-import { font } from "../../utilities/fonts";
+import { dishes } from "../../utilities/dishes";
 import { motion } from "framer-motion";
 
 function Soup() {
   return (
     <>
       <Header />
-      <Container color={color}>
+      <Container color>
         <Sidebar />
 
-        <Content color={color} font={font}>
+        <Content color font>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   ListItem,
   OpenSidebar,
@@ -11,11 +11,9 @@ import {
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { menuItems } from "./menu";
+import { menuItems } from "../../utilities/menu";
 import { Link } from "react-router-dom";
 import SidebarLogic from "./SidebarLogic";
-import { color } from "../../utilities/colors";
-import { font } from "../../utilities/fonts";
 import { motion } from "framer-motion";
 
 function Sidebar() {
@@ -30,13 +28,13 @@ function Sidebar() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.1 }}
         >
-          <OpenSidebar color={color} onClick={dotsClick}>
+          <OpenSidebar color onClick={dotsClick}>
             <MenuIcon />
             <OpenSidebarTitle>Open menu</OpenSidebarTitle>
           </OpenSidebar>
         </motion.div>
       ) : (
-        <SidebarStyle color={color}>
+        <SidebarStyle color>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -63,8 +61,8 @@ function Sidebar() {
                       key={item.id}
                     >
                       <ListItem
-                        color={color}
-                        font={font}
+                        color
+                        font
                         onMouseOver={mouseHover}
                         onMouseOut={mouseOutHover}
                       >
@@ -89,8 +87,8 @@ function Sidebar() {
                       key={item.id}
                     >
                       <ListItem
-                        color={color}
-                        font={font}
+                        color
+                        font
                         onMouseOver={mouseHover}
                         onMouseOut={mouseOutHover}
                       >
@@ -115,8 +113,8 @@ function Sidebar() {
                       key={item.id}
                     >
                       <ListItem
-                        color={color}
-                        font={font}
+                        color
+                        font
                         onMouseOver={mouseHover}
                         onMouseOut={mouseOutHover}
                       >
@@ -141,8 +139,8 @@ function Sidebar() {
                       key={item.id}
                     >
                       <ListItem
-                        color={color}
-                        font={font}
+                        color
+                        font
                         onMouseOver={mouseHover}
                         onMouseOut={mouseOutHover}
                       >
@@ -167,8 +165,8 @@ function Sidebar() {
                       key={item.id}
                     >
                       <ListItem
-                        color={color}
-                        font={font}
+                        color
+                        font
                         onMouseOver={mouseHover}
                         onMouseOut={mouseOutHover}
                       >
@@ -193,8 +191,8 @@ function Sidebar() {
                       key={item.id}
                     >
                       <ListItem
-                        color={color}
-                        font={font}
+                        color
+                        font
                         onMouseOver={mouseHover}
                         onMouseOut={mouseOutHover}
                       >
@@ -219,8 +217,8 @@ function Sidebar() {
                       key={item.id}
                     >
                       <ListItem
-                        color={color}
-                        font={font}
+                        color
+                        font
                         onMouseOver={mouseHover}
                         onMouseOut={mouseOutHover}
                       >
@@ -245,8 +243,8 @@ function Sidebar() {
                       key={item.id}
                     >
                       <ListItem
-                        color={color}
-                        font={font}
+                        color
+                        font
                         onMouseOver={mouseHover}
                         onMouseOut={mouseOutHover}
                       >

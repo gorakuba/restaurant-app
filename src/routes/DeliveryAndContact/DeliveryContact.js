@@ -24,8 +24,6 @@ import {
 import { TileLayer, MapContainer, Popup, Circle } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import DeliveryContactLogic from "./DeliveryContactLogic";
-import { color } from "../../utilities/colors";
-import { colors } from "../../utilities/colors";
 import { motion } from "framer-motion";
 
 function DeliveryContact() {
@@ -34,20 +32,20 @@ function DeliveryContact() {
   return (
     <>
       <Header />
-      <Container color={color}>
+      <Container color>
         <motion.div>
-          <Content color={color}>
+          <Content color>
             <ContactHeader>
               Zapraszamy do kontaktu z naszą resturacją :
             </ContactHeader>
             <>
               <ContactList>
                 <ContactLink
-                  color={color}
+                  color
                   target='blank'
                   href='https://restaurant-app-demo.netlify.app'
                 >
-                  <ContactItems color={color}>
+                  <ContactItems color>
                     poprzez naszą stronę internetową
                   </ContactItems>
                   <ContactIcon>
@@ -56,11 +54,11 @@ function DeliveryContact() {
                 </ContactLink>
 
                 <ContactLink
-                  color={color}
+                  color
                   target='blank'
                   href='https://mail.google.com/'
                 >
-                  <ContactItems color={color}>
+                  <ContactItems color>
                     poprzez naszą pocztę elektroniczną
                   </ContactItems>
 
@@ -70,12 +68,12 @@ function DeliveryContact() {
                 </ContactLink>
 
                 <ContactLink
-                  color={color}
+                  color
                   target='blank'
                   href='https://www.whatsapp.com/'
                 >
                   <div>
-                    <ContactItems color={color}>
+                    <ContactItems color>
                       poprzez kontakt telefoniczny, SMS lub WhatApp'a
                     </ContactItems>
                     <ContactInfoText>
@@ -90,11 +88,11 @@ function DeliveryContact() {
                 </ContactLink>
 
                 <ContactLink
-                  color={color}
+                  color
                   target='blank'
                   href='https://www.facebook.com'
                 >
-                  <ContactItems color={color}>
+                  <ContactItems color>
                     poprzez naszą stronę na FaceBook'u
                   </ContactItems>
 
@@ -108,7 +106,7 @@ function DeliveryContact() {
         </motion.div>
 
         <motion.div>
-          <Map color={color}>
+          <Map color>
             <MapContainer center={position} zoom={zoom}>
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -117,7 +115,7 @@ function DeliveryContact() {
 
               <Circle
                 center={markerPosition}
-                color={colors.twelfthColorType}
+                color={{ color: "rgb(65 105 225)" }}
                 radius={700}
               >
                 <Popup>
@@ -131,14 +129,14 @@ function DeliveryContact() {
       </Container>
 
       <motion.div>
-        <Footer color={color}>
+        <Footer color>
           <FooterHeader>
             Może chcesz zostać z nami na dłużej? Złóż swoje CV, a my rozpatrzymy
             twoją propozycję i postaramy się odpowiedzieć tak szybko, jak to
             tylko możliwe 😉
           </FooterHeader>
 
-          <FooterButton color={color} type='submit' onClick={send}>
+          <FooterButton color type='submit' onClick={send}>
             Send e-mail to us
           </FooterButton>
         </Footer>

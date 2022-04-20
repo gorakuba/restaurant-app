@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { colors } from "../../utilities/colors";
-import { fonts } from "../../utilities/fonts";
 
 export const LoginLogicStyle = styled.div`
   display: flex;
@@ -12,12 +10,8 @@ export const LoginStyle = styled.div`
   width: 40vw;
   height: 80vh;
   background-color: ${(props) =>
-    props.color === "color" ? colors.thirdColorType : colors.defaultColorType};
-  box-shadow: 0 10px 20px
-    ${(props) =>
-      props.color === "color"
-        ? colors.fourthColorType
-        : colors.defaultColorType};
+    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -29,7 +23,7 @@ export const LoginStyle = styled.div`
   border-radius: 20px;
   border: none;
 
-  @media (max-width: 600px) {
+  @media ${(props) => props.theme.breakpoints.sm} {
     width: 70%;
     margin-bottom: 5vh;
   }
@@ -38,14 +32,10 @@ export const LoginStyle = styled.div`
 export const LoginHeader = styled.div`
   font-style: italic;
   font-family: ${(props) =>
-    props.font === "font" ? fonts.fifthColorType : fonts.defaultFontType};
+    props.font ? props.theme.fonts.font_5 : props.theme.defaultFont};
   margin: 10px;
-  width: 43vw;
-  box-shadow: 0 10px 20px
-    ${(props) =>
-      props.color === "color"
-        ? colors.fourthColorType
-        : colors.defaultColorType};
+  width: 41vw;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,14 +43,15 @@ export const LoginHeader = styled.div`
   word-wrap: break-word;
   text-decoration: underline;
   background-color: ${(props) =>
-    props.color === "color" ? colors.ninethColorType : colors.defaultColorType};
+    props.color ? props.theme.colors.color_8 : props.theme.defaultColor};
   border-radius: 15px;
+  padding: 15px;
 `;
 
 export const LoginIcon = styled.div`
   width: 40px;
   height: 40px;
-  padding: 25px 10px 10px 10px;
+  padding: 10px;
 `;
 
 export const LoginInput = styled.input`
@@ -73,16 +64,12 @@ export const LoginInput = styled.input`
   text-align: center;
 
   &:hover {
-    box-shadow: 0 10px 20px
-      ${(props) =>
-        props.color === "color"
-          ? colors.fourthColorType
-          : colors.defaultColorType};
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
 
-  @media (max-width: 1000px) {
+  @media ${(props) => props.theme.breakpoints.lg} {
     width: 70%;
   }
 `;
@@ -92,9 +79,7 @@ export const PassInput = styled(LoginInput)``;
 export const LoginInfo = styled.p`
   margin: 0;
   color: ${(props) =>
-    props.color === "color"
-      ? colors.seventhColorType
-      : colors.defaultColorType};
+    props.color ? props.theme.colors.color_6 : props.theme.defaultColor};
   font-size: 12px;
   font-style: italic;
 `;
@@ -130,9 +115,7 @@ export const LoginButton = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
-      props.color === "color"
-        ? colors.eighthColorType
-        : colors.defaultColorType};
+      props.color ? props.theme.colors.color_7 : props.theme.defaultColor};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
@@ -149,9 +132,7 @@ export const RegisterButton = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${(props) =>
-      props.color === "color"
-        ? colors.tenthColorType
-        : colors.defaultColorType};
+      props.color ? props.theme.colors.color_9 : props.theme.defaultColor};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
