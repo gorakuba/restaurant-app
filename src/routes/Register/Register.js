@@ -10,8 +10,8 @@ const Register = () => {
       <hr />
       <p>Resource not found on server!</p>
 
-      <Link to='/login' style={{ textDecoration: "none" }}>
-        <Back color>
+      <Link to='/login' style={{ textDecoration: "none", color: "rgb(0 0 0)" }}>
+        <Back>
           <RegisterIcon>
             <ArrowBackIcon />
           </RegisterIcon>

@@ -9,7 +9,6 @@ export const Container = styled.div`
   @media ${(props) => props.theme.breakpoints.md} {
     display: flex;
     flex-direction: column;
-    margin-left: 5vw;
     width: 100%;
   }
 

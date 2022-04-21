@@ -28,16 +28,12 @@ export const Content = styled.div`
   @media ${(props) => props.theme.breakpoints.md} {
     display: flex;
     flex-direction: column;
-    margin: 3vh 4vw 0 4vh;
+    margin: 3vh 4vw 0 4.5vw;
     width: 85%;
   }
 `;
 
 export const ResHeader = styled.h1`
-  margin-left: 2vw;
+  margin: 2vh 4vw;
   text-align: center;
-
-  @media ${(props) => props.theme.breakpoints.md} {
-    margin-left: 5vw;
-  }
 `;

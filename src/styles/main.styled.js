@@ -39,6 +39,6 @@ export const Content = styled.div`
     width: 90%;
     display: flex;
     flex-direction: column;
-    margin: 3vh 4vw 0 4vh;
+    margin: 3vh 4vw 0 3vw;
   }
 `;

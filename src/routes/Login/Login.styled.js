@@ -24,7 +24,7 @@ export const LoginStyle = styled.div`
   border: none;
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    width: 70%;
+    width: 85%;
     margin-bottom: 5vh;
   }
 `;
@@ -60,7 +60,7 @@ export const LoginInput = styled.input`
   border: none;
   width: 40%;
   height: 30px;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
 
   &:hover {
@@ -70,7 +70,7 @@ export const LoginInput = styled.input`
   }
 
   @media ${(props) => props.theme.breakpoints.lg} {
-    width: 70%;
+    width: 80%;
   }
 `;
 
@@ -106,9 +106,9 @@ export const RememberText = styled.p`
 export const LoginButton = styled.button`
   margin: 40px;
   margin-bottom: 10px;
-  padding: 10px;
-  height: 40px;
-  width: 20vw;
+  padding: 15px;
+  height: 50px;
+  width: 25vw;
   border-radius: 5px;
   border: none;
 
@@ -123,9 +123,9 @@ export const LoginButton = styled.button`
 
 export const RegisterButton = styled.button`
   margin: 20px;
-  padding: 10px;
-  height: 40px;
-  width: 20vw;
+  padding: 15px;
+  height: 50px;
+  width: 25vw;
   border-radius: 5px;
   border: none;
 

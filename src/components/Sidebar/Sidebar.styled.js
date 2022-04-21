@@ -48,10 +48,10 @@ export const SidebarStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 30px;
+    margin: 0 20px 20px 0;
   }
 
-  @media ${(props) => props.theme.breakpoints.lg} {
+  @media ${(props) => props.theme.breakpoints.xl} {
     height: 80vh;
     overflow: auto;
   }

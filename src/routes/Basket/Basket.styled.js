@@ -9,7 +9,7 @@ export const BasketStyle = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     flex-direction: column-reverse;
     align-items: center;
-    margin: 35px;
+    margin: 10px;
     width: 97.5%;
   }
 `;
@@ -122,8 +122,8 @@ export const EmptyBasket = styled.h1`
   font-family: ${(props) =>
     props.font ? props.theme.fonts.font_4 : props.theme.defaultFont};
 
-  @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 30px 0 30px -30px;
+  @media ${(props) => props.theme.breakpoints.md} {
+    margin: 0;
     text-align: center;
   }
 `;

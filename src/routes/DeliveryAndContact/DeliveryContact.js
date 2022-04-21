@@ -33,7 +33,11 @@ function DeliveryContact() {
     <>
       <Header />
       <Container color>
-        <motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
           <Content color>
             <ContactHeader>
               Zapraszamy do kontaktu z naszą resturacją :
@@ -105,7 +109,11 @@ function DeliveryContact() {
           </Content>
         </motion.div>
 
-        <motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+        >
           <Map color>
             <MapContainer center={position} zoom={zoom}>
               <TileLayer
@@ -113,11 +121,7 @@ function DeliveryContact() {
                 url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
               />
 
-              <Circle
-                center={markerPosition}
-                color={{ color: "rgb(65 105 225)" }}
-                radius={700}
-              >
+              <Circle center={markerPosition} radius={700}>
                 <Popup>
                   <h3>Enjoy your meal!</h3>
                   <p>Location: Andrychów</p>
@@ -128,7 +132,11 @@ function DeliveryContact() {
         </motion.div>
       </Container>
 
-      <motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+      >
         <Footer color>
           <FooterHeader>
             Może chcesz zostać z nami na dłużej? Złóż swoje CV, a my rozpatrzymy

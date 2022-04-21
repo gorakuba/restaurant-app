@@ -14,7 +14,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   background-color: ${(props) =>
     props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
-  padding: 0 30px 0px 10px;
+  padding: 0 30px 0px 30px;
   width: 75%;
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -36,12 +36,8 @@ export const ContactHeader = styled.h1`
 `;
 
 export const ContactList = styled.ul`
-  margin: 50px 50px 50px 40px;
+  margin: 50px 50px 50px 70px;
   list-style-type: circle;
-
-  @media ${(props) => props.theme.breakpoints.md} {
-    margin-left: 20px;
-  }
 `;
 
 export const ContactLink = styled.div`
@@ -103,13 +99,13 @@ export const Map = styled.div`
   width: 120vh;
   background-color: ${(props) =>
     props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
-  padding: 1rem;
+  padding: 2vh;
   border-radius: 20px;
   margin: 30px 60px 80px 0;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
   @media ${(props) => props.theme.breakpoints.lg} {
-    width: 97%;
+    width: 80vw;
     margin: 13px;
   }
 
@@ -132,7 +128,7 @@ export const Footer = styled.div`
 
   @media ${(props) => props.theme.breakpoints.md} {
     width: 80%;
-    margin: 13px;
+    margin: 13px auto;
   }
 `;
 
