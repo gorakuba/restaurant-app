@@ -24,6 +24,11 @@ export const HeaderLine = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 15px 15px 15px 0;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 export const Name = styled.h3`
@@ -35,6 +40,12 @@ export const AddSection = styled.div`
   justify-content: right;
   align-items: center;
   margin: 0 0 0 10px;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
 `;
 
 export const Counter = styled.div`
@@ -48,6 +59,10 @@ export const Counter = styled.div`
   &:hover {
     cursor: pointer;
   }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    margin: 10px auto 0 auto;
+  }
 `;
 
 export const Plus = styled.div`
@@ -56,12 +71,19 @@ export const Plus = styled.div`
   &:hover {
     cursor: pointer;
   }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    margin: 10px auto 0 auto;
+  }
 `;
 
 export const Price = styled.div`
-  display: flex;
-  margin: 0 10px 0 0;
+  margin-right: 10px;
   font-weight: 500;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    margin: 10px auto 0 auto;
+  }
 `;
 
 export const Description = styled.div`

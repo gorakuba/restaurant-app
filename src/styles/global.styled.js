@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
-  html {
+  html {  
     scroll-behavior: smooth;
-  }
+  } 
 `;

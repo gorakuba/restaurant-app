@@ -51,7 +51,7 @@ export const SidebarStyle = styled.div`
     margin: 0 20px 20px 0;
   }
 
-  @media ${(props) => props.theme.breakpoints.xl} {
+  @media ${(props) => props.theme.breakpoints.xxl} {
     height: 80vh;
     overflow: auto;
   }

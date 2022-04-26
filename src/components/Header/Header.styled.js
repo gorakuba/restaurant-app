@@ -9,7 +9,7 @@ export const HeaderStyle = styled.header`
   background-color: ${(props) =>
     props.color ? props.theme.colors.color_1 : props.theme.defaultColor};
   margin-bottom: 30px;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 export const HeaderLeft = styled.div`

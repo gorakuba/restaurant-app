@@ -106,20 +106,26 @@ const Table = ({ name }) => {
                 {place.length >= 1 ? (
                   <>
                     {parseInt(place) > 10 ? (
-                      <p>Stolik można zarezerwować dla maksymalnie 10 osób!</p>
+                      <p style={{ marginTop: "15px", marginBottom: "15px" }}>
+                        Stolik można zarezerwować dla maksymalnie 10 osób!
+                      </p>
                     ) : (
                       <>
                         {parseInt(place) < 0 || parseInt(place) === 0 ? (
-                          <p>Ilość miejsc nie może być mniejsza ani równa 0!</p>
+                          <p
+                            style={{ marginTop: "15px", marginBottom: "15px" }}
+                          >
+                            Ilość miejsc nie może być mniejsza ani równa 0!
+                          </p>
                         ) : (
                           <>
                             {parseInt(place) === 1 ? (
-                              <p>
+                              <p style={{ marginTop: "15px" }}>
                                 Czy jesteś pewien, że chcesz zarezerwowć stolik
                                 dla {place} osoby?
                               </p>
                             ) : (
-                              <p>
+                              <p style={{ marginTop: "15px" }}>
                                 Czy jesteś pewien, że chcesz zarezerwowć stolik
                                 dla {place} osób?
                               </p>

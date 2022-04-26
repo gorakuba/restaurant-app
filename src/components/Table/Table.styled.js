@@ -39,6 +39,8 @@ export const ReservationButton = styled.button`
   height: 30px;
   border: none;
   border-radius: 10px;
+  font-size: 14px;
+  margin-top: 5px;
 
   &:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -53,6 +55,7 @@ export const CancelReservationButton = styled.button`
   width: 100px;
   border: none;
   border-radius: 10px;
+  font-size: 14px;
 
   &:hover {
     cursor: pointer;
@@ -117,14 +120,15 @@ export const TableHead = styled.div`
 
 export const TableHeadInput = styled.input`
   padding: 5px;
+  margin-top: 0px;
   margin-left: 10px;
   text-align: center;
   width: 50px;
-  height: 20px;
+  height: 30px;
   border-radius: 10px;
   border: none;
   background-color: ${(props) =>
-    props.color ? props.theme.colors.color_4 : props.theme.defaultColor};
+    props.color ? props.theme.colors.color_5 : props.theme.defaultColor};
 `;
 
 export const ReservationButtonAgree = styled.button`
