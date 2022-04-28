@@ -4,8 +4,7 @@ export const Container = styled.div`
   width: 65vw;
   display: flex;
   margin: 4vh 20vw;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
 
   @media ${(props) => props.theme.breakpoints.md} {
     flex-direction: column;
@@ -19,15 +18,13 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
   padding: 30px;
   margin: 3vh 4vw 0 20vw;
   z-index: 1;
 
   h1 {
-    font-family: ${(props) =>
-      props.font ? props.theme.fonts.font_2 : props.theme.defaultFont};
+    font-family: ${(props) => props.theme.fonts.font_2};
     margin: 0 20px 20px 1vw;
 
     @media ${(props) => props.theme.breakpoints.md} {

@@ -1,25 +1,36 @@
 import React from "react";
+
+//styled components
 import {
   HeaderStyle,
-  HeaderLeft,
   HeaderLeftTitle,
   HeaderRight,
   BasketCounter,
   HomeLink,
   HeaderRightIcon,
 } from "./Header.styled";
+
+//icons
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import InputIcon from "@mui/icons-material/Input";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+
+//react router
 import { Link } from "react-router-dom";
-import { useStateValue } from "../../helper/StateProvider";
-import ModalLogic from "../Modal/ModalLogic";
+
+//useStateValue
+import { useStateValue } from "../../helper/StateProvider/StateProvider";
+
+//modal window and modal logic
 import Modal from "../Modal/Modal";
+import ModalLogic from "../Modal/ModalLogic";
+
+//framer motion
 import { motion } from "framer-motion";
 
-function Header() {
+const Header = () => {
   const [{ basket }] = useStateValue();
   const { openModal, showModal, setShowModal } = ModalLogic();
 
@@ -30,18 +41,18 @@ function Header() {
       animate={{ opacity: 1, marginTop: 0 }}
       transition={{ delay: 0.2 }}
     >
-      <HeaderStyle color>
-        <HeaderLeft color>
+      <HeaderStyle>
+        <HeaderLeftTitle>
           <Link to='/' style={{ textDecoration: "none" }}>
-            <HomeLink color>
+            <HomeLink>
               <RestaurantMenuIcon />
-              <HeaderLeftTitle font>Enjoy your meal!</HeaderLeftTitle>
+              <HeaderLeftTitle>Enjoy your meal!</HeaderLeftTitle>
             </HomeLink>
           </Link>
-        </HeaderLeft>
+        </HeaderLeftTitle>
 
-        <HeaderRight color>
-          <HeaderRightIcon color>
+        <HeaderRight>
+          <HeaderRightIcon>
             <PersonIcon onClick={openModal} />
           </HeaderRightIcon>
 
@@ -54,23 +65,23 @@ function Header() {
           ) : null}
 
           <Link to='/basket'>
-            <HeaderRightIcon color>
+            <HeaderRightIcon>
               <ShoppingBasketIcon />
             </HeaderRightIcon>
           </Link>
 
           {basket.length >= 1 ? (
-            <BasketCounter font>{basket.length}</BasketCounter>
+            <BasketCounter>{basket.length}</BasketCounter>
           ) : null}
 
           <Link to='/reservation'>
-            <HeaderRightIcon color>
+            <HeaderRightIcon>
               <BookmarkAddIcon />
             </HeaderRightIcon>
           </Link>
 
           <Link to='/login'>
-            <HeaderRightIcon color>
+            <HeaderRightIcon>
               <InputIcon />
             </HeaderRightIcon>
           </Link>
@@ -78,6 +89,6 @@ function Header() {
       </HeaderStyle>
     </motion.div>
   );
-}
+};
 
 export default Header;

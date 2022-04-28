@@ -2,15 +2,21 @@ import styled from "styled-components";
 
 export const BasketStyle = styled.div`
   display: flex;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
-  margin: 20px;
+  justify-content: center;
+  background-color: ${(props) => props.theme.colors.color_3};
+  width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
 
   @media ${(props) => props.theme.breakpoints.sm} {
     flex-direction: column-reverse;
     align-items: center;
-    margin: 10px;
+    margin: 11.5px;
     width: 97.5%;
+  }
+
+  @media ${(props) => props.theme.breakpoints.xxl} {
+    width: 70vw;
   }
 `;
 
@@ -18,7 +24,7 @@ export const LeftSide = styled.div`
   margin-top: 30px;
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 0 20px 20px -10px;
+    margin: 0 20px 20px 0;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -29,10 +35,9 @@ export const LeftSide = styled.div`
 export const RightSide = styled.div`
   height: 30vh;
   width: 25vw;
-  margin-left: 10px;
+  margin-left: 20px;
   margin-top: 5vh;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -45,7 +50,7 @@ export const RightSide = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
     height: auto;
-    margin: 20px 60px 60px 60px;
+    margin: 20px 40px 60px 40px;
     box-shadow: none;
   }
 
@@ -72,11 +77,11 @@ export const BasketAddButton = styled.button`
   border: none;
   border-radius: 10px;
   font-weight: 700;
+  font-size: 14px;
 
   &:hover {
     cursor: pointer;
-    background-color: ${(props) =>
-      props.color ? props.theme.colors.color_7 : props.theme.defaultColor};
+    background-color: ${(props) => props.theme.colors.color_7};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
@@ -87,8 +92,7 @@ export const BasketDeleteButton = styled(BasketAddButton)`
   padding: 17px;
 
   &:hover {
-    background-color: ${(props) =>
-      props.color ? props.theme.colors.color_6 : props.theme.defaultColor};
+    background-color: ${(props) => props.theme.colors.color_6};
   }
 `;
 
@@ -99,14 +103,14 @@ export const Checkout = styled.button`
   border: none;
   border-radius: 10px;
   font-weight: 700;
+  font-size: 14px;
   display: flex;
   align-items: center;
   padding: 14px;
 
   &:hover {
     cursor: pointer;
-    background-color: ${(props) =>
-      props.color ? props.theme.colors.color_10 : props.theme.defaultColor};
+    background-color: ${(props) => props.theme.colors.color_10};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
@@ -119,8 +123,7 @@ export const CheckoutIcon = styled.div`
 export const EmptyBasket = styled.h1`
   margin: 30px;
   font-weight: 700;
-  font-family: ${(props) =>
-    props.font ? props.theme.fonts.font_4 : props.theme.defaultFont};
+  font-family: ${(props) => props.theme.fonts.font_4};
 
   @media ${(props) => props.theme.breakpoints.md} {
     margin: 0;

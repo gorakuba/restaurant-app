@@ -6,26 +6,13 @@ export const HeaderStyle = styled.header`
   height: 70px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   padding: 10px 20px;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_1 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_1};
   margin-bottom: 30px;
-  justify-content: space-around;
-`;
-
-export const HeaderLeft = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 30px;
-
-  &:hover {
-    cursor: pointer;
-  }
+  justify-content: space-between;
 `;
 
 export const HomeLink = styled.div`
-  color: ${(props) =>
-    props.color ? props.theme.colors.color_2 : props.theme.defaultColor};
+  color: ${(props) => props.theme.colors.color_2};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,8 +27,7 @@ export const HeaderLeftTitle = styled.div`
   text-align: center;
   font-weight: 500;
   font-size: 24px;
-  font-family: ${(props) =>
-    props.font ? props.theme.fonts.font_1 : props.theme.defaultFont};
+  font-family: ${(props) => props.theme.fonts.font_1};
 
   @media ${(props) => props.theme.breakpoints.md} {
     display: none;
@@ -58,8 +44,7 @@ export const HeaderRight = styled.div`
 export const HeaderRightIcon = styled.div`
   padding-left: 15px;
   padding-right: 15px;
-  color: ${(props) =>
-    props.color ? props.theme.colors.color_2 : props.theme.defaultColor};
+  color: ${(props) => props.theme.colors.color_2};
 
   &:hover {
     cursor: pointer;
@@ -71,7 +56,5 @@ export const HeaderRightIcon = styled.div`
 
 export const BasketCounter = styled.div`
   font-weight: 900;
-  font-family: ${(props) =>
-      props.font ? props.theme.fonts.font_2 : props.theme.defaultFont},
-    sans-serif;
+  font-family: ${(props) => props.theme.fonts.font_2}, sans-serif;
 `;

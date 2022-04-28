@@ -1,5 +1,9 @@
 import React from "react";
-import { useStateValue } from "../../helper/StateProvider";
+
+//useStateValue
+import { useStateValue } from "../../helper/StateProvider/StateProvider";
+
+//styled components
 import {
   Description,
   HeaderLine,
@@ -10,7 +14,7 @@ import {
   Name,
 } from "./BasketProduct.styled";
 
-function BasketProduct({ id, name, price, description }) {
+const BasketProduct = ({ id, name, price, description }) => {
   const [{ basket }, dispatch] = useStateValue();
 
   const basketRemove = () => {
@@ -26,7 +30,7 @@ function BasketProduct({ id, name, price, description }) {
   };
 
   return (
-    <ProductStyle color>
+    <ProductStyle>
       <HeaderLine>
         <Name>{name}</Name>
 
@@ -39,6 +43,6 @@ function BasketProduct({ id, name, price, description }) {
       <Description>{description}</Description>
     </ProductStyle>
   );
-}
+};
 
 export default BasketProduct;

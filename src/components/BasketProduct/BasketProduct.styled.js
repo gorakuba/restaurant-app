@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const ProductStyle = styled.div`
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
-  width: auto;
+  background-color: ${(props) => props.theme.colors.color_3};
+  width: 90%;
   padding: 15px;
-  margin: 30px 10px 10px 30px;
+  margin: 30px 10px 10px 50px;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
@@ -14,7 +13,7 @@ export const ProductStyle = styled.div`
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    margin-left: 10px;
+    margin-left: 0;
     width: 95%;
   }
 `;
@@ -24,6 +23,11 @@ export const HeaderLine = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 15px 15px 15px 0;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 
 export const Name = styled.h3`
@@ -35,6 +39,12 @@ export const RemoveSection = styled.div`
   justify-content: left;
   align-items: center;
   margin: 0 0 0 10px;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
 `;
 
 export const Minus = styled.div`
@@ -43,12 +53,20 @@ export const Minus = styled.div`
   &:hover {
     cursor: pointer;
   }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    margin: 10px auto 0 auto;
+  }
 `;
 
 export const Price = styled.div`
   display: flex;
   margin: 0 10px 0 0;
   font-weight: 500;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    margin: 10px auto 0 auto;
+  }
 `;
 
 export const Description = styled.div`

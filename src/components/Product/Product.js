@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+//styled components
 import {
   Description,
   HeaderLine,
@@ -9,11 +11,15 @@ import {
   Plus,
   Name,
 } from "./Product.styled";
+
+//icons
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { useStateValue } from "../../helper/StateProvider";
 
-function Product({ id, name, description, price }) {
+//useStateValue
+import { useStateValue } from "../../helper/StateProvider/StateProvider";
+
+const Product = ({ id, name, description, price }) => {
   const [{ basket }, dispatch] = useStateValue();
   const [clicked, setClicked] = useState(false);
   const [counter, setCounter] = useState(0);
@@ -68,7 +74,7 @@ function Product({ id, name, description, price }) {
   };
 
   return (
-    <ProductStyle color>
+    <ProductStyle>
       <HeaderLine>
         <Name>{name}</Name>
 
@@ -90,6 +96,6 @@ function Product({ id, name, description, price }) {
       <Description color>{description}</Description>
     </ProductStyle>
   );
-}
+};
 
 export default Product;

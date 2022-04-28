@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const ProductStyle = styled.div`
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
   width: 100%;
   padding: 15px;
   margin: 30px 10px 10px 10px;
@@ -89,7 +88,6 @@ export const Price = styled.div`
 export const Description = styled.div`
   font-size: 12px;
   font-weight: 700;
-  color: ${(props) =>
-    props.color ? props.theme.colors.color_2 : props.theme.defaultColor};
+  color: ${(props) => props.theme.colors.color_2};
   padding: 10px;
 `;

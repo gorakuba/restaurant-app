@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const TableStyle = styled.div`
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
   width: 100%;
   height: auto;
   padding: 10px;
@@ -127,8 +126,7 @@ export const TableHeadInput = styled.input`
   height: 30px;
   border-radius: 10px;
   border: none;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_5 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_5};
 `;
 
 export const ReservationButtonAgree = styled.button`
@@ -182,8 +180,7 @@ export const TableChairIcon = styled.div`
 
 export const DeletePerson = styled(RemoveReservationButton)`
   &:hover {
-    background-color: ${(props) =>
-      props.color ? props.theme.colors.color_5 : props.theme.defaultColor};
+    background-color: ${(props) => props.theme.colors.color_5};
     cursor: pointer;
     transition: all ease-in-out;
     transition-duration: 400ms;

@@ -1,4 +1,5 @@
-import { useStateValue } from "../../helper/StateProvider";
+//useStateValue
+import { useStateValue } from "../../helper/StateProvider/StateProvider";
 
 const BasketLogic = () => {
   const [{ basket }, dispatch] = useStateValue();
@@ -9,9 +10,7 @@ const BasketLogic = () => {
     });
   };
 
-  const checkout = () => {};
-
-  return { basket, deleteItems, checkout };
+  return { basket, deleteItems };
 };
 
 export default BasketLogic;

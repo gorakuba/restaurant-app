@@ -2,20 +2,18 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  flex-direction: column;
+  margin: 0 21vw;
+  width: 50vw;
+  background-color: ${(props) => props.theme.colors.color_3};
 
-  @media ${(props) => props.theme.breakpoints.lg} {
-    flex-direction: column;
+  @media ${(props) => props.theme.breakpoints.xxl} {
+    width: 70vw;
   }
 `;
 
 export const Content = styled.div`
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
-  padding: 0 30px 0px 30px;
-  width: 75%;
+  background-color: ${(props) => props.theme.colors.color_3};
 
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 90%;
@@ -40,12 +38,11 @@ export const ContactList = styled.ul`
   list-style-type: circle;
 `;
 
-export const ContactLink = styled.div`
+export const ContactLink = styled.a`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: ${(props) =>
-    props.color ? props.theme.colors.color_2 : props.theme.defaultColor};
+  color: ${(props) => props.theme.colors.color_2};
 `;
 
 export const ContactIcon = styled.div`
@@ -54,7 +51,7 @@ export const ContactIcon = styled.div`
   height: 25px;
 `;
 
-export const ContactIconWup = styled(ContactIcon)`
+export const ContactIconWupMail = styled(ContactIcon)`
   margin-left: 20px;
   margin-top: 40px;
   width: 40px;
@@ -75,8 +72,7 @@ export const ContactItems = styled.li`
   &:hover {
     cursor: pointer;
     border: none;
-    color: ${(props) =>
-      props.color ? props.theme.colors.color_12 : props.theme.defaultColor};
+    color: ${(props) => props.theme.colors.color_12};
     transition: all ease-in-out;
     transition-duration: 200ms;
   }
@@ -97,8 +93,7 @@ export const ContactInfoText = styled.p`
 export const Map = styled.div`
   height: 550px;
   width: 120vh;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
   padding: 2vh;
   border-radius: 20px;
   margin: 30px 60px 80px 0;
@@ -113,39 +108,5 @@ export const Map = styled.div`
     width: 100%;
     height: 100%;
     z-index: 0;
-  }
-`;
-
-export const Footer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px 60px 80px 60px;
-  padding: 50px 50px 20px 50px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  border: none;
-
-  @media ${(props) => props.theme.breakpoints.md} {
-    width: 80%;
-    margin: 13px auto;
-  }
-`;
-
-export const FooterHeader = styled.h3`
-  text-align: center;
-`;
-
-export const FooterButton = styled.button`
-  width: 150px;
-  padding: 10px;
-  margin: 50px 10px 50px 10px;
-  border-radius: 10px;
-  border: none;
-
-  &:hover {
-    background-color: ${(props) =>
-      props.color ? props.theme.colors.color_11 : props.theme.defaultColor};
-    cursor: pointer;
   }
 `;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function SidebarLogic() {
+const SidebarLogic = () => {
   const [showHover, setShowHover] = useState(false);
   const [sidebar, setSidebar] = useState(false);
 
@@ -27,6 +27,6 @@ function SidebarLogic() {
     dotsClick,
     close,
   };
-}
+};
 
 export default SidebarLogic;

@@ -1,4 +1,6 @@
 import React from "react";
+
+//styled components
 import {
   Background,
   ModalWraper,
@@ -8,8 +10,14 @@ import {
   ModalLogoTitle,
   ModalContentText,
 } from "./Modal.styled";
+
+//modal logic
 import ModalLogic from "./ModalLogic";
+
+//icons
 import RestaurantIcon from "@mui/icons-material/Restaurant";
+
+//framer motion
 import { motion } from "framer-motion";
 
 const Modal = ({ setCloseModal }) => {
@@ -23,8 +31,8 @@ const Modal = ({ setCloseModal }) => {
         transition={{ delay: 0.1, duration: 0.4 }}
       >
         <Background ref={modalRef} onClick={closeModal}>
-          <ModalWraper showModal={showModal} color>
-            <ModalContent color>
+          <ModalWraper showModal={showModal}>
+            <ModalContent>
               <ModalLogo>
                 <RestaurantIcon />
                 <ModalLogoTitle>Our Restaurant</ModalLogoTitle>

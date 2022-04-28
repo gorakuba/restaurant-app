@@ -8,8 +8,7 @@ export const OpenSidebar = styled.div`
   margin: 20px 0 20px 60px;
   display: flex;
   align-items: center;
-  color: ${(props) =>
-    props.color ? props.theme.colors.color_2 : props.theme.defaultColor};
+  color: ${(props) => props.theme.colors.color_2};
 
   &:hover {
     cursor: pointer;
@@ -37,8 +36,7 @@ export const SidebarStyle = styled.div`
   left: 14vw;
   top: 17vh;
   width: 20%;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
   margin: 0 20px 20px 30px;
 
   @media ${(props) => props.theme.breakpoints.md} {
@@ -96,12 +94,10 @@ export const ListItem = styled.div`
   width: 70%;
   height: 30px;
   font-size: 16px;
-  font-family: ${(props) =>
-    props.font ? props.theme.fonts.font_3 : props.theme.defaultFont};
+  font-family: ${(props) => props.theme.fonts.font_3};
 
   &:hover {
-    background-color: ${(props) =>
-      props.color ? props.theme.colors.color_5 : props.theme.defaultColor};
+    background-color: ${(props) => props.theme.colors.color_5};
     border-radius: 10px;
     cursor: pointer;
     font-weight: 700;

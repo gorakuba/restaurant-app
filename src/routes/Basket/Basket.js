@@ -1,5 +1,10 @@
 import React from "react";
+
+//components
 import Header from "../../components/Header/Header";
+import BasketProduct from "../../components/BasketProduct/BasketProduct";
+
+//styled components
 import {
   ItemsPrice,
   BasketStyle,
@@ -12,21 +17,32 @@ import {
   CheckoutIcon,
   EmptyBasket,
 } from "./Basket.styled";
-import BasketProduct from "../../components/BasketProduct/BasketProduct";
+
+//currency format
 import CurrencyFormat from "react-currency-format";
-import { getBasketTotal } from "../../helper/reducer";
+
+//basket total func
+import { getBasketTotal } from "../../helper/StateProvider/reducer";
+
+//react router
 import { Link } from "react-router-dom";
+
+//basket logic
 import BasketLogic from "./BasketLogic";
+
+//icons
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
+//framer motion
 import { motion } from "framer-motion";
 
-function Basket() {
-  const { basket, deleteItems, checkout } = BasketLogic();
+const Basket = () => {
+  const { basket, deleteItems } = BasketLogic();
 
   return (
     <>
       <Header />
-      <BasketStyle color font>
+      <BasketStyle>
         {basket.length > 0 ? (
           <>
             <motion.div
@@ -52,7 +68,7 @@ function Basket() {
               animate={{ opacity: 1, marginTop: 0 }}
               transition={{ type: "spring", stiffness: 50, delay: 0.8 }}
             >
-              <RightSide color>
+              <RightSide>
                 <CurrencyFormat
                   renderText={(value) => (
                     <>
@@ -66,15 +82,13 @@ function Basket() {
                   thousandSeparator={true}
                 />
                 <Link to='/specialsoftheday' style={{ textDecoration: "none" }}>
-                  <BasketAddButton color>
-                    Add more items to basket
-                  </BasketAddButton>
+                  <BasketAddButton>Add more items to basket</BasketAddButton>
                 </Link>
-                <BasketDeleteButton color onClick={deleteItems}>
+                <BasketDeleteButton onClick={deleteItems}>
                   Delete items from basket
                 </BasketDeleteButton>
                 <Link to='/checkout' style={{ textDecoration: "none" }}>
-                  <Checkout color onClick={checkout}>
+                  <Checkout>
                     Go to checkout page
                     <CheckoutIcon>
                       <ShoppingCartIcon />
@@ -96,6 +110,6 @@ function Basket() {
       </BasketStyle>
     </>
   );
-}
+};
 
 export default Basket;

@@ -1,19 +1,27 @@
 import React from "react";
-import { Container, Content } from "../../styles/main.styled";
+
+//components
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Product from "../../components/Product/Product";
+
+//styled components
+import { Container, Content } from "../../styles/main.styled";
+
+//dishes
 import { dishes } from "../../utilities/dishes";
+
+//framer motion
 import { motion } from "framer-motion";
 
-function VegDish() {
+const VegDish = () => {
   return (
     <>
       <Header />
-      <Container color>
+      <Container>
         <Sidebar />
 
-        <Content color font>
+        <Content>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -24,12 +32,12 @@ function VegDish() {
 
           {dishes.map((dish) => (
             <motion.div
+              key={dish.id}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, marginTop: 40 }}
               transition={{ delay: 1.6, duration: 0.8 }}
             >
               <Product
-                key={dish.id}
                 name={dish.name}
                 price={dish.price}
                 description={dish.description}
@@ -40,6 +48,6 @@ function VegDish() {
       </Container>
     </>
   );
-}
+};
 
 export default VegDish;

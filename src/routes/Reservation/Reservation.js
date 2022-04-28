@@ -1,19 +1,27 @@
 import React from "react";
+
+//components
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import { Container, Content, ResHeader } from "./Resevation.styled";
 import Table from "../../components/Table/Table";
+
+//styled components
+import { Container, Content, ResHeader } from "./Resevation.styled";
+
+//tables
 import { tables } from "../../utilities/tables";
+
+//framer motion
 import { motion } from "framer-motion";
 
 const Reservation = () => {
   return (
     <>
       <Header />
-      <Container color>
+      <Container>
         <Sidebar />
 
-        <Content color>
+        <Content>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -24,11 +32,12 @@ const Reservation = () => {
 
           {tables.map((table) => (
             <motion.div
+              key={table.id}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, marginTop: 80 }}
               transition={{ delay: 1.6, duration: 0.8 }}
             >
-              <Table key={table.id} name={table.name} />
+              <Table name={table.name} />
             </motion.div>
           ))}
         </Content>

@@ -1,5 +1,9 @@
 import React from "react";
+
+//react router
 import { Routes, Route } from "react-router-dom";
+
+//routes
 import Home from "./routes/Home/Home";
 import DeliveryContact from "./routes/DeliveryAndContact/DeliveryContact";
 import Drink from "./routes/Drinks/Drink";
@@ -13,6 +17,7 @@ import Basket from "./routes/Basket/Basket";
 import Login from "./routes/Login/Login";
 import Reservation from "./routes/Reservation/Reservation";
 import Register from "./routes/Register/Register";
+import Checkout from "./routes/Checkout/Checkout";
 
 function App() {
   return (
@@ -31,6 +36,7 @@ function App() {
         <Route path='login' element={<Login />} />
         <Route path='/reservation' element={<Reservation />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/checkout' element={<Checkout />} />
       </Routes>
     </>
   );

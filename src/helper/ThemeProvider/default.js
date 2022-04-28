@@ -14,7 +14,6 @@ export const theme = {
     color_11: "rgb(173 216 230)",
     color_12: "rgb(70 130 180)",
   },
-  defaultColor: "rgb(128 128 128)",
 
   //fonts for layout
   fonts: {
@@ -25,7 +24,6 @@ export const theme = {
     font_4: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif",
     font_5: "Georgia, 'Times New Roman', Times, serif;",
   },
-  defaultFont: "Times New Roman",
 
   //breakpoints for responsive design
   breakpoints: {

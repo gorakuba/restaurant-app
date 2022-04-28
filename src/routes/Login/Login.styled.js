@@ -9,8 +9,7 @@ export const LoginLogicStyle = styled.div`
 export const LoginStyle = styled.div`
   width: 40vw;
   height: 80vh;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
   display: flex;
@@ -31,8 +30,7 @@ export const LoginStyle = styled.div`
 
 export const LoginHeader = styled.div`
   font-style: italic;
-  font-family: ${(props) =>
-    props.font ? props.theme.fonts.font_5 : props.theme.defaultFont};
+  font-family: ${(props) => props.theme.fonts.font_5};
   margin: 10px;
   width: 41vw;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -42,8 +40,7 @@ export const LoginHeader = styled.div`
   margin-bottom: 40px;
   word-wrap: break-word;
   text-decoration: underline;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_8 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_8};
   border-radius: 15px;
   padding: 15px;
 `;
@@ -78,8 +75,7 @@ export const PassInput = styled(LoginInput)``;
 
 export const LoginInfo = styled.p`
   margin: 0;
-  color: ${(props) =>
-    props.color ? props.theme.colors.color_6 : props.theme.defaultColor};
+  color: ${(props) => props.theme.colors.color_6};
   font-size: 12px;
   font-style: italic;
 `;
@@ -114,8 +110,7 @@ export const LoginButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: ${(props) =>
-      props.color ? props.theme.colors.color_7 : props.theme.defaultColor};
+    background-color: ${(props) => props.theme.colors.color_7};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
@@ -131,8 +126,7 @@ export const RegisterButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: ${(props) =>
-      props.color ? props.theme.colors.color_9 : props.theme.defaultColor};
+    background-color: ${(props) => props.theme.colors.color_9};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }

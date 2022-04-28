@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 50vw;
   margin: 0 auto;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
 
   @media ${(props) => props.theme.breakpoints.md} {
     display: flex;
@@ -24,8 +23,7 @@ export const Content = styled.div`
   align-items: center;
   margin: 20px;
   text-align: justify;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
   padding: 0 30px 30px 30px;
 
   h1 {
@@ -40,10 +38,8 @@ export const Button = styled.button`
   height: 50px;
   border: none;
   border-radius: 10px;
-  color: ${(props) =>
-    props.color ? props.theme.colors.color_2 : props.theme.defaultColor};
-  font-family: ${(props) =>
-    props.font ? props.theme.fonts.font_3 : props.theme.defaultFont};
+  color: ${(props) => props.theme.colors.color_2};
+  font-family: ${(props) => props.theme.fonts.font_3};
   font-weight: 700;
 
   &:hover {

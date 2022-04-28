@@ -1,4 +1,6 @@
 import React from "react";
+
+//styled components
 import {
   LoginButton,
   LoginHeader,
@@ -14,9 +16,17 @@ import {
   RememberInput,
   RememberText,
 } from "./Login.styled";
+
+//icons
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
+
+//react router
 import { Link } from "react-router-dom";
+
+//login logic
 import LoginLogic from "./LoginLogic";
+
+//framer motion
 import { motion } from "framer-motion";
 
 const Login = () => {
@@ -37,13 +47,13 @@ const Login = () => {
       transition={{ delay: 0.2 }}
     >
       <LoginLogicStyle>
-        <LoginStyle color>
+        <LoginStyle>
           <motion.div
             initial={{ opacity: 0, marginTop: -200 }}
             animate={{ opacity: 1, marginTop: 0 }}
             transition={{ type: "spring", stiffness: 80, delay: 0.4 }}
           >
-            <LoginHeader color font>
+            <LoginHeader>
               <Link
                 to='/'
                 style={{
@@ -59,20 +69,18 @@ const Login = () => {
           </motion.div>
 
           <LoginInput
-            color
             type='text'
             placeholder='Enter your login'
             onChange={loginValid}
           />
-          {!loginForm ? <LoginInfo color>{loginInfo}</LoginInfo> : null}
+          {!loginForm ? <LoginInfo>{loginInfo}</LoginInfo> : null}
 
           <PassInput
-            color
             type='password'
             placeholder='Enter your password'
             onChange={passValid}
           />
-          {!loginForm ? <PassInfo color>{passInfo}</PassInfo> : null}
+          {!loginForm ? <PassInfo>{passInfo}</PassInfo> : null}
 
           <LoginRemember>
             <RememberInput type='checkbox' />
@@ -81,18 +89,14 @@ const Login = () => {
 
           {loginForm ? (
             <Link to='/'>
-              <LoginButton color onClick={loginFunc}>
-                Login
-              </LoginButton>
+              <LoginButton onClick={loginFunc}>Login</LoginButton>
             </Link>
           ) : (
-            <LoginButton color onClick={validFunc}>
-              Sprawdź
-            </LoginButton>
+            <LoginButton onClick={validFunc}>Sprawdź</LoginButton>
           )}
 
           <Link to='/register'>
-            <RegisterButton color>Register</RegisterButton>
+            <RegisterButton>Register</RegisterButton>
           </Link>
         </LoginStyle>
       </LoginLogicStyle>

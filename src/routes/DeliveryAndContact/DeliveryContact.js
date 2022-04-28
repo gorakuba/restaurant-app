@@ -1,83 +1,84 @@
 import React from "react";
+
+//components
+import Header from "../../components/Header/Header";
+
+//styled components
 import {
   Container,
   Content,
   Map,
-  Footer,
   ContactHeader,
   ContactList,
   ContactLink,
   ContactItems,
   ContactIcon,
   ContactInfoText,
-  ContactIconWup,
-  FooterHeader,
-  FooterButton,
+  ContactIconWupMail,
 } from "./DeliveryContact.styled";
-import Header from "../../components/Header/Header";
-import {
-  WebAssetOutlined,
-  Mail,
-  WhatsApp,
-  Facebook,
-} from "@mui/icons-material";
+
+//icons
+import WebAssetOutlined from "@mui/icons-material/WebAssetOutlined";
+import Mail from "@mui/icons-material/Mail";
+import WhatsApp from "@mui/icons-material/WhatsApp";
+import Facebook from "@mui/icons-material/Facebook";
+
+//react leaflet
 import { TileLayer, MapContainer, Popup, Circle } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+
+//deliveryContact logic
 import DeliveryContactLogic from "./DeliveryContactLogic";
+
+//framer motion
 import { motion } from "framer-motion";
 
-function DeliveryContact() {
-  const { position, markerPosition, zoom, send } = DeliveryContactLogic();
+const DeliveryContact = () => {
+  const { position, markerPosition, zoom } = DeliveryContactLogic();
 
   return (
     <>
       <Header />
-      <Container color>
+      <Container>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <Content color>
+          <Content>
             <ContactHeader>
-              Zapraszamy do kontaktu z naszą resturacją :
+              Zapraszamy do kontaktu z naszą resturacją:
             </ContactHeader>
             <>
               <ContactList>
                 <ContactLink
-                  color
                   target='blank'
                   href='https://restaurant-app-demo.netlify.app'
                 >
-                  <ContactItems color>
-                    poprzez naszą stronę internetową
-                  </ContactItems>
+                  <ContactItems>poprzez naszą stronę internetową</ContactItems>
                   <ContactIcon>
                     <WebAssetOutlined />
                   </ContactIcon>
                 </ContactLink>
 
-                <ContactLink
-                  color
-                  target='blank'
-                  href='https://mail.google.com/'
-                >
-                  <ContactItems color>
-                    poprzez naszą pocztę elektroniczną
-                  </ContactItems>
+                <ContactLink>
+                  <div>
+                    <ContactItems>
+                      poprzez naszą pocztę elektroniczną
+                    </ContactItems>
+                    <ContactInfoText>
+                      (nasz adres e-mail: bestreasturant@gmail.com)
+                    </ContactInfoText>
+                  </div>
 
-                  <ContactIcon>
+                  <ContactIconWupMail>
                     <Mail />
-                  </ContactIcon>
+                  </ContactIconWupMail>
                 </ContactLink>
 
-                <ContactLink
-                  color
-                  target='blank'
-                  href='https://www.whatsapp.com/'
-                >
+                <ContactLink target='blank' href='https://www.whatsapp.com/'>
                   <div>
-                    <ContactItems color>
+                    <ContactItems>
                       poprzez kontakt telefoniczny, SMS lub WhatApp'a
                     </ContactItems>
                     <ContactInfoText>
@@ -86,17 +87,13 @@ function DeliveryContact() {
                     </ContactInfoText>
                   </div>
 
-                  <ContactIconWup>
+                  <ContactIconWupMail>
                     <WhatsApp />
-                  </ContactIconWup>
+                  </ContactIconWupMail>
                 </ContactLink>
 
-                <ContactLink
-                  color
-                  target='blank'
-                  href='https://www.facebook.com'
-                >
-                  <ContactItems color>
+                <ContactLink target='blank' href='https://www.facebook.com'>
+                  <ContactItems>
                     poprzez naszą stronę na FaceBook'u
                   </ContactItems>
 
@@ -114,7 +111,7 @@ function DeliveryContact() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          <Map color>
+          <Map>
             <MapContainer center={position} zoom={zoom}>
               <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -131,26 +128,8 @@ function DeliveryContact() {
           </Map>
         </motion.div>
       </Container>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-      >
-        <Footer color>
-          <FooterHeader>
-            Może chcesz zostać z nami na dłużej? Złóż swoje CV, a my rozpatrzymy
-            twoją propozycję i postaramy się odpowiedzieć tak szybko, jak to
-            tylko możliwe 😉
-          </FooterHeader>
-
-          <FooterButton color type='submit' onClick={send}>
-            Send e-mail to us
-          </FooterButton>
-        </Footer>
-      </motion.div>
     </>
   );
-}
+};
 
 export default DeliveryContact;

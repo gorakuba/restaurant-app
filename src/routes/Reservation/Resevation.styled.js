@@ -4,8 +4,7 @@ export const Container = styled.div`
   display: flex;
   width: 65vw;
   margin: 4vh 20vw;
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
 
   @media ${(props) => props.theme.breakpoints.md} {
     flex-direction: column;
@@ -19,8 +18,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  background-color: ${(props) =>
-    props.color ? props.theme.colors.color_3 : props.theme.defaultColor};
+  background-color: ${(props) => props.theme.colors.color_3};
   padding: 0 30px 30px 30px;
   width: 100%;
   margin: 4vh 4vw 0 20vw;
