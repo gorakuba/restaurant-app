@@ -8,6 +8,7 @@ import {
   BasketCounter,
   HomeLink,
   HeaderRightIcon,
+  HeaderLeft,
 } from "./Header.styled";
 
 //icons
@@ -42,14 +43,14 @@ const Header = () => {
       transition={{ delay: 0.2 }}
     >
       <HeaderStyle>
-        <HeaderLeftTitle>
+        <HeaderLeft>
           <Link to='/' style={{ textDecoration: "none" }}>
             <HomeLink>
               <RestaurantMenuIcon />
               <HeaderLeftTitle>Enjoy your meal!</HeaderLeftTitle>
             </HomeLink>
           </Link>
-        </HeaderLeftTitle>
+        </HeaderLeft>
 
         <HeaderRight>
           <HeaderRightIcon>

@@ -22,6 +22,10 @@ export const HomeLink = styled.div`
   }
 `;
 
+export const HeaderLeft = styled.div`
+  margin-left: 30px;
+`;
+
 export const HeaderLeftTitle = styled.div`
   padding: 10px;
   text-align: center;
