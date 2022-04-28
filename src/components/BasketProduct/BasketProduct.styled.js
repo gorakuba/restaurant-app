@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const ProductStyle = styled.div`
-  background-color: ${(props) => props.theme.colors.color_3};
   width: 90%;
   padding: 15px;
   margin: 30px 10px 10px 50px;
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fdfffc;
 
   &:first-child {
     margin-top: 0px;

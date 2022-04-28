@@ -8,7 +8,6 @@ import {
   LoginStyle,
   LoginRemember,
   RegisterButton,
-  LoginIcon,
   LoginInput,
   LoginInfo,
   PassInput,
@@ -44,14 +43,14 @@ const Login = () => {
     <motion.div
       initial={{ opacity: 0, marginTop: -200 }}
       animate={{ opacity: 1, marginTop: 0 }}
-      transition={{ delay: 0.2 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
     >
       <LoginLogicStyle>
         <LoginStyle>
           <motion.div
-            initial={{ opacity: 0, marginTop: -200 }}
-            animate={{ opacity: 1, marginTop: 0 }}
-            transition={{ type: "spring", stiffness: 80, delay: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
           >
             <LoginHeader>
               <Link
@@ -61,13 +60,10 @@ const Login = () => {
                   color: "rgb(0 0 0)",
                 }}
               >
-                <LoginIcon>
-                  <RestaurantMenuIcon />
-                </LoginIcon>
+                <RestaurantMenuIcon />
               </Link>
             </LoginHeader>
           </motion.div>
-
           <LoginInput
             type='text'
             placeholder='Enter your login'

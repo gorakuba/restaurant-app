@@ -14,4 +14,8 @@ export const GlobalStyles = createGlobalStyle`
   html {  
     scroll-behavior: smooth;
   } 
+
+  body {
+    background-color: ${(props) => props.theme.colors.color_5};
+  }
 `;

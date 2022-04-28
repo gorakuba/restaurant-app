@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 50vw;
   margin: 0 auto;
-  background-color: ${(props) => props.theme.colors.color_3};
 
   @media ${(props) => props.theme.breakpoints.md} {
     display: flex;
@@ -22,9 +21,12 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   margin: 20px;
-  text-align: justify;
-  background-color: ${(props) => props.theme.colors.color_3};
   padding: 0 30px 30px 30px;
+
+  p {
+    width: 50vw;
+    text-align: center;
+  }
 
   h1 {
     text-align: center;

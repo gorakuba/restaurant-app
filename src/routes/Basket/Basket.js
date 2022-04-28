@@ -46,9 +46,9 @@ const Basket = () => {
         {basket.length > 0 ? (
           <>
             <motion.div
-              initial={{ opacity: 0, marginTop: -200 }}
-              animate={{ opacity: 1, marginTop: 0 }}
-              transition={{ type: "spring", stiffness: 50, delay: 0.4 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
               <LeftSide>
                 {basket.map((product) => (
@@ -64,9 +64,9 @@ const Basket = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, marginTop: -200 }}
-              animate={{ opacity: 1, marginTop: 0 }}
-              transition={{ type: "spring", stiffness: 50, delay: 0.8 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
             >
               <RightSide>
                 <CurrencyFormat
@@ -100,11 +100,21 @@ const Basket = () => {
           </>
         ) : (
           <motion.div
-            initial={{ opacity: 0, marginTop: -200 }}
-            animate={{ opacity: 1, marginTop: 0 }}
-            transition={{ type: "spring", stiffness: 50, delay: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
             <EmptyBasket>Your shopping basket is empty!</EmptyBasket>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <Link to='/specialsoftheday' style={{ textDecoration: "none" }}>
+                <BasketAddButton>Add items to basket</BasketAddButton>
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </BasketStyle>

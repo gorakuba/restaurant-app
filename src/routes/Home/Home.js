@@ -18,8 +18,8 @@ const Home = () => {
       <Header />
 
       <motion.div
-        initial={{ opacity: 0, marginLeft: -200 }}
-        animate={{ opacity: 1, marginLeft: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
         <Container>
@@ -35,9 +35,9 @@ const Home = () => {
             </p>
 
             <motion.div
-              initial={{ opacity: 0, marginLeft: -200 }}
-              animate={{ opacity: 1, marginLeft: 0 }}
-              transition={{ type: "spring", stiffness: 50, delay: 0.6 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
             >
               <Link to='/specialsoftheday'>
                 <Button>Start make your order</Button>

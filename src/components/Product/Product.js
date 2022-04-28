@@ -33,11 +33,13 @@ const Product = ({ id, name, description, price }) => {
           name: name,
           price: price,
           description: description,
+          count: counter,
         },
       });
-    }
 
-    setCounter(counter + 1);
+      setCounter(counter + 1);
+      setClicked(true);
+    }
   };
 
   const counterMinus = () => {
@@ -49,6 +51,7 @@ const Product = ({ id, name, description, price }) => {
           name: name,
           price: price,
           description: description,
+          count: counter,
         },
       });
 
@@ -66,10 +69,11 @@ const Product = ({ id, name, description, price }) => {
         name: name,
         price: price,
         description: description,
+        count: counter,
       },
     });
 
-    setClicked((prev) => !prev);
+    setClicked(true);
     setCounter(counter + 1);
   };
 
@@ -81,12 +85,12 @@ const Product = ({ id, name, description, price }) => {
         <AddSection>
           {clicked && counter > 0 ? (
             <Counter>
-              <AddIcon onClick={counterPlus} />
+              <AddIcon onClick={basketAdd} />
               {counter}
               <RemoveIcon onClick={counterMinus} />
             </Counter>
           ) : (
-            <Plus onClick={basketAdd}>Add to basket</Plus>
+            <Plus onClick={counterPlus}>Add to basket</Plus>
           )}
 
           <Price>Price: {price} zł</Price>

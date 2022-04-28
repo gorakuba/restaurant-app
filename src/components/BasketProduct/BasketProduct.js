@@ -14,7 +14,7 @@ import {
   Name,
 } from "./BasketProduct.styled";
 
-const BasketProduct = ({ id, name, price, description }) => {
+const BasketProduct = ({ id, name, price, description, counter }) => {
   const [{ basket }, dispatch] = useStateValue();
 
   const basketRemove = () => {
@@ -25,6 +25,7 @@ const BasketProduct = ({ id, name, price, description }) => {
         name: name,
         price: price,
         description: description,
+        count: counter,
       },
     });
   };

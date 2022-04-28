@@ -8,7 +8,7 @@ export const LoginLogicStyle = styled.div`
 
 export const LoginStyle = styled.div`
   width: 40vw;
-  height: 80vh;
+  height: auto;
   background-color: ${(props) => props.theme.colors.color_3};
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -30,25 +30,13 @@ export const LoginStyle = styled.div`
 
 export const LoginHeader = styled.div`
   font-style: italic;
-  font-family: ${(props) => props.theme.fonts.font_5};
-  margin: 10px;
-  width: 41vw;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
-  word-wrap: break-word;
-  text-decoration: underline;
-  background-color: ${(props) => props.theme.colors.color_8};
-  border-radius: 15px;
-  padding: 15px;
-`;
 
-export const LoginIcon = styled.div`
-  width: 40px;
-  height: 40px;
-  padding: 10px;
+  padding: 15px;
 `;
 
 export const LoginInput = styled.input`

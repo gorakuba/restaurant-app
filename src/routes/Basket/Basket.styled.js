@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const BasketStyle = styled.div`
   display: flex;
   justify-content: center;
-  background-color: ${(props) => props.theme.colors.color_3};
   width: 50vw;
   margin-left: auto;
   margin-right: auto;
@@ -11,7 +10,7 @@ export const BasketStyle = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     flex-direction: column-reverse;
     align-items: center;
-    margin: 11.5px;
+    margin-left: 11px;
     width: 97.5%;
   }
 
@@ -37,7 +36,6 @@ export const RightSide = styled.div`
   width: 25vw;
   margin-left: 20px;
   margin-top: 5vh;
-  background-color: ${(props) => props.theme.colors.color_3};
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -126,7 +124,7 @@ export const EmptyBasket = styled.h1`
   font-family: ${(props) => props.theme.fonts.font_4};
 
   @media ${(props) => props.theme.breakpoints.md} {
-    margin: 0;
+    margin: 0 0 30px 0;
     text-align: center;
   }
 `;

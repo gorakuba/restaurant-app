@@ -17,7 +17,6 @@ export const OpenSidebar = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     position: static;
     top: auto;
-    margin-left: 50px;
   }
 `;
 
@@ -36,7 +35,6 @@ export const SidebarStyle = styled.div`
   left: 14vw;
   top: 17vh;
   width: 20%;
-  background-color: ${(props) => props.theme.colors.color_3};
   margin: 0 20px 20px 30px;
 
   @media ${(props) => props.theme.breakpoints.md} {
@@ -46,7 +44,7 @@ export const SidebarStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 20px 20px 0;
+    margin: 0 0 20px 0;
   }
 
   @media ${(props) => props.theme.breakpoints.xxl} {
@@ -93,12 +91,12 @@ export const ListItem = styled.div`
   margin: 20px;
   width: 70%;
   height: 30px;
+  border-radius: 10px;
   font-size: 16px;
   font-family: ${(props) => props.theme.fonts.font_3};
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.color_5};
-    border-radius: 10px;
+    background-color: #e9e9e9;
     cursor: pointer;
     font-weight: 700;
     width: 80%;
@@ -121,6 +119,8 @@ export const ListItem = styled.div`
 `;
 
 export const ArrowIcon = styled.div`
+  margin-left: 20px;
+
   @media ${(props) => props.theme.breakpoints.lg} {
     display: none;
   }
