@@ -9,7 +9,7 @@ import Product from "../../components/Product/Product";
 import { Container, Content } from "../../styles/main.styled";
 
 //drinks
-import { dishes } from "../../utilities/dishes";
+import { dishes } from "../../resources/dishes";
 
 //framer motion
 import { motion } from "framer-motion";

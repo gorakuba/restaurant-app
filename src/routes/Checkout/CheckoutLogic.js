@@ -1,5 +1,11 @@
 import { useState } from "react";
 
+//initialState
+import { useStateValue } from "../../helper/StateProvider/StateProvider";
+
+//basketTotal
+import { getBasketTotal } from "../../helper/StateProvider/reducer";
+
 export const defaults = {
   //links
   links: {
@@ -48,11 +54,21 @@ const CheckoutLogic = () => {
   const [payment, setPayment] = useState(0);
   const [courier, setCourier] = useState(0);
 
+  const [promoCode, setPromoCode] = useState("");
+  const [{ basket }] = useStateValue();
+
+  var basketValue = getBasketTotal(basket);
+  var basketValueAfterPromo;
+
   return {
     payment,
     setPayment,
     courier,
     setCourier,
+    promoCode,
+    setPromoCode,
+    basketValue,
+    basketValueAfterPromo,
   };
 };
 

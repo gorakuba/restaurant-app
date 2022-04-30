@@ -17,7 +17,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
 //menu items
-import { menuItems } from "../../utilities/menu";
+import { menuItems } from "../../resources/menu";
 
 //react router
 import { Link } from "react-router-dom";

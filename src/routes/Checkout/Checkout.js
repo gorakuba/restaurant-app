@@ -42,15 +42,13 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 //PromoCodes func
-import PromoCodes from "./PromoCodes";
-
-//icons
-import AddIcon from "@mui/icons-material/Add";
+import PromoCodes from "../../utils/PromoCodes";
 
 const Checkout = () => {
   const { payment, setPayment, courier, setCourier } = CheckoutLogic();
   const { promoCode, setPromoCode, basketValue, basketValueAfterPromo } =
     PromoCodes();
+
   const [{ basket }] = useStateValue();
 
   return (
@@ -194,7 +192,7 @@ const Checkout = () => {
           >
             <Total>
               <p>Total</p>
-              <p>{basketValueAfterPromo} zł</p>
+              <p>{promoCode === "" ? basketValue : basketValueAfterPromo} zł</p>
             </Total>
           </motion.div>
           <motion.div
@@ -206,20 +204,10 @@ const Checkout = () => {
               {basket.length === 0 ? (
                 <Input placeholder={defaults.placeholders.promoCode} disabled />
               ) : (
-                <>
-                  <Input
-                    placeholder={defaults.placeholders.promoCode}
-                    onChange={(e) => setPromoCode(e.target.value)}
-                  />
-                  <AddIcon
-                    onClick={PromoCodes}
-                    style={{
-                      width: "10%",
-                      cursor: "pointer",
-                      color: "gray",
-                    }}
-                  />
-                </>
+                <Input
+                  placeholder={defaults.placeholders.promoCode}
+                  onChange={(e) => setPromoCode(e.target.value)}
+                />
               )}
             </PromoCode>
           </motion.div>

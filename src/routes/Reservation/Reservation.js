@@ -9,7 +9,7 @@ import Table from "../../components/Table/Table";
 import { Container, Content, ResHeader } from "./Resevation.styled";
 
 //tables
-import { tables } from "../../utilities/tables";
+import { tables } from "../../resources/tables";
 
 //framer motion
 import { motion } from "framer-motion";
