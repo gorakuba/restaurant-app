@@ -120,6 +120,10 @@ export const Total = styled.div`
 export const PromoCode = styled.div`
   display: flex;
   align-items: center;
+
+  &:hover {
+    color: black;
+  }
 `;
 
 export const Input = styled(Email)`

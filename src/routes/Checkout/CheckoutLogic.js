@@ -33,10 +33,10 @@ export const defaults = {
 
   //placeholders
   placeholders: {
-    email: "Enter your address email (user@email.com)",
+    email: "Enter your address email (username@email.com)",
     fisrtName: "Enter your name ...",
     surname: "Enter your surname ...",
-    company: "Enter your company name ...",
+    company: "Enter your company name (optional)",
     address: "Enter your address ...",
     phone: "Enter your phone number (XXX-XXX-XXX)",
     zipCode: "Enter your zip code and city (XX-XXX CITY)",
