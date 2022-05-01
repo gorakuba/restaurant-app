@@ -7,7 +7,7 @@ export const BasketStyle = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  @media ${(props) => props.theme.breakpoints.sm} {
+  @media ${(props) => props.theme.breakpoints.xl} {
     flex-direction: column-reverse;
     align-items: center;
     margin-left: 11px;
@@ -22,8 +22,8 @@ export const BasketStyle = styled.div`
 export const LeftSide = styled.div`
   margin-top: 30px;
 
-  @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 0 20px 20px 0;
+  @media ${(props) => props.theme.breakpoints.xl} {
+    margin: 60px 0 20px 0;
     display: flex;
     align-items: center;
     flex-direction: column;

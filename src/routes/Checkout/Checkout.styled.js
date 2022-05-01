@@ -14,8 +14,10 @@ export const CheckoutBody = styled.div`
   margin: 50px auto;
   width: 50vw;
 
-  @media ${(props) => props.theme.breakpoints.md} {
+  @media ${(props) => props.theme.breakpoints.xl} {
     flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   @media ${(props) => props.theme.breakpoints.xxl} {
@@ -87,6 +89,10 @@ export const Email = styled.input`
   width: 35vw;
   border-radius: 10px;
   border: none;
+
+  @media ${(props) => props.theme.breakpoints.lg} {
+    width: calc(100% - 40px);
+  }
 `;
 
 export const FirstName = styled(Email)``;
@@ -104,6 +110,11 @@ export const ZipCode = styled(Email)``;
 export const CheckoutConfirm = styled.div`
   width: 50%;
   margin-left: 10px;
+
+  @media ${(props) => props.theme.breakpoints.lg} {
+    margin-left: 0;
+    margin-top: 50px;
+  }
 `;
 
 export const Total = styled.div`

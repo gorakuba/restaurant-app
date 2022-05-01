@@ -5,7 +5,6 @@ export const Container = styled.div`
   flex-direction: column;
   margin: 0 21vw;
   width: 50vw;
-  background-color: ${(props) => props.theme.colors.color_3};
 
   @media ${(props) => props.theme.breakpoints.xxl} {
     width: 70vw;
@@ -13,8 +12,6 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  background-color: ${(props) => props.theme.colors.color_3};
-
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 90%;
     display: flex;
