@@ -17,6 +17,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import InputIcon from "@mui/icons-material/Input";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 //react router
 import { Link } from "react-router-dom";
@@ -28,12 +29,19 @@ import { useStateValue } from "../../helper/StateProvider/StateProvider";
 import Modal from "../Modal/Modal";
 import ModalLogic from "../Modal/ModalLogic";
 
+//header logic
+import HeaderLogic from "./HeaderLogic";
+
 //framer motion
 import { motion } from "framer-motion";
+
+// //users data
+import { users } from "../../resources/users";
 
 const Header = () => {
   const [{ basket }] = useStateValue();
   const { openModal, showModal, setShowModal } = ModalLogic();
+  const { check, logout } = HeaderLogic();
 
   return (
     <motion.div
@@ -47,7 +55,13 @@ const Header = () => {
           <Link to='/' style={{ textDecoration: "none" }}>
             <HomeLink>
               <RestaurantMenuIcon />
-              <HeaderLeftTitle>Enjoy your meal!</HeaderLeftTitle>
+              <HeaderLeftTitle>
+                Enjoy your meal
+                {users.map((user) =>
+                  user.loginStatus === true ? `, ${user.name}` : ""
+                )}
+                !
+              </HeaderLeftTitle>
             </HomeLink>
           </Link>
         </HeaderLeft>
@@ -81,11 +95,19 @@ const Header = () => {
             </HeaderRightIcon>
           </Link>
 
-          <Link to='/login'>
-            <HeaderRightIcon>
-              <InputIcon />
-            </HeaderRightIcon>
-          </Link>
+          {check === false ? (
+            <Link to='/login'>
+              <HeaderRightIcon>
+                <InputIcon />
+              </HeaderRightIcon>
+            </Link>
+          ) : (
+            <Link to='/'>
+              <HeaderRightIcon>
+                <LogoutIcon onClick={logout} />
+              </HeaderRightIcon>
+            </Link>
+          )}
         </HeaderRight>
       </HeaderStyle>
     </motion.div>

@@ -4,7 +4,12 @@ import React from "react";
 import Header from "../../components/Header/Header";
 
 //styled components
-import { Container, Content, Button } from "./Home.styled";
+import {
+  Container,
+  Content,
+  StartShopButton,
+  LoginButton,
+} from "./Home.styled";
 
 //react router
 import { Link } from "react-router-dom";
@@ -12,7 +17,15 @@ import { Link } from "react-router-dom";
 //framer motion
 import { motion } from "framer-motion";
 
+//header logic
+import HeaderLogic from "../../components/Header/HeaderLogic";
+
+//users data
+import { users } from "../../resources/users";
+
 const Home = () => {
+  const { check } = HeaderLogic();
+
   return (
     <>
       <Header />
@@ -24,7 +37,20 @@ const Home = () => {
       >
         <Container>
           <Content>
-            <h1>Welcome to our restaurant page!</h1>
+            <h1>
+              Welcome!
+              {check === false ? (
+                " You are not logged in!"
+              ) : (
+                <>
+                  {users.map((user) =>
+                    user.loginStatus === true
+                      ? ` You are logged in as ${user.name}!`
+                      : null
+                  )}
+                </>
+              )}
+            </h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae
               libero placerat lectus ultricies placerat. Cras eros mi,
@@ -34,15 +60,21 @@ const Home = () => {
               pharetra at urna eu fringilla.
             </p>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <Link to='/specialsoftheday'>
-                <Button>Start make your order</Button>
+            {check === false ? (
+              <Link to='/login'>
+                <LoginButton>Login</LoginButton>
               </Link>
-            </motion.div>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <Link to='/specialsoftheday'>
+                  <StartShopButton>Start make your order</StartShopButton>
+                </Link>
+              </motion.div>
+            )}
           </Content>
         </Container>
       </motion.div>

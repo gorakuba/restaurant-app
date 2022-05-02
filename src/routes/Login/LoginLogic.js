@@ -1,32 +1,37 @@
 import { useState } from "react";
 
+//users data
+import { users } from "../../resources/users";
+
 const LoginLogic = () => {
   const [pass, setPass] = useState(false);
   const [login, setLogin] = useState(false);
   const [loginInfo, setLoginInfo] = useState("");
   const [passInfo, setPassInfo] = useState("");
   const [loginForm, setLoginForm] = useState(false);
+  const [fullLogin, setFullLogin] = useState("");
+  const [fullPass, setFullPass] = useState("");
 
   const loginValid = (e) => {
     if (e.target.value === "") {
-      setLogin(false);
       setLoginForm(false);
       setLoginInfo("Login field cannot be empty!");
     } else {
       setLogin(true);
       setLoginInfo("");
+      setFullLogin(e.target.value);
       return e.target.value;
     }
   };
 
   const passValid = (e) => {
     if (e.target.value === "") {
-      setPass(false);
       setLoginForm(false);
       setPassInfo("Password field cannot be empty!");
     } else {
       setPass(true);
       setPassInfo("");
+      setFullPass(e.target.value);
       return e.target.value;
     }
   };
@@ -49,7 +54,13 @@ const LoginLogic = () => {
   const loginFunc = () => {
     setLoginInfo("");
     setPassInfo("");
-    setLoginForm(false);
+
+    users.map((user) => {
+      if (user.name === fullLogin && user.password === fullPass) {
+        return (user.loginStatus = true);
+      }
+      return { fullLogin, fullPass };
+    });
   };
 
   return {

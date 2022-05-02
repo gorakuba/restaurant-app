@@ -33,7 +33,7 @@ export const Content = styled.div`
   }
 `;
 
-export const Button = styled.button`
+export const StartShopButton = styled.button`
   margin-top: 50px;
   padding: 5px;
   width: 200px;
@@ -52,3 +52,5 @@ export const Button = styled.button`
     transition-duration: 300ms;
   }
 `;
+
+export const LoginButton = styled(StartShopButton)``;
