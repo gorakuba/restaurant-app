@@ -16,6 +16,8 @@ import {
   BasketDeleteButton,
   CheckoutIcon,
   EmptyBasket,
+  NotLogged,
+  LoginButton,
 } from "./Basket.styled";
 
 //currency format
@@ -36,88 +38,114 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 //framer motion
 import { motion } from "framer-motion";
 
+//header logic
+import HeaderLogic from "../../components/Header/HeaderLogic";
+
 const Basket = () => {
   const { basket, deleteItems } = BasketLogic();
+  const { check } = HeaderLogic();
 
   return (
     <>
       <Header />
-      <BasketStyle>
-        {basket.length > 0 ? (
-          <>
+
+      {check === false ? (
+        <motion.div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <NotLogged>You are not logged in!</NotLogged>
+          <LoginButton>Login</LoginButton>
+        </motion.div>
+      ) : (
+        <BasketStyle>
+          {basket.length > 0 ? (
+            <>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <LeftSide>
+                  {basket.map((product) => (
+                    <BasketProduct
+                      key={basket.indexOf(product)}
+                      id={product.id}
+                      name={product.name}
+                      description={product.description}
+                      price={product.price}
+                    />
+                  ))}
+                </LeftSide>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+              >
+                <RightSide>
+                  <CurrencyFormat
+                    renderText={(value) => (
+                      <>
+                        <ItemsCount>
+                          Items in basket: {basket.length}
+                        </ItemsCount>
+                        <ItemsPrice>Total price: {value} zł</ItemsPrice>
+                      </>
+                    )}
+                    decimalScale={2}
+                    value={getBasketTotal(basket)}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                  />
+                  <Link
+                    to='/specialsoftheday'
+                    style={{ textDecoration: "none" }}
+                  >
+                    <BasketAddButton>Add more items to basket</BasketAddButton>
+                  </Link>
+                  <BasketDeleteButton onClick={deleteItems}>
+                    Delete items from basket
+                  </BasketDeleteButton>
+                  <Link to='/checkout' style={{ textDecoration: "none" }}>
+                    <Checkout>
+                      Go to checkout page
+                      <CheckoutIcon>
+                        <ShoppingCartIcon />
+                      </CheckoutIcon>
+                    </Checkout>
+                  </Link>
+                </RightSide>
+              </motion.div>
+            </>
+          ) : (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <LeftSide>
-                {basket.map((product) => (
-                  <BasketProduct
-                    key={basket.indexOf(product)}
-                    id={product.id}
-                    name={product.name}
-                    description={product.description}
-                    price={product.price}
-                  />
-                ))}
-              </LeftSide>
-            </motion.div>
+              <EmptyBasket>Your shopping basket is empty!</EmptyBasket>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <RightSide>
-                <CurrencyFormat
-                  renderText={(value) => (
-                    <>
-                      <ItemsCount>Items in basket: {basket.length}</ItemsCount>
-                      <ItemsPrice>Total price: {value} zł</ItemsPrice>
-                    </>
-                  )}
-                  decimalScale={2}
-                  value={getBasketTotal(basket)}
-                  displayType={"text"}
-                  thousandSeparator={true}
-                />
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
                 <Link to='/specialsoftheday' style={{ textDecoration: "none" }}>
-                  <BasketAddButton>Add more items to basket</BasketAddButton>
+                  <BasketAddButton>Add items to basket</BasketAddButton>
                 </Link>
-                <BasketDeleteButton onClick={deleteItems}>
-                  Delete items from basket
-                </BasketDeleteButton>
-                <Link to='/checkout' style={{ textDecoration: "none" }}>
-                  <Checkout>
-                    Go to checkout page
-                    <CheckoutIcon>
-                      <ShoppingCartIcon />
-                    </CheckoutIcon>
-                  </Checkout>
-                </Link>
-              </RightSide>
+              </motion.div>
             </motion.div>
-          </>
-        ) : (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <EmptyBasket>Your shopping basket is empty!</EmptyBasket>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <Link to='/specialsoftheday' style={{ textDecoration: "none" }}>
-                <BasketAddButton>Add items to basket</BasketAddButton>
-              </Link>
-            </motion.div>
-          </motion.div>
-        )}
-      </BasketStyle>
+          )}
+        </BasketStyle>
+      )}
     </>
   );
 };

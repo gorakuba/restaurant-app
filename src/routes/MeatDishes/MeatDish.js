@@ -6,7 +6,12 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import Product from "../../components/Product/Product";
 
 //styled components
-import { Container, Content } from "../../styles/main.styled";
+import {
+  Container,
+  Content,
+  NotLogged,
+  LoginButton,
+} from "../../styles/main.styled";
 
 //dishes
 import { dishes } from "../../resources/dishes";
@@ -14,38 +19,65 @@ import { dishes } from "../../resources/dishes";
 //framer motion
 import { motion } from "framer-motion";
 
+//header logic
+import HeaderLogic from "../../components/Header/HeaderLogic";
+
+//react router
+import { Link } from "react-router-dom";
+
 const MeatDish = () => {
+  const { check } = HeaderLogic();
+
   return (
     <>
       <Header />
-      <Container>
-        <Sidebar />
 
-        <Content>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.4 }}
-          >
-            <h1>Dania mięsne:</h1>
-          </motion.div>
+      {check === false ? (
+        <motion.div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
+          <Link to='/login'>
+            <NotLogged>You are not logged in!</NotLogged>
+            <LoginButton>Login</LoginButton>
+          </Link>
+        </motion.div>
+      ) : (
+        <Container>
+          <Sidebar />
 
-          {dishes.map((dish) => (
+          <Content>
             <motion.div
-              key={dish.id}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1, marginTop: 40 }}
-              transition={{ delay: 1.6, duration: 0.8 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.4 }}
             >
-              <Product
-                name={dish.name}
-                price={dish.price}
-                description={dish.description}
-              />
+              <h1>Dania mięsne:</h1>
             </motion.div>
-          ))}
-        </Content>
-      </Container>
+
+            {dishes.map((dish) => (
+              <motion.div
+                key={dish.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, marginTop: 40 }}
+                transition={{ delay: 1.6, duration: 0.8 }}
+              >
+                <Product
+                  name={dish.name}
+                  price={dish.price}
+                  description={dish.description}
+                />
+              </motion.div>
+            ))}
+          </Content>
+        </Container>
+      )}
     </>
   );
 };

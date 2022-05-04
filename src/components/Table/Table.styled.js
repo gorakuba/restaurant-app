@@ -180,7 +180,7 @@ export const TableChairIcon = styled.div`
 
 export const DeletePerson = styled(RemoveReservationButton)`
   &:hover {
-    background-color: ${(props) => props.theme.colors.color_5};
+    background-color: ${(props) => props.theme.colors.color_6};
     cursor: pointer;
     transition: all ease-in-out;
     transition-duration: 400ms;
