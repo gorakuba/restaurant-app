@@ -61,7 +61,9 @@ const Basket = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <NotLogged>You are not logged in!</NotLogged>
-          <LoginButton>Login</LoginButton>
+          <Link to='/login'>
+            <LoginButton>Login</LoginButton>
+          </Link>
         </motion.div>
       ) : (
         <BasketStyle>

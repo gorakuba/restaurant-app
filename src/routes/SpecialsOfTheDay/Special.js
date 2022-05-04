@@ -43,8 +43,8 @@ const Special = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
+          <NotLogged>You are not logged in!</NotLogged>
           <Link to='/login'>
-            <NotLogged>You are not logged in!</NotLogged>
             <LoginButton>Login</LoginButton>
           </Link>
         </motion.div>
