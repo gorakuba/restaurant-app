@@ -86,7 +86,6 @@ const LoginLogic = () => {
     loginValid,
     passValid,
     validFunc,
-    // path,
   };
 };
 
