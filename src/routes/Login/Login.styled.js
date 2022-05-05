@@ -8,7 +8,7 @@ export const LoginLogicStyle = styled.div`
 
 export const LoginStyle = styled.div`
   width: 40vw;
-  height: auto;
+  height: 90vh;
   background-color: ${(props) => props.theme.colors.color_3};
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -21,10 +21,11 @@ export const LoginStyle = styled.div`
   padding-bottom: 50px;
   border-radius: 20px;
   border: none;
+  margin-bottom: 5vh;
 
-  @media ${(props) => props.theme.breakpoints.sm} {
+  @media ${(props) => props.theme.breakpoints.lg} {
     width: 85%;
-    margin-bottom: 5vh;
+    height: auto;
   }
 `;
 

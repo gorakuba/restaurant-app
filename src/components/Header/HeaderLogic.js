@@ -14,7 +14,6 @@ const HeaderLogic = () => {
       }
       return check;
     });
-    console.log(check);
   }, [check, setCheck]);
 
   const logout = () => {

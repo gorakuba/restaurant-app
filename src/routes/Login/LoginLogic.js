@@ -47,20 +47,35 @@ const LoginLogic = () => {
       setLoginInfo("Login field cannot be empty!");
       setPassInfo("");
     } else if (login === true && pass === true) {
-      setLoginForm(true);
+      users.find((user) => {
+        if (fullLogin === user.name && fullPass === user.password) {
+          user.loginStatus = true;
+          var status = user.loginStatus;
+          setLoginForm(true);
+          return { status, loginInfo, passInfo, loginForm };
+        } else if (fullLogin !== user.name && fullPass === user.password) {
+          setLoginForm(false);
+          setLoginInfo("User not exist!");
+          return { loginInfo, loginForm };
+        } else if (fullLogin === user.name && fullPass !== user.password) {
+          setLoginForm(false);
+          setPassInfo("Password incorrect!");
+          return { passInfo, loginForm };
+        } else if (fullLogin !== user.name && fullPass !== user.password) {
+          setLoginForm(false);
+          setLoginInfo("User not exist!");
+          setPassInfo("Password incorrect!");
+          return { loginInfo, passInfo, loginForm };
+        }
+
+        return { fullLogin, fullPass };
+      });
     }
   };
 
   const loginFunc = () => {
     setLoginInfo("");
     setPassInfo("");
-
-    users.map((user) => {
-      if (user.name === fullLogin && user.password === fullPass) {
-        return (user.loginStatus = true);
-      }
-      return { fullLogin, fullPass };
-    });
   };
 
   return {
@@ -71,6 +86,7 @@ const LoginLogic = () => {
     loginValid,
     passValid,
     validFunc,
+    // path,
   };
 };
 

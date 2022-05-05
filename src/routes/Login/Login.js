@@ -37,6 +37,7 @@ const Login = () => {
     loginValid,
     passValid,
     validFunc,
+    // path,
   } = LoginLogic();
 
   return (
@@ -84,9 +85,11 @@ const Login = () => {
           </LoginRemember>
 
           {loginForm ? (
-            <Link to='/'>
-              <LoginButton onClick={loginFunc}>Login</LoginButton>
-            </Link>
+            <>
+              <Link to='/'>
+                <LoginButton onClick={loginFunc}>Login</LoginButton>
+              </Link>
+            </>
           ) : (
             <LoginButton onClick={validFunc}>Sprawdź</LoginButton>
           )}
