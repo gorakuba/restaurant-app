@@ -8,6 +8,11 @@ const TableLogic = () => {
   const [renderTables, setRenderTables] = useState(false);
   const [cancelButton, setCancelButton] = useState(false);
   const [reservationDelete, setReservationDelete] = useState(false);
+  const [hour, setHour] = useState("");
+  const [date, setDate] = useState("");
+  const [chairHolder, setChairHolder] = useState(false);
+  const [dateHolder, setDateHolder] = useState(false);
+  const [hourHolder, setHourHolder] = useState(false);
 
   const reserve = () => {
     setTable((prev) => !prev);
@@ -19,6 +24,22 @@ const TableLogic = () => {
       setTitle("Reserve");
       setLoad(false);
     }
+  };
+
+  const setHours = (e) => {
+    setHour(e.target.value);
+    setHourHolder(true);
+  };
+
+  const setDates = (e) => {
+    setDate(e.target.value);
+    setDateHolder(true);
+  };
+
+  const nextStep = () => {
+    setChairHolder(true);
+    setHourHolder(false);
+    setDateHolder(false);
   };
 
   const setPlaces = (e) => {
@@ -96,6 +117,14 @@ const TableLogic = () => {
     removeReservationQuestion,
     reservationDelete,
     leaveReservation,
+    chairHolder,
+    setHours,
+    setDates,
+    hourHolder,
+    dateHolder,
+    hour,
+    date,
+    nextStep,
   };
 };
 

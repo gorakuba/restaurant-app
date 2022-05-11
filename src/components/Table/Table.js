@@ -27,6 +27,8 @@ import {
   TableChairIcon,
   DeletePerson,
   CancelSectionQuestion,
+  TableDate,
+  TableHour,
 } from "./Table.styled";
 
 //table logic
@@ -36,6 +38,7 @@ import TableLogic from "./TableLogic";
 import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import { Button } from "@mui/material";
 
 const Table = ({ name }) => {
   const {
@@ -56,6 +59,14 @@ const Table = ({ name }) => {
     removeReservationQuestion,
     reservationDelete,
     leaveReservation,
+    chairHolder,
+    setHours,
+    setDates,
+    hour,
+    date,
+    hourHolder,
+    dateHolder,
+    nextStep,
   } = TableLogic();
 
   return (
@@ -101,50 +112,82 @@ const Table = ({ name }) => {
           <>
             {table ? (
               <>
-                <TableHead>
-                  <p>Ile miejsc potrzebujesz:</p>
+                <>
+                  <TableHour>
+                    <p>Godzina rezerwacji:</p>
 
-                  <TableHeadInput type='number' onChange={setPlaces} />
-                </TableHead>
+                    <TableHeadInput type='time' onChange={setHours} />
+                  </TableHour>
 
-                {place.length >= 1 ? (
+                  <TableDate>
+                    <p>Data rezerwacji:</p>
+
+                    <TableHeadInput type='date' onChange={setDates} />
+                  </TableDate>
+
+                  {hourHolder && dateHolder ? (
+                    <Button onClick={nextStep}>Next step</Button>
+                  ) : null}
+                </>
+
+                {chairHolder ? (
                   <>
-                    {parseInt(place) > 10 ? (
-                      <p style={{ marginTop: "15px", marginBottom: "15px" }}>
-                        Stolik można zarezerwować dla maksymalnie 10 osób!
-                      </p>
-                    ) : (
+                    <TableHead>
+                      <p>Ile miejsc potrzebujesz:</p>
+
+                      <TableHeadInput type='number' onChange={setPlaces} />
+                    </TableHead>
+
+                    {place.length >= 1 ? (
                       <>
-                        {parseInt(place) < 0 || parseInt(place) === 0 ? (
+                        {parseInt(place) > 10 ? (
                           <p
-                            style={{ marginTop: "15px", marginBottom: "15px" }}
+                            style={{
+                              marginTop: "15px",
+                              marginBottom: "15px",
+                              color: "red",
+                            }}
                           >
-                            Ilość miejsc nie może być mniejsza ani równa 0!
+                            Stolik można zarezerwować dla maksymalnie 10 osób!
                           </p>
                         ) : (
                           <>
-                            {parseInt(place) === 1 ? (
-                              <p style={{ marginTop: "15px" }}>
-                                Czy jesteś pewien, że chcesz zarezerwowć stolik
-                                dla {place} osoby?
+                            {parseInt(place) < 0 || parseInt(place) === 0 ? (
+                              <p
+                                style={{
+                                  marginTop: "15px",
+                                  marginBottom: "15px",
+                                  color: "red",
+                                }}
+                              >
+                                Ilość miejsc nie może być mniejsza ani równa 0!
                               </p>
                             ) : (
-                              <p style={{ marginTop: "15px" }}>
-                                Czy jesteś pewien, że chcesz zarezerwowć stolik
-                                dla {place} osób?
-                              </p>
+                              <>
+                                {parseInt(place) === 1 ? (
+                                  <p style={{ marginTop: "15px" }}>
+                                    Czy jesteś pewien, że chcesz zarezerwowć
+                                    stolik dla {place} osoby?
+                                  </p>
+                                ) : (
+                                  <p style={{ marginTop: "15px" }}>
+                                    Czy jesteś pewien, że chcesz zarezerwowć
+                                    stolik dla {place} osób?
+                                  </p>
+                                )}
+                                <br />
+                                <ReservationButtonAgree onClick={yesClick}>
+                                  Tak
+                                </ReservationButtonAgree>
+                                <ReservationButtonDisagree onClick={noClick}>
+                                  Nie
+                                </ReservationButtonDisagree>
+                              </>
                             )}
-                            <br />
-                            <ReservationButtonAgree onClick={yesClick}>
-                              Tak
-                            </ReservationButtonAgree>
-                            <ReservationButtonDisagree onClick={noClick}>
-                              Nie
-                            </ReservationButtonDisagree>
                           </>
                         )}
                       </>
-                    )}
+                    ) : null}
                   </>
                 ) : null}
               </>

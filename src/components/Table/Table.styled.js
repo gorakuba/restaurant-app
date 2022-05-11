@@ -115,18 +115,23 @@ export const LeaveReservationButton = styled(RemoveReservationButton)``;
 export const TableHead = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
 `;
+
+export const TableHour = styled(TableHead)``;
+
+export const TableDate = styled(TableHead)``;
 
 export const TableHeadInput = styled.input`
   padding: 5px;
   margin-top: 0px;
   margin-left: 10px;
   text-align: center;
-  width: 50px;
   height: 30px;
   border-radius: 10px;
   border: none;
   background-color: ${(props) => props.theme.colors.color_5};
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 `;
 
 export const ReservationButtonAgree = styled.button`

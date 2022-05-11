@@ -50,7 +50,7 @@ const LoginLogic = () => {
       users.find((user) => {
         if (fullLogin === user.name && fullPass === user.password) {
           user.loginStatus = true;
-          var status = user.loginStatus;
+          let status = user.loginStatus;
           setLoginForm(true);
           return { status, loginInfo, passInfo, loginForm };
         } else if (fullLogin !== user.name && fullPass === user.password) {
