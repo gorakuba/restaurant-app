@@ -3,15 +3,12 @@ import styled from "styled-components";
 export const BasketStyle = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 50vw;
-  margin-left: auto;
-  margin-right: auto;
 
   @media ${(props) => props.theme.breakpoints.xl} {
     flex-direction: column-reverse;
-    align-items: center;
-    margin-left: 11px;
-    width: 97.5%;
+    width: 100%;
   }
 
   @media ${(props) => props.theme.breakpoints.xxl} {
@@ -23,7 +20,7 @@ export const LeftSide = styled.div`
   margin-top: 30px;
 
   @media ${(props) => props.theme.breakpoints.xl} {
-    margin: 60px 0 20px 0;
+    margin: 60px 0 20px -20px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -34,8 +31,8 @@ export const LeftSide = styled.div`
 export const RightSide = styled.div`
   height: 30vh;
   width: 25vw;
-  margin-left: 20px;
   margin-top: 5vh;
+  margin-bottom: 15vh;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -48,14 +45,21 @@ export const RightSide = styled.div`
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
     height: auto;
-    margin: 20px 40px 60px 40px;
+    margin: 20px auto 60px auto;
     box-shadow: none;
   }
 
   @media ${(props) => props.theme.breakpoints.lg} {
-    width: auto;
+    width: 100%;
     height: auto;
-    margin-left: 30px;
+
+    margin: 5vh auto 60px auto;
+  }
+
+  @media ${(props) => props.theme.breakpoints.xl} {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 

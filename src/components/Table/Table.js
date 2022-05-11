@@ -37,7 +37,8 @@ import TableLogic from "./TableLogic";
 //icons
 import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
-import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+// import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { Button } from "@mui/material";
 
 const Table = ({ name }) => {
@@ -188,10 +189,6 @@ const Table = ({ name }) => {
                     </>
                   ) : null}
                 </>
-
-                {/* {chairHolder ? (
-                  
-                ) : null} */}
               </>
             ) : null}
 
@@ -199,12 +196,26 @@ const Table = ({ name }) => {
               <>
                 <RenderTableHeader>
                   <DotsIcon>
-                    <ArrowRightAltIcon />
+                    <FiberManualRecordIcon style={{ fontSize: "10px" }} />
                   </DotsIcon>
 
                   {parseInt(place) === 1
                     ? `Stolik zarezerwowany dla ${place} osoby 🤭`
                     : `Stolik zarezerwowany dla ${place} osób 🤭`}
+                </RenderTableHeader>
+
+                <RenderTableHeader>
+                  <DotsIcon>
+                    <FiberManualRecordIcon style={{ fontSize: "10px" }} />
+                  </DotsIcon>
+                  Stolik zarezerwowany na dzień: {date}
+                </RenderTableHeader>
+
+                <RenderTableHeader>
+                  <DotsIcon>
+                    <FiberManualRecordIcon style={{ fontSize: "10px" }} />
+                  </DotsIcon>
+                  Stolik zarezerwowany na godzinę: {hour}
                 </RenderTableHeader>
 
                 <ChairSection>

@@ -48,7 +48,7 @@ const Header = () => {
       style={{ position: "sticky", left: 0, top: 0, zIndex: 10 }}
       initial={{ opacity: 0, marginTop: -200 }}
       animate={{ opacity: 1, marginTop: 0 }}
-      transition={{ delay: 0.2 }}
+      transition={{ delay: 0.1 }}
     >
       <HeaderStyle>
         <HeaderLeft>

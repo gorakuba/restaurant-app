@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 //components
 import Header from "../../components/Header/Header";
@@ -61,7 +61,6 @@ const Reservation = () => {
             >
               <ResHeader>Zarezerwuj stolik online już teraz: </ResHeader>
             </motion.div>
-
             {tables.map((table) => (
               <motion.div
                 key={table.id}

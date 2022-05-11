@@ -19,7 +19,7 @@ import Reservation from "./routes/Reservation/Reservation";
 import Register from "./routes/Register/Register";
 import Checkout from "./routes/Checkout/Checkout";
 
-function App() {
+const App = () => {
   return (
     <>
       <Routes>
@@ -40,6 +40,6 @@ function App() {
       </Routes>
     </>
   );
-}
+};
 
 export default App;

@@ -180,10 +180,12 @@ export const TableChairIcon = styled.div`
   height: 30px;
   width: 30px;
   padding: 5px;
-  margin: 5px 10px 5px 10px;
+  margin: 0 10px 5px 10px;
 `;
 
 export const DeletePerson = styled(RemoveReservationButton)`
+  margin-top: 20px;
+
   &:hover {
     background-color: ${(props) => props.theme.colors.color_6};
     cursor: pointer;

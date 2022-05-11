@@ -16,7 +16,7 @@ const TableLogic = () => {
 
   const reserve = (e) => {
     setTable((prev) => !prev);
-    setChairHolder((prev) => !prev);
+    setChairHolder(false);
     setPlace((e.target.value = ""));
 
     if (!table) {
