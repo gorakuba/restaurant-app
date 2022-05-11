@@ -112,84 +112,86 @@ const Table = ({ name }) => {
           <>
             {table ? (
               <>
+                <TableHour>
+                  <p>Godzina rezerwacji:</p>
+
+                  <TableHeadInput type='time' onChange={setHours} />
+                </TableHour>
+
+                <TableDate>
+                  <p>Data rezerwacji:</p>
+
+                  <TableHeadInput type='date' onChange={setDates} />
+                </TableDate>
+
                 <>
-                  <TableHour>
-                    <p>Godzina rezerwacji:</p>
+                  <TableHead>
+                    <p>Ile miejsc potrzebujesz:</p>
 
-                    <TableHeadInput type='time' onChange={setHours} />
-                  </TableHour>
+                    <TableHeadInput type='number' onChange={setPlaces} />
+                  </TableHead>
 
-                  <TableDate>
-                    <p>Data rezerwacji:</p>
+                  {hourHolder && dateHolder && place.length >= 1 ? (
+                    <Button style={{ marginLeft: "0" }} onClick={nextStep}>
+                      Next step
+                    </Button>
+                  ) : null}
 
-                    <TableHeadInput type='date' onChange={setDates} />
-                  </TableDate>
-
-                  {hourHolder && dateHolder ? (
-                    <Button onClick={nextStep}>Next step</Button>
+                  {place.length >= 1 && chairHolder ? (
+                    <>
+                      {parseInt(place) > 10 ? (
+                        <p
+                          style={{
+                            marginTop: "15px",
+                            marginBottom: "15px",
+                            color: "red",
+                          }}
+                        >
+                          Stolik można zarezerwować dla maksymalnie 10 osób!
+                        </p>
+                      ) : (
+                        <>
+                          {parseInt(place) < 0 || parseInt(place) === 0 ? (
+                            <p
+                              style={{
+                                marginTop: "15px",
+                                marginBottom: "15px",
+                                color: "red",
+                              }}
+                            >
+                              Ilość miejsc nie może być mniejsza ani równa 0!
+                            </p>
+                          ) : (
+                            <>
+                              {parseInt(place) === 1 ? (
+                                <p style={{ marginTop: "25px" }}>
+                                  Czy jesteś pewien, że chcesz zarezerwowć
+                                  stolik dla {place} osoby?
+                                </p>
+                              ) : (
+                                <p style={{ marginTop: "25px" }}>
+                                  Czy jesteś pewien, że chcesz zarezerwowć
+                                  stolik dla {place} osób?
+                                </p>
+                              )}
+                              <br />
+                              <ReservationButtonAgree onClick={yesClick}>
+                                Tak
+                              </ReservationButtonAgree>
+                              <ReservationButtonDisagree onClick={noClick}>
+                                Nie
+                              </ReservationButtonDisagree>
+                            </>
+                          )}
+                        </>
+                      )}
+                    </>
                   ) : null}
                 </>
 
-                {chairHolder ? (
-                  <>
-                    <TableHead>
-                      <p>Ile miejsc potrzebujesz:</p>
-
-                      <TableHeadInput type='number' onChange={setPlaces} />
-                    </TableHead>
-
-                    {place.length >= 1 ? (
-                      <>
-                        {parseInt(place) > 10 ? (
-                          <p
-                            style={{
-                              marginTop: "15px",
-                              marginBottom: "15px",
-                              color: "red",
-                            }}
-                          >
-                            Stolik można zarezerwować dla maksymalnie 10 osób!
-                          </p>
-                        ) : (
-                          <>
-                            {parseInt(place) < 0 || parseInt(place) === 0 ? (
-                              <p
-                                style={{
-                                  marginTop: "15px",
-                                  marginBottom: "15px",
-                                  color: "red",
-                                }}
-                              >
-                                Ilość miejsc nie może być mniejsza ani równa 0!
-                              </p>
-                            ) : (
-                              <>
-                                {parseInt(place) === 1 ? (
-                                  <p style={{ marginTop: "15px" }}>
-                                    Czy jesteś pewien, że chcesz zarezerwowć
-                                    stolik dla {place} osoby?
-                                  </p>
-                                ) : (
-                                  <p style={{ marginTop: "15px" }}>
-                                    Czy jesteś pewien, że chcesz zarezerwowć
-                                    stolik dla {place} osób?
-                                  </p>
-                                )}
-                                <br />
-                                <ReservationButtonAgree onClick={yesClick}>
-                                  Tak
-                                </ReservationButtonAgree>
-                                <ReservationButtonDisagree onClick={noClick}>
-                                  Nie
-                                </ReservationButtonDisagree>
-                              </>
-                            )}
-                          </>
-                        )}
-                      </>
-                    ) : null}
-                  </>
-                ) : null}
+                {/* {chairHolder ? (
+                  
+                ) : null} */}
               </>
             ) : null}
 

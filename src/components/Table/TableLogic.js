@@ -14,8 +14,10 @@ const TableLogic = () => {
   const [dateHolder, setDateHolder] = useState(false);
   const [hourHolder, setHourHolder] = useState(false);
 
-  const reserve = () => {
+  const reserve = (e) => {
     setTable((prev) => !prev);
+    setChairHolder((prev) => !prev);
+    setPlace((e.target.value = ""));
 
     if (!table) {
       setTitle("Cancel");
@@ -23,6 +25,8 @@ const TableLogic = () => {
     } else {
       setTitle("Reserve");
       setLoad(false);
+      setHourHolder(false);
+      setDateHolder(false);
     }
   };
 
@@ -92,6 +96,9 @@ const TableLogic = () => {
     setLoad(false);
     setCancelButton(false);
     setReservationDelete(false);
+    setChairHolder(false);
+    setHourHolder(false);
+    setDateHolder(false);
   };
 
   const leaveReservation = () => {
