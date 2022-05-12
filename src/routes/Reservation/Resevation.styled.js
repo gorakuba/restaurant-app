@@ -24,7 +24,7 @@ export const Content = styled.div`
   @media ${(props) => props.theme.breakpoints.md} {
     display: flex;
     flex-direction: column;
-    margin: 3vh 4vw 0 4.5vw;
+    margin: 3vh 4vw 0 6vw;
     width: 85%;
   }
 `;

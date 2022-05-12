@@ -115,6 +115,7 @@ export const LeaveReservationButton = styled(RemoveReservationButton)``;
 export const TableHead = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 15px;
 `;
 
@@ -124,8 +125,10 @@ export const TableDate = styled(TableHead)``;
 
 export const TableHeadInput = styled.input`
   padding: 5px;
+  width: 40%;
   margin-top: 0px;
   margin-left: 10px;
+  margin-right: 0;
   text-align: center;
   height: 30px;
   border-radius: 10px;
