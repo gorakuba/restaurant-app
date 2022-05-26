@@ -1,11 +1,11 @@
-import React, { Suspense } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-//components
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Table from "../../components/Table/Table";
+import HeaderLogic from "../../components/Header/HeaderLogic";
 
-//styled components
 import {
   Container,
   Content,
@@ -14,17 +14,8 @@ import {
   LoginButton,
 } from "./Resevation.styled";
 
-//tables
 import { tables } from "../../resources/tables";
-
-//framer motion
 import { motion } from "framer-motion";
-
-//header logic
-import HeaderLogic from "../../components/Header/HeaderLogic";
-
-//react router
-import { Link } from "react-router-dom";
 
 const Reservation = () => {
   const { check } = HeaderLogic();

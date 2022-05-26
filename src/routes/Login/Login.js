@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-//styled components
+import LoginLogic from "./LoginLogic";
+
 import {
   LoginButton,
   LoginHeader,
@@ -16,16 +18,7 @@ import {
   RememberText,
 } from "./Login.styled";
 
-//icons
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
-
-//react router
-import { Link } from "react-router-dom";
-
-//login logic
-import LoginLogic from "./LoginLogic";
-
-//framer motion
 import { motion } from "framer-motion";
 
 const Login = () => {

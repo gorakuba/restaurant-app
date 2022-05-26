@@ -1,12 +1,8 @@
 import React from "react";
-
-//styled components
-import { Error, Back, RegisterIcon } from "./Register.styled";
-
-//react router
 import { Link } from "react-router-dom";
 
-//icons
+import { Error, Back, RegisterIcon } from "./Register.styled";
+
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const Register = () => {

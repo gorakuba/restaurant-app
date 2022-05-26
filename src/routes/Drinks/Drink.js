@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-//components
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Product from "../../components/Product/Product";
+import HeaderLogic from "../../components/Header/HeaderLogic";
 
-//styled components
 import {
   Container,
   Content,
@@ -13,17 +13,8 @@ import {
   LoginButton,
 } from "../../styles/main.styled";
 
-//drinks
 import { dishes } from "../../resources/dishes";
-
-//framer motion
 import { motion } from "framer-motion";
-
-//header logic
-import HeaderLogic from "../../components/Header/HeaderLogic";
-
-//react router
-import { Link } from "react-router-dom";
 
 const Drink = () => {
   const { check } = HeaderLogic();

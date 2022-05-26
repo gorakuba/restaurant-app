@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-
-//users data
 import { users } from "../../resources/users";
 
 const HeaderLogic = () => {

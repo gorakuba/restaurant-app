@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-//styled components
 import {
   Description,
   HeaderLine,
@@ -12,11 +11,9 @@ import {
   Name,
 } from "./Product.styled";
 
-//icons
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
-//useStateValue
 import { useStateValue } from "../../helper/StateProvider/StateProvider";
 
 const Product = ({ id, name, description, price }) => {

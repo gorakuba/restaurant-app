@@ -1,9 +1,8 @@
 import React from "react";
 
-//components
 import Header from "../../components/Header/Header";
+import DeliveryContactLogic from "./DeliveryContactLogic";
 
-//styled components
 import {
   Container,
   Content,
@@ -17,20 +16,14 @@ import {
   ContactIconWupMail,
 } from "./DeliveryContact.styled";
 
-//icons
 import WebAssetOutlined from "@mui/icons-material/WebAssetOutlined";
 import Mail from "@mui/icons-material/Mail";
 import WhatsApp from "@mui/icons-material/WhatsApp";
 import Facebook from "@mui/icons-material/Facebook";
 
-//react leaflet
 import { TileLayer, MapContainer, Popup, Circle } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-//deliveryContact logic
-import DeliveryContactLogic from "./DeliveryContactLogic";
-
-//framer motion
 import { motion } from "framer-motion";
 
 const DeliveryContact = () => {

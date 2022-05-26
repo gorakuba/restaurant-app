@@ -1,6 +1,5 @@
 import React from "react";
 
-//ThemeProvider, theme
 import { ThemeProvider } from "styled-components";
 import { theme } from "./default";
 

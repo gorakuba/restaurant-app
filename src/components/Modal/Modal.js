@@ -1,6 +1,7 @@
 import React from "react";
 
-//styled components
+import ModalLogic from "./ModalLogic";
+
 import {
   Background,
   ModalWraper,
@@ -11,13 +12,7 @@ import {
   ModalContentText,
 } from "./Modal.styled";
 
-//modal logic
-import ModalLogic from "./ModalLogic";
-
-//icons
 import RestaurantIcon from "@mui/icons-material/Restaurant";
-
-//framer motion
 import { motion } from "framer-motion";
 
 const Modal = ({ setCloseModal }) => {

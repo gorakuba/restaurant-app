@@ -1,9 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-//components
 import Header from "../../components/Header/Header";
+import HeaderLogic from "../../components/Header/HeaderLogic";
 
-//styled components
 import {
   Container,
   Content,
@@ -11,16 +11,7 @@ import {
   LoginButton,
 } from "./Home.styled";
 
-//react router
-import { Link } from "react-router-dom";
-
-//framer motion
 import { motion } from "framer-motion";
-
-//header logic
-import HeaderLogic from "../../components/Header/HeaderLogic";
-
-//users data
 import { users } from "../../resources/users";
 
 const Home = () => {

@@ -1,9 +1,6 @@
 import React from "react";
-
-//react router
 import { Routes, Route } from "react-router-dom";
 
-//routes
 import Home from "./routes/Home/Home";
 import DeliveryContact from "./routes/DeliveryAndContact/DeliveryContact";
 import Drink from "./routes/Drinks/Drink";

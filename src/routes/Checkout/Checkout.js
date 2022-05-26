@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-//styled components
+import CheckoutLogic, { defaults } from "./CheckoutLogic";
+
 import {
   Address,
   BasketReturnButton,
@@ -29,19 +31,8 @@ import {
   ZipCode,
 } from "./Checkout.styled";
 
-//checkout logic
-import CheckoutLogic, { defaults } from "./CheckoutLogic";
-
-//initialState
 import { useStateValue } from "../../helper/StateProvider/StateProvider";
-
-//react router
-import { Link } from "react-router-dom";
-
-//framer motion
 import { motion } from "framer-motion";
-
-//PromoCodes func
 import PromoCodes from "../../utils/PromoCodes";
 
 const Checkout = () => {

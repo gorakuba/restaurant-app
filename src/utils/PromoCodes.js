@@ -1,13 +1,6 @@
-//promo codes
 import { codes } from "../resources/codes";
-
-//checkout logic
 import CheckoutLogic from "../routes/Checkout/CheckoutLogic";
-
-//initialState
 import { useStateValue } from "../helper/StateProvider/StateProvider";
-
-//basketTotal
 import { getBasketTotal } from "../helper/StateProvider/reducer";
 
 const PromoCodes = () => {

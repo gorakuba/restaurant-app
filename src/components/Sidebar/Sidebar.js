@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-//styled components
+import SidebarLogic from "./SidebarLogic";
+
 import {
   ListItem,
   OpenSidebar,
@@ -11,21 +13,11 @@ import {
   ArrowIcon,
 } from "./Sidebar.styled";
 
-//icons
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
-//menu items
 import { menuItems } from "../../resources/menu";
-
-//react router
-import { Link } from "react-router-dom";
-
-//sidebar logic
-import SidebarLogic from "./SidebarLogic";
-
-//framer motion
 import { motion } from "framer-motion";
 
 const Sidebar = () => {

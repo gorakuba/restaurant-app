@@ -1,6 +1,7 @@
 import React from "react";
 
-//styled components
+import TableLogic from "./TableLogic";
+
 import {
   TableStyle,
   TableHeader,
@@ -31,13 +32,8 @@ import {
   TableHour,
 } from "./Table.styled";
 
-//table logic
-import TableLogic from "./TableLogic";
-
-//icons
 import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
-// import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { Button } from "@mui/material";
 

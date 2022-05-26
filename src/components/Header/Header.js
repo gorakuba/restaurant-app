@@ -1,6 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-//styled components
+import Modal from "../Modal/Modal";
+import ModalLogic from "../Modal/ModalLogic";
+import HeaderLogic from "./HeaderLogic";
+
 import {
   HeaderStyle,
   HeaderLeftTitle,
@@ -11,7 +15,6 @@ import {
   HeaderLeft,
 } from "./Header.styled";
 
-//icons
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
@@ -19,23 +22,8 @@ import InputIcon from "@mui/icons-material/Input";
 import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import LogoutIcon from "@mui/icons-material/Logout";
 
-//react router
-import { Link } from "react-router-dom";
-
-//useStateValue
 import { useStateValue } from "../../helper/StateProvider/StateProvider";
-
-//modal window and modal logic
-import Modal from "../Modal/Modal";
-import ModalLogic from "../Modal/ModalLogic";
-
-//header logic
-import HeaderLogic from "./HeaderLogic";
-
-//framer motion
 import { motion } from "framer-motion";
-
-// //users data
 import { users } from "../../resources/users";
 
 const Header = () => {

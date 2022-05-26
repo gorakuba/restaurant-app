@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BasketStyle = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin: 0 auto;
   width: 50vw;
 
   @media ${(props) => props.theme.breakpoints.xl} {
@@ -17,7 +17,7 @@ export const BasketStyle = styled.div`
 `;
 
 export const LeftSide = styled.div`
-  margin-top: 30px;
+  margin-top: 50px;
 
   @media ${(props) => props.theme.breakpoints.xl} {
     margin: 60px 0 20px -20px;
@@ -31,7 +31,7 @@ export const LeftSide = styled.div`
 export const RightSide = styled.div`
   height: 30vh;
   width: 25vw;
-  margin-top: 5vh;
+  margin-top: 50px;
   margin-bottom: 15vh;
   padding: 10px;
   display: flex;

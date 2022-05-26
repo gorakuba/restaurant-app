@@ -1,6 +1,4 @@
 import { useState } from "react";
-
-//users data
 import { users } from "../../resources/users";
 
 const LoginLogic = () => {

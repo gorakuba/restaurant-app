@@ -1,9 +1,7 @@
 import React from "react";
 
-//useStateValue
 import { useStateValue } from "../../helper/StateProvider/StateProvider";
 
-//styled components
 import {
   Description,
   HeaderLine,
