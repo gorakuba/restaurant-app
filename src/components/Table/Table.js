@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import TableLogic from "./TableLogic";
-
+import TableLogic from './TableLogic';
 import {
   TableStyle,
   TableHeader,
@@ -30,12 +29,12 @@ import {
   CancelSectionQuestion,
   TableDate,
   TableHour,
-} from "./Table.styled";
+} from './Table.styled';
 
-import TableRestaurantIcon from "@mui/icons-material/TableRestaurant";
-import EventSeatIcon from "@mui/icons-material/EventSeat";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import { Button } from "@mui/material";
+import TableRestaurantIcon from '@mui/icons-material/TableRestaurant';
+import EventSeatIcon from '@mui/icons-material/EventSeat';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { Button } from '@mui/material';
 
 const Table = ({ name }) => {
   const {
@@ -129,7 +128,7 @@ const Table = ({ name }) => {
                   </TableHead>
 
                   {hourHolder && dateHolder && place.length >= 1 ? (
-                    <Button style={{ marginLeft: "0" }} onClick={nextStep}>
+                    <Button style={{ marginLeft: '0' }} onClick={nextStep}>
                       Next step
                     </Button>
                   ) : null}
@@ -139,9 +138,9 @@ const Table = ({ name }) => {
                       {parseInt(place) > 10 ? (
                         <p
                           style={{
-                            marginTop: "15px",
-                            marginBottom: "15px",
-                            color: "red",
+                            marginTop: '15px',
+                            marginBottom: '15px',
+                            color: 'red',
                           }}
                         >
                           Stolik można zarezerwować dla maksymalnie 10 osób!
@@ -151,9 +150,9 @@ const Table = ({ name }) => {
                           {parseInt(place) < 0 || parseInt(place) === 0 ? (
                             <p
                               style={{
-                                marginTop: "15px",
-                                marginBottom: "15px",
-                                color: "red",
+                                marginTop: '15px',
+                                marginBottom: '15px',
+                                color: 'red',
                               }}
                             >
                               Ilość miejsc nie może być mniejsza ani równa 0!
@@ -161,12 +160,12 @@ const Table = ({ name }) => {
                           ) : (
                             <>
                               {parseInt(place) === 1 ? (
-                                <p style={{ marginTop: "25px" }}>
+                                <p style={{ marginTop: '25px' }}>
                                   Czy jesteś pewien, że chcesz zarezerwowć
                                   stolik dla {place} osoby?
                                 </p>
                               ) : (
-                                <p style={{ marginTop: "25px" }}>
+                                <p style={{ marginTop: '25px' }}>
                                   Czy jesteś pewien, że chcesz zarezerwowć
                                   stolik dla {place} osób?
                                 </p>
@@ -192,7 +191,7 @@ const Table = ({ name }) => {
               <>
                 <RenderTableHeader>
                   <DotsIcon>
-                    <FiberManualRecordIcon style={{ fontSize: "10px" }} />
+                    <FiberManualRecordIcon style={{ fontSize: '10px' }} />
                   </DotsIcon>
 
                   {parseInt(place) === 1
@@ -202,14 +201,14 @@ const Table = ({ name }) => {
 
                 <RenderTableHeader>
                   <DotsIcon>
-                    <FiberManualRecordIcon style={{ fontSize: "10px" }} />
+                    <FiberManualRecordIcon style={{ fontSize: '10px' }} />
                   </DotsIcon>
                   Stolik zarezerwowany na dzień: {date}
                 </RenderTableHeader>
 
                 <RenderTableHeader>
                   <DotsIcon>
-                    <FiberManualRecordIcon style={{ fontSize: "10px" }} />
+                    <FiberManualRecordIcon style={{ fontSize: '10px' }} />
                   </DotsIcon>
                   Stolik zarezerwowany na godzinę: {hour}
                 </RenderTableHeader>

@@ -1,8 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import SidebarLogic from "./SidebarLogic";
-
+import SidebarLogic from './SidebarLogic';
 import {
   ListItem,
   OpenSidebar,
@@ -11,18 +10,30 @@ import {
   OpenSidebarTitle,
   CloseSidebarTitle,
   ArrowIcon,
-} from "./Sidebar.styled";
+} from './Sidebar.styled';
 
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
-import { menuItems } from "../../resources/menu";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import axios from 'axios';
 
 const Sidebar = () => {
   const { mouseHover, mouseOutHover, dotsClick, sidebar, close } =
     SidebarLogic();
+  const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/menu')
+      .then((response) => {
+        setMenuItems(response.data);
+      })
+      .catch((error) => {
+        console.log('Error!!', error);
+      });
+  }, []);
 
   return (
     <>
@@ -52,17 +63,17 @@ const Sidebar = () => {
 
           {menuItems.map((item) => {
             switch (item.name) {
-              case "Dania dnia":
+              case 'Dania dnia':
                 return (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, marginLeft: -200 }}
                     animate={{ opacity: 1, marginLeft: 0 }}
-                    transition={{ type: "spring", stiffness: 50, delay: 0.1 }}
+                    transition={{ type: 'spring', stiffness: 50, delay: 0.1 }}
                   >
                     <Link
                       to='/specialsoftheday'
-                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
                     >
                       <ListItem
                         onMouseOver={mouseHover}
@@ -76,17 +87,17 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case "Dania mięsne":
+              case 'Dania mięsne':
                 return (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, marginLeft: -200 }}
                     animate={{ opacity: 1, marginLeft: 0 }}
-                    transition={{ type: "spring", stiffness: 50, delay: 0.2 }}
+                    transition={{ type: 'spring', stiffness: 50, delay: 0.2 }}
                   >
                     <Link
                       to='/meatdishes'
-                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
                     >
                       <ListItem
                         onMouseOver={mouseHover}
@@ -100,17 +111,17 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case "Dania wege":
+              case 'Dania wege':
                 return (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, marginLeft: -200 }}
                     animate={{ opacity: 1, marginLeft: 0 }}
-                    transition={{ type: "spring", stiffness: 50, delay: 0.3 }}
+                    transition={{ type: 'spring', stiffness: 50, delay: 0.3 }}
                   >
                     <Link
                       to='/vegdishes'
-                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
                     >
                       <ListItem
                         onMouseOver={mouseHover}
@@ -124,17 +135,17 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case "Zupy":
+              case 'Zupy':
                 return (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, marginLeft: -200 }}
                     animate={{ opacity: 1, marginLeft: 0 }}
-                    transition={{ type: "spring", stiffness: 50, delay: 0.4 }}
+                    transition={{ type: 'spring', stiffness: 50, delay: 0.4 }}
                   >
                     <Link
                       to='/soups'
-                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
                     >
                       <ListItem
                         onMouseOver={mouseHover}
@@ -148,17 +159,17 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case "Fast food":
+              case 'Fast food':
                 return (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, marginLeft: -200 }}
                     animate={{ opacity: 1, marginLeft: 0 }}
-                    transition={{ type: "spring", stiffness: 50, delay: 0.5 }}
+                    transition={{ type: 'spring', stiffness: 50, delay: 0.5 }}
                   >
                     <Link
                       to='/fastfoods'
-                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
                     >
                       <ListItem
                         onMouseOver={mouseHover}
@@ -172,17 +183,17 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case "Pizza":
+              case 'Pizza':
                 return (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, marginLeft: -200 }}
                     animate={{ opacity: 1, marginLeft: 0 }}
-                    transition={{ type: "spring", stiffness: 50, delay: 0.6 }}
+                    transition={{ type: 'spring', stiffness: 50, delay: 0.6 }}
                   >
                     <Link
                       to='/pizzas'
-                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
                     >
                       <ListItem
                         onMouseOver={mouseHover}
@@ -196,17 +207,17 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case "Napoje":
+              case 'Napoje':
                 return (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, marginLeft: -200 }}
                     animate={{ opacity: 1, marginLeft: 0 }}
-                    transition={{ type: "spring", stiffness: 50, delay: 0.7 }}
+                    transition={{ type: 'spring', stiffness: 50, delay: 0.7 }}
                   >
                     <Link
                       to='/drinks'
-                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
                     >
                       <ListItem
                         onMouseOver={mouseHover}
@@ -220,17 +231,17 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case "Dowóz i kontakt":
+              case 'Dowóz i kontakt':
                 return (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, marginLeft: -200 }}
                     animate={{ opacity: 1, marginLeft: 0 }}
-                    transition={{ type: "spring", stiffness: 50, delay: 0.8 }}
+                    transition={{ type: 'spring', stiffness: 50, delay: 0.8 }}
                   >
                     <Link
                       to='/deliveryandcontact'
-                      style={{ textDecoration: "none", color: "rgb(0 0 0)" }}
+                      style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
                     >
                       <ListItem
                         onMouseOver={mouseHover}

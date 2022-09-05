@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { useStateValue } from "../../helper/StateProvider/StateProvider";
-
+import { useStateValue } from '../../helper/StateProvider/StateProvider';
 import {
   Description,
   HeaderLine,
@@ -10,14 +9,14 @@ import {
   RemoveSection,
   Minus,
   Name,
-} from "./BasketProduct.styled";
+} from './BasketProduct.styled';
 
 const BasketProduct = ({ id, name, price, description, counter }) => {
   const [{ basket }, dispatch] = useStateValue();
 
   const basketRemove = () => {
     dispatch({
-      type: "REMOVE_FROM_BASKET",
+      type: 'REMOVE_FROM_BASKET',
       product: {
         id: id,
         name: name,

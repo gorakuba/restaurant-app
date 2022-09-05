@@ -1,8 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import Header from "../../components/Header/Header";
-import DeliveryContactLogic from "./DeliveryContactLogic";
-
+import DeliveryContactLogic from './DeliveryContactLogic';
 import {
   Container,
   Content,
@@ -14,24 +12,23 @@ import {
   ContactIcon,
   ContactInfoText,
   ContactIconWupMail,
-} from "./DeliveryContact.styled";
+} from './DeliveryContact.styled';
 
-import WebAssetOutlined from "@mui/icons-material/WebAssetOutlined";
-import Mail from "@mui/icons-material/Mail";
-import WhatsApp from "@mui/icons-material/WhatsApp";
-import Facebook from "@mui/icons-material/Facebook";
+import WebAssetOutlined from '@mui/icons-material/WebAssetOutlined';
+import Mail from '@mui/icons-material/Mail';
+import WhatsApp from '@mui/icons-material/WhatsApp';
+import Facebook from '@mui/icons-material/Facebook';
 
-import { TileLayer, MapContainer, Popup, Circle } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import { TileLayer, MapContainer, Popup, Circle } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const DeliveryContact = () => {
   const { position, markerPosition, zoom } = DeliveryContactLogic();
 
   return (
     <>
-      <Header />
       <Container>
         <motion.div
           initial={{ opacity: 0 }}

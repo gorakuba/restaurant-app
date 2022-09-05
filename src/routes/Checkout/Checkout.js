@@ -1,8 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import CheckoutLogic, { defaults } from "./CheckoutLogic";
-
+import CheckoutLogic, { defaults } from './CheckoutLogic';
+import { useStateValue } from '../../helper/StateProvider/StateProvider';
+import PromoCodes from '../../utils/PromoCodes';
 import {
   Address,
   BasketReturnButton,
@@ -29,11 +30,9 @@ import {
   Surname,
   Total,
   ZipCode,
-} from "./Checkout.styled";
+} from './Checkout.styled';
 
-import { useStateValue } from "../../helper/StateProvider/StateProvider";
-import { motion } from "framer-motion";
-import PromoCodes from "../../utils/PromoCodes";
+import { motion } from 'framer-motion';
 
 const Checkout = () => {
   const { payment, setPayment, courier, setCourier } = CheckoutLogic();
@@ -85,8 +84,8 @@ const Checkout = () => {
                 />
               </div>
 
-              <div style={{ margin: "20px 0 10px 20px" }}>
-                or{" "}
+              <div style={{ margin: '20px 0 10px 20px' }}>
+                or{' '}
                 <b
                   onClick={() => setPayment(4)}
                   style={
@@ -169,7 +168,7 @@ const Checkout = () => {
               ) : (
                 <>
                   <h3>You have any products in basket!</h3>
-                  <Link to='/basket' style={{ textDecoration: "none" }}>
+                  <Link to='/basket' style={{ textDecoration: 'none' }}>
                     <BasketReturnButton>Back to basket</BasketReturnButton>
                   </Link>
                 </>
@@ -183,7 +182,7 @@ const Checkout = () => {
           >
             <Total>
               <p>Total</p>
-              <p>{promoCode === "" ? basketValue : basketValueAfterPromo} zł</p>
+              <p>{promoCode === '' ? basketValue : basketValueAfterPromo} zł</p>
             </Total>
           </motion.div>
           <motion.div

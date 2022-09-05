@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import ModalLogic from "./ModalLogic";
-
+import ModalLogic from './ModalLogic';
 import {
   Background,
   ModalWraper,
@@ -10,10 +9,11 @@ import {
   ModalLogo,
   ModalLogoTitle,
   ModalContentText,
-} from "./Modal.styled";
+} from './Modal.styled';
 
-import RestaurantIcon from "@mui/icons-material/Restaurant";
-import { motion } from "framer-motion";
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+
+import { motion } from 'framer-motion';
 
 const Modal = ({ setCloseModal }) => {
   const { closeModal, modalRef, showModal } = ModalLogic();

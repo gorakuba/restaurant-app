@@ -1,0 +1,149 @@
+{
+  "codes": [
+    {
+      "code": "BBB",
+      "value": 0.8
+    },
+    {
+      "code": "CCC",
+      "value": 0.5
+    },
+    {
+      "code": "AAA",
+      "value": 0.9
+    }
+  ],
+  "dishes": [
+    {
+      "id": 1,
+      "name": "Pizza własnej kompozycji",
+      "price": 30,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae libero placerat lectus ultricies placerat. Cras eros mi, vestibulum id arcu in, vehicula porta velit. Nunc ut nisi congue, ornare diam ut, pellentesque turpis. Maecenas faucibus massa neque, vel mattis magna malesuada quis. Nam nec lectus massa. Sed pharetra at urna eu fringilla.",
+      "count": 0
+    },
+    {
+      "id": 2,
+      "name": "Pizza własnej kompozycji",
+      "price": 30,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae libero placerat lectus ultricies placerat. Cras eros mi, vestibulum id arcu in, vehicula porta velit. Nunc ut nisi congue, ornare diam ut, pellentesque turpis. Maecenas faucibus massa neque, vel mattis magna malesuada quis. Nam nec lectus massa. Sed pharetra at urna eu fringilla.",
+      "count": 0
+    },
+    {
+      "id": 3,
+      "name": "Pizza własnej kompozycji",
+      "price": 30,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae libero placerat lectus ultricies placerat. Cras eros mi, vestibulum id arcu in, vehicula porta velit. Nunc ut nisi congue, ornare diam ut, pellentesque turpis. Maecenas faucibus massa neque, vel mattis magna malesuada quis. Nam nec lectus massa. Sed pharetra at urna eu fringilla.",
+      "count": 0
+    },
+    {
+      "id": 4,
+      "name": "Pizza własnej kompozycji",
+      "price": 30,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae libero placerat lectus ultricies placerat. Cras eros mi, vestibulum id arcu in, vehicula porta velit. Nunc ut nisi congue, ornare diam ut, pellentesque turpis. Maecenas faucibus massa neque, vel mattis magna malesuada quis. Nam nec lectus massa. Sed pharetra at urna eu fringilla.",
+      "count": 0
+    },
+    {
+      "id": 5,
+      "name": "Pizza własnej kompozycji",
+      "price": 30,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae libero placerat lectus ultricies placerat. Cras eros mi, vestibulum id arcu in, vehicula porta velit. Nunc ut nisi congue, ornare diam ut, pellentesque turpis. Maecenas faucibus massa neque, vel mattis magna malesuada quis. Nam nec lectus massa. Sed pharetra at urna eu fringilla.",
+      "count": 0
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "name": "Dania dnia"
+    },
+    {
+      "id": 2,
+      "name": "Dania mięsne"
+    },
+    {
+      "id": 3,
+      "name": "Dania wege"
+    },
+    {
+      "id": 4,
+      "name": "Zupy"
+    },
+    {
+      "id": 5,
+      "name": "Fast food"
+    },
+    {
+      "id": 6,
+      "name": "Pizza"
+    },
+    {
+      "id": 7,
+      "name": "Napoje"
+    },
+    {
+      "id": 8,
+      "name": "Dowóz i kontakt"
+    }
+  ],
+  "tables": [
+    {
+      "id": 1,
+      "name": "First table:",
+      "date": "",
+      "hour": ""
+    },
+    {
+      "id": 2,
+      "name": "Second table:",
+      "date": "",
+      "hour": ""
+    },
+    {
+      "id": 3,
+      "name": "Third table:",
+      "date": "",
+      "hour": ""
+    },
+    {
+      "id": 4,
+      "name": "Fourth table:",
+      "date": "",
+      "hour": ""
+    },
+    {
+      "id": 5,
+      "name": "Fifth table:",
+      "date": "",
+      "hour": ""
+    },
+    {
+      "id": 6,
+      "name": "Sixth table:",
+      "date": "",
+      "hour": ""
+    },
+    {
+      "id": 7,
+      "name": "Seventh table:",
+      "date": "",
+      "hour": ""
+    },
+    {
+      "id": 8,
+      "name": "Eighth table:",
+      "date": "",
+      "hour": ""
+    },
+    {
+      "id": 9,
+      "name": "Ninth table:",
+      "date": "",
+      "hour": ""
+    },
+    {
+      "id": 10,
+      "name": "Tenth table:",
+      "date": "",
+      "hour": ""
+    }
+  ]
+}

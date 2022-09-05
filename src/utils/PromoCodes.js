@@ -1,17 +1,32 @@
-import { codes } from "../resources/codes";
-import CheckoutLogic from "../routes/Checkout/CheckoutLogic";
-import { useStateValue } from "../helper/StateProvider/StateProvider";
-import { getBasketTotal } from "../helper/StateProvider/reducer";
+import { useEffect, useState } from 'react';
+
+import CheckoutLogic from '../routes/Checkout/CheckoutLogic';
+import { useStateValue } from '../helper/StateProvider/StateProvider';
+import { getBasketTotal } from '../helper/StateProvider/reducer';
+
+import axios from 'axios';
 
 const PromoCodes = () => {
   const [{ basket }] = useStateValue();
-  var { promoCode, setPromoCode } = CheckoutLogic();
+  const [codes, setCodes] = useState([]);
+  let { promoCode, setPromoCode } = CheckoutLogic();
 
-  var basketValue = getBasketTotal(basket);
-  var productValue = basket?.map((product) => product.price);
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/tables')
+      .then((response) => {
+        setCodes(response.data);
+      })
+      .catch((error) => {
+        console.log('Error!!', error);
+      });
+  }, []);
+
+  let basketValue = getBasketTotal(basket);
+  let productValue = basket?.map((product) => product.price);
 
   //promo for all items in basket
-  var basketValueAfterPromo;
+  let basketValueAfterPromo;
   codes?.map((promo) => {
     if (promoCode === promo.code) {
       return (basketValueAfterPromo = basketValue * promo.value);
@@ -21,7 +36,7 @@ const PromoCodes = () => {
   });
 
   //promo for single product
-  var productValueAfterPromo;
+  let productValueAfterPromo;
   codes?.map((promo) => {
     if (promoCode === promo.code) {
       return (productValueAfterPromo = productValue * promo.value);
