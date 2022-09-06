@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ProductStyle = styled.div`
   background-color: #fdfffc;
-  width: 100%;
+  height: 200px;
   padding: 15px;
   margin: 30px 10px 10px 10px;
   border-radius: 10px;
@@ -32,6 +32,11 @@ export const HeaderLine = styled.div`
 
 export const Name = styled.h3`
   margin-left: 10px;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;
 
 export const AddSection = styled.div`

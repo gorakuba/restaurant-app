@@ -1,13 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HeaderStyle = styled.header`
   display: flex;
   align-items: center;
   height: 70px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   padding: 10px 20px;
   background-color: ${(props) => props.theme.colors.color_1};
-  margin-bottom: 30px;
   justify-content: space-between;
 `;
 

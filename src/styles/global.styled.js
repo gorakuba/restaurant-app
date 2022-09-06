@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import { normalize } from "styled-normalize";
+import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
 
 export const GlobalStyles = createGlobalStyle`
   ${normalize};
@@ -16,5 +16,6 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background-color: ${(props) => props.theme.colors.color_5};
+    overflow: auto;
   }
 `;

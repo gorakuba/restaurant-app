@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
 export const SidebarStyle = styled.div`
+  position: sticky;
+  top: 7.5vh;
+  z-index: 10;
+  background-image: linear-gradient(#c0c0c0, rgb(245 245 245));
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 10;
+  padding-bottom: 20px;
 
   @media ${(props) => props.theme.breakpoints.md} {
     position: static;
@@ -13,11 +17,6 @@ export const SidebarStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  @media ${(props) => props.theme.breakpoints.xxl} {
-    height: 80vh;
-    overflow: auto;
   }
 `;
 

@@ -4,6 +4,7 @@ import Product from '../../components/Product/Product';
 import { Container, Content } from '../../styles/main.styled';
 
 import { motion } from 'framer-motion';
+import ProductDetail from '../../components/ProductDetail/ProductDetail';
 
 const RouteLayout = ({ products, title }) => {
   return (
@@ -22,7 +23,7 @@ const RouteLayout = ({ products, title }) => {
             <motion.div
               key={product.id}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1, marginTop: 40 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: 1.6, duration: 0.8 }}
             >
               <Product
@@ -33,6 +34,8 @@ const RouteLayout = ({ products, title }) => {
             </motion.div>
           ))}
         </Content>
+
+        <ProductDetail />
       </Container>
     </>
   );

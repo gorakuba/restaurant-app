@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import Sidebar from '../../components/Sidebar/Sidebar';
 import Table from '../../components/Table/Table';
 import { Container, Content, ResHeader } from './Resevation.styled';
 
@@ -24,8 +23,6 @@ const Reservation = () => {
   return (
     <>
       <Container>
-        <Sidebar />
-
         <Content>
           <motion.div
             initial={{ opacity: 0 }}
