@@ -10,6 +10,7 @@ import { StateProvider } from './helper/StateProvider/StateProvider';
 import Theme from './helper/ThemeProvider/Theme';
 import { GlobalStyles } from './styles/global.styled';
 import Header from './components/Header/Header';
+import Sidebar from './components/Sidebar/Sidebar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
         <Theme>
           <GlobalStyles />
           <Header />
+          <Sidebar />
           <App />
         </Theme>
       </StateProvider>

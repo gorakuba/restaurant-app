@@ -13,7 +13,7 @@ const PromoCodes = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3001/tables')
+      .get('http://localhost:3001/codes')
       .then((response) => {
         setCodes(response.data);
       })

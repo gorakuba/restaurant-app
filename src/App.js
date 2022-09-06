@@ -14,22 +14,28 @@ import Basket from './routes/Basket/Basket';
 import Reservation from './routes/Reservation/Reservation';
 import Checkout from './routes/Checkout/Checkout';
 
+export const paths = [
+  { id: 1, path: '', element: <Home /> },
+  { id: 2, path: 'deliveryandcontact', element: <DeliveryContact /> },
+  { id: 3, path: 'drinks', element: <Drink /> },
+  { id: 4, path: 'fastfoods', element: <FastFood /> },
+  { id: 5, path: 'meatdishes', element: <MeatDish /> },
+  { id: 6, path: 'pizzas', element: <Pizza /> },
+  { id: 7, path: 'soups', element: <Soup /> },
+  { id: 8, path: 'specialsoftheday', element: <Special /> },
+  { id: 9, path: 'vegdishes', element: <VegDish /> },
+  { id: 10, path: 'basket', element: <Basket /> },
+  { id: 11, path: 'reservation', element: <Reservation /> },
+  { id: 12, path: 'checkout', element: <Checkout /> },
+];
+
 const App = () => {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='deliveryandcontact' element={<DeliveryContact />} />
-        <Route path='drinks' element={<Drink />} />
-        <Route path='fastfoods' element={<FastFood />} />
-        <Route path='meatdishes' element={<MeatDish />} />
-        <Route path='pizzas' element={<Pizza />} />
-        <Route path='soups' element={<Soup />} />
-        <Route path='specialsoftheday' element={<Special />} />
-        <Route path='vegdishes' element={<VegDish />} />
-        <Route path='basket' element={<Basket />} />
-        <Route path='/reservation' element={<Reservation />} />
-        <Route path='/checkout' element={<Checkout />} />
+        {paths?.map((path) => (
+          <Route key={path.id} path={path.path} element={path.element} />
+        ))}
       </Routes>
     </>
   );

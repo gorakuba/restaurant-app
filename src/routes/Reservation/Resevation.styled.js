@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ export const Content = styled.div`
 `;
 
 export const ResHeader = styled.h1`
-  margin: 2vh 4vw;
+  margin: 30vh 4vw;
   text-align: center;
 `;
 

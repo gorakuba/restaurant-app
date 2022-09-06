@@ -32,7 +32,7 @@ const Reservation = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.4, duration: 0.6 }}
           >
-            <ResHeader>Zarezerwuj stolik online już teraz: </ResHeader>
+            <ResHeader>Zarezerwuj stolik online już teraz!! </ResHeader>
           </motion.div>
           {tables.map((table) => (
             <motion.div

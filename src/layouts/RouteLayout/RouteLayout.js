@@ -1,24 +1,21 @@
 import React from 'react';
 
-import Sidebar from '../../components/Sidebar/Sidebar';
 import Product from '../../components/Product/Product';
 import { Container, Content } from '../../styles/main.styled';
 
 import { motion } from 'framer-motion';
 
-const RouteLayout = ({ products }) => {
+const RouteLayout = ({ products, title }) => {
   return (
     <>
       <Container>
-        <Sidebar />
-
         <Content>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.4 }}
           >
-            <h1>Napoje:</h1>
+            <h1>{title}:</h1>
           </motion.div>
 
           {products.map((product) => (
