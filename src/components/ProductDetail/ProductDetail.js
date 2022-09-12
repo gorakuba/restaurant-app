@@ -1,12 +1,17 @@
 import React from 'react';
 
 import { Style } from './ProductDetail.styled';
+import { useStateValue } from '../../helper/StateProvider/StateProvider';
 
-const ProductDetail = () => {
+const ProductDetail = ({ id, name, description, price }) => {
+  const [{ details }, dispatch] = useStateValue();
+
   return (
-    <Style>
-      <h1>Choose product which you want to see details!! </h1>
-    </Style>
+    <>
+      {details.map((detail) => (
+        <Style>{detail.name}</Style>
+      ))}
+    </>
   );
 };
 

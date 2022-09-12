@@ -2,9 +2,9 @@ import React from 'react';
 
 import Product from '../../components/Product/Product';
 import { Container, Content } from '../../styles/main.styled';
+import ProductDetail from '../../components/ProductDetail/ProductDetail';
 
 import { motion } from 'framer-motion';
-import ProductDetail from '../../components/ProductDetail/ProductDetail';
 
 const RouteLayout = ({ products, title }) => {
   return (
@@ -16,7 +16,7 @@ const RouteLayout = ({ products, title }) => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.4 }}
           >
-            <h1>{title}:</h1>
+            <h1> {title}:</h1>
           </motion.div>
 
           {products.map((product) => (
@@ -35,7 +35,15 @@ const RouteLayout = ({ products, title }) => {
           ))}
         </Content>
 
-        <ProductDetail />
+        {products.map((product) => (
+          <ProductDetail
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            price={product.price}
+            description={product.description}
+          />
+        ))}
       </Container>
     </>
   );

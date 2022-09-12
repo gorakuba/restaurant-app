@@ -2,31 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  width: 65vw;
-  margin: 4vh 20vw;
-
-  @media ${(props) => props.theme.breakpoints.md} {
-    flex-direction: column;
-    width: 100%;
-    margin: 4vh auto;
-  }
-
-  @media ${(props) => props.theme.breakpoints.xxl} {
-    width: 70vw;
-  }
+  width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const Content = styled.div`
   padding: 0 30px 30px 30px;
-  width: 100%;
-  margin: 0 4vw 0 20vw;
-
-  @media ${(props) => props.theme.breakpoints.md} {
-    display: flex;
-    flex-direction: column;
-    margin: 3vh 4vw 0 6vw;
-    width: 85%;
-  }
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const ResHeader = styled.h1`

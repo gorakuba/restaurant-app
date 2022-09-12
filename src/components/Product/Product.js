@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import {
   Description,
@@ -9,22 +9,23 @@ import {
   Counter,
   Plus,
   Name,
-} from "./Product.styled";
+} from './Product.styled';
 
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
-import { useStateValue } from "../../helper/StateProvider/StateProvider";
+import { useStateValue } from '../../helper/StateProvider/StateProvider';
 
 const Product = ({ id, name, description, price }) => {
   const [{ basket }, dispatch] = useStateValue();
   const [clicked, setClicked] = useState(false);
   const [counter, setCounter] = useState(0);
+  const [productClicked, setProductClicked] = useState(false);
 
   const counterPlus = () => {
     if (counter === 0) {
       dispatch({
-        type: "ADD_TO_BASKET",
+        type: 'ADD_TO_BASKET',
         product: {
           id: id,
           name: name,
@@ -42,7 +43,7 @@ const Product = ({ id, name, description, price }) => {
   const counterMinus = () => {
     if (counter > 0) {
       dispatch({
-        type: "REMOVE_FROM_BASKET",
+        type: 'REMOVE_FROM_BASKET',
         product: {
           id: id,
           name: name,
@@ -60,7 +61,7 @@ const Product = ({ id, name, description, price }) => {
 
   const basketAdd = () => {
     dispatch({
-      type: "ADD_TO_BASKET",
+      type: 'ADD_TO_BASKET',
       product: {
         id: id,
         name: name,
@@ -74,28 +75,44 @@ const Product = ({ id, name, description, price }) => {
     setCounter(counter + 1);
   };
 
+  const showDetails = () => {
+    dispatch({
+      type: 'SHOW_PRODUCT_DETAIL',
+      product: {
+        id: id,
+        name: name,
+        price: price,
+        description: description,
+      },
+    });
+
+    setProductClicked(true);
+  };
+
   return (
-    <ProductStyle>
-      <HeaderLine>
-        <Name>{name}</Name>
+    <>
+      <ProductStyle>
+        <HeaderLine>
+          <Name onClick={showDetails}>{name}</Name>
 
-        <AddSection>
-          {clicked && counter > 0 ? (
-            <Counter>
-              <AddIcon onClick={basketAdd} />
-              {counter}
-              <RemoveIcon onClick={counterMinus} />
-            </Counter>
-          ) : (
-            <Plus onClick={counterPlus}>Add to basket</Plus>
-          )}
+          <AddSection>
+            {clicked && counter > 0 ? (
+              <Counter>
+                <AddIcon onClick={basketAdd} />
+                {counter}
+                <RemoveIcon onClick={counterMinus} />
+              </Counter>
+            ) : (
+              <Plus onClick={counterPlus}>Add to basket</Plus>
+            )}
 
-          <Price>Price: {price} zł</Price>
-        </AddSection>
-      </HeaderLine>
+            <Price>Price: {price} zł</Price>
+          </AddSection>
+        </HeaderLine>
 
-      <Description color>{description}</Description>
-    </ProductStyle>
+        <Description color>{description}</Description>
+      </ProductStyle>
+    </>
   );
 };
 

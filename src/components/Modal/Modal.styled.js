@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 //close icon
-import CloseIcon from "@mui/icons-material/Close";
+import CloseIcon from '@mui/icons-material/Close';
 
 export const Background = styled.div`
   display: flex;
@@ -34,10 +34,6 @@ export const ModalWraper = styled.div`
     margin: 5vh;
     height: auto;
   }
-
-  /* @media (min-width: 1400px) {
-    height: auto;
-  } */
 `;
 
 export const ModalContent = styled.div`

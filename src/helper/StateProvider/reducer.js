@@ -1,5 +1,6 @@
 export const initialState = {
   basket: [],
+  details: [],
 };
 
 export const getBasketTotal = (basket) =>
@@ -7,13 +8,13 @@ export const getBasketTotal = (basket) =>
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "ADD_TO_BASKET":
+    case 'ADD_TO_BASKET':
       return {
         ...state,
         basket: [...state.basket, action.product],
       };
 
-    case "REMOVE_FROM_BASKET":
+    case 'REMOVE_FROM_BASKET':
       let newBasket = [...state.basket];
       const index = state.basket.findIndex(
         (basketItem) => basketItem.id === action.product.id
@@ -22,7 +23,7 @@ const reducer = (state, action) => {
       if (index >= 0) {
         newBasket.splice(index, 1);
       } else {
-        console.warn("Can not remove it! Item is not in a basket!");
+        console.warn('Can not remove it! Item is not in a basket!');
       }
 
       return {
@@ -30,10 +31,22 @@ const reducer = (state, action) => {
         basket: newBasket,
       };
 
-    case "REMOVE_ALL_FROM_BASKET":
+    case 'REMOVE_ALL_FROM_BASKET':
       return {
         ...state,
         basket: [],
+      };
+
+    case 'SHOW_PRODUCT_DETAIL':
+      return {
+        ...state,
+        details: [...state.details, action.product],
+      };
+
+    case 'DELETE_PRODUCT_DETAIL':
+      return {
+        ...state,
+        details: [],
       };
 
     default:
