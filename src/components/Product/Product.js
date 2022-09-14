@@ -20,7 +20,6 @@ const Product = ({ id, name, description, price }) => {
   const [{ basket }, dispatch] = useStateValue();
   const [clicked, setClicked] = useState(false);
   const [counter, setCounter] = useState(0);
-  const [productClicked, setProductClicked] = useState(false);
 
   const counterPlus = () => {
     if (counter === 0) {
@@ -85,8 +84,6 @@ const Product = ({ id, name, description, price }) => {
         description: description,
       },
     });
-
-    setProductClicked(true);
   };
 
   return (

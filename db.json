@@ -83,5 +83,12 @@
       "id": 8,
       "name": "Dowóz i kontakt"
     }
+  ],
+  "modal-content": [
+    {
+      "id": 1,
+      "title": "Our Restaurant",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus tincidunt ipsum ac commodo. Sed pulvinar posuere dolor, in pretium orci. In nec ex eu arcu maximus ultrices. Fusce sem augue, luctus ut elit ut, maximus lacinia risus. Quisque eget quam ac ante pulvinar vehicula."
+    }
   ]
 }

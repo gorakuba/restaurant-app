@@ -11,7 +11,6 @@ import Soup from './routes/Soups/Soup';
 import Special from './routes/SpecialsOfTheDay/Special';
 import VegDish from './routes/VegDishes/VegDish';
 import Basket from './routes/Basket/Basket';
-import Reservation from './routes/Reservation/Reservation';
 import Checkout from './routes/Checkout/Checkout';
 
 export const paths = [
@@ -25,8 +24,7 @@ export const paths = [
   { id: 8, path: 'specialsoftheday', element: <Special /> },
   { id: 9, path: 'vegdishes', element: <VegDish /> },
   { id: 10, path: 'basket', element: <Basket /> },
-  { id: 11, path: 'reservation', element: <Reservation /> },
-  { id: 12, path: 'checkout', element: <Checkout /> },
+  { id: 11, path: 'checkout', element: <Checkout /> },
 ];
 
 const App = () => {

@@ -1,10 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 21vw;
   width: 50vw;
+
+  @media ${(props) => props.theme.breakpoints.xl} {
+    margin: 0 9vw;
+  }
 
   @media ${(props) => props.theme.breakpoints.xxl} {
     width: 70vw;

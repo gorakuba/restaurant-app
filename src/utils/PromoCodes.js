@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import CheckoutLogic from '../routes/Checkout/CheckoutLogic';
 import { useStateValue } from '../helper/StateProvider/StateProvider';
-import { getBasketTotal } from '../helper/StateProvider/reducer';
+import { getBasketTotal } from '../helper/reducers/reducer';
 
 import axios from 'axios';
 

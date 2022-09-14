@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import ModalLogic from './ModalLogic';
 import {
@@ -15,8 +15,22 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 
 import { motion } from 'framer-motion';
 
+import axios from 'axios';
+
 const Modal = ({ setCloseModal }) => {
   const { closeModal, modalRef, showModal } = ModalLogic();
+  const [modalContent, setModalContent] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/modal-content')
+      .then((response) => {
+        setModalContent(response.data);
+      })
+      .catch((error) => {
+        console.log('Error!!', error);
+      });
+  }, []);
 
   return (
     <>
@@ -27,19 +41,15 @@ const Modal = ({ setCloseModal }) => {
       >
         <Background ref={modalRef} onClick={closeModal}>
           <ModalWraper showModal={showModal}>
-            <ModalContent>
-              <ModalLogo>
-                <RestaurantIcon />
-                <ModalLogoTitle>Our Restaurant</ModalLogoTitle>
-              </ModalLogo>
-              <ModalContentText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                finibus tincidunt ipsum ac commodo. Sed pulvinar posuere dolor,
-                in pretium orci. In nec ex eu arcu maximus ultrices. Fusce sem
-                augue, luctus ut elit ut, maximus lacinia risus. Quisque eget
-                quam ac ante pulvinar vehicula.
-              </ModalContentText>
-            </ModalContent>
+            {modalContent.map((content) => (
+              <ModalContent key={content.id}>
+                <ModalLogo>
+                  <RestaurantIcon />
+                  <ModalLogoTitle>{content.title}</ModalLogoTitle>
+                </ModalLogo>
+                <ModalContentText>{content.content}</ModalContentText>
+              </ModalContent>
+            ))}
             <CloseModalButton onClick={() => setCloseModal(false)} />
           </ModalWraper>
         </Background>

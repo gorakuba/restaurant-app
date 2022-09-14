@@ -16,6 +16,6 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background-color: ${(props) => props.theme.colors.color_5};
-    overflow: auto;
+    overflow: scroll;
   }
 `;

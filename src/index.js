@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from 'react-router-dom';
-import reducer, { initialState } from './helper/StateProvider/reducer';
+import reducer, { initialState } from './helper/reducers/reducer';
 import { StateProvider } from './helper/StateProvider/StateProvider';
 import Theme from './helper/ThemeProvider/Theme';
 import { GlobalStyles } from './styles/global.styled';

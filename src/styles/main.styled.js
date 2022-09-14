@@ -17,4 +17,8 @@ export const Content = styled.div`
       margin: 0 20px 20px 3vw;
     }
   }
+
+  @media ${(props) => props.theme.breakpoints.xl} {
+    width: 100%;
+  }
 `;

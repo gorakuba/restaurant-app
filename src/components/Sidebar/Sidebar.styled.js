@@ -5,18 +5,18 @@ export const SidebarStyle = styled.div`
   top: 7.5vh;
   z-index: 10;
   background-image: linear-gradient(#c0c0c0, rgb(245 245 245));
-  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding-bottom: 20px;
 
-  @media ${(props) => props.theme.breakpoints.md} {
+  @media ${(props) => props.theme.breakpoints.xl} {
     position: static;
     top: auto;
     width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    top: 9.3vh;
   }
 `;
 
@@ -37,7 +37,7 @@ export const ListItem = styled.div`
     text-decoration: underline;
   }
 
-  @media ${(props) => props.theme.breakpoints.md} {
+  @media ${(props) => props.theme.breakpoints.xl} {
     justify-content: center;
   }
 `;

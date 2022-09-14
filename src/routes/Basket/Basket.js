@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import BasketProduct from '../../components/BasketProduct/BasketProduct';
 import BasketLogic from './BasketLogic';
-import { getBasketTotal } from '../../helper/StateProvider/reducer';
+import { getBasketTotal } from '../../helper/reducers/reducer';
 import {
   ItemsPrice,
   BasketStyle,
