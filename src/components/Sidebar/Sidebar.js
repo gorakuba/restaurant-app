@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ListItem, SidebarStyle } from './Sidebar.styled';
 
 import { motion } from 'framer-motion';
+
 import axios from 'axios';
 
 const Sidebar = () => {
@@ -11,7 +12,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3001/menu')
+      .get(' http://localhost:3001/menu')
       .then((response) => {
         setMenuItems(response.data);
       })
