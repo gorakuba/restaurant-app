@@ -1,5 +1,8 @@
 RESTAURANT APP
 
-Users: 
- - username: Kuba, password: 123,
- - username: Stefan, password: 456.
+To run app:
+  - install dependencies: npm install,
+  - run local database: npx json-server --watch db.json --port 3001,
+  - run application: npm start.
+  
+  Have fun!!
