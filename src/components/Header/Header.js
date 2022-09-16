@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Modal from '../Modal/Modal';
 import ModalLogic from '../Modal/ModalLogic';
+import ViewMode from '../../utils/ViewMode';
 import { useStateValue } from '../../helper/StateProvider/StateProvider';
 import {
   HeaderStyle,
@@ -12,18 +13,26 @@ import {
   HomeLink,
   HeaderRightIcon,
   HeaderLeft,
+  SwitchModeButton,
 } from './Header.styled';
 
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 import { motion } from 'framer-motion';
 
 const Header = () => {
   const [{ basket }] = useStateValue();
   const { openModal, showModal, setShowModal } = ModalLogic();
+  const { darkModeState, modeHandler } = ViewMode();
+
+  const iconStyle = {
+    height: '20px',
+    width: '20px',
+  };
 
   return (
     <motion.div
@@ -65,11 +74,41 @@ const Header = () => {
             <BasketCounter>{basket.length}</BasketCounter>
           ) : null}
 
-          <Link to='/reservation'>
-            <HeaderRightIcon>
-              <BookmarkAddIcon />
-            </HeaderRightIcon>
-          </Link>
+          {/* <motion.div {...animations.viewMode}> */}
+          <div className='viewOption'>
+            <SwitchModeButton
+              onClick={modeHandler}
+              style={
+                darkModeState.setDarkMode
+                  ? {
+                      backgroundImage: 'linear-gradient(to right,#DADADA,#666)',
+                    }
+                  : { backgroundColor: '#DADADA' }
+              }
+            >
+              <div className='lightModeIcon'>
+                <motion.div
+                  animate={
+                    darkModeState.setDarkMode ? { opacity: 0 } : { opacity: 1 }
+                  }
+                  transition={{ duration: 0.2 }}
+                >
+                  <LightModeIcon style={iconStyle} />
+                </motion.div>
+              </div>
+              <div className='darkModeIcon'>
+                <motion.div
+                  animate={
+                    darkModeState.setDarkMode ? { opacity: 1 } : { opacity: 0 }
+                  }
+                  transition={{ duration: 0.2 }}
+                >
+                  <DarkModeIcon style={iconStyle} />
+                </motion.div>
+              </div>
+            </SwitchModeButton>
+          </div>
+          {/* </motion.div> */}
         </HeaderRight>
       </HeaderStyle>
     </motion.div>

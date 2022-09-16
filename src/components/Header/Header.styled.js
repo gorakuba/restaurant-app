@@ -60,3 +60,30 @@ export const BasketCounter = styled.div`
   font-weight: 900;
   font-family: ${(props) => props.theme.fonts.font_2}, sans-serif;
 `;
+
+export const SwitchModeButton = styled.div`
+  height: 30px;
+  width: 60px;
+  background-color: lightgray;
+  border-radius: 999px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 15px;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .lightModeIcon {
+    padding: 5px;
+    border-radius: 999px;
+    color: black !important;
+  }
+
+  .darkModeIcon {
+    padding: 5px;
+    border-radius: 999px;
+    color: black !important;
+  }
+`;
