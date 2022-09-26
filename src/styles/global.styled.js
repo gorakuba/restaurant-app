@@ -3,8 +3,18 @@ import { normalize } from 'styled-normalize';
 
 export const GlobalStyles = createGlobalStyle`
   ${normalize};
+
+  :root {
+    --background: "#000";
+    --font-color: "#000";
+  }
+
+  [theme-data="dark"] {
+    --background: "#fff";
+    --font-color: "#fff";
+  }
  
-   * {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,7 +25,8 @@ export const GlobalStyles = createGlobalStyle`
   } 
 
   body {
-    background-color: ${(props) => props.theme.colors.color_5};
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: .7px;
     overflow: scroll;
   }
 `;

@@ -1,19 +1,24 @@
 import styled from 'styled-components';
 
+export const iconStyle = {
+  height: '16px',
+  width: '16px',
+  marginTop: '4px',
+};
+
 export const HeaderStyle = styled.header`
   display: flex;
   align-items: center;
   height: 70px;
   padding: 10px 20px;
-  background-color: ${(props) => props.theme.colors.color_1};
   justify-content: space-between;
 `;
 
 export const HomeLink = styled.div`
-  color: ${(props) => props.theme.colors.color_2};
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000;
 
   &:hover {
     cursor: pointer;
@@ -22,18 +27,6 @@ export const HomeLink = styled.div`
 
 export const HeaderLeft = styled.div`
   margin-left: 30px;
-`;
-
-export const HeaderLeftTitle = styled.div`
-  padding: 10px;
-  text-align: center;
-  font-weight: 500;
-  font-size: 24px;
-  font-family: ${(props) => props.theme.fonts.font_1};
-
-  @media ${(props) => props.theme.breakpoints.md} {
-    display: none;
-  }
 `;
 
 export const HeaderRight = styled.div`
@@ -46,7 +39,7 @@ export const HeaderRight = styled.div`
 export const HeaderRightIcon = styled.div`
   padding-left: 15px;
   padding-right: 15px;
-  color: ${(props) => props.theme.colors.color_2};
+  color: #000;
 
   &:hover {
     cursor: pointer;
@@ -58,7 +51,6 @@ export const HeaderRightIcon = styled.div`
 
 export const BasketCounter = styled.div`
   font-weight: 900;
-  font-family: ${(props) => props.theme.fonts.font_2}, sans-serif;
 `;
 
 export const SwitchModeButton = styled.div`
@@ -68,8 +60,9 @@ export const SwitchModeButton = styled.div`
   border-radius: 999px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-left: 15px;
-  transition: 0.3s;
+  transition: 0.4s;
 
   &:hover {
     cursor: pointer;

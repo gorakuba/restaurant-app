@@ -1,17 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 50vw;
   margin: 0 auto;
+  height: 82vh;
 
   @media ${(props) => props.theme.breakpoints.md} {
     display: flex;
     flex-direction: column;
-    width: 100%;
-  }
-
-  @media ${(props) => props.theme.breakpoints.xxl} {
-    width: 70vw;
   }
 `;
 
@@ -20,7 +15,7 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 0 20px 20px 20px;
   padding: 0 30px 30px 30px;
 
   p {
@@ -34,14 +29,13 @@ export const Content = styled.div`
 `;
 
 export const StartShopButton = styled.button`
-  margin-top: 50px;
+  position: relative;
+  top: 20vh;
   padding: 5px;
   width: 200px;
   height: 50px;
   border: none;
   border-radius: 10px;
-  color: ${(props) => props.theme.colors.color_2};
-  font-family: ${(props) => props.theme.fonts.font_3};
   font-weight: 700;
 
   &:hover {
@@ -52,5 +46,3 @@ export const StartShopButton = styled.button`
     transition-duration: 300ms;
   }
 `;
-
-export const LoginButton = styled(StartShopButton)``;

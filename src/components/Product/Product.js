@@ -87,29 +87,27 @@ const Product = ({ id, name, description, price }) => {
   };
 
   return (
-    <>
-      <ProductStyle>
-        <HeaderLine>
-          <Name onClick={showDetails}>{name}</Name>
+    <ProductStyle>
+      <HeaderLine>
+        <Name onClick={showDetails}>{name}</Name>
 
-          <AddSection>
-            {clicked && counter > 0 ? (
-              <Counter>
-                <AddIcon onClick={basketAdd} />
-                {counter}
-                <RemoveIcon onClick={counterMinus} />
-              </Counter>
-            ) : (
-              <Plus onClick={counterPlus}>Add to basket</Plus>
-            )}
+        <AddSection>
+          {clicked && counter > 0 ? (
+            <Counter>
+              <AddIcon onClick={basketAdd} />
+              {counter}
+              <RemoveIcon onClick={counterMinus} />
+            </Counter>
+          ) : (
+            <Plus onClick={counterPlus}>Add to basket</Plus>
+          )}
 
-            <Price>Price: {price} zł</Price>
-          </AddSection>
-        </HeaderLine>
+          <Price>Price: {price} zł</Price>
+        </AddSection>
+      </HeaderLine>
 
-        <Description color>{description}</Description>
-      </ProductStyle>
-    </>
+      <Description>{description}</Description>
+    </ProductStyle>
   );
 };
 

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ProductStyle = styled.div`
-  background-color: #fdfffc;
   height: 200px;
   padding: 15px;
   margin: 30px 10px 10px 10px;
@@ -32,6 +31,7 @@ export const HeaderLine = styled.div`
 
 export const Name = styled.h3`
   margin-left: 10px;
+  font-weight: 600;
 
   &:hover {
     text-decoration: underline;
@@ -92,7 +92,6 @@ export const Price = styled.div`
 
 export const Description = styled.div`
   font-size: 12px;
-  font-weight: 700;
-  color: ${(props) => props.theme.colors.color_2};
+  font-weight: 400;
   padding: 10px;
 `;

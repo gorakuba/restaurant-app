@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-
-//close icon
 import CloseIcon from '@mui/icons-material/Close';
 
 export const Background = styled.div`
@@ -21,8 +19,6 @@ export const ModalWraper = styled.div`
   width: 700px;
   max-height: 700px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background-color: ${(props) => props.theme.colors.color_3};
-  color: ${(props) => props.theme.colors.color_2};
   position: relative;
   top: 40vh;
   z-index: 100;
@@ -42,7 +38,6 @@ export const ModalContent = styled.div`
   justify-content: center;
   align-items: center;
   line-height: 1.8;
-  color: ${(props) => props.theme.colors.color_4};
 `;
 
 export const ModalLogo = styled.div`

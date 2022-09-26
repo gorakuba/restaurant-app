@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const BasketStyle = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0 auto;
+  margin: 50px auto;
   width: 50vw;
 
   @media ${(props) => props.theme.breakpoints.xl} {
@@ -83,7 +83,6 @@ export const BasketAddButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: ${(props) => props.theme.colors.color_7};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
@@ -92,10 +91,6 @@ export const BasketAddButton = styled.button`
 export const BasketDeleteButton = styled(BasketAddButton)`
   margin-top: 20px;
   padding: 17px;
-
-  &:hover {
-    background-color: ${(props) => props.theme.colors.color_6};
-  }
 `;
 
 export const Checkout = styled.button`
@@ -112,7 +107,6 @@ export const Checkout = styled.button`
 
   &:hover {
     cursor: pointer;
-    background-color: ${(props) => props.theme.colors.color_10};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
@@ -125,7 +119,6 @@ export const CheckoutIcon = styled.div`
 export const EmptyBasket = styled.h1`
   margin: 30px;
   font-weight: 700;
-  font-family: ${(props) => props.theme.fonts.font_4};
 
   @media ${(props) => props.theme.breakpoints.md} {
     margin: 0 0 30px 0;

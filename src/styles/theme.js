@@ -14,31 +14,11 @@ export const theme = {
     color_12: 'rgb(70 130 180)',
   },
 
-  fonts: {
-    font_1: "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
-    font_2: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS'",
-    font_3:
-      "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande','Lucida Sans', Arial, sans-serif",
-    font_4: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif",
-    font_5: "Georgia, 'Times New Roman', Times, serif;",
-  },
-
   breakpoints: {
     sm: 'screen and (max-width: 640px)',
     md: 'screen and (max-width: 768px)',
     lg: 'screen and (max-width: 1024px)',
     xl: 'screen and (max-width: 1280px)',
     xxl: 'screen and (min-width: 1281px)',
-  },
-
-  views: {
-    light: {
-      body: '#fff',
-      fontColor: '#000',
-    },
-    dark: {
-      body: '#000',
-      fontColor: '#fff',
-    },
   },
 };

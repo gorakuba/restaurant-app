@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const TableStyle = styled.div`
-  background-color: ${(props) => props.theme.colors.color_3};
   width: 100%;
   height: auto;
   padding: 10px;
@@ -133,7 +132,6 @@ export const TableHeadInput = styled.input`
   height: 30px;
   border-radius: 10px;
   border: none;
-  background-color: ${(props) => props.theme.colors.color_5};
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 `;
 
@@ -211,6 +209,5 @@ export const CancelSection = styled.div`
 `;
 
 export const CancelSectionQuestion = styled.p`
-  font-style: italic;
   font-weight: 100;
 `;

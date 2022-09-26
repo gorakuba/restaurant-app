@@ -16,7 +16,7 @@ const RouteLayout = ({ products, title }) => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
-            <h1>{title}:</h1>
+            <h2>{title}:</h2>
           </motion.div>
 
           {products.map((product) => (

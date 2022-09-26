@@ -22,144 +22,118 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <>
-      <SidebarStyle>
-        {menuItems.map((item) => {
-          switch (item.name) {
-            case 'Dania dnia':
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.1 }}
-                >
-                  <Link
-                    to='/specialsoftheday'
-                    style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
-                  >
-                    <ListItem>{item.name}</ListItem>
-                  </Link>
-                </motion.div>
-              );
-            case 'Dania mięsne':
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <Link
-                    to='/meatdishes'
-                    style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
-                  >
-                    <ListItem>{item.name}</ListItem>
-                  </Link>
-                </motion.div>
-              );
-            case 'Dania wege':
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <Link
-                    to='/vegdishes'
-                    style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
-                  >
-                    <ListItem>{item.name}</ListItem>
-                  </Link>
-                </motion.div>
-              );
-            case 'Zupy':
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  <Link
-                    to='/soups'
-                    style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
-                  >
-                    <ListItem>{item.name}</ListItem>
-                  </Link>
-                </motion.div>
-              );
-            case 'Fast food':
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <Link
-                    to='/fastfoods'
-                    style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
-                  >
-                    <ListItem>{item.name}</ListItem>
-                  </Link>
-                </motion.div>
-              );
-            case 'Pizza':
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  <Link
-                    to='/pizzas'
-                    style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
-                  >
-                    <ListItem>{item.name}</ListItem>
-                  </Link>
-                </motion.div>
-              );
-            case 'Napoje':
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.7 }}
-                >
-                  <Link
-                    to='/drinks'
-                    style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
-                  >
-                    <ListItem>{item.name}</ListItem>
-                  </Link>
-                </motion.div>
-              );
-            case 'Dowóz i kontakt':
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.8 }}
-                >
-                  <Link
-                    to='/deliveryandcontact'
-                    style={{ textDecoration: 'none', color: 'rgb(0 0 0)' }}
-                  >
-                    <ListItem>{item.name}</ListItem>
-                  </Link>
-                </motion.div>
-              );
-            default:
-              return null;
-          }
-        })}
-      </SidebarStyle>
-    </>
+    <SidebarStyle>
+      {menuItems.map((item) => {
+        switch (item.name) {
+          case 'Dania dnia':
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1 }}
+              >
+                <Link to='/specialsoftheday'>
+                  <ListItem>{item.name}</ListItem>
+                </Link>
+              </motion.div>
+            );
+          case 'Dania mięsne':
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+              >
+                <Link to='/meatdishes'>
+                  <ListItem>{item.name}</ListItem>
+                </Link>
+              </motion.div>
+            );
+          case 'Dania wege':
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                <Link to='/vegdishes'>
+                  <ListItem>{item.name}</ListItem>
+                </Link>
+              </motion.div>
+            );
+          case 'Zupy':
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                <Link to='/soups'>
+                  <ListItem>{item.name}</ListItem>
+                </Link>
+              </motion.div>
+            );
+          case 'Fast food':
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Link to='/fastfoods'>
+                  <ListItem>{item.name}</ListItem>
+                </Link>
+              </motion.div>
+            );
+          case 'Pizza':
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                <Link to='/pizzas'>
+                  <ListItem>{item.name}</ListItem>
+                </Link>
+              </motion.div>
+            );
+          case 'Napoje':
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7 }}
+              >
+                <Link to='/drinks'>
+                  <ListItem>{item.name}</ListItem>
+                </Link>
+              </motion.div>
+            );
+          case 'Dowóz i kontakt':
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+              >
+                <Link to='/deliveryandcontact'>
+                  <ListItem>{item.name}</ListItem>
+                </Link>
+              </motion.div>
+            );
+          default:
+            return null;
+        }
+      })}
+    </SidebarStyle>
   );
 };
 

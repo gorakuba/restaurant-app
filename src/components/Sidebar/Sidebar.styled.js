@@ -4,7 +4,6 @@ export const SidebarStyle = styled.div`
   position: sticky;
   top: 7.5vh;
   z-index: 10;
-  background-image: linear-gradient(#c0c0c0, rgb(245 245 245));
   display: flex;
   justify-content: space-around;
   padding-bottom: 20px;
@@ -31,7 +30,6 @@ export const ListItem = styled.div`
   height: 30px;
   border-radius: 10px;
   font-size: 16px;
-  font-family: ${(props) => props.theme.fonts.font_3};
 
   &:hover {
     text-decoration: underline;
