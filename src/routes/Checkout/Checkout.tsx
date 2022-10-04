@@ -80,7 +80,7 @@ const Checkout = () => {
               </div>
 
               <div style={{ margin: '20px 0 10px 20px' }}>
-                or{' '}
+                or
                 <b
                   onClick={() => setPayment(4)}
                   // style={payment === 4 && defaults.styles.afterClickStyle.text}

@@ -19,7 +19,6 @@ import { addToBasket } from '../../slices/ProductSlice';
 import {
   showProductDetails,
   removeProductFromBasket,
-  addToBasketIfProductExist,
 } from '../../slices/ProductSlice';
 
 const Product = ({ id, name, description, price, count }: ProductInterface) => {
@@ -31,14 +30,6 @@ const Product = ({ id, name, description, price, count }: ProductInterface) => {
     dispatch(addToBasket({ id, name, description, price, count }));
 
     setClicked(true);
-    setCounter((current: number) => (current += 1));
-  };
-
-  const basketAddIfExist = () => {
-    dispatch(
-      addToBasketIfProductExist({ id, name, description, price, count })
-    );
-
     setCounter((current: number) => (current += 1));
   };
 
@@ -72,7 +63,7 @@ const Product = ({ id, name, description, price, count }: ProductInterface) => {
         <AddSection>
           {clicked && counter > 0 ? (
             <Counter>
-              <AddIcon onClick={basketAddIfExist} />
+              <AddIcon onClick={basketAdd} />
               {counter}
               <RemoveIcon onClick={basketRemove} />
             </Counter>

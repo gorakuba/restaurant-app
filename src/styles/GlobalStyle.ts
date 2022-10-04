@@ -52,7 +52,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body, html {
     font-family: 'Poppins', sans-serif;
-    letter-spacing: .7px;
+    letter-spacing: 0.7px;
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;

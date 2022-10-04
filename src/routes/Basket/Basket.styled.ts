@@ -17,7 +17,6 @@ export const BasketStyle = styled.div`
 
 export const HeaderLine = styled.div`
   display: flex;
-
   border-bottom: 1px solid gray;
 `;
 

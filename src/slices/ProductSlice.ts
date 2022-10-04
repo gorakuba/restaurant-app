@@ -13,25 +13,6 @@ export const productSlice = createSlice({
       };
     },
 
-    addToBasketIfProductExist: (state, action) => {
-      let newBasket: ProductInterface[];
-
-      let isExistInBasket = state.basket.map(
-        (product) => product.id === action.payload.id
-      );
-
-      if (isExistInBasket) {
-        newBasket = [...state.basket];
-      } else {
-        newBasket = [...state.basket, action.payload];
-      }
-
-      return {
-        ...state,
-        basket: newBasket,
-      };
-    },
-
     removeProductFromBasket: (state, action) => {
       let newBasket = [...state.basket];
       const index = state.basket.findIndex(
@@ -75,7 +56,6 @@ export const productSlice = createSlice({
 
 export const {
   addToBasket,
-  addToBasketIfProductExist,
   removeProductFromBasket,
   removeAllFromBasket,
   showProductDetails,

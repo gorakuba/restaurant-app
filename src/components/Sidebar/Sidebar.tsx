@@ -40,10 +40,7 @@ const Sidebar = () => {
               case 'Dania dnia':
                 return (
                   <motion.div key={item.id} {...animations.specials}>
-                    <Link
-                      to='/specialsoftheday'
-                      style={{ textDecoration: 'none' }}
-                    >
+                    <Link to='/' style={{ textDecoration: 'none' }}>
                       <ListItem>{item.name}</ListItem>
                     </Link>
                   </motion.div>
