@@ -6,12 +6,17 @@ export const GlobalStyle = createGlobalStyle`
     --bodyBackground: ${(props) => props.theme.colors.light.bodyBackground};
     --productBackground:${(props) =>
       props.theme.colors.light.productBackground};
+    --productBoxShadow: ${(props) => props.theme.colors.light.productBoxShadow};
     --font: ${(props) => props.theme.colors.light.font};
     --switchButtonBackground: ${(props) =>
       props.theme.colors.light.switchButtonBackground};
     --modalBackground: ${(props) => props.theme.colors.light.modalBackground};
+    --productDetailsGradientOpen: ${(props) =>
+      props.theme.colors.light.productDetailsGradientOpen};
     --productDetailsGradient: ${(props) =>
       props.theme.colors.light.productDetailsGradient};
+    --productDetailsBorderColor: ${(props) =>
+      props.theme.colors.light.productDetailsBorderColor};
     --sidebarBackground: ${(props) =>
       props.theme.colors.light.sidebarBackground};
     --opacityAnimationLight: 1;
@@ -23,12 +28,17 @@ export const GlobalStyle = createGlobalStyle`
     --headerBackground: ${(props) => props.theme.colors.dark.headerBackground};
     --bodyBackground: ${(props) => props.theme.colors.dark.bodyBackground};
     --productBackground:${(props) => props.theme.colors.dark.productBackground};
+    --productBoxShadow: ${(props) => props.theme.colors.dark.productBoxShadow};
     --font: ${(props) => props.theme.colors.dark.font};
     --switchButtonBackground: ${(props) =>
       props.theme.colors.dark.switchButtonBackground};
     --modalBackground: ${(props) => props.theme.colors.dark.modalBackground};
+    --productDetailsGradientOpen: ${(props) =>
+      props.theme.colors.dark.productDetailsGradientOpen};
     --productDetailsGradient: ${(props) =>
       props.theme.colors.dark.productDetailsGradient};
+    --productDetailsBorderColor: ${(props) =>
+      props.theme.colors.dark.productDetailsBorderColor};
     --sidebarBackground: ${(props) =>
       props.theme.colors.dark.sidebarBackground};
     --opacityAnimationLight: 0;
@@ -50,5 +60,9 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: var(--bodyBackground);
+  }
+
+  .root {
+    width: 100%;
   }
 `;

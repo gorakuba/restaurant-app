@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Home from './routes/Home/Home';
 import DeliveryContact from './routes/DeliveryContact/DeliveryContact';
 import Drink from './routes/Drinks/Drink';
 import FastFood from './routes/FastFoods/FastFoods';
@@ -13,17 +12,16 @@ import Basket from './routes/Basket/Basket';
 import Checkout from './routes/Checkout/Checkout';
 
 const paths = [
-  { id: 1, path: '', element: <Home /> },
-  { id: 2, path: 'deliveryandcontact', element: <DeliveryContact /> },
-  { id: 3, path: 'drinks', element: <Drink /> },
-  { id: 4, path: 'fastfoods', element: <FastFood /> },
-  { id: 5, path: 'meatdishes', element: <MeatDish /> },
-  { id: 6, path: 'pizzas', element: <Pizza /> },
-  { id: 7, path: 'soups', element: <Soup /> },
-  { id: 8, path: 'specialsoftheday', element: <Special /> },
-  { id: 9, path: 'vegdishes', element: <VegDish /> },
-  { id: 10, path: 'basket', element: <Basket /> },
-  { id: 11, path: 'checkout', element: <Checkout /> },
+  { id: 1, path: 'deliveryandcontact', element: <DeliveryContact /> },
+  { id: 2, path: 'drinks', element: <Drink /> },
+  { id: 3, path: 'fastfoods', element: <FastFood /> },
+  { id: 4, path: 'meatdishes', element: <MeatDish /> },
+  { id: 5, path: 'pizzas', element: <Pizza /> },
+  { id: 6, path: 'soups', element: <Soup /> },
+  { id: 7, path: '/', element: <Special /> },
+  { id: 8, path: 'vegdishes', element: <VegDish /> },
+  { id: 9, path: 'basket', element: <Basket /> },
+  { id: 10, path: 'checkout', element: <Checkout /> },
 ];
 
 const MyApp = () => {

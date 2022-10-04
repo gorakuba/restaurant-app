@@ -7,6 +7,12 @@ export const BasketStyle = styled.div`
   margin: 50px auto;
   width: 50vw;
   color: var(--font);
+
+  h5 {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: 100;
+  }
 `;
 
 export const HeaderLine = styled.div`
@@ -26,7 +32,7 @@ export const RightHeaderSide = styled.div`
   width: 30%;
 `;
 
-export const ContinueShoppingCheckout = styled.div`
+export const ContinueShoppingBasketLenght = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -41,6 +47,10 @@ export const ContinueShopping = styled.div`
     padding-bottom: 5px;
     border-bottom: 1px solid #1e90ff;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Checkout = styled.div`
@@ -54,7 +64,16 @@ export const Checkout = styled.div`
     padding: 10px;
     text-align: center;
     border: none;
+    margin-bottom: 30px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
+`;
+
+export const ItemsInBasket = styled(Checkout)`
+  font-weight: 100;
 `;
 
 export const UpdateCheckout = styled.div`
@@ -82,5 +101,28 @@ export const Update = styled(Checkout)`
     border: 2px solid #1e90ff;
     color: #1e90ff;
     background-color: transparent;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`;
+
+export const BasketProductLook = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 110%;
+`;
+
+export const DeleteIconItem = styled.div`
+  margin-left: 30px;
+  margin-top: 20px;
+  color: red;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform ease-in-out;
   }
 `;

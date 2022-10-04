@@ -1,35 +1,27 @@
 import styled from 'styled-components';
 
 export const ProductStyle = styled.div`
-  height: 200px;
-  padding: 15px;
-  margin: 30px 10px 60px 10px;
-
-  &:first-child {
-    margin-top: 0px;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    width: 95%;
-    margin-left: 12.5px;
-  }
+  height: 240px;
+  padding: 14px;
+  width: 30vw;
+  margin: 4px;
+  background-color: var(--productBackground);
+  box-shadow: var(--productBoxShadow);
 `;
 
 export const HeaderLine = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 15px 15px 0;
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    flex-direction: column;
-    text-align: center;
-  }
+  flex-direction: column;
+  text-align: center;
+  padding: 4px;
 `;
 
 export const Name = styled.h3`
-  margin-left: 10px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 100;
+  height: 60px;
 
   &:hover {
     text-decoration: underline;
@@ -41,55 +33,38 @@ export const AddSection = styled.div`
   display: flex;
   justify-content: right;
   align-items: center;
-  margin: 0 0 0 10px;
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-  }
+  flex-direction: column-reverse;
 `;
 
 export const Counter = styled.div`
+  color: #565656;
+  margin-top: 70px;
   font-size: 20px;
   width: 100px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-right: 20px;
 
   &:hover {
     cursor: pointer;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 10px auto 0 auto;
   }
 `;
 
-export const Plus = styled.div`
-  margin-right: 20px;
+export const Plus = styled.button`
+  padding: 6px;
+  width: 120px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #3d3d3d;
+  margin-top: 66px;
+  background-color: #ffd600;
+  border: none;
 
   &:hover {
     cursor: pointer;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 10px auto 0 auto;
   }
 `;
 
 export const Price = styled.div`
-  margin-right: 10px;
   font-weight: 500;
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 10px auto 0 auto;
-  }
-`;
-
-export const Description = styled.div`
-  font-size: 12px;
-  font-weight: 400;
-  padding: 10px;
 `;

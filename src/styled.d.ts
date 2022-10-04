@@ -11,9 +11,12 @@ declare module 'styled-components' {
         headerBackground: string;
         bodyBackground: string;
         productBackground: string;
+        productBoxShadow: string;
         switchButtonBackground: string;
         modalBackground: string;
+        productDetailsGradientOpen: string;
         productDetailsGradient: string;
+        productDetailsBorderColor: string;
         sidebarBackground: string;
         font: string;
       };
@@ -22,9 +25,12 @@ declare module 'styled-components' {
         headerBackground: string;
         bodyBackground: string;
         productBackground: string;
+        productBoxShadow: string;
         switchButtonBackground: string;
         modalBackground: string;
+        productDetailsGradientOpen: string;
         productDetailsGradient: string;
+        productDetailsBorderColor: string;
         sidebarBackground: string;
         font: string;
       };

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { initialState } from '../states/initialState';
+import { initialState } from '../states/states';
 
 export const sidebarSlice = createSlice({
   name: 'sidebar',

@@ -145,7 +145,7 @@ const Checkout = () => {
             <ItemsList>
               {basket.length > 0 ? (
                 <>
-                  {basket?.map((product: ProductInterface) => (
+                  {basket.map((product: ProductInterface) => (
                     <Item key={product.id}>
                       <h5>{product.name}</h5>
                       <p>{product.price} zł</p>

@@ -7,12 +7,15 @@ import {
   HeaderLine,
   LeftHeaderSide,
   RightHeaderSide,
-  ContinueShoppingCheckout,
+  ContinueShoppingBasketLenght,
   ContinueShopping,
   Checkout,
   UpdateCheckout,
   Update,
   SubTotal,
+  ItemsInBasket,
+  BasketProductLook,
+  DeleteIconItem,
 } from './Basket.styled';
 
 import CurrencyFormat from 'react-currency-format';
@@ -22,7 +25,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
 import { removeProductFromBasket } from '../../slices/ProductSlice';
 import { ProductInterface } from '../../typings';
-import { getBasketTotal } from '../../states/initialState';
+import { getBasketTotal } from '../../states/states';
+
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const Basket = () => {
   const basket = useSelector((state: RootState) => state.product.basket);
@@ -30,15 +35,17 @@ const Basket = () => {
 
   return (
     <BasketStyle>
-      <ContinueShoppingCheckout>
+      <ContinueShoppingBasketLenght>
         <ContinueShopping>
-          <h5>Continue shopping</h5>
+          <Link to='/' style={{ textDecoration: 'none' }}>
+            <h5>Continue shopping</h5>
+          </Link>
         </ContinueShopping>
 
-        <Checkout>
-          <button>Checkout</button>
-        </Checkout>
-      </ContinueShoppingCheckout>
+        <ItemsInBasket>
+          <h5>Items in basket: {basket.length > 0 ? basket.length : 0}</h5>
+        </ItemsInBasket>
+      </ContinueShoppingBasketLenght>
 
       <HeaderLine>
         <LeftHeaderSide>
@@ -51,20 +58,32 @@ const Basket = () => {
         </RightHeaderSide>
       </HeaderLine>
 
-      {basket?.map((product: ProductInterface) => (
-        <BasketProduct
-          key={product.id}
-          id={product.id}
-          name={product.name}
-          description={product.description}
-          price={product.price}
-          count={product.count}
-        />
-      ))}
+      {basket.length > 0 ? (
+        basket.map((product: ProductInterface) => (
+          <BasketProductLook key={product.id}>
+            <BasketProduct
+              id={product.id}
+              name={product.name}
+              description={product.description}
+              price={product.price}
+              count={product.count}
+            />
+            <DeleteIconItem>
+              <DeleteIcon
+                onClick={() => dispatch(removeProductFromBasket(product))}
+              />
+            </DeleteIconItem>
+          </BasketProductLook>
+        ))
+      ) : (
+        <h5>No items in basket!</h5>
+      )}
 
       <UpdateCheckout>
         <Update>
-          <button>update</button>
+          <Link to='/'>
+            <button>update</button>
+          </Link>
         </Update>
 
         <SubTotal>
@@ -79,7 +98,9 @@ const Basket = () => {
         </SubTotal>
 
         <Checkout>
-          <button>checkout</button>
+          <Link to='/checkout'>
+            <button>checkout</button>
+          </Link>
         </Checkout>
       </UpdateCheckout>
     </BasketStyle>

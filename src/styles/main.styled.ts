@@ -1,28 +1,23 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-`;
-
-export const Content = styled.div`
-  width: 40%;
-  padding: 60px 30px 30px 30px;
+  width: 100%;
   color: var(--font);
 
   h2 {
     font-weight: 400;
-    margin: 0 20px 20px 1vw;
+    padding: 30px 30px 30px 60px;
+    margin: 30px;
 
-    @media ${(props) => props.theme.breakpoints.md} {
-      margin: 0 20px 20px 3vw;
+    @media ${(props) => props.theme.breakpoints.xl} {
+      padding-left: 30px;
     }
   }
+`;
 
-  @media ${(props) => props.theme.breakpoints.xl} {
-    width: 100%;
-
-    h2 {
-      text-align: center;
-    }
-  }
+export const Content = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 `;

@@ -6,7 +6,7 @@ export const SidebarStyle = styled.div`
   display: flex;
   justify-content: space-around;
   padding-bottom: 20px;
-  background-image: var(--sidebarBackground);
+  background: var(--sidebarBackground);
 
   @media ${(props) => props.theme.breakpoints.xl} {
     position: static;
@@ -15,7 +15,7 @@ export const SidebarStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 9.3vh;
+    top: 9vh;
   }
 `;
 

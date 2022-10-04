@@ -3,13 +3,12 @@ import styled from 'styled-components';
 export const Style = styled.div`
   width: 40%;
   margin: 13vh 0 10px 10px;
-  padding: 60px 0 30px 30px;
-  height: 62vh;
+  padding: 20px 40px 30px 30px;
   position: fixed;
-  left: 54vw;
+  left: 60vw;
   color: var(--font);
-  background-color: #e8eaf6;
-  border-left: 3px solid #1e90ff;
+  background: var(--productDetailsGradientOpen);
+  border-left: var(--productDetailsBorderColor);
   display: flex;
   justify-content: space-between;
 
@@ -30,7 +29,17 @@ export const ProductDetails = styled.div`
 `;
 
 export const CloseIconDiv = styled.div`
-  cursor: pointer;
+  position: relative;
+  top: 20px;
+  width: 33px;
+  height: 33px;
+  padding: 5px;
+  border-radius: 999px;
+  color: red;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const NoProductSelected = styled.div`

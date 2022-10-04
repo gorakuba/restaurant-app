@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {
   Style,
   NoProductSelected,
@@ -14,6 +12,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { hideProductDetails } from '../../slices/ProductSlice';
+import { ProductInterface } from '../../typings';
 
 const ProductDetail = () => {
   const details = useSelector((state: RootState) => state.product.details);
@@ -23,7 +22,7 @@ const ProductDetail = () => {
     <>
       {details.length > 0 ? (
         <AnimatePresence>
-          {details?.map((detail: any) => (
+          {details?.map((detail: ProductInterface) => (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

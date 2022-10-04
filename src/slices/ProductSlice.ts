@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { initialState } from '../states/initialState';
+import { initialState } from '../states/states';
 import { ProductInterface } from '../typings';
 
 export const productSlice = createSlice({
@@ -10,6 +10,25 @@ export const productSlice = createSlice({
       return {
         ...state,
         basket: [...state.basket, action.payload],
+      };
+    },
+
+    addToBasketIfProductExist: (state, action) => {
+      let newBasket: ProductInterface[];
+
+      let isExistInBasket = state.basket.map(
+        (product) => product.id === action.payload.id
+      );
+
+      if (isExistInBasket) {
+        newBasket = [...state.basket];
+      } else {
+        newBasket = [...state.basket, action.payload];
+      }
+
+      return {
+        ...state,
+        basket: newBasket,
       };
     },
 
@@ -38,12 +57,12 @@ export const productSlice = createSlice({
       };
     },
 
-    // showProductDetails: (state, action) => {
-    //   return {
-    //     ...state,
-    //     details: [...state.details, action.payload],
-    //   };
-    // },
+    showProductDetails: (state, action) => {
+      return {
+        ...state,
+        details: [...state.details, action.payload],
+      };
+    },
 
     hideProductDetails: (state) => {
       return {
@@ -56,9 +75,10 @@ export const productSlice = createSlice({
 
 export const {
   addToBasket,
+  addToBasketIfProductExist,
   removeProductFromBasket,
   removeAllFromBasket,
-  // showProductDetails,
+  showProductDetails,
   hideProductDetails,
 } = productSlice.actions;
 export default productSlice.reducer;
