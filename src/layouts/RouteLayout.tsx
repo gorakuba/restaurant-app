@@ -27,7 +27,7 @@ const RouteLayout = ({ products, title }) => {
             transition={{ delay: 1.2, duration: 0.8 }}
           >
             <Link
-              to={`/${productGroup}/${product.name}`}
+              to={`/${productGroup}/${product.id}`}
               style={{ textDecoration: 'none', color: 'var(--font)' }}
             >
               <Product
