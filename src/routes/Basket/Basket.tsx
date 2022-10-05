@@ -67,6 +67,7 @@ const Basket = () => {
               description={product.description}
               price={product.price}
               count={product.count}
+              photoSrc={product.photoSrc}
             />
             <DeleteIconItem>
               <DeleteIcon

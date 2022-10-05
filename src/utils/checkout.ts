@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export const defaults = {
   //links
   links: {
@@ -23,14 +21,6 @@ export const defaults = {
     dhlUrl: 'http://podrugie.pl/wp-content/uploads/2020/12/DHL-logo.png',
   },
 
-  //click styles
-  styles: {
-    afterClickStyle: {
-      icon: { border: '2px solid black' },
-      text: { textDecoration: 'underline', color: '#404545' },
-    },
-  },
-
   //placeholders
   placeholders: {
     email: 'Enter your address email (username@email.com)',
@@ -40,23 +30,5 @@ export const defaults = {
     address: 'Enter your address ...',
     phone: 'Enter your phone number (XXX-XXX-XXX)',
     zipCode: 'Enter your zip code and city (XX-XXX CITY)',
-    promoCode: 'Enter promo code ...',
   },
 };
-
-const CheckoutMethods = () => {
-  const [payment, setPayment] = useState(0);
-  const [courier, setCourier] = useState(0);
-  const [promoCode, setPromoCode] = useState('');
-
-  return {
-    payment,
-    setPayment,
-    courier,
-    setCourier,
-    promoCode,
-    setPromoCode,
-  };
-};
-
-export default CheckoutMethods;

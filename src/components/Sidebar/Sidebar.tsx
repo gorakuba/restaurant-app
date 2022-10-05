@@ -56,7 +56,7 @@ const Sidebar = () => {
               case 'Dania wege':
                 return (
                   <motion.div key={item.id} {...animations.vege}>
-                    <Link to='/vegdishes' style={{ textDecoration: 'none' }}>
+                    <Link to='/vegedishes' style={{ textDecoration: 'none' }}>
                       <ListItem>{item.name}</ListItem>
                     </Link>
                   </motion.div>
@@ -93,13 +93,10 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case 'Dowóz i kontakt':
+              case 'Lokalizacja':
                 return (
-                  <motion.div key={item.id} {...animations.deliveryContact}>
-                    <Link
-                      to='/deliveryandcontact'
-                      style={{ textDecoration: 'none' }}
-                    >
+                  <motion.div key={item.id} {...animations.location}>
+                    <Link to='/location' style={{ textDecoration: 'none' }}>
                       <ListItem>{item.name}</ListItem>
                     </Link>
                   </motion.div>

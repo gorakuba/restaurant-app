@@ -3,8 +3,11 @@ import { Container, Content } from '../styles/main.styled';
 
 import { motion } from 'framer-motion';
 import { ProductInterface } from '../typings';
+import { Link } from 'react-router-dom';
 
 const RouteLayout = ({ products, title }) => {
+  let productGroup: string = title.toLowerCase().replace(/ /g, '');
+
   return (
     <Container>
       <motion.div
@@ -23,13 +26,19 @@ const RouteLayout = ({ products, title }) => {
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
-            <Product
-              id={product.id}
-              name={product.name}
-              price={product.price}
-              description={product.description}
-              count={product.count}
-            />
+            <Link
+              to={`/${productGroup}/${product.name}`}
+              style={{ textDecoration: 'none', color: 'var(--font)' }}
+            >
+              <Product
+                id={product.id}
+                name={product.name}
+                price={product.price}
+                description={product.description}
+                count={product.count}
+                photoSrc={product.photoSrc}
+              />
+            </Link>
           </motion.div>
         ))}
       </Content>

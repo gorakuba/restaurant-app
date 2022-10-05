@@ -37,14 +37,11 @@ export const PaymentInfo = styled.div`
   border: 1px solid lightgrey;
   border-radius: 15px;
   padding: 20px;
+  margin-top: 20px;
 
   h5 {
     margin: 10px 0 10px 20px;
     text-align: left;
-  }
-
-  b {
-    cursor: pointer;
   }
 `;
 
@@ -52,10 +49,47 @@ export const Payment = styled.img`
   width: 140px;
   height: 70px;
   border-radius: 15px;
-  padding: 2px;
-  margin: 10px;
+  margin: 10px 10px 0 10px;
   cursor: pointer;
 `;
+
+export const PayOnDelivery = styled.div`
+  margin: 20px 0 10px 20px;
+  display: flex;
+  align-items: center;
+
+  b {
+    margin-left: 6px;
+    cursor: pointer;
+  }
+`;
+
+export const PayOnDeliveryIcon = styled.div`
+  border-radius: 999px;
+  color: white;
+  background-color: green;
+  width: 25px;
+  height: 25px;
+  margin-left: 6px;
+`;
+
+export const PaymentCheckGPay = styled.div`
+  height: 40px;
+  width: 140px;
+  background-color: green;
+  margin: -16px 0 0 10px;
+  color: white;
+  padding: 4px;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 0 0 15px 15px;
+`;
+
+export const PaymentCheckPayPal = styled(PaymentCheckGPay)``;
+export const PaymentCheckBlik = styled(PaymentCheckGPay)``;
+export const CourierCheckDHL = styled(PaymentCheckGPay)``;
+export const CourierCheckDPD = styled(PaymentCheckGPay)``;
+export const CourierCheckInPost = styled(PaymentCheckGPay)``;
 
 export const ContactInfo = styled.form`
   display: flex;
@@ -72,6 +106,7 @@ export const ContactInfo = styled.form`
 `;
 
 export const DeliveryInfo = styled(ContactInfo)`
+  height: 220px;
   padding: 20px;
 
   h5 {
@@ -96,15 +131,10 @@ export const Email = styled.input`
 `;
 
 export const FirstName = styled(Email)``;
-
 export const Surname = styled(Email)``;
-
 export const Company = styled(Email)``;
-
 export const Address = styled(Email)``;
-
 export const Phone = styled(Email)``;
-
 export const ZipCode = styled(Email)``;
 
 export const CheckoutConfirm = styled.div`
@@ -126,10 +156,6 @@ export const Total = styled.div`
     margin: 20px 20px 10px 20px;
     color: gray;
   }
-`;
-
-export const PromoCode = styled.div`
-  display: flex;
 `;
 
 export const Input = styled(Email)`
@@ -175,7 +201,7 @@ export const ItemsList = styled.div`
 
   h3 {
     text-align: center;
-    margin: 20px;
+    margin: 60px;
     color: gray;
   }
 `;

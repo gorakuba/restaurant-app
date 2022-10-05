@@ -5,6 +5,8 @@ import {
   Price,
   RemoveSection,
   Count,
+  BasketProductImage,
+  BasketProductHeaderLine,
 } from './BasketProduct.styled';
 
 const BasketProduct = ({
@@ -13,11 +15,17 @@ const BasketProduct = ({
   description,
   price,
   count,
+  photoSrc,
 }: ProductInterface) => {
   return (
     <ProductStyle>
       <ProductSection>
-        <h4>{name}</h4>
+        <BasketProductHeaderLine>
+          <BasketProductImage>
+            <img src={photoSrc} alt={name} />
+          </BasketProductImage>
+          <h4>{name}</h4>
+        </BasketProductHeaderLine>
 
         <RemoveSection>
           <Count>{count}</Count>

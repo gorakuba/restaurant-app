@@ -8,6 +8,7 @@ import {
   Counter,
   Plus,
   Name,
+  ProductImage,
 } from './Product.styled';
 
 import AddIcon from '@mui/icons-material/Add';
@@ -21,13 +22,20 @@ import {
   removeProductFromBasket,
 } from '../../slices/ProductSlice';
 
-const Product = ({ id, name, description, price, count }: ProductInterface) => {
+const Product = ({
+  id,
+  name,
+  description,
+  price,
+  count,
+  photoSrc,
+}: ProductInterface) => {
   const [clicked, setClicked] = useState(false);
   const [counter, setCounter] = useState(0);
   const dispatch = useDispatch();
 
   const basketAdd = () => {
-    dispatch(addToBasket({ id, name, description, price, count }));
+    dispatch(addToBasket({ id, name, description, price, count, photoSrc }));
 
     setClicked(true);
     setCounter((current: number) => (current += 1));
@@ -36,7 +44,14 @@ const Product = ({ id, name, description, price, count }: ProductInterface) => {
   const basketRemove = () => {
     if (counter > 0) {
       dispatch(
-        removeProductFromBasket({ id, name, description, price, count })
+        removeProductFromBasket({
+          id,
+          name,
+          description,
+          price,
+          count,
+          photoSrc,
+        })
       );
 
       setCounter((current: number) => (current -= 1));
@@ -47,11 +62,21 @@ const Product = ({ id, name, description, price, count }: ProductInterface) => {
 
   return (
     <ProductStyle>
+      <ProductImage>
+        <img src={photoSrc} alt={name} />
+      </ProductImage>
       <HeaderLine>
         <Name
           onClick={() =>
             dispatch(
-              showProductDetails({ id, name, description, price, count })
+              showProductDetails({
+                id,
+                name,
+                description,
+                price,
+                count,
+                photoSrc,
+              })
             )
           }
         >

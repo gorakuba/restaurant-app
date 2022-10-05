@@ -1,7 +1,6 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import CheckoutMethods, { defaults } from '../../utils/checkout';
-import PromoCodes from '../../utils/promoCodes';
 import {
   Address,
   BasketReturnButton,
@@ -24,22 +23,33 @@ import {
   PaymentButtonDisabled,
   PaymentInfo,
   Phone,
-  PromoCode,
   Surname,
   Total,
   ZipCode,
+  PaymentCheckGPay,
+  PaymentCheckPayPal,
+  PaymentCheckBlik,
+  CourierCheckDHL,
+  CourierCheckDPD,
+  CourierCheckInPost,
+  PayOnDelivery,
+  PayOnDeliveryIcon,
 } from './Checkout.styled';
 
+import { defaults } from '../../utils/checkout';
+
+import axios from 'axios';
 import { motion } from 'framer-motion';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
 import { ProductInterface } from '../../typings';
+import { getBasketTotal } from '../../states/states';
+
+import DoneIcon from '@mui/icons-material/Done';
 
 const Checkout = () => {
-  const { payment, setPayment, courier, setCourier } = CheckoutMethods();
-  // const { promoCode, setPromoCode, basketValue, basketValueAfterPromo } =
-  //   PromoCodes();
-
+  const [payment, setPayment] = useState(0);
+  const [courier, setCourier] = useState(0);
   const basket = useSelector((state: RootState) => state.product.basket);
 
   return (
@@ -59,42 +69,6 @@ const Checkout = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <PaymentInfo>
-              <h5>Payment options: </h5>
-              <div>
-                <Payment
-                  src={defaults.links.gpayUrl}
-                  onClick={() => setPayment(1)}
-                  // style={payment === 1 && defaults.styles.afterClickStyle.icon}
-                />
-                <Payment
-                  src={defaults.links.paypalUrl}
-                  onClick={() => setPayment(2)}
-                  // style={payment === 2 && defaults.styles.afterClickStyle.icon}
-                />
-                <Payment
-                  src={defaults.links.blikUrl}
-                  onClick={() => setPayment(3)}
-                  // style={payment === 3 && defaults.styles.afterClickStyle.icon}
-                />
-              </div>
-
-              <div style={{ margin: '20px 0 10px 20px' }}>
-                or
-                <b
-                  onClick={() => setPayment(4)}
-                  // style={payment === 4 && defaults.styles.afterClickStyle.text}
-                >
-                  pay on delivery!
-                </b>
-              </div>
-            </PaymentInfo>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
             <ContactInfo>
               <h5>Contact information:</h5>
 
@@ -107,6 +81,70 @@ const Checkout = () => {
               <ZipCode placeholder={defaults.placeholders.zipCode} />
             </ContactInfo>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <PaymentInfo>
+              <h5>Payment options: </h5>
+              <div style={{ display: 'flex' }}>
+                <div>
+                  <Payment
+                    src={defaults.links.gpayUrl}
+                    onClick={() => setPayment(1)}
+                  />
+                  <PaymentCheckGPay
+                    style={
+                      payment === 1 ? { display: 'flex' } : { display: 'none' }
+                    }
+                  >
+                    <DoneIcon />
+                  </PaymentCheckGPay>
+                </div>
+                <div>
+                  <Payment
+                    src={defaults.links.paypalUrl}
+                    onClick={() => setPayment(2)}
+                  />
+                  <PaymentCheckPayPal
+                    style={
+                      payment === 2 ? { display: 'flex' } : { display: 'none' }
+                    }
+                  >
+                    <DoneIcon />
+                  </PaymentCheckPayPal>
+                </div>
+                <div>
+                  <Payment
+                    src={defaults.links.blikUrl}
+                    onClick={() => setPayment(3)}
+                  />
+
+                  <PaymentCheckBlik
+                    style={
+                      payment === 3 ? { display: 'flex' } : { display: 'none' }
+                    }
+                  >
+                    <DoneIcon />
+                  </PaymentCheckBlik>
+                </div>
+              </div>
+
+              <PayOnDelivery>
+                or <b onClick={() => setPayment(4)}>pay on delivery!</b>
+                <PayOnDeliveryIcon
+                  style={
+                    payment === 4 ? { display: 'flex' } : { display: 'none' }
+                  }
+                >
+                  <DoneIcon />
+                </PayOnDeliveryIcon>
+              </PayOnDelivery>
+            </PaymentInfo>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -114,23 +152,46 @@ const Checkout = () => {
           >
             <DeliveryInfo>
               <h5>Delivery options:</h5>
-
-              <div>
-                <Courier
-                  src={defaults.links.dhlUrl}
-                  onClick={() => setCourier(1)}
-                  // style={courier === 1 && defaults.styles.afterClickStyle.icon}
-                />
-                <Courier
-                  src={defaults.links.dpdUrl}
-                  onClick={() => setCourier(2)}
-                  // style={courier === 2 && defaults.styles.afterClickStyle.icon}
-                />
-                <Courier
-                  src={defaults.links.inpostUrl}
-                  onClick={() => setCourier(3)}
-                  // style={courier === 3 && defaults.styles.afterClickStyle.icon}
-                />
+              <div style={{ display: 'flex' }}>
+                <div>
+                  <Courier
+                    src={defaults.links.dhlUrl}
+                    onClick={() => setCourier(1)}
+                  />
+                  <CourierCheckDHL
+                    style={
+                      courier === 1 ? { display: 'flex' } : { display: 'none' }
+                    }
+                  >
+                    <DoneIcon />
+                  </CourierCheckDHL>
+                </div>
+                <div>
+                  <Courier
+                    src={defaults.links.dpdUrl}
+                    onClick={() => setCourier(2)}
+                  />
+                  <CourierCheckDPD
+                    style={
+                      courier === 2 ? { display: 'flex' } : { display: 'none' }
+                    }
+                  >
+                    <DoneIcon />
+                  </CourierCheckDPD>
+                </div>
+                <div>
+                  <Courier
+                    src={defaults.links.inpostUrl}
+                    onClick={() => setCourier(3)}
+                  />
+                  <CourierCheckInPost
+                    style={
+                      courier === 3 ? { display: 'flex' } : { display: 'none' }
+                    }
+                  >
+                    <DoneIcon />
+                  </CourierCheckInPost>
+                </div>
               </div>
             </DeliveryInfo>
           </motion.div>
@@ -169,24 +230,8 @@ const Checkout = () => {
           >
             <Total>
               <p>Total</p>
-              {/* <p>{promoCode === '' ? basketValue : basketValueAfterPromo} zł</p> */}
+              <p>{getBasketTotal(basket)} zł</p>
             </Total>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
-          >
-            <PromoCode>
-              {basket.length === 0 ? (
-                <Input placeholder={defaults.placeholders.promoCode} disabled />
-              ) : (
-                <Input
-                  placeholder={defaults.placeholders.promoCode}
-                  // onChange={(e) => setPromoCode(e.target.value)}
-                />
-              )}
-            </PromoCode>
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}

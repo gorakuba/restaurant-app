@@ -1,12 +1,25 @@
 import styled from 'styled-components';
 
 export const ProductStyle = styled.div`
-  height: 240px;
+  height: 440px;
   padding: 14px;
   width: 30vw;
-  margin: 4px;
+  margin: 4px 4px 20px 4px;
   background-color: var(--productBackground);
   box-shadow: var(--productBoxShadow);
+`;
+
+export const ProductImage = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 999px;
+  }
 `;
 
 export const HeaderLine = styled.div`

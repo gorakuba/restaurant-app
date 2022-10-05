@@ -19,18 +19,12 @@ export const ModalWraper = styled.div`
   width: 700px;
   max-height: 700px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  position: relative;
-  top: 60vh;
+  position: fixed;
+  top: 30vh;
   z-index: 100;
   border-radius: 10px;
-  overflow-y: auto;
   padding: 20px;
   background: var(--modalBackground);
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 5vh;
-    height: auto;
-  }
 `;
 
 export const ModalContent = styled.div`
