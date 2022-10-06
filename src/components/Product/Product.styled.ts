@@ -32,7 +32,7 @@ export const HeaderLine = styled.div`
 `;
 
 export const Name = styled.h3`
-  font-size: 16px;
+  font-size: ${(props) => props.theme.fonts.size.fontSize16};
   font-weight: 100;
   height: 60px;
 
@@ -50,9 +50,9 @@ export const AddSection = styled.div`
 `;
 
 export const Counter = styled.div`
-  color: #565656;
+  color: ${(props) => props.theme.fonts.colors.productCounterFont};
   margin-top: 70px;
-  font-size: 20px;
+  font-size: ${(props) => props.theme.fonts.size.fontSize24};
   width: 100px;
   display: flex;
   align-items: center;
@@ -64,14 +64,16 @@ export const Counter = styled.div`
 `;
 
 export const Plus = styled.button`
-  padding: 6px;
-  width: 120px;
-  font-size: 12px;
+  padding: 10px;
+  width: 160px;
+  font-size: ${(props) => props.theme.fonts.size.fontSize16};
   font-weight: 900;
-  color: #3d3d3d;
+  color: ${(props) => props.theme.fonts.colors.addToBasketButton};
   margin-top: 66px;
-  background-color: #ffd600;
+  background-color: ${(props) =>
+    props.theme.colors.states.addToBasketButtonBackground};
   border: none;
+  font-weight: 700;
 
   &:hover {
     cursor: pointer;

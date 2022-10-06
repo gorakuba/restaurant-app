@@ -2,32 +2,31 @@ import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
   colors: {
-    // states: {},
+    states: {
+      addToBasketButtonBackground: '#ffd600',
+      switchModeButtonBackground: '#d3d3d3',
+      modeIconsColor: '#000',
+      gray: '#808080',
+    },
 
     light: {
-      headerBackground: '#1E90FF',
+      header: '#1e90ff',
       bodyBackground: '#E8EAF6',
       productBackground: 'transparent',
       productBoxShadow: '0 0 6px rgba(0, 0, 0, 0.2)',
       switchButtonBackground: '#DADADA',
       modalBackground: '#ECEFF1',
-      productDetailsGradientOpen: 'transparent',
-      productDetailsGradient: 'linear-gradient(to right, #e8eaf6, #DADADA)',
-      productDetailsBorderColor: '#1e90ff',
       sidebarBackground: 'linear-gradient(to top, #E8EAF6, #CFCFCF)',
       font: '#000',
     },
 
     dark: {
-      headerBackground: '#2E2E2E',
+      header: '#2E2E2E',
       bodyBackground: '#191919',
       productBackground: '#1F1F1F',
       productBoxShadow: 'none',
       switchButtonBackground: 'linear-gradient(to right, #DADADA, #666)',
       modalBackground: '#323232',
-      productDetailsGradientOpen: '#1F1F1F',
-      productDetailsGradient: 'linear-gradient(to right, #191919, #2e2e2e)',
-      productDetailsBorderColor: '#2a2a2a',
       sidebarBackground: '#2E2E2E',
       font: '#fff',
     },
@@ -44,6 +43,17 @@ export const theme: DefaultTheme = {
       fontSize24: '1.5rem',
       fontSize32: '2rem',
       fontSize64: '4rem',
+    },
+
+    colors: {
+      whiteFont: '#fff',
+      blackFont: '#000',
+      addToBasketButton: '#3d3d3d',
+      grayFont: '#808080',
+      darkGrayFont: '#a9a9a9',
+      lightGrayFont: '#d3d3d3',
+      redFont: '#ff0000',
+      productCounterFont: '#565656',
     },
   },
 

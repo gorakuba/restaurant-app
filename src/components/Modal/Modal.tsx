@@ -1,5 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
-
+import { useEffect, useState } from 'react';
 import {
   Background,
   ModalWraper,
@@ -9,24 +8,16 @@ import {
   ModalLogoTitle,
   ModalContentText,
 } from './Modal.styled';
-
 import RestaurantIcon from '@mui/icons-material/Restaurant';
-
 import { motion } from 'framer-motion';
 import axios from 'axios';
-
 import { useDispatch } from 'react-redux';
 import { closeModal } from '../../slices/ModalSlice';
+import { modalAnimations } from '../../utils/animations';
 
 const Modal = () => {
   const [modalContent, setModalContent] = useState([]);
   const dispatch = useDispatch();
-
-  const animations = {
-    initial: { opacity: 0, marginTop: -1200 },
-    animate: { opacity: 1, marginTop: -800 },
-    transition: { delay: 0.1, duration: 0.4 },
-  };
 
   useEffect(() => {
     axios
@@ -40,7 +31,7 @@ const Modal = () => {
   }, []);
 
   return (
-    <motion.div {...animations}>
+    <motion.div {...modalAnimations}>
       <Background onClick={() => dispatch(closeModal())}>
         <ModalWraper>
           {modalContent.map((content: any) => (

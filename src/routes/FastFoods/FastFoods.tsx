@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
-
 import RouteLayout from '../../layouts/RouteLayout';
-import TitleLogic from '../../utils/title';
+import Title from '../../utils/title';
 import { ProductInterface } from '../../typings';
-
 import axios from 'axios';
 
 const FastFood = () => {
   const [fastFoods, setFastFoods] = useState<ProductInterface[]>([]);
-  const { title, setTitle } = TitleLogic();
+  const { title, setTitle } = Title();
 
   useEffect(() => {
     axios

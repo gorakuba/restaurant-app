@@ -33,7 +33,7 @@ export const CheckoutCustomerInfo = styled.div`
 export const PaymentInfo = styled.div`
   display: flex;
   flex-direction: column;
-  color: gray;
+  color: ${(props) => props.theme.fonts.colors.grayFont};
   border: 1px solid lightgrey;
   border-radius: 15px;
   padding: 20px;
@@ -66,7 +66,7 @@ export const PayOnDelivery = styled.div`
 
 export const PayOnDeliveryIcon = styled.div`
   border-radius: 999px;
-  color: white;
+  color: ${(props) => props.theme.fonts.colors.whiteFont};
   background-color: green;
   width: 25px;
   height: 25px;
@@ -78,7 +78,7 @@ export const PaymentCheckGPay = styled.div`
   width: 140px;
   background-color: green;
   margin: -16px 0 0 10px;
-  color: white;
+  color: ${(props) => props.theme.fonts.colors.whiteFont};
   padding: 4px;
   justify-content: center;
   align-items: flex-end;
@@ -101,7 +101,7 @@ export const ContactInfo = styled.form`
 
   h5 {
     margin: 50px 30px 10px 30px;
-    color: gray;
+    color: ${(props) => props.theme.fonts.colors.grayFont};
   }
 `;
 
@@ -111,7 +111,7 @@ export const DeliveryInfo = styled(ContactInfo)`
 
   h5 {
     margin: 20px 30px 10px 20px;
-    color: gray;
+    color: ${(props) => props.theme.fonts.colors.grayFont};
   }
 `;
 
@@ -154,7 +154,7 @@ export const Total = styled.div`
 
   p {
     margin: 20px 20px 10px 20px;
-    color: gray;
+    color: ${(props) => props.theme.fonts.colors.grayFont};
   }
 `;
 
@@ -166,33 +166,33 @@ export const Input = styled(Email)`
 export const PaymentButton = styled.button`
   margin-left: auto;
   margin-right: auto;
-  color: darkgray;
+  color: ${(props) => props.theme.fonts.colors.darkGrayFont};
   margin-top: 20px;
   padding: 15px;
   border: none;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: ${(props) => props.theme.fonts.size.fontSize16};
   width: 100%;
 
   &:hover {
     cursor: pointer;
     transition: all ease-in-out;
     transition-duration: 400ms;
-    color: black;
+    color: ${(props) => props.theme.fonts.colors.blackFont};
   }
 `;
 
 export const PaymentButtonDisabled = styled.button`
   margin-left: auto;
   margin-right: auto;
-  color: darkgray;
+  color: ${(props) => props.theme.fonts.colors.darkGrayFont};
   margin-top: 20px;
   padding: 15px;
   border: none;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: ${(props) => props.theme.fonts.size.fontSize16};
   width: 100%;
 `;
 
@@ -202,7 +202,7 @@ export const ItemsList = styled.div`
   h3 {
     text-align: center;
     margin: 60px;
-    color: gray;
+    color: ${(props) => props.theme.fonts.colors.grayFont};
   }
 `;
 
@@ -214,13 +214,13 @@ export const BasketReturnButton = styled.button`
   border: none;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 14px;
-  color: gray;
+  font-size: ${(props) => props.theme.fonts.size.fontSize16};
+  color: ${(props) => props.theme.fonts.colors.grayFont};
 
   &:hover {
     cursor: pointer;
-    color: lightgray;
-    background-color: gray;
+    color: ${(props) => props.theme.fonts.colors.lightGrayFont};
+    background-color: ${(props) => props.theme.colors.states.gray};
     transition: all ease-in-out;
     transition-duration: 400ms;
   }
@@ -231,5 +231,5 @@ export const Item = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 20px;
-  color: gray;
+  color: ${(props) => props.theme.fonts.colors.grayFont};
 `;

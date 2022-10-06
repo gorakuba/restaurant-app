@@ -11,7 +11,7 @@ export const HeaderStyle = styled.header`
   align-items: center;
   height: 70px;
   padding: 10px 20px;
-  background-color: var(--headerBackground);
+  background-color: var(--header);
   color: var(--font);
   justify-content: space-between;
 `;
@@ -62,7 +62,8 @@ export const BasketCounter = styled.div`
 export const SwitchModeButton = styled.div`
   height: 30px;
   width: 60px;
-  background-color: lightgray;
+  background-color: ${(props) =>
+    props.theme.colors.states.switchModeButtonBackground};
   border-radius: 999px;
   display: flex;
   justify-content: space-between;
@@ -77,7 +78,7 @@ export const SwitchModeButton = styled.div`
   .lightModeIcon {
     padding: 5px;
     border-radius: 999px;
-    color: black !important;
+    color: ${(props) => props.theme.colors.states.modeIconsColor} !important;
     opacity: var(--opacityAnimationLight);
     transition: 0.3s;
   }
@@ -85,7 +86,7 @@ export const SwitchModeButton = styled.div`
   .darkModeIcon {
     padding: 5px;
     border-radius: 999px;
-    color: black !important;
+    color: ${(props) => props.theme.colors.states.modeIconsColor} !important;
     opacity: var(--opacityAnimationDark);
     transition: 0.3s;
   }

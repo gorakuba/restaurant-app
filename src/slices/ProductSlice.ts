@@ -37,28 +37,9 @@ export const productSlice = createSlice({
         basket: [],
       };
     },
-
-    showProductDetails: (state, action) => {
-      return {
-        ...state,
-        details: [...state.details, action.payload],
-      };
-    },
-
-    hideProductDetails: (state) => {
-      return {
-        ...state,
-        details: [],
-      };
-    },
   },
 });
 
-export const {
-  addToBasket,
-  removeProductFromBasket,
-  removeAllFromBasket,
-  showProductDetails,
-  hideProductDetails,
-} = productSlice.actions;
+export const { addToBasket, removeProductFromBasket, removeAllFromBasket } =
+  productSlice.actions;
 export default productSlice.reducer;

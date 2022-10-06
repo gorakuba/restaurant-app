@@ -9,6 +9,7 @@ import {
 import { motion } from 'framer-motion';
 import { ProductInterface } from '../../typings';
 import axios from 'axios';
+import { productDetailsAnimations } from '../../utils/animations';
 
 const ProductDetails = () => {
   const [product, setProduct] = useState<ProductInterface>();
@@ -26,22 +27,13 @@ const ProductDetails = () => {
   }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ delay: 0.1, duration: 0.3 }}
-    >
+    <motion.div {...productDetailsAnimations.productDetails}>
       <Style>
         <ProductDetailImage>
           <img src={product?.photoSrc} alt={product?.name} />
         </ProductDetailImage>
         <div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.3 }}
-          >
+          <motion.div {...productDetailsAnimations.header}>
             <ProductDetailsHeader>
               <div>
                 <h2>{product?.name}</h2>
@@ -51,11 +43,7 @@ const ProductDetails = () => {
             </ProductDetailsHeader>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.3 }}
-          >
+          <motion.div {...productDetailsAnimations.description}>
             <p>{product?.description}</p>
           </motion.div>
         </div>

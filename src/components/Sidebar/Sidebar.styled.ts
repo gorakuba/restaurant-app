@@ -28,7 +28,7 @@ export const ListItem = styled.div`
   width: 10vw;
   margin: 26px 6px 6px 0;
   height: 30px;
-  font-size: 14px;
+  font-size: ${(props) => props.theme.fonts.size.fontSize16};
   font-weight: 700;
   border-radius: 10px;
   color: var(--font);

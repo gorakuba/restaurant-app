@@ -3,34 +3,31 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
-      // states: {
-      //   sidebarBackground: string;
-      // };
+      states: {
+        addToBasketButtonBackground: string;
+        switchModeButtonBackground: string;
+        modeIconsColor: string;
+        gray: string;
+      };
 
       light: {
-        headerBackground: string;
+        header: string;
         bodyBackground: string;
         productBackground: string;
         productBoxShadow: string;
         switchButtonBackground: string;
         modalBackground: string;
-        productDetailsGradientOpen: string;
-        productDetailsGradient: string;
-        productDetailsBorderColor: string;
         sidebarBackground: string;
         font: string;
       };
 
       dark: {
-        headerBackground: string;
+        header: string;
         bodyBackground: string;
         productBackground: string;
         productBoxShadow: string;
         switchButtonBackground: string;
         modalBackground: string;
-        productDetailsGradientOpen: string;
-        productDetailsGradient: string;
-        productDetailsBorderColor: string;
         sidebarBackground: string;
         font: string;
       };
@@ -47,6 +44,17 @@ declare module 'styled-components' {
         fontSize24: string;
         fontSize32: string;
         fontSize64: string;
+      };
+
+      colors: {
+        whiteFont: string;
+        blackFont: string;
+        addToBasketButton: string;
+        grayFont: string;
+        darkGrayFont: string;
+        lightGrayFont: string;
+        redFont: string;
+        productCounterFont: string;
       };
     };
 

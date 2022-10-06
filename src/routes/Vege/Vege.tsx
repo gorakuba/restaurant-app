@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
-
 import RouteLayout from '../../layouts/RouteLayout';
-import TitleLogic from '../../utils/title';
+import Title from '../../utils/title';
 import { ProductInterface } from '../../typings';
-
 import axios from 'axios';
 
 const Vege = () => {
   const [vegeDishes, setVegeDishes] = useState<ProductInterface[]>([]);
-  const { title, setTitle } = TitleLogic();
+  const { title, setTitle } = Title();
 
   useEffect(() => {
     axios

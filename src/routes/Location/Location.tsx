@@ -1,21 +1,16 @@
 import { Container, Map } from './Location.styled';
-
 import { TileLayer, Popup, MapContainer, Marker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-
 import { motion } from 'framer-motion';
-
 import L from 'leaflet';
-L.Icon.Default.imagePath = 'leaflet_images/';
+import { locationAnimations } from '../../utils/animations';
 
 const Location = () => {
+  L.Icon.Default.imagePath = 'leaflet_images/';
+
   return (
     <Container>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 0.6 }}
-      >
+      <motion.div {...locationAnimations}>
         <Map>
           <MapContainer
             center={[49.854851, 19.33852]}

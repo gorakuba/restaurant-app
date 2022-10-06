@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-
 import RouteLayout from '../../layouts/RouteLayout';
 import Title from '../../utils/title';
 import { ProductInterface } from '../../typings';
-
 import axios from 'axios';
 
 const Drink = () => {

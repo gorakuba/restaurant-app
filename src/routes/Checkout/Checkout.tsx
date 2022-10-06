@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import {
   Address,
   BasketReturnButton,
@@ -15,7 +14,6 @@ import {
   DeliveryInfo,
   Email,
   FirstName,
-  Input,
   Item,
   ItemsList,
   Payment,
@@ -35,17 +33,14 @@ import {
   PayOnDelivery,
   PayOnDeliveryIcon,
 } from './Checkout.styled';
-
 import { defaults } from '../../utils/checkout';
-
-import axios from 'axios';
 import { motion } from 'framer-motion';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../api/store';
 import { ProductInterface } from '../../typings';
 import { getBasketTotal } from '../../states/states';
-
 import DoneIcon from '@mui/icons-material/Done';
+import { checkoutAnimations } from '../../utils/animations';
 
 const Checkout = () => {
   const [payment, setPayment] = useState(0);
@@ -54,21 +49,13 @@ const Checkout = () => {
 
   return (
     <CheckoutStyle>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
+      <motion.div {...checkoutAnimations.banner}>
         <CheckoutBanner src={defaults.links.bannerUrl} />
       </motion.div>
 
       <CheckoutBody>
         <CheckoutCustomerInfo>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          <motion.div {...checkoutAnimations.customerInfo}>
             <ContactInfo>
               <h5>Contact information:</h5>
 
@@ -82,11 +69,7 @@ const Checkout = () => {
             </ContactInfo>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
+          <motion.div {...checkoutAnimations.paymentInfo}>
             <PaymentInfo>
               <h5>Payment options: </h5>
               <div style={{ display: 'flex' }}>
@@ -145,11 +128,7 @@ const Checkout = () => {
             </PaymentInfo>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
+          <motion.div {...checkoutAnimations.deliveryInfo}>
             <DeliveryInfo>
               <h5>Delivery options:</h5>
               <div style={{ display: 'flex' }}>
@@ -198,11 +177,7 @@ const Checkout = () => {
         </CheckoutCustomerInfo>
 
         <CheckoutConfirm>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
+          <motion.div {...checkoutAnimations.checkoutConfirm}>
             <ItemsList>
               {basket.length > 0 ? (
                 <>
@@ -223,21 +198,15 @@ const Checkout = () => {
               )}
             </ItemsList>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
+
+          <motion.div {...checkoutAnimations.total}>
             <Total>
               <p>Total</p>
               <p>{getBasketTotal(basket)} zł</p>
             </Total>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-          >
+
+          <motion.div {...checkoutAnimations.buyButton}>
             {basket.length === 0 ? (
               <PaymentButtonDisabled>Buy</PaymentButtonDisabled>
             ) : (

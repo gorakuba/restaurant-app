@@ -16,6 +16,7 @@ const BasketProduct = ({
   price,
   count,
   photoSrc,
+  title,
 }: ProductInterface) => {
   return (
     <ProductStyle>
@@ -29,7 +30,7 @@ const BasketProduct = ({
 
         <RemoveSection>
           <Count>{count}</Count>
-          <Price>{price} zł</Price>
+          <Price>{price.toFixed(2)} zł</Price>
         </RemoveSection>
       </ProductSection>
     </ProductStyle>

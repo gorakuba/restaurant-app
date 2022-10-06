@@ -5,6 +5,7 @@ export interface ProductInterface {
   description: string;
   count: number;
   photoSrc: string;
+  title: string;
 }
 
 export interface MenuItemInterface {

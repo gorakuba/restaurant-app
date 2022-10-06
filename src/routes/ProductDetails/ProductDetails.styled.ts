@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const Style = styled.div`
-  margin: 14vh;
+  margin: 20vh auto;
   padding: 20px;
   height: 100%;
+  width: 60%;
   color: var(--font);
-  border-left: var(--productDetailsBorderColor);
   display: flex;
-  justify-content: center;
   align-items: center;
   text-align: center;
 
@@ -22,13 +21,14 @@ export const ProductDetailImage = styled.div`
   margin-right: 60px;
 
   img {
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
     border-radius: 999px;
   }
 
   @media ${(props) => props.theme.breakpoints.xl} {
     margin-right: 0;
+    margin-bottom: 30px;
   }
 `;
 
@@ -42,12 +42,13 @@ export const ProductDetailsHeader = styled.div`
 export const PlusButton = styled.button`
   padding: 6px;
   height: 40px;
-  width: 120px;
-  font-size: 12px;
+  width: 160px;
+  font-size: ${(props) => props.theme.fonts.size.fontSize16};
   font-weight: 900;
-  color: #3d3d3d;
+  color: ${(props) => props.theme.fonts.colors.addToBasketButton};
   margin-top: 32px;
-  background-color: #ffd600;
+  background-color: ${(props) =>
+    props.theme.colors.states.addToBasketButtonBackground};
   border: none;
 
   &:hover {

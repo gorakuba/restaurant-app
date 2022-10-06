@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
-
 import BasketProduct from '../../components/BasketProduct/BasketProduct';
-
 import {
   BasketStyle,
   HeaderLine,
@@ -17,16 +15,12 @@ import {
   BasketProductLook,
   DeleteIconItem,
 } from './Basket.styled';
-
 import CurrencyFormat from 'react-currency-format';
-import { motion } from 'framer-motion';
-
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store';
+import { RootState } from '../../api/store';
 import { removeProductFromBasket } from '../../slices/ProductSlice';
 import { ProductInterface } from '../../typings';
 import { getBasketTotal } from '../../states/states';
-
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const Basket = () => {
@@ -68,6 +62,7 @@ const Basket = () => {
               price={product.price}
               count={product.count}
               photoSrc={product.photoSrc}
+              title={product.title}
             />
             <DeleteIconItem>
               <DeleteIcon
@@ -90,11 +85,11 @@ const Basket = () => {
         <SubTotal>
           <p>subtotal</p>
           <CurrencyFormat
-            renderText={(value: any) => <h3>{value} zł</h3>}
+            displayType={'text'}
             decimalScale={2}
             value={getBasketTotal(basket)}
-            displayType={'text'}
             thousandSeparator={true}
+            renderText={(value: any) => <h3>{value} zł</h3>}
           />
         </SubTotal>
 

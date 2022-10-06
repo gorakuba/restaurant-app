@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
-    --headerBackground: ${(props) => props.theme.colors.light.headerBackground};
+    --header: ${(props) => props.theme.colors.light.header};
     --bodyBackground: ${(props) => props.theme.colors.light.bodyBackground};
     --productBackground:${(props) =>
       props.theme.colors.light.productBackground};
@@ -11,12 +11,6 @@ export const GlobalStyle = createGlobalStyle`
     --switchButtonBackground: ${(props) =>
       props.theme.colors.light.switchButtonBackground};
     --modalBackground: ${(props) => props.theme.colors.light.modalBackground};
-    --productDetailsGradientOpen: ${(props) =>
-      props.theme.colors.light.productDetailsGradientOpen};
-    --productDetailsGradient: ${(props) =>
-      props.theme.colors.light.productDetailsGradient};
-    --productDetailsBorderColor: ${(props) =>
-      props.theme.colors.light.productDetailsBorderColor};
     --sidebarBackground: ${(props) =>
       props.theme.colors.light.sidebarBackground};
     --opacityAnimationLight: 1;
@@ -25,7 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   [theme-data="dark"] {
-    --headerBackground: ${(props) => props.theme.colors.dark.headerBackground};
+    --header: ${(props) => props.theme.colors.dark.header};
     --bodyBackground: ${(props) => props.theme.colors.dark.bodyBackground};
     --productBackground:${(props) => props.theme.colors.dark.productBackground};
     --productBoxShadow: ${(props) => props.theme.colors.dark.productBoxShadow};
@@ -33,12 +27,6 @@ export const GlobalStyle = createGlobalStyle`
     --switchButtonBackground: ${(props) =>
       props.theme.colors.dark.switchButtonBackground};
     --modalBackground: ${(props) => props.theme.colors.dark.modalBackground};
-    --productDetailsGradientOpen: ${(props) =>
-      props.theme.colors.dark.productDetailsGradientOpen};
-    --productDetailsGradient: ${(props) =>
-      props.theme.colors.dark.productDetailsGradient};
-    --productDetailsBorderColor: ${(props) =>
-      props.theme.colors.dark.productDetailsBorderColor};
     --sidebarBackground: ${(props) =>
       props.theme.colors.dark.sidebarBackground};
     --opacityAnimationLight: 0;

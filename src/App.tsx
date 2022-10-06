@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-
 import Location from './routes/Location/Location';
 import Drink from './routes/Drinks/Drink';
 import FastFood from './routes/FastFoods/FastFoods';

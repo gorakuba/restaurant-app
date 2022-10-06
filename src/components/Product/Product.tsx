@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import {
   HeaderLine,
   ProductStyle,
@@ -10,17 +10,12 @@ import {
   Name,
   ProductImage,
 } from './Product.styled';
-
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-
 import { ProductInterface } from '../../typings';
 import { useDispatch } from 'react-redux';
 import { addToBasket } from '../../slices/ProductSlice';
-import {
-  showProductDetails,
-  removeProductFromBasket,
-} from '../../slices/ProductSlice';
+import { removeProductFromBasket } from '../../slices/ProductSlice';
 
 const Product = ({
   id,
@@ -29,10 +24,12 @@ const Product = ({
   price,
   count,
   photoSrc,
+  title,
 }: ProductInterface) => {
   const [clicked, setClicked] = useState(false);
   const [counter, setCounter] = useState(0);
   const dispatch = useDispatch();
+  let productGroup: string = title.toLowerCase().replace(/ /g, '');
 
   const basketAdd = () => {
     dispatch(addToBasket({ id, name, description, price, count, photoSrc }));
@@ -66,24 +63,14 @@ const Product = ({
         <img src={photoSrc} alt={name} />
       </ProductImage>
       <HeaderLine>
-        <Name
-          onClick={() =>
-            dispatch(
-              showProductDetails({
-                id,
-                name,
-                description,
-                price,
-                count,
-                photoSrc,
-              })
-            )
-          }
+        <Link
+          to={`/${productGroup}/${id}`}
+          style={{ textDecoration: 'none', color: 'var(--font)' }}
         >
-          {name}
-        </Name>
+          <Name>{name}</Name>
+        </Link>
 
-        <Price>Price: {price} zł</Price>
+        <Price>Price: {price.toFixed(2)} zł</Price>
 
         <AddSection>
           {clicked && counter > 0 ? (

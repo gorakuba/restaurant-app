@@ -1,13 +1,12 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-
 import MyApp from './App';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import { Provider } from 'react-redux';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { store } from './store';
+import { store } from './api/store';
 import { GlobalStyle } from './styles/GlobalStyle';
 import ModeHandler from './utils/mode';
 import Sidebar from './components/Sidebar/Sidebar';
