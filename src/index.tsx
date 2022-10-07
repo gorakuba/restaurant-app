@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import { Provider } from 'react-redux';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { store } from './api/store';
+import { store } from './store';
 import { GlobalStyle } from './styles/GlobalStyle';
 import ModeHandler from './utils/mode';
 import Sidebar from './components/Sidebar/Sidebar';

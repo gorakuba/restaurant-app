@@ -5,6 +5,7 @@ export const initialState: InitialStateInterface = {
   details: [],
   modal: false,
   sidebar: false,
+  productsData: [],
 };
 
 export const getBasketTotal = (basket: ProductInterface[]) =>

@@ -19,7 +19,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import MenuIcon from '@mui/icons-material/Menu';
 import { motion } from 'framer-motion';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../api/store';
+import { RootState } from '../../store';
 import { openModal } from '../../slices/ModalSlice';
 import { openSidebar } from '../../slices/SidebarSlice';
 import { headerAnimations } from '../../utils/animations';

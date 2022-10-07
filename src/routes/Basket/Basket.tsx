@@ -17,7 +17,7 @@ import {
 } from './Basket.styled';
 import CurrencyFormat from 'react-currency-format';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../api/store';
+import { RootState } from '../../store';
 import { removeProductFromBasket } from '../../slices/ProductSlice';
 import { ProductInterface } from '../../typings';
 import { getBasketTotal } from '../../states/states';

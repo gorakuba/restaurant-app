@@ -4,7 +4,7 @@ import { CloseListItem, ListItem, SidebarStyle } from './Sidebar.styled';
 import { AnimatePresence, motion } from 'framer-motion';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../api/store';
+import { RootState } from '../../store';
 import { closeSidebar } from '../../slices/SidebarSlice';
 import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 import { MenuItemInterface } from '../../typings';

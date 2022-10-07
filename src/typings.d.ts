@@ -23,4 +23,5 @@ export interface InitialStateInterface {
   details: ProductInterface[];
   modal: boolean;
   sidebar: boolean;
+  productsData: ProductInterface[];
 }

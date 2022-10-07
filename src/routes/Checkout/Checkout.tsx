@@ -36,7 +36,7 @@ import {
 import { defaults } from '../../utils/checkout';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../api/store';
+import { RootState } from '../../store';
 import { ProductInterface } from '../../typings';
 import { getBasketTotal } from '../../states/states';
 import DoneIcon from '@mui/icons-material/Done';
