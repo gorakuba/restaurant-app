@@ -17,5 +17,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "src/api/server.ts"]
+  "include": ["src", "src/api/config/db.ts", "src/api/index.ts"]
 }
