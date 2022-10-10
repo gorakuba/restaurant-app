@@ -8,7 +8,7 @@ const RouteLayout = ({ products, title }) => {
   return (
     <Container>
       <motion.div {...routeLayoutAnimations.layout}>
-        <h2>{title}:</h2>
+        <h2>{title}</h2>
       </motion.div>
 
       <Content>
