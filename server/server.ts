@@ -25,7 +25,7 @@ app.get('/drinks/:id', (req, res) => {
       if (error) {
         console.error(error);
       }
-      console.log(res.send(result));
+      res.send(result);
     }
   );
 });
