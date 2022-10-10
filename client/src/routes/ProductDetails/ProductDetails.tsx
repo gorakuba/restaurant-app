@@ -13,7 +13,6 @@ import { productDetailsAnimations } from '../../utils/animations';
 const ProductDetails = () => {
   const [product, setProduct] = useState<ProductInterface[]>([]);
   const { productId } = useParams();
-  console.log(product);
 
   useEffect(() => {
     fetch(`/drinks/${productId}`)
