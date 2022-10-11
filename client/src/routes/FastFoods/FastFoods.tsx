@@ -1,26 +1,21 @@
 import { useEffect, useState } from 'react';
 import RouteLayout from '../../layouts/RouteLayout';
-import Title from '../../utils/title';
 import { ProductInterface } from '../../typings';
-import axios from 'axios';
 
 const FastFood = () => {
   const [fastFoods, setFastFoods] = useState<ProductInterface[]>([]);
-  const { title, setTitle } = Title();
+  const [group, setGroup] = useState('');
 
   useEffect(() => {
-    axios
-      .get<ProductInterface[]>('http://localhost:3001/dishes')
-      .then((response) => {
-        setFastFoods(response.data);
-        setTitle('Fast foods');
-      })
-      .catch((error) => {
-        console.error(error);
+    fetch('/fast-foods')
+      .then((response) => response.json())
+      .then((data) => {
+        setFastFoods(data);
+        setGroup('Fast foods');
       });
   }, []);
 
-  return <RouteLayout products={fastFoods} title={title}></RouteLayout>;
+  return <RouteLayout products={fastFoods} group={group}></RouteLayout>;
 };
 
 export default FastFood;

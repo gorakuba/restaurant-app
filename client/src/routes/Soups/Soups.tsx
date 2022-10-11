@@ -1,26 +1,21 @@
 import { useEffect, useState } from 'react';
 import RouteLayout from '../../layouts/RouteLayout';
-import Title from '../../utils/title';
 import { ProductInterface } from '../../typings';
-import axios from 'axios';
 
 const Soup = () => {
   const [soups, setSoups] = useState<ProductInterface[]>([]);
-  const { title, setTitle } = Title();
+  const [group, setGroup] = useState('');
 
   useEffect(() => {
-    axios
-      .get<ProductInterface[]>('http://localhost:3001/dishes')
-      .then((response) => {
-        setSoups(response.data);
-        setTitle('Soups');
-      })
-      .catch((error) => {
-        console.error(error);
+    fetch('/soups')
+      .then((response) => response.json())
+      .then((data) => {
+        setSoups(data);
+        setGroup('Soups');
       });
   }, []);
 
-  return <RouteLayout products={soups} title={title}></RouteLayout>;
+  return <RouteLayout products={soups} group={group}></RouteLayout>;
 };
 
 export default Soup;

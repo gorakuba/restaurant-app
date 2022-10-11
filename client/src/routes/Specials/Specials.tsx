@@ -1,26 +1,21 @@
 import { useEffect, useState } from 'react';
 import RouteLayout from '../../layouts/RouteLayout';
-import Title from '../../utils/title';
 import { ProductInterface } from '../../typings';
-import axios from 'axios';
 
 const Special = () => {
   const [specials, setSpecials] = useState<ProductInterface[]>([]);
-  const { title, setTitle } = Title();
+  const [group, setGroup] = useState('');
 
   useEffect(() => {
-    axios
-      .get<ProductInterface[]>('http://localhost:3001/dishes')
-      .then((response) => {
-        setSpecials(response.data);
-        setTitle('Specials of the days');
-      })
-      .catch((error) => {
-        console.error(error);
+    fetch('/specials')
+      .then((response) => response.json())
+      .then((data) => {
+        setSpecials(data);
+        setGroup('Specials of the day');
       });
   }, []);
 
-  return <RouteLayout products={specials} title={title}></RouteLayout>;
+  return <RouteLayout products={specials} group={group}></RouteLayout>;
 };
 
 export default Special;

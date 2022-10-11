@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import MyApp from './App';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <React.StrictMode>
-      <BrowserRouter>
+      <HashRouter>
         <Provider store={store}>
           <HelmetProvider>
             <ThemeProvider theme={theme}>
@@ -34,7 +34,7 @@ const App = () => {
             </ThemeProvider>
           </HelmetProvider>
         </Provider>
-      </BrowserRouter>
+      </HashRouter>
     </React.StrictMode>
   );
 };

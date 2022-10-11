@@ -1,26 +1,21 @@
 import { useEffect, useState } from 'react';
 import RouteLayout from '../../layouts/RouteLayout';
-import Title from '../../utils/title';
 import { ProductInterface } from '../../typings';
-import axios from 'axios';
 
 const MeatDish = () => {
   const [meatDishes, setMeatDishes] = useState<ProductInterface[]>([]);
-  const { title, setTitle } = Title();
+  const [group, setGroup] = useState('');
 
   useEffect(() => {
-    axios
-      .get<ProductInterface[]>('http://localhost:3001/dishes')
-      .then((response) => {
-        setMeatDishes(response.data);
-        setTitle('Meat dishes');
-      })
-      .catch((error) => {
-        console.error(error);
+    fetch('/meat-dishes')
+      .then((response) => response.json())
+      .then((data) => {
+        setMeatDishes(data);
+        setGroup('Meat dishes');
       });
   }, []);
 
-  return <RouteLayout products={meatDishes} title={title}></RouteLayout>;
+  return <RouteLayout products={meatDishes} group={group}></RouteLayout>;
 };
 
 export default MeatDish;

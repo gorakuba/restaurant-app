@@ -1,26 +1,21 @@
 import { useEffect, useState } from 'react';
 import RouteLayout from '../../layouts/RouteLayout';
-import Title from '../../utils/title';
 import { ProductInterface } from '../../typings';
-import axios from 'axios';
 
 const Vege = () => {
-  const [vegeDishes, setVegeDishes] = useState<ProductInterface[]>([]);
-  const { title, setTitle } = Title();
+  const [vege, setVege] = useState<ProductInterface[]>([]);
+  const [group, setGroup] = useState('');
 
   useEffect(() => {
-    axios
-      .get<ProductInterface[]>('http://localhost:3001/dishes')
-      .then((response) => {
-        setVegeDishes(response.data);
-        setTitle('Vege dishes');
-      })
-      .catch((error) => {
-        console.error(error);
+    fetch('/vege-dishes')
+      .then((response) => response.json())
+      .then((data) => {
+        setVege(data);
+        setGroup('Vege dishes');
       });
   }, []);
 
-  return <RouteLayout products={vegeDishes} title={title}></RouteLayout>;
+  return <RouteLayout products={vege} group={group}></RouteLayout>;
 };
 
 export default Vege;

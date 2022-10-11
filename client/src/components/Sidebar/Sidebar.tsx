@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CloseListItem, ListItem, SidebarStyle } from './Sidebar.styled';
 import { AnimatePresence, motion } from 'framer-motion';
-import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
 import { closeSidebar } from '../../slices/SidebarSlice';
@@ -16,13 +15,10 @@ const Sidebar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get<MenuItemInterface[]>(' http://localhost:3001/menu')
-      .then((response) => {
-        setMenuItems(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
+    fetch('/menu')
+      .then((response) => response.json())
+      .then((data) => {
+        setMenuItems(data);
       });
   }, []);
 
@@ -43,7 +39,7 @@ const Sidebar = () => {
               case 'Dania mięsne':
                 return (
                   <motion.div key={item.id} {...sidebarAnimations.meatDishes}>
-                    <Link to='/meatdishes' style={{ textDecoration: 'none' }}>
+                    <Link to='/meat-dishes' style={{ textDecoration: 'none' }}>
                       <ListItem>{item.name}</ListItem>
                     </Link>
                   </motion.div>
@@ -51,7 +47,7 @@ const Sidebar = () => {
               case 'Dania wege':
                 return (
                   <motion.div key={item.id} {...sidebarAnimations.vege}>
-                    <Link to='/vegedishes' style={{ textDecoration: 'none' }}>
+                    <Link to='/vege-dishes' style={{ textDecoration: 'none' }}>
                       <ListItem>{item.name}</ListItem>
                     </Link>
                   </motion.div>
@@ -67,7 +63,7 @@ const Sidebar = () => {
               case 'Fast food':
                 return (
                   <motion.div key={item.id} {...sidebarAnimations.fastFoods}>
-                    <Link to='/fastfoods' style={{ textDecoration: 'none' }}>
+                    <Link to='/fast-foods' style={{ textDecoration: 'none' }}>
                       <ListItem>{item.name}</ListItem>
                     </Link>
                   </motion.div>

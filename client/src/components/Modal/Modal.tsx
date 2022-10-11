@@ -10,7 +10,6 @@ import {
 } from './Modal.styled';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import { motion } from 'framer-motion';
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { closeModal } from '../../slices/ModalSlice';
 import { modalAnimations } from '../../utils/animations';
@@ -20,13 +19,10 @@ const Modal = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get<any>('http://localhost:3001/modal-content')
-      .then((response) => {
-        setModalContent(response.data);
-      })
-      .catch((error) => {
-        console.log('Error!!', error);
+    fetch('/modal')
+      .then((response) => response.json())
+      .then((data) => {
+        setModalContent(data);
       });
   }, []);
 

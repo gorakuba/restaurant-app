@@ -24,12 +24,13 @@ const Product = ({
   price,
   count,
   photoSrc,
-  title,
+  group,
 }: ProductInterface) => {
   const [clicked, setClicked] = useState(false);
   const [counter, setCounter] = useState(0);
   const dispatch = useDispatch();
-  let productGroup: string = title.toLowerCase().replace(/ /g, '');
+
+  let productGroup: string = group.toLowerCase().replace(/ /g, '-');
 
   const basketAdd = () => {
     dispatch(addToBasket({ id, name, description, price, count, photoSrc }));

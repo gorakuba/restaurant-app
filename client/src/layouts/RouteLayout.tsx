@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import { ProductInterface } from '../typings';
 import { routeLayoutAnimations } from '../utils/animations';
 
-const RouteLayout = ({ products, title }) => {
+const RouteLayout = ({ products, group }) => {
   return (
     <Container>
       <motion.div {...routeLayoutAnimations.layout}>
-        <h2>{title}</h2>
+        <h2>{group}</h2>
       </motion.div>
 
       <Content>
@@ -21,7 +21,7 @@ const RouteLayout = ({ products, title }) => {
               description={product.description}
               count={product.count}
               photoSrc={product.photoSrc}
-              title={title}
+              group={group}
             />
           </motion.div>
         ))}

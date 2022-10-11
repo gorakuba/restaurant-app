@@ -12,31 +12,51 @@ import Checkout from './routes/Checkout/Checkout';
 import ProductDetails from './routes/ProductDetails/ProductDetails';
 
 const paths = [
-  { id: 1, path: 'location', element: <Location /> },
-  { id: 2, path: 'drinks', element: <Drink /> },
-  { id: 3, path: 'drinks/:productId', element: <ProductDetails /> },
-  { id: 4, path: 'fastfoods', element: <FastFood /> },
-  { id: 5, path: 'fastfoods/:productId', element: <ProductDetails /> },
-  { id: 6, path: 'meatdishes', element: <MeatDish /> },
+  { id: 1, path: '/location', element: <Location /> },
+  { id: 2, path: '/drinks', element: <Drink /> },
   {
-    id: 7,
-    path: 'meatdishes/:productName',
+    id: 3,
+    path: '/drinks/:productId',
     element: <ProductDetails />,
   },
-  { id: 8, path: 'pizzas', element: <Pizza /> },
-  { id: 9, path: 'pizzas/:productId', element: <ProductDetails /> },
-  { id: 10, path: 'soups', element: <Soup /> },
-  { id: 11, path: 'soups/:productId', element: <ProductDetails /> },
+  { id: 4, path: '/fast-foods', element: <FastFood /> },
+  {
+    id: 5,
+    path: '/fast-foods/:productId',
+    element: <ProductDetails />,
+  },
+  { id: 6, path: '/meat-dishes', element: <MeatDish /> },
+  {
+    id: 7,
+    path: '/meat-dishes/:productName',
+    element: <ProductDetails />,
+  },
+  { id: 8, path: '/pizzas', element: <Pizza /> },
+  {
+    id: 9,
+    path: '/pizzas/:productId',
+    element: <ProductDetails />,
+  },
+  { id: 10, path: '/soups', element: <Soup /> },
+  {
+    id: 11,
+    path: '/soups/:productId',
+    element: <ProductDetails />,
+  },
   { id: 12, path: '/', element: <Special /> },
   {
     id: 13,
-    path: '/specialsofthedays/:productId',
+    path: '/specials-of-the-day/:productId',
     element: <ProductDetails />,
   },
-  { id: 14, path: 'vegedishes', element: <VegDish /> },
-  { id: 15, path: 'vegedishes/:productId', element: <ProductDetails /> },
-  { id: 16, path: 'basket', element: <Basket /> },
-  { id: 17, path: 'checkout', element: <Checkout /> },
+  { id: 14, path: '/vege-dishes', element: <VegDish /> },
+  {
+    id: 15,
+    path: '/vege-dishes/:productId',
+    element: <ProductDetails />,
+  },
+  { id: 16, path: '/basket', element: <Basket /> },
+  { id: 17, path: '/checkout', element: <Checkout /> },
 ];
 
 const MyApp = () => {

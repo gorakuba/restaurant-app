@@ -16,7 +16,6 @@ const BasketProduct = ({
   price,
   count,
   photoSrc,
-  title,
 }: ProductInterface) => {
   return (
     <ProductStyle>
