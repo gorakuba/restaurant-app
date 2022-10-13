@@ -3,16 +3,28 @@ import { useParams } from 'react-router-dom';
 import {
   Style,
   ProductDetailImage,
-  PlusButton,
   ProductDetailsHeader,
+  AddSection,
+  Counter,
+  Plus,
 } from './ProductDetails.styled';
 import { motion } from 'framer-motion';
 import { ProductInterface } from '../../typings';
 import { productDetailsAnimations } from '../../utils/animations';
+import { useDispatch } from 'react-redux';
+import {
+  addToBasket,
+  removeProductFromBasket,
+} from '../../slices/ProductSlice';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const ProductDetails = () => {
   const [product, setProduct] = useState<ProductInterface[]>([]);
   const { productId } = useParams();
+  const [clicked, setClicked] = useState(false);
+  const [counter, setCounter] = useState(0);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch(`/drinks/${productId}`)
@@ -21,6 +33,23 @@ const ProductDetails = () => {
         setProduct(data);
       });
   }, []);
+
+  const basketAdd = () => {
+    dispatch(addToBasket(product));
+
+    setClicked(true);
+    setCounter((current: number) => (current += 1));
+  };
+
+  const basketRemove = () => {
+    if (counter > 0) {
+      dispatch(removeProductFromBasket(product));
+
+      setCounter((current: number) => (current -= 1));
+    } else {
+      setCounter(0);
+    }
+  };
 
   return (
     <>
@@ -41,7 +70,18 @@ const ProductDetails = () => {
                         <h2>{product.name}</h2>
                         <h3>Price: {product.price} zł</h3>
                       </div>
-                      <PlusButton>Add to basket</PlusButton>
+
+                      <AddSection>
+                        {clicked && counter > 0 ? (
+                          <Counter>
+                            <AddIcon onClick={basketAdd} />
+                            {counter}
+                            <RemoveIcon onClick={basketRemove} />
+                          </Counter>
+                        ) : (
+                          <Plus onClick={basketAdd}>Add to basket</Plus>
+                        )}
+                      </AddSection>
                     </ProductDetailsHeader>
                   </motion.div>
 

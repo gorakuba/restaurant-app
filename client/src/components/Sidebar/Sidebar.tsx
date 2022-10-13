@@ -28,7 +28,7 @@ const Sidebar = () => {
         <SidebarStyle>
           {menuItems.map((item: MenuItemInterface) => {
             switch (item.name) {
-              case 'Dania dnia':
+              case 'Specials of the day':
                 return (
                   <motion.div key={item.id} {...sidebarAnimations.specials}>
                     <Link to='/' style={{ textDecoration: 'none' }}>
@@ -36,7 +36,7 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case 'Dania mięsne':
+              case 'Meat dishes':
                 return (
                   <motion.div key={item.id} {...sidebarAnimations.meatDishes}>
                     <Link to='/meat-dishes' style={{ textDecoration: 'none' }}>
@@ -44,7 +44,7 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case 'Dania wege':
+              case 'Vege dishes':
                 return (
                   <motion.div key={item.id} {...sidebarAnimations.vege}>
                     <Link to='/vege-dishes' style={{ textDecoration: 'none' }}>
@@ -52,7 +52,7 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case 'Zupy':
+              case 'Soups':
                 return (
                   <motion.div key={item.id} {...sidebarAnimations.soups}>
                     <Link to='/soups' style={{ textDecoration: 'none' }}>
@@ -60,7 +60,7 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case 'Fast food':
+              case 'Fast foods':
                 return (
                   <motion.div key={item.id} {...sidebarAnimations.fastFoods}>
                     <Link to='/fast-foods' style={{ textDecoration: 'none' }}>
@@ -68,7 +68,7 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case 'Pizza':
+              case 'Pizzas':
                 return (
                   <motion.div key={item.id} {...sidebarAnimations.pizzas}>
                     <Link to='/pizzas' style={{ textDecoration: 'none' }}>
@@ -76,7 +76,7 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case 'Napoje':
+              case 'Drinks':
                 return (
                   <motion.div key={item.id} {...sidebarAnimations.drinks}>
                     <Link to='/drinks' style={{ textDecoration: 'none' }}>
@@ -84,7 +84,7 @@ const Sidebar = () => {
                     </Link>
                   </motion.div>
                 );
-              case 'Lokalizacja':
+              case 'Location':
                 return (
                   <motion.div key={item.id} {...sidebarAnimations.location}>
                     <Link to='/location' style={{ textDecoration: 'none' }}>

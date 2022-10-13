@@ -29,7 +29,6 @@ const Product = ({
   const [clicked, setClicked] = useState(false);
   const [counter, setCounter] = useState(0);
   const dispatch = useDispatch();
-
   let productGroup: string = group.toLowerCase().replace(/ /g, '-');
 
   const basketAdd = () => {

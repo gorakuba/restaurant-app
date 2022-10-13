@@ -19,7 +19,7 @@ const Modal = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch('/modal')
+    fetch('/modal-content')
       .then((response) => response.json())
       .then((data) => {
         setModalContent(data);

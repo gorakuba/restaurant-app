@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // get all drinks route
 app.get('/drinks', (req, res) => {
   db.query(
-    'SELECT id, name, count, description, price, photoSrc FROM drinks',
+    'SELECT id, name, count, price, photoSrc FROM drinks',
     (error, result) => {
       if (error) {
         console.error(error);
@@ -21,8 +21,9 @@ app.get('/drinks', (req, res) => {
 });
 
 // get one drink route
-app.get('/drinks/:id', (req, res) => {
+app.get('/drinks/:id', (req: any, res: any) => {
   const id = req.params.id;
+
   db.query(
     `SELECT id, name, count, description, price, photoSrc FROM drinks WHERE id = ${id}`,
     (error, result) => {
@@ -37,7 +38,7 @@ app.get('/drinks/:id', (req, res) => {
 // get all fast-foods route
 app.get('/fast-foods', (req, res) => {
   db.query(
-    'SELECT id, name, count, description, price, photoSrc FROM fastfoods',
+    'SELECT id, name, count, price, photoSrc FROM fastfoods',
     (error, result) => {
       if (error) {
         console.error(error);
@@ -64,7 +65,7 @@ app.get('/fast-foods/:id', (req, res) => {
 // get all meat-dishes route
 app.get('/meat-dishes', (req, res) => {
   db.query(
-    'SELECT id, name, count, description, price, photoSrc FROM meatdishes',
+    'SELECT id, name, count, price, photoSrc FROM meatdishes',
     (error, result) => {
       if (error) {
         console.error(error);
@@ -91,7 +92,7 @@ app.get('/meat-dishes/:id', (req, res) => {
 // get all pizzas route
 app.get('/pizzas', (req, res) => {
   db.query(
-    'SELECT id, name, count, description, price, photoSrc FROM pizzas',
+    'SELECT id, name, count, price, photoSrc FROM pizzas',
     (error, result) => {
       if (error) {
         console.error(error);
@@ -118,7 +119,7 @@ app.get('/pizzas/:id', (req, res) => {
 // get all soups route
 app.get('/soups', (req, res) => {
   db.query(
-    'SELECT id, name, count, description, price, photoSrc FROM soups',
+    'SELECT id, name, count, price, photoSrc FROM soups',
     (error, result) => {
       if (error) {
         console.error(error);
@@ -145,7 +146,7 @@ app.get('/soups/:id', (req, res) => {
 // get all specilas route
 app.get('/specials', (req, res) => {
   db.query(
-    'SELECT id, name, count, description, price, photoSrc FROM specials',
+    'SELECT id, name, count, price, photoSrc FROM specials',
     (error, result) => {
       if (error) {
         console.error(error);
@@ -172,7 +173,7 @@ app.get('/specials/:id', (req, res) => {
 // get all vege-dishes route
 app.get('/vege-dishes', (req, res) => {
   db.query(
-    'SELECT id, name, count, description, price, photoSrc FROM vegedishes',
+    'SELECT id, name, count, price, photoSrc FROM vegedishes',
     (error, result) => {
       if (error) {
         console.error(error);
@@ -207,8 +208,8 @@ app.get('/menu', (req, res) => {
 });
 
 // get modal route
-app.get('/menu', (req, res) => {
-  db.query('SELECT id, title, content FROM modal-content', (error, result) => {
+app.get('/modal-content', (req, res) => {
+  db.query('SELECT id, title, content FROM modal', (error, result) => {
     if (error) {
       console.error(error);
     }

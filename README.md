@@ -1,10 +1,10 @@
 ### Getting Started with app
 
-# Go to the client directory in first terminal and run command `npm i` amd then in the second terminal go to the server directory and run this command too.
+# Go to the client directory in first terminal and run command `npm i` and then in the second terminal go to the server directory and run the same command.
 
-# Then in the first terminal run command `npm start` and in the second `nodemon server.ts`.
+# Then in the first terminal run command `npm start` and in the second `node server.ts`.
 
-# If you have any required depedencies and packages, app will run correctly.
+# If you have every required depedencies and packages, app will run correctly.
 
 ### Learn More
 

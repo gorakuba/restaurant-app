@@ -34,22 +34,44 @@ export const ProductDetailImage = styled.div`
 
 export const ProductDetailsHeader = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 140px;
   align-items: center;
 `;
 
-export const PlusButton = styled.button`
-  padding: 6px;
-  height: 40px;
+export const AddSection = styled.div`
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-direction: column-reverse;
+  margin-bottom: 60px;
+`;
+
+export const Counter = styled.div`
+  color: ${(props) => props.theme.fonts.colors.productCounterFont};
+  margin-top: 70px;
+  font-size: ${(props) => props.theme.fonts.size.fontSize24};
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const Plus = styled.button`
+  padding: 10px;
   width: 160px;
   font-size: ${(props) => props.theme.fonts.size.fontSize16};
   font-weight: 900;
   color: ${(props) => props.theme.fonts.colors.addToBasketButton};
-  margin-top: 32px;
+  margin-top: 66px;
   background-color: ${(props) =>
     props.theme.colors.states.addToBasketButtonBackground};
   border: none;
+  font-weight: 700;
 
   &:hover {
     cursor: pointer;
