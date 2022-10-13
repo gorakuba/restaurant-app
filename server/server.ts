@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const db = require('./config/db');
+const db = require('./config/database');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -21,7 +21,7 @@ app.get('/drinks', (req, res) => {
 });
 
 // get one drink route
-app.get('/drinks/:id', (req: any, res: any) => {
+app.get('/drinks/:id', (req, res) => {
   const id = req.params.id;
 
   db.query(
