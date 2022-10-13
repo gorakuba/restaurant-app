@@ -1,0 +1,93 @@
+{
+  "dishes": [
+    {
+      "id": 1,
+      "name": "aaaaaa",
+      "price": 30,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae libero placerat lectus ultricies placerat. Cras eros mi, vestibulum id arcu in, vehicula porta velit. Nunc ut nisi congue, ornare diam ut, pellentesque turpis. Maecenas faucibus massa neque, vel mattis magna malesuada quis. Nam nec lectus massa. Sed pharetra at urna eu fringilla.",
+      "count": 1,
+      "photoSrc": "https://st2.depositphotos.com/4441075/7805/v/950/depositphotos_78054294-stock-illustration-photo-camera-simple-web-icon.jpg"
+    },
+    {
+      "id": 2,
+      "name": "bbbbbb",
+      "price": 130,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae libero placerat lectus ultricies placerat. Cras eros mi, vestibulum id arcu in, vehicula porta velit. Nunc ut nisi congue, ornare diam ut, pellentesque turpis. Maecenas faucibus massa neque, vel mattis magna malesuada quis. Nam nec lectus massa. Sed pharetra at urna eu fringilla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+      "count": 1,
+      "photoSrc": "https://st2.depositphotos.com/4441075/7805/v/950/depositphotos_78054294-stock-illustration-photo-camera-simple-web-icon.jpg"
+    },
+    {
+      "id": 3,
+      "name": "cccccc",
+      "price": 50,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae libero placerat lectus ultricies placerat. Cras eros mi, vestibulum id arcu in, vehicula porta velit. Nunc ut nisi congue, ornare diam ut, pellentesque turpis. Maecenas faucibus massa neque, vel mattis magna malesuada quis. Nam nec lectus massa. Sed pharetra at urna eu fringilla.",
+      "count": 1,
+      "photoSrc": "https://st2.depositphotos.com/4441075/7805/v/950/depositphotos_78054294-stock-illustration-photo-camera-simple-web-icon.jpg"
+    },
+    {
+      "id": 4,
+      "name": "dddddd",
+      "price": 63.56,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae libero placerat lectus ultricies placerat. Cras eros mi, vestibulum id arcu in, vehicula porta velit. Nunc ut nisi congue, ornare diam ut, pellentesque turpis. Maecenas faucibus massa neque, vel mattis magna malesuada quis. Nam nec lectus massa. Sed pharetra at urna eu fringilla.",
+      "count": 1,
+      "photoSrc": "https://st2.depositphotos.com/4441075/7805/v/950/depositphotos_78054294-stock-illustration-photo-camera-simple-web-icon.jpg"
+    },
+    {
+      "id": 5,
+      "name": "eeeeee",
+      "price": 67.9,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae libero placerat lectus ultricies placerat. Cras eros mi, vestibulum id arcu in, vehicula porta velit. Nunc ut nisi congue, ornare diam ut, pellentesque turpis. Maecenas faucibus massa neque, vel mattis magna malesuada quis. Nam nec lectus massa. Sed pharetra at urna eu fringilla.",
+      "count": 1,
+      "photoSrc": "https://st2.depositphotos.com/4441075/7805/v/950/depositphotos_78054294-stock-illustration-photo-camera-simple-web-icon.jpg"
+    },
+    {
+      "id": 6,
+      "name": "ffffff",
+      "price": 88,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae libero placerat lectus ultricies placerat. Cras eros mi, vestibulum id arcu in, vehicula porta velit. Nunc ut nisi congue, ornare diam ut, pellentesque turpis. Maecenas faucibus massa neque, vel mattis magna malesuada quis. Nam nec lectus massa. Sed pharetra at urna eu fringilla.",
+      "count": 1,
+      "photoSrc": "https://st2.depositphotos.com/4441075/7805/v/950/depositphotos_78054294-stock-illustration-photo-camera-simple-web-icon.jpg"
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "name": "Dania dnia"
+    },
+    {
+      "id": 2,
+      "name": "Dania mięsne"
+    },
+    {
+      "id": 3,
+      "name": "Dania wege"
+    },
+    {
+      "id": 4,
+      "name": "Zupy"
+    },
+    {
+      "id": 5,
+      "name": "Fast food"
+    },
+    {
+      "id": 6,
+      "name": "Pizza"
+    },
+    {
+      "id": 7,
+      "name": "Napoje"
+    },
+    {
+      "id": 8,
+      "name": "Lokalizacja"
+    }
+  ],
+  "modal-content": [
+    {
+      "id": 1,
+      "title": "Our Restaurant",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus tincidunt ipsum ac commodo. Sed pulvinar posuere dolor, in pretium orci. In nec ex eu arcu maximus ultrices. Fusce sem augue, luctus ut elit ut, maximus lacinia risus. Quisque eget quam ac ante pulvinar vehicula."
+    }
+  ]
+}

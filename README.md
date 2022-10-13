@@ -1,8 +1,13 @@
-RESTAURANT APP
+### Getting Started with app
 
-To run app:
-  - install dependencies: npm install,
-  - run local database: npx json-server --watch db.json --port 3001,
-  - run application: npm start.
-  
-  Have fun!!
+# Go to the client directory in first terminal and run command `npm i` and then in the second terminal go to the server directory and run the same command.
+
+# Then in the first terminal run command `npm start` and in the second `node server.ts`.
+
+# If you have every required depedencies and packages, app will run correctly.
+
+### Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
