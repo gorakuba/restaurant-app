@@ -6,6 +6,11 @@ export const iconStyle = {
   marginTop: '4px',
 };
 
+export const linkStyle = {
+  color: 'var(--font)',
+  textDecoration: 'none',
+};
+
 export const HeaderStyle = styled.header`
   display: flex;
   align-items: center;
@@ -89,5 +94,16 @@ export const SwitchModeButton = styled.div`
     color: ${(props) => props.theme.colors.states.modeIconsColor} !important;
     opacity: var(--opacityAnimationDark);
     transition: 0.3s;
+  }
+`;
+
+export const SignInRegister = styled.p`
+  margin-right: 10px;
+
+  b {
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 `;

@@ -23,7 +23,7 @@ export const ModalWraper = styled.div`
   top: 30vh;
   z-index: 100;
   border-radius: 10px;
-  padding: 20px;
+  padding: 20px 20px 50px 20px;
   background: var(--modalBackground);
 `;
 

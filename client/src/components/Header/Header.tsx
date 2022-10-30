@@ -10,6 +10,8 @@ import {
   SwitchModeButton,
   MenuLink,
   iconStyle,
+  linkStyle,
+  SignInRegister,
 } from './Header.styled';
 import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
 import PersonIcon from '@mui/icons-material/Person';
@@ -48,6 +50,16 @@ const Header = ({ switchMode }) => {
         </HeaderLeft>
 
         <HeaderRight>
+          <SignInRegister>
+            <Link to='/login' style={linkStyle}>
+              <b>Sign in</b>
+            </Link>{' '}
+            or{' '}
+            <Link to='/register' style={linkStyle}>
+              <b>register</b>
+            </Link>
+          </SignInRegister>
+
           <HeaderRightIcon>
             <PersonIcon onClick={() => dispatch(openModal())} />
           </HeaderRightIcon>

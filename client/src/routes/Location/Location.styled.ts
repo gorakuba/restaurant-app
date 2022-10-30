@@ -6,6 +6,7 @@ export const Container = styled.div`
   color: var(--font);
   margin-left: auto;
   margin-right: auto;
+  margin-top: 8vh;
 
   @media ${(props) => props.theme.breakpoints.xl} {
     margin: 0 9vw;
