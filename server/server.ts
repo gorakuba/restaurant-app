@@ -1,71 +1,46 @@
-require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const database = require('./models');
-const Role = database.roles;
+const path = require('path');
+const connection = require('./connections/db.connections');
 
 const app = express();
+
 let corsOptions = {
   origin: 'http://localhost:8081',
 };
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
+
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
+
 app.use(cookieParser());
 
-// register route
-app.post('/register', async (req: any, res: any) => {
-  const { id, username, password, email } = req.body;
+// database connection
+connection.connect((err) => {
+  if (err) return console.error(err);
+  console.log('connected to database!');
+});
+//////////////////////
 
-  // const user = {
-  //   userId: id,
-  //   username: username,
-  //   pass: password,
-  //   email: email,
-  // };
-
-  // UserModel.create(user)
-  //   .then(() => {
-  //     res.send('user registered!', user);
-  //   })
-  //   .catch((err: any) => {
-  //     console.error(err);
-  //   });
+app.get('/', (req: any, res: any) => {
+  res.send('welcome!');
 });
 
-// login route
-app.get('/login', async (req: any, res: any) => {
-  // const { username, password } = req.body;
-  // try {
-  //   databaseConn.getConnection((err: any, connection: any) => {
-  //     if (err) throw err;
-  //     console.log('database connected!');
-  //   });
-  // } catch (err) {
-  //   console.error(err);
-  // }
+app.get('/login-form', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'loginForm.html'));
 });
 
-database.sequelize.sync().then(() => {
-  initial();
+app.get('/register-form', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'registerForm.html'));
 });
 
-const PORT = process.env.PORT;
+require('./routes/auth.routes')(app);
+require('./routes/products.routes');
+
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server is runnig on port ${PORT}`);
+  console.log(`server is running on port ${PORT} ...`);
 });
-
-const initial = () => {
-  Role.create({
-    id: 1,
-    name: 'admin',
-  });
-
-  Role.create({
-    id: 2,
-    name: 'user',
-  });
-};
