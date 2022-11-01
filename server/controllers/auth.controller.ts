@@ -12,8 +12,19 @@ exports.signin = (req, res) => {
 
 exports.signup = (req, res) => {
   const { username, password, email } = req.body;
+  const saltRounds = 10;
+  let hashedPassword: string = '';
 
-  const addUserQuery = `INSERT INTO users (username, password, email) VALUES ('${username}', '${password}', '${email}')`;
+  bcrypt.genSalt(saltRounds, (err, salt) => {
+    bcrypt.hash(password, salt, (err, hash) => {
+      hashedPassword = hash;
+      return hashedPassword;
+    });
+  });
+
+  console.log(hashedPassword);
+
+  const addUserQuery = `INSERT INTO users (username, password, email) VALUES ('${username}', '${hashedPassword}', '${email}')`;
 
   dbConnection.query(addUserQuery, (error, results) => {
     if (error) {
